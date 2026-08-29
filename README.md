@@ -4,7 +4,11 @@ Open-source UX impact measurement and delivery intelligence dashboard for design
 
 Track UX impact across delivery health, research coverage, strategic contribution, and design system adoption — with bundled LinkedIn-themed sample data, optional JSON uploads, or build-time Jira/Figma capture.
 
-**[Live demo](https://YOUR_USER.github.io/ux-metrics-dashboard/)** · [Data format](docs/data-format.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISH.md)
+**[Live demo](https://jasminekaurr.github.io/ux-metrics-dashboard/)** · [Data format](docs/data-format.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISH.md)
+
+> **Live demo vs. source code**
+> - **Dashboard (visitors):** [jasminekaurr.github.io/ux-metrics-dashboard](https://jasminekaurr.github.io/ux-metrics-dashboard/) — the interactive app
+> - **Repository (developers):** [github.com/jasminekaurr/ux-metrics-dashboard](https://github.com/jasminekaurr/ux-metrics-dashboard) — source code and docs
 
 ## Quick start
 
@@ -99,7 +103,7 @@ All sample data is fictional. Product names (Feed, Messaging, Jobs, Network, Pre
 
 - **Jasmine Kaur** — ideated and built the dashboard
 - **Manasi Kulkarni** — ideation, requirement gathering, and planning
-- **Akanksha Tanwar** — refining the project and preparing it for public release
+- **Akanksha Tanwar** — helped prepare the project for public release
 
 ## License
 

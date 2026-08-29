@@ -24,12 +24,16 @@ How to publish or update the public UX Metrics Dashboard repository.
    git push -u origin main
    ```
 
-3. **Enable GitHub Pages**:
-   - Go to **Settings → Pages**
-   - Set **Source** to **GitHub Actions**
-   - The `Deploy dashboard to Pages` workflow builds and deploys on every push to `main`
+3. **Enable GitHub Pages** (required before the deploy workflow can succeed):
+   - Go to your repo on GitHub → **Settings → Pages**
+   - Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”)
+   - Click **Save** if prompted
 
-4. **Verify CI**: The `CI` workflow runs lint and build on pull requests and pushes.
+   If you already pushed and the deploy workflow failed with `Get Pages site failed` / `Not Found`, this is the fix. Then re-run the failed workflow from the **Actions** tab.
+
+4. **Verify deployment**: Open **Actions** → **Deploy dashboard to Pages** → confirm the latest run succeeds. The site URL appears in the job summary (usually `https://<username>.github.io/ux-metrics-dashboard/`).
+
+5. **Verify CI**: The `CI` workflow runs lint and build on pull requests and pushes.
 
 ## Updating from a private repo
 
@@ -69,3 +73,16 @@ Alternatively, push to `main` and let the GitHub Actions workflow rebuild automa
 Public deployments use `build:external`, which sets `VITE_ORG_MODE=external` to anonymize product names (Product Alpha, Product Beta, etc.).
 
 Local development defaults to the LinkedIn-themed demo labels (Feed, Messaging, Jobs, etc.).
+
+## Troubleshooting Pages deploy
+
+### `Get Pages site failed` / `Not Found` on Setup Pages
+
+GitHub Pages is not enabled yet, or the source is set to a branch instead of GitHub Actions.
+
+**Fix:**
+1. Repo → **Settings → Pages**
+2. **Build and deployment → Source** → choose **GitHub Actions**
+3. **Actions** → re-run the failed **Deploy dashboard to Pages** workflow
+
+The default `GITHUB_TOKEN` cannot create the Pages site for you — a repo admin must enable it once in Settings.
