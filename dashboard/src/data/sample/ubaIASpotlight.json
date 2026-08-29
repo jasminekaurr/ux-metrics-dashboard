@@ -5,7 +5,7 @@
       "successRate": 67.1,
       "n": 5,
       "method": "Unmoderated panel",
-      "roles": "Ops & SysAdmin",
+      "roles": "Casual posters",
       "improvement": null
     },
     {
@@ -13,44 +13,44 @@
       "successRate": 85.6,
       "n": 10,
       "method": "Unmoderated panel",
-      "roles": "Ops & SysAdmin",
+      "roles": "Casual posters",
       "improvement": "+18.5%"
     },
     {
       "version": "V3",
       "successRate": 97.8,
       "n": 10,
-      "method": "Moderated client sessions",
-      "roles": "Senior Ops, Admin/IT",
+      "method": "Moderated creator sessions",
+      "roles": "Reels creators, editors",
       "improvement": "+12.2%"
     }
   ],
   "domains": [
     {
-      "name": "System Settings",
-      "desc": "How the system behaves over time — branch ops, hours, device mgmt"
+      "name": "Create & Publish",
+      "desc": "Camera, editing, drafts, and posting flows"
     },
     {
-      "name": "Roles & Access",
-      "desc": "Roles, permissions, and access control"
+      "name": "Discover & Explore",
+      "desc": "Search, Explore grid, hashtags, and recommendations"
     },
     {
-      "name": "Transactions & Pricing",
-      "desc": "Fees, rules, and limits for movement of money"
+      "name": "Connect & Message",
+      "desc": "DMs, groups, requests, and shared media"
     },
     {
-      "name": "Currency, Cash & Reconciliation",
-      "desc": "Control of physical/represented cash and currency (vaults & tills)"
+      "name": "Profile & Identity",
+      "desc": "Bio, highlights, grid, and account settings"
     },
     {
-      "name": "Forms & Communications",
-      "desc": "What the system prints or shows (digital & printed)"
+      "name": "Stories & Ephemeral",
+      "desc": "Stories creation, stickers, replies, and archives"
     },
     {
-      "name": "Compliance & Risk",
-      "desc": "Regulatory enforcement and audit posture — BSA/AML, CTR, SAR, OFAC"
+      "name": "Safety & Monetization",
+      "desc": "Controls, reporting, badges, and creator payouts"
     }
   ],
-  "finding": "This is no longer a hypothesis. It is a validated domain model.",
-  "context": "Mapped 13 legacy navigation items from Integrated Teller to 6 governed domains. The final IA (V4) reflects how professionals actually reason about governance, authority, risk, and execution."
+  "finding": "This is no longer a hypothesis. It is a validated navigation model.",
+  "context": "Mapped 13 legacy Reels navigation items into 6 governed domains. The final IA (V4) reflects how creators actually reason about publishing, discovery, connection, and identity."
 }

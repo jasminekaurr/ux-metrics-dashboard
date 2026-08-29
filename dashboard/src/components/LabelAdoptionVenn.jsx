@@ -6,63 +6,63 @@ import './LabelAdoption.css'
 // Restructured data to show tickets with multiple labels (overlaps)
 const ALL_TICKETS = [
   // UXR Identified only
-  { id: 'CORE-2201', name: 'Task Admin bulk actions — users expect select-all functionality', labels: ['UXR Identified'] },
-  { id: 'DNA-945', name: 'Search refinement needed — 78% of users couldn\'t find accounts', labels: ['UXR Identified'] },
-  { id: 'PORT-167', name: 'Queue status indicators unclear — research surfaced confusion', labels: ['UXR Identified'] },
+  { id: 'FEED-2201', name: 'Creator Studio multi-select actions — users expect select-all functionality', labels: ['UXR Identified'] },
+  { id: 'REEL-945', name: 'Search refinement needed — 78% of users couldn\'t find creators', labels: ['UXR Identified'] },
+  { id: 'EXPL-167', name: 'Inbox status indicators unclear — research surfaced confusion', labels: ['UXR Identified'] },
 
   // Design Rework only
-  { id: 'DNA-901', name: 'Dashboard widget arrangement revised for consistency', labels: ['Design Rework'] },
+  { id: 'REEL-901', name: 'Feed module arrangement revised for consistency', labels: ['Design Rework'] },
   { id: 'DS-505', name: 'Button hierarchy rework across pattern library', labels: ['Design Rework'] },
 
   // Post-Handoff Change only
-  { id: 'DNA-956', name: 'Backend limitation found — search can\'t filter by date range', labels: ['Post-Handoff Change'] },
-  { id: 'PORT-194', name: 'Real-time updates blocked by server limitations', labels: ['Post-Handoff Change'] },
+  { id: 'REEL-956', name: 'Backend limitation found — search can\'t filter by date range', labels: ['Post-Handoff Change'] },
+  { id: 'EXPL-194', name: 'Real-time updates blocked by server limitations', labels: ['Post-Handoff Change'] },
 
   // Usability Issue only
-  { id: 'DNA-989', name: 'Tab order incorrect in modal dialogs', labels: ['Usability Issue'] },
-  { id: 'UBA-425', name: 'Button text contrast below 4.5:1 ratio', labels: ['Usability Issue'] },
+  { id: 'REEL-989', name: 'Tab order incorrect in modal dialogs', labels: ['Usability Issue'] },
+  { id: 'REEL-425', name: 'Button text contrast below 4.5:1 ratio', labels: ['Usability Issue'] },
 
   // UXR + Design Rework (research led to design revision)
-  { id: 'UBA-345', name: 'Transaction history redesign based on panel feedback', labels: ['UXR Identified', 'Design Rework'] },
-  { id: 'DS-418', name: 'Form validation timing revised after usability testing', labels: ['UXR Identified', 'Design Rework'] },
-  { id: 'AI-58', name: 'Prompt feedback mechanism redesigned per user research', labels: ['UXR Identified', 'Design Rework'] },
+  { id: 'REEL-345', name: 'Reels analytics redesign based on panel feedback', labels: ['UXR Identified', 'Design Rework'] },
+  { id: 'DS-418', name: 'Carousel swipe timing revised after usability testing', labels: ['UXR Identified', 'Design Rework'] },
+  { id: 'CRE-58', name: 'Spark AI feedback mechanism redesigned per user research', labels: ['UXR Identified', 'Design Rework'] },
 
   // UXR + Usability Issue (research found usability problem)
-  { id: 'CORE-2310', name: 'Mobile nav discoverability improved — accessibility + research', labels: ['UXR Identified', 'Usability Issue'] },
-  { id: 'DA-128', name: 'Empty state guidance insufficient — testing + WCAG issue', labels: ['UXR Identified', 'Usability Issue'] },
-  { id: 'UBA-402', name: 'Quick actions menu placement — research + accessibility fix', labels: ['UXR Identified', 'Usability Issue'] },
+  { id: 'FEED-2310', name: 'Mobile nav discoverability improved — accessibility + research', labels: ['UXR Identified', 'Usability Issue'] },
+  { id: 'STOR-128', name: 'Empty state guidance insufficient — testing + WCAG issue', labels: ['UXR Identified', 'Usability Issue'] },
+  { id: 'REEL-402', name: 'Share actions menu placement — research + accessibility fix', labels: ['UXR Identified', 'Usability Issue'] },
 
   // Design Rework + Post-Handoff Change (design changed after handoff)
-  { id: 'CORE-2245', name: 'Task Admin card layout redesigned due to API constraints', labels: ['Design Rework', 'Post-Handoff Change'] },
-  { id: 'UBA-362', name: 'Quick actions menu reversed after backend limitations found', labels: ['Design Rework', 'Post-Handoff Change'] },
-  { id: 'AI-72', name: 'Recommendation cards reworked after data format issues', labels: ['Design Rework', 'Post-Handoff Change'] },
+  { id: 'FEED-2245', name: 'Creator Studio card layout redesigned due to API constraints', labels: ['Design Rework', 'Post-Handoff Change'] },
+  { id: 'REEL-362', name: 'Share actions menu reversed after backend limitations found', labels: ['Design Rework', 'Post-Handoff Change'] },
+  { id: 'CRE-72', name: 'Suggested post cards reworked after data format issues', labels: ['Design Rework', 'Post-Handoff Change'] },
 
   // Design Rework + Usability Issue (rework addressed usability)
-  { id: 'PORT-182', name: 'Notification center layout revised for clarity and contrast', labels: ['Design Rework', 'Usability Issue'] },
-  { id: 'DA-141', name: 'Error state improvements after accessibility critique', labels: ['Design Rework', 'Usability Issue'] },
+  { id: 'EXPL-182', name: 'Activity center layout revised for clarity and contrast', labels: ['Design Rework', 'Usability Issue'] },
+  { id: 'STOR-141', name: 'Error state improvements after accessibility critique', labels: ['Design Rework', 'Usability Issue'] },
 
   // Post-Handoff + Usability Issue (handoff revealed usability issue)
-  { id: 'CORE-2289', name: 'Bulk action limit required loading state for accessibility', labels: ['Post-Handoff Change', 'Usability Issue'] },
+  { id: 'FEED-2289', name: 'Bulk action limit required loading state for accessibility', labels: ['Post-Handoff Change', 'Usability Issue'] },
   { id: 'DS-521', name: 'Component detachment exposed focus indicator issue', labels: ['Post-Handoff Change', 'Usability Issue'] },
 
   // UXR + Design Rework + Usability Issue (all three)
-  { id: 'DNA-1002', name: 'Data table sorting — research + redesign + WCAG compliance', labels: ['UXR Identified', 'Design Rework', 'Usability Issue'] },
-  { id: 'CORE-2267', name: 'Form inputs redesigned based on research and accessibility audit', labels: ['UXR Identified', 'Design Rework', 'Usability Issue'] },
+  { id: 'REEL-1002', name: 'Comment thread sorting — research + redesign + WCAG compliance', labels: ['UXR Identified', 'Design Rework', 'Usability Issue'] },
+  { id: 'FEED-2267', name: 'Form inputs redesigned based on research and accessibility audit', labels: ['UXR Identified', 'Design Rework', 'Usability Issue'] },
 
-  // BA Change Request (separate)
-  { id: 'CORE-2208', name: 'Additional field required for compliance reporting', labels: ['BA Change Request'] },
-  { id: 'DNA-923', name: 'BA requested account type filter in search results', labels: ['BA Change Request'] },
-  { id: 'UBA-378', name: 'Transaction approval levels need third tier', labels: ['BA Change Request'] },
+  // PM Change Request (separate)
+  { id: 'FEED-2208', name: 'Additional field required for creator verification', labels: ['PM Change Request'] },
+  { id: 'REEL-923', name: 'PM requested profile type filter in search results', labels: ['PM Change Request'] },
+  { id: 'REEL-378', name: 'Engagement approval levels need third tier', labels: ['PM Change Request'] },
 
   // Iteration Feedback (separate)
-  { id: 'CORE-2256', name: 'VP requested priority indicator on task cards', labels: ['Iteration Feedback'] },
-  { id: 'DNA-978', name: 'PM feedback — add export functionality to reports', labels: ['Iteration Feedback'] },
-  { id: 'UBA-410', name: 'Design review identified missing confirmation dialog', labels: ['Iteration Feedback'] },
+  { id: 'FEED-2256', name: 'Product lead requested priority indicator on task cards', labels: ['Iteration Feedback'] },
+  { id: 'REEL-978', name: 'PM feedback — add share sheet to insights', labels: ['Iteration Feedback'] },
+  { id: 'REEL-410', name: 'Design review identified missing confirmation dialog', labels: ['Iteration Feedback'] },
 
   // Scope Change (separate)
-  { id: 'CORE-2278', name: 'Bulk actions expanded to include batch approval flow', labels: ['Scope Change'] },
-  { id: 'DNA-995', name: 'Search scope expanded to include archived accounts', labels: ['Scope Change'] },
-  { id: 'UBA-438', name: 'Transaction history now includes pending transactions', labels: ['Scope Change'] },
+  { id: 'FEED-2278', name: 'Bulk actions expanded to include collab publish flow', labels: ['Scope Change'] },
+  { id: 'REEL-995', name: 'Search scope expanded to include archived creators', labels: ['Scope Change'] },
+  { id: 'REEL-438', name: 'Reels analytics now includes pending engagements', labels: ['Scope Change'] },
 ]
 
 const LABEL_INFO = {
@@ -70,7 +70,7 @@ const LABEL_INFO = {
   'Design Rework': { color: '#f59e0b', description: 'Revisions to previously completed or approved design' },
   'Post-Handoff Change': { color: '#dc2626', description: 'Changes identified after design handoff to engineering' },
   'Usability Issue': { color: '#0891b2', description: 'Fixes addressing usability or accessibility concerns' },
-  'BA Change Request': { color: '#7c3aed', description: 'Updates requested by a BA after initial definition' },
+  'PM Change Request': { color: '#7c3aed', description: 'Updates requested by a PM after initial definition' },
   'Iteration Feedback': { color: '#34a853', description: 'Changes resulting from internal or stakeholder feedback' },
   'Scope Change': { color: '#d97706', description: 'Changes that expand or materially alter original scope' },
 }
@@ -105,7 +105,7 @@ export default function LabelAdoptionVenn() {
     design_usability: getTicketsByLabels(['Design Rework', 'Usability Issue']).length,
     handoff_usability: getTicketsByLabels(['Post-Handoff Change', 'Usability Issue']).length,
     uxr_design_usability: getTicketsByLabels(['UXR Identified', 'Design Rework', 'Usability Issue']).length,
-    ba: getTicketsByLabels(['BA Change Request']).length,
+    ba: getTicketsByLabels(['PM Change Request']).length,
     feedback: getTicketsByLabels(['Iteration Feedback']).length,
     scope: getTicketsByLabels(['Scope Change']).length,
   }
@@ -339,11 +339,11 @@ export default function LabelAdoptionVenn() {
 
                 {/* Separate circles for BA, Feedback, Scope */}
                 <g transform="translate(100, 520)">
-                  <circle cx="100" cy="0" r="35" fill={LABEL_INFO['BA Change Request'].color} fillOpacity={selectedLabels === 'BA Change Request' ? 0.8 : 0.5}
+                  <circle cx="100" cy="0" r="35" fill={LABEL_INFO['PM Change Request'].color} fillOpacity={selectedLabels === 'PM Change Request' ? 0.8 : 0.5}
                     style={{ cursor: 'pointer' }}
-                    onClick={() => handleRegionClick(['BA Change Request'])}
+                    onClick={() => handleRegionClick(['PM Change Request'])}
                   />
-                  <text x="100" y="-10" textAnchor="middle" fill="white" fontSize="10" fontWeight="700">BA Change</text>
+                  <text x="100" y="-10" textAnchor="middle" fill="white" fontSize="10" fontWeight="700">PM Change</text>
                   <text x="100" y="5" textAnchor="middle" fill="white" fontSize="16" fontWeight="800">{counts.ba}</text>
 
                   <circle cx="300" cy="0" r="35" fill={LABEL_INFO['Iteration Feedback'].color} fillOpacity={selectedLabels === 'Iteration Feedback' ? 0.8 : 0.5}

@@ -190,7 +190,7 @@
       }
     },
     {
-      "name": "Messaging",
+      "name": "DMs",
       "shipped": 2,
       "onTime": 75,
       "inFlight": 5,
@@ -217,7 +217,7 @@
       }
     },
     {
-      "name": "Jobs",
+      "name": "Reels",
       "shipped": 3,
       "onTime": 92,
       "inFlight": 3,
@@ -244,7 +244,7 @@
       }
     },
     {
-      "name": "Data Acceleration",
+      "name": "Stories",
       "shipped": 2,
       "onTime": 67,
       "inFlight": 3,
@@ -271,7 +271,7 @@
       }
     },
     {
-      "name": "Premium",
+      "name": "Creator",
       "shipped": 1,
       "onTime": 50,
       "inFlight": 2,
@@ -298,7 +298,7 @@
       }
     },
     {
-      "name": "Network",
+      "name": "Explore",
       "shipped": 2,
       "onTime": 83,
       "inFlight": 2,
@@ -325,7 +325,7 @@
       }
     },
     {
-      "name": "SnapPay",
+      "name": "Checkout",
       "shipped": 1,
       "onTime": 100,
       "inFlight": 1,
@@ -352,7 +352,7 @@
       }
     },
     {
-      "name": "Client Onboarding",
+      "name": "Sign-up",
       "shipped": 1,
       "onTime": 80,
       "inFlight": 2,
@@ -382,8 +382,8 @@
   "features": [
     {
       "project": "Feed",
-      "name": "Task Admin redesign — bulk action toolbar",
-      "tickets": "CORE-2201, CORE-2208",
+      "name": "Creator Studio redesign — bulk action toolbar",
+      "tickets": "FEED-2201, FEED-2208",
       "currentStage": "execution",
       "plannedStage": "execution",
       "deploymentStage": "Production",
@@ -396,7 +396,7 @@
     {
       "project": "Feed",
       "name": "Advanced search filters",
-      "tickets": "CORE-2245",
+      "tickets": "FEED-2245",
       "currentStage": "validation",
       "plannedStage": "execution",
       "deploymentStage": null,
@@ -411,7 +411,7 @@
     {
       "project": "Feed",
       "name": "Report export redesign",
-      "tickets": "CORE-2289, CORE-2290",
+      "tickets": "FEED-2289, FEED-2290",
       "currentStage": "execution",
       "plannedStage": "execution",
       "deploymentStage": "Staging",
@@ -424,7 +424,7 @@
     {
       "project": "Feed",
       "name": "Task prioritization UI",
-      "tickets": "CORE-2301",
+      "tickets": "FEED-2301",
       "currentStage": "optimization",
       "plannedStage": "optimization",
       "deploymentStage": "Production",
@@ -437,9 +437,9 @@
       ]
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "name": "Progressive disclosure filters (v1)",
-      "tickets": "DNA-884",
+      "tickets": "REEL-884",
       "currentStage": "execution",
       "plannedStage": "execution",
       "deploymentStage": "Staging",
@@ -450,9 +450,9 @@
       "blockers": []
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "name": "Data visualization refresh",
-      "tickets": "DNA-901, DNA-905",
+      "tickets": "REEL-901, REEL-905",
       "currentStage": "validation",
       "plannedStage": "execution",
       "deploymentStage": null,
@@ -465,9 +465,9 @@
       ]
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "name": "User preferences panel",
-      "tickets": "DNA-920",
+      "tickets": "REEL-920",
       "currentStage": "validation",
       "plannedStage": "validation",
       "deploymentStage": null,
@@ -478,9 +478,9 @@
       "blockers": []
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "name": "Dashboard widget customization",
-      "tickets": "DNA-934",
+      "tickets": "REEL-934",
       "currentStage": "execution",
       "plannedStage": "execution",
       "deploymentStage": "Handoff",
@@ -491,9 +491,9 @@
       "blockers": []
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "name": "Mobile responsiveness improvements",
-      "tickets": "DNA-945",
+      "tickets": "REEL-945",
       "currentStage": "discovery",
       "plannedStage": "validation",
       "deploymentStage": null,
@@ -506,9 +506,9 @@
       ]
     },
     {
-      "project": "Jobs",
+      "project": "Reels",
       "name": "Cash balancing flow — reduced steps",
-      "tickets": "UBA-319",
+      "tickets": "Reels-319",
       "currentStage": "execution",
       "plannedStage": "execution",
       "deploymentStage": "Production",
@@ -519,9 +519,9 @@
       "blockers": []
     },
     {
-      "project": "Jobs",
+      "project": "Reels",
       "name": "Transaction history redesign",
-      "tickets": "UBA-345",
+      "tickets": "Reels-345",
       "currentStage": "execution",
       "plannedStage": "execution",
       "deploymentStage": "Staging",
@@ -532,9 +532,9 @@
       "blockers": []
     },
     {
-      "project": "Jobs",
+      "project": "Reels",
       "name": "Quick actions menu",
-      "tickets": "UBA-362",
+      "tickets": "Reels-362",
       "currentStage": "validation",
       "plannedStage": "execution",
       "deploymentStage": null,
@@ -547,7 +547,7 @@
       ]
     },
     {
-      "project": "Data Acceleration",
+      "project": "Stories",
       "name": "Client widget empty states",
       "tickets": "DA-112, DA-115",
       "currentStage": "execution",
@@ -560,7 +560,7 @@
       "blockers": []
     },
     {
-      "project": "Data Acceleration",
+      "project": "Stories",
       "name": "API integration flow",
       "tickets": "DA-128",
       "currentStage": "validation",
@@ -573,7 +573,7 @@
       "blockers": []
     },
     {
-      "project": "Data Acceleration",
+      "project": "Stories",
       "name": "Error state improvements",
       "tickets": "DA-141",
       "currentStage": "discovery",
@@ -588,7 +588,7 @@
       ]
     },
     {
-      "project": "Premium",
+      "project": "Creator",
       "name": "AI recommendations onboarding UX",
       "tickets": "AI-44",
       "currentStage": "execution",
@@ -604,7 +604,7 @@
       ]
     },
     {
-      "project": "Premium",
+      "project": "Creator",
       "name": "Prompt feedback mechanism",
       "tickets": "AI-58",
       "currentStage": "discovery",
@@ -617,7 +617,7 @@
       "blockers": []
     },
     {
-      "project": "Network",
+      "project": "Explore",
       "name": "My Queue — status indicators refresh",
       "tickets": "PORT-67",
       "currentStage": "execution",
@@ -630,7 +630,7 @@
       "blockers": []
     },
     {
-      "project": "Network",
+      "project": "Explore",
       "name": "Notification preferences",
       "tickets": "PORT-82",
       "currentStage": "validation",
@@ -643,7 +643,7 @@
       "blockers": []
     },
     {
-      "project": "SnapPay",
+      "project": "Checkout",
       "name": "Payment confirmation micro-interactions",
       "tickets": "SP-211",
       "currentStage": "execution",
@@ -656,7 +656,7 @@
       "blockers": []
     },
     {
-      "project": "Client Onboarding",
+      "project": "Sign-up",
       "name": "Stepper progress redesign",
       "tickets": "CO-88, CO-91",
       "currentStage": "execution",
@@ -669,7 +669,7 @@
       "blockers": []
     },
     {
-      "project": "Client Onboarding",
+      "project": "Sign-up",
       "name": "Document upload improvements",
       "tickets": "CO-105",
       "currentStage": "validation",
@@ -685,55 +685,55 @@
   "shippedFeatures": [
     {
       "project": "Feed",
-      "name": "Task Admin redesign — bulk action toolbar",
-      "tickets": "CORE-2201, CORE-2208",
+      "name": "Creator Studio redesign — bulk action toolbar",
+      "tickets": "FEED-2201, FEED-2208",
       "stage": "Production",
       "onTime": true
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "name": "Progressive disclosure filters (v1)",
-      "tickets": "DNA-884",
+      "tickets": "REEL-884",
       "stage": "Staging",
       "onTime": true
     },
     {
-      "project": "Jobs",
+      "project": "Reels",
       "name": "Cash balancing flow — reduced steps",
-      "tickets": "UBA-319",
+      "tickets": "Reels-319",
       "stage": "Production",
       "onTime": true
     },
     {
-      "project": "Data Acceleration",
+      "project": "Stories",
       "name": "Client widget empty states",
       "tickets": "DA-112, DA-115",
       "stage": "Handoff",
       "onTime": true
     },
     {
-      "project": "Premium",
+      "project": "Creator",
       "name": "AI recommendations onboarding UX",
       "tickets": "AI-44",
       "stage": "Staging",
       "onTime": false
     },
     {
-      "project": "Network",
+      "project": "Explore",
       "name": "My Queue — status indicators refresh",
       "tickets": "PORT-67",
       "stage": "Production",
       "onTime": true
     },
     {
-      "project": "SnapPay",
+      "project": "Checkout",
       "name": "Payment confirmation micro-interactions",
       "tickets": "SP-211",
       "stage": "Production",
       "onTime": true
     },
     {
-      "project": "Client Onboarding",
+      "project": "Sign-up",
       "name": "Stepper progress redesign",
       "tickets": "CO-88, CO-91",
       "stage": "Handoff",
@@ -747,40 +747,40 @@
       "closed": 11
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "opened": 9,
       "closed": 8
     },
     {
-      "project": "Jobs",
+      "project": "Reels",
       "opened": 8,
       "closed": 8
     },
     {
-      "project": "Data Acceleration",
+      "project": "Stories",
       "opened": 6,
       "closed": 5
     },
     {
-      "project": "Premium",
+      "project": "Creator",
       "opened": 4,
       "closed": 3
     },
     {
-      "project": "Network",
+      "project": "Explore",
       "opened": 3,
       "closed": 3
     },
     {
-      "project": "SnapPay",
+      "project": "Checkout",
       "opened": 2,
       "closed": 3
     }
   ],
   "epics": [
     {
-      "key": "CORE-EP-12",
-      "name": "Task Admin Modernization",
+      "key": "FEED-EP-12",
+      "name": "Creator Studio Modernization",
       "project": "Feed",
       "completion": 75,
       "health": "good",
@@ -796,9 +796,9 @@
       }
     },
     {
-      "key": "DNA-EP-08",
+      "key": "REEL-EP-08",
       "name": "Dashboard Personalization",
-      "project": "Messaging",
+      "project": "DMs",
       "completion": 60,
       "health": "warning",
       "plannedCompletion": "2026-06-01",
@@ -813,9 +813,9 @@
       }
     },
     {
-      "key": "UBA-EP-05",
+      "key": "Reels-EP-05",
       "name": "Transaction Flow Optimization",
-      "project": "Jobs",
+      "project": "Reels",
       "completion": 90,
       "health": "good",
       "plannedCompletion": "2026-04-30",
@@ -832,7 +832,7 @@
     {
       "key": "DA-EP-03",
       "name": "API Integration Suite",
-      "project": "Data Acceleration",
+      "project": "Stories",
       "completion": 50,
       "health": "risk",
       "plannedCompletion": "2026-05-20",
@@ -849,7 +849,7 @@
     {
       "key": "AI-EP-02",
       "name": "AI Recommendations Engine",
-      "project": "Premium",
+      "project": "Creator",
       "completion": 40,
       "health": "warning",
       "plannedCompletion": "2026-06-15",
@@ -866,7 +866,7 @@
     {
       "key": "PORT-EP-04",
       "name": "Notification System Overhaul",
-      "project": "Network",
+      "project": "Explore",
       "completion": 67,
       "health": "good",
       "plannedCompletion": "2026-05-10",
@@ -883,7 +883,7 @@
     {
       "key": "SP-EP-01",
       "name": "Payment Experience Refresh",
-      "project": "SnapPay",
+      "project": "Checkout",
       "completion": 100,
       "health": "good",
       "plannedCompletion": "2026-04-15",
@@ -900,7 +900,7 @@
     {
       "key": "CO-EP-02",
       "name": "Document Management Redesign",
-      "project": "Client Onboarding",
+      "project": "Sign-up",
       "completion": 50,
       "health": "good",
       "plannedCompletion": "2026-05-30",
@@ -921,8 +921,8 @@
       "version": "v2.4.0",
       "projects": [
         "Feed",
-        "Messaging",
-        "Jobs"
+        "DMs",
+        "Reels"
       ],
       "plannedDate": "2026-06-30",
       "status": "on-track",
@@ -937,7 +937,7 @@
       "version": "v2.3.5",
       "projects": [
         "Feed",
-        "Network"
+        "Explore"
       ],
       "plannedDate": "2026-05-15",
       "status": "on-track",
@@ -951,8 +951,8 @@
       "name": "AI Beta Release",
       "version": "v3.0.0-beta",
       "projects": [
-        "Premium",
-        "Data Acceleration"
+        "Creator",
+        "Stories"
       ],
       "plannedDate": "2026-07-15",
       "status": "at-risk",
@@ -998,43 +998,43 @@
         "achievement": 95
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "committed": 38,
         "delivered": 36,
         "achievement": 95
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "committed": 32,
         "delivered": 31,
         "achievement": 97
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "committed": 18,
         "delivered": 16,
         "achievement": 89
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "committed": 12,
         "delivered": 10,
         "achievement": 83
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "committed": 15,
         "delivered": 14,
         "achievement": 93
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "committed": 8,
         "delivered": 8,
         "achievement": 100
       },
       {
-        "project": "Client Onboarding",
+        "project": "Sign-up",
         "committed": 10,
         "delivered": 9,
         "achievement": 90
@@ -1076,37 +1076,37 @@
         "netFlow": -1
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "opened": 9,
         "closed": 8,
         "netFlow": -1
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "opened": 8,
         "closed": 8,
         "netFlow": 0
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "opened": 6,
         "closed": 5,
         "netFlow": -1
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "opened": 4,
         "closed": 3,
         "netFlow": -1
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "opened": 3,
         "closed": 3,
         "netFlow": 0
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "opened": 2,
         "closed": 3,
         "netFlow": 1
@@ -1126,43 +1126,43 @@
         "p90": 6
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "average": 5.1,
         "p50": 5,
         "p90": 8
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "average": 3.8,
         "p50": 4,
         "p90": 6
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "average": 4.9,
         "p50": 5,
         "p90": 7
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "average": 6.2,
         "p50": 6,
         "p90": 10
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "average": 3.2,
         "p50": 3,
         "p90": 5
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "average": 2.8,
         "p50": 3,
         "p90": 4
       },
       {
-        "project": "Client Onboarding",
+        "project": "Sign-up",
         "average": 4.1,
         "p50": 4,
         "p90": 6
@@ -1203,49 +1203,49 @@
         "optimization": 3
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "discovery": 9,
         "validation": 7,
         "execution": 13,
         "optimization": 4
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "discovery": 6,
         "validation": 5,
         "execution": 10,
         "optimization": 4
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "discovery": 10,
         "validation": 6,
         "execution": 14,
         "optimization": 5
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "discovery": 12,
         "validation": 8,
         "execution": 15,
         "optimization": 6
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "discovery": 6,
         "validation": 4,
         "execution": 9,
         "optimization": 3
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "discovery": 5,
         "validation": 4,
         "execution": 8,
         "optimization": 2
       },
       {
-        "project": "Client Onboarding",
+        "project": "Sign-up",
         "discovery": 7,
         "validation": 5,
         "execution": 11,
@@ -1265,37 +1265,37 @@
         "rate": 7
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "total": 21,
         "reworked": 3,
         "rate": 14
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "total": 11,
         "reworked": 1,
         "rate": 9
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "total": 9,
         "reworked": 2,
         "rate": 22
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "total": 6,
         "reworked": 1,
         "rate": 17
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "total": 6,
         "reworked": 0,
         "rate": 0
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "total": 5,
         "reworked": 0,
         "rate": 0
@@ -1370,37 +1370,37 @@
         "rate": 0
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "closed": 8,
         "reopened": 1,
         "rate": 13
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "closed": 8,
         "reopened": 0,
         "rate": 0
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "closed": 5,
         "reopened": 1,
         "rate": 20
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "closed": 3,
         "reopened": 1,
         "rate": 33
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "closed": 3,
         "reopened": 0,
         "rate": 0
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "closed": 3,
         "reopened": 0,
         "rate": 0
@@ -1452,7 +1452,7 @@
     },
     {
       "component": "Dashboard",
-      "project": "Messaging",
+      "project": "DMs",
       "shipped": 3,
       "onTime": 83,
       "inFlight": 3,
@@ -1460,7 +1460,7 @@
     },
     {
       "component": "Filters & Search",
-      "project": "Messaging",
+      "project": "DMs",
       "shipped": 2,
       "onTime": 67,
       "inFlight": 2,
@@ -1468,7 +1468,7 @@
     },
     {
       "component": "Data Visualization",
-      "project": "Messaging",
+      "project": "DMs",
       "shipped": 1,
       "onTime": 50,
       "inFlight": 2,
@@ -1476,7 +1476,7 @@
     },
     {
       "component": "Transaction Flows",
-      "project": "Jobs",
+      "project": "Reels",
       "shipped": 3,
       "onTime": 92,
       "inFlight": 2,
@@ -1484,7 +1484,7 @@
     },
     {
       "component": "Quick Actions",
-      "project": "Jobs",
+      "project": "Reels",
       "shipped": 1,
       "onTime": 100,
       "inFlight": 1,
@@ -1492,7 +1492,7 @@
     },
     {
       "component": "API Integration",
-      "project": "Data Acceleration",
+      "project": "Stories",
       "shipped": 1,
       "onTime": 50,
       "inFlight": 2,
@@ -1500,7 +1500,7 @@
     },
     {
       "component": "Client Widgets",
-      "project": "Data Acceleration",
+      "project": "Stories",
       "shipped": 2,
       "onTime": 75,
       "inFlight": 1,
@@ -1508,7 +1508,7 @@
     },
     {
       "component": "AI Recommendations",
-      "project": "Premium",
+      "project": "Creator",
       "shipped": 1,
       "onTime": 50,
       "inFlight": 1,
@@ -1516,7 +1516,7 @@
     },
     {
       "component": "Feedback Mechanisms",
-      "project": "Premium",
+      "project": "Creator",
       "shipped": 0,
       "onTime": 0,
       "inFlight": 1,
@@ -1524,7 +1524,7 @@
     },
     {
       "component": "My Queue",
-      "project": "Network",
+      "project": "Explore",
       "shipped": 2,
       "onTime": 83,
       "inFlight": 1,
@@ -1532,7 +1532,7 @@
     },
     {
       "component": "Notifications",
-      "project": "Network",
+      "project": "Explore",
       "shipped": 1,
       "onTime": 100,
       "inFlight": 1,
@@ -1540,7 +1540,7 @@
     },
     {
       "component": "Payment Flows",
-      "project": "SnapPay",
+      "project": "Checkout",
       "shipped": 1,
       "onTime": 100,
       "inFlight": 1,
@@ -1548,7 +1548,7 @@
     },
     {
       "component": "Stepper UI",
-      "project": "Client Onboarding",
+      "project": "Sign-up",
       "shipped": 1,
       "onTime": 80,
       "inFlight": 1,
@@ -1556,7 +1556,7 @@
     },
     {
       "component": "Document Upload",
-      "project": "Client Onboarding",
+      "project": "Sign-up",
       "shipped": 0,
       "onTime": 0,
       "inFlight": 1,
@@ -1568,12 +1568,12 @@
       {
         "blocker": "API endpoint not ready",
         "affectedFeatures": [
-          "DNA-901",
-          "UBA-362"
+          "REEL-901",
+          "Reels-362"
         ],
         "affectedProjects": [
-          "Messaging",
-          "Jobs"
+          "DMs",
+          "Reels"
         ],
         "ageInDays": 8,
         "priority": "critical",
@@ -1582,14 +1582,14 @@
       {
         "blocker": "Design system component pending",
         "affectedFeatures": [
-          "CORE-2245"
+          "FEED-2245"
         ],
         "affectedProjects": [
           "Feed"
         ],
         "ageInDays": 5,
         "priority": "major",
-        "owner": "Horizon Team"
+        "owner": "Prism Team"
       },
       {
         "blocker": "Stakeholder approval pending",
@@ -1597,7 +1597,7 @@
           "AI-58"
         ],
         "affectedProjects": [
-          "Premium"
+          "Creator"
         ],
         "ageInDays": 12,
         "priority": "critical",
@@ -1606,10 +1606,10 @@
       {
         "blocker": "Resource availability",
         "affectedFeatures": [
-          "DNA-945"
+          "REEL-945"
         ],
         "affectedProjects": [
-          "Messaging"
+          "DMs"
         ],
         "ageInDays": 6,
         "priority": "major",
@@ -1646,32 +1646,32 @@
         "avgResolutionDays": 3.5
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "activeBlockers": 3,
         "avgResolutionDays": 6.8
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "activeBlockers": 1,
         "avgResolutionDays": 4.2
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "activeBlockers": 0,
         "avgResolutionDays": 5
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "activeBlockers": 2,
         "avgResolutionDays": 8.5
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "activeBlockers": 0,
         "avgResolutionDays": 3.2
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "activeBlockers": 0,
         "avgResolutionDays": 2.8
       }
@@ -1680,19 +1680,19 @@
   "crossProjectDeps": [
     {
       "blocking": {
-        "key": "CORE-2302",
+        "key": "FEED-2302",
         "project": "Feed",
         "name": "Shared auth component"
       },
       "blockedBy": [
         {
-          "key": "DNA-905",
-          "project": "Messaging",
+          "key": "REEL-905",
+          "project": "DMs",
           "name": "SSO integration"
         },
         {
-          "key": "UBA-362",
-          "project": "Jobs",
+          "key": "Reels-362",
+          "project": "Reels",
           "name": "Login flow"
         }
       ],
@@ -1701,13 +1701,13 @@
     {
       "blocking": {
         "key": "DA-115",
-        "project": "Data Acceleration",
+        "project": "Stories",
         "name": "Client widget API"
       },
       "blockedBy": [
         {
           "key": "PORT-82",
-          "project": "Network",
+          "project": "Explore",
           "name": "Real-time notifications"
         }
       ],
@@ -1736,49 +1736,49 @@
         "minor": 1
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "blocker": 1,
         "critical": 2,
         "major": 2,
         "minor": 0
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "blocker": 0,
         "critical": 1,
         "major": 2,
         "minor": 0
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "blocker": 0,
         "critical": 1,
         "major": 1,
         "minor": 1
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "blocker": 1,
         "critical": 0,
         "major": 1,
         "minor": 0
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "blocker": 0,
         "critical": 1,
         "major": 1,
         "minor": 0
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "blocker": 0,
         "critical": 0,
         "major": 1,
         "minor": 0
       },
       {
-        "project": "Client Onboarding",
+        "project": "Sign-up",
         "blocker": 0,
         "critical": 0,
         "major": 0,
@@ -1788,8 +1788,8 @@
   },
   "atRiskFeatures": [
     {
-      "key": "DNA-901",
-      "project": "Messaging",
+      "key": "REEL-901",
+      "project": "DMs",
       "name": "Data visualization refresh",
       "riskType": "blocked",
       "daysOverdue": 0,
@@ -1799,7 +1799,7 @@
     },
     {
       "key": "AI-58",
-      "project": "Premium",
+      "project": "Creator",
       "name": "Prompt feedback mechanism",
       "riskType": "stale",
       "daysOverdue": 0,
@@ -1808,8 +1808,8 @@
       "riskReason": "No updates in 12 days"
     },
     {
-      "key": "UBA-362",
-      "project": "Jobs",
+      "key": "Reels-362",
+      "project": "Reels",
       "name": "Quick actions menu",
       "riskType": "overdue",
       "daysOverdue": 2,
@@ -1819,7 +1819,7 @@
     },
     {
       "key": "DA-141",
-      "project": "Data Acceleration",
+      "project": "Stories",
       "name": "Error state improvements",
       "riskType": "missing-data",
       "daysOverdue": 0,
@@ -1876,7 +1876,7 @@
       },
       {
         "name": "Sprint 45",
-        "project": "Messaging",
+        "project": "DMs",
         "startDate": "2026-03-04",
         "endDate": "2026-03-18",
         "committed": 36,
@@ -1887,7 +1887,7 @@
       },
       {
         "name": "Sprint 46",
-        "project": "Messaging",
+        "project": "DMs",
         "startDate": "2026-03-18",
         "endDate": "2026-04-01",
         "committed": 38,
@@ -1898,7 +1898,7 @@
       },
       {
         "name": "Sprint 47",
-        "project": "Messaging",
+        "project": "DMs",
         "startDate": "2026-04-01",
         "endDate": "2026-04-15",
         "committed": 38,
@@ -1909,7 +1909,7 @@
       },
       {
         "name": "Sprint 48",
-        "project": "Messaging",
+        "project": "DMs",
         "startDate": "2026-04-15",
         "endDate": "2026-04-29",
         "committed": 38,
@@ -1920,7 +1920,7 @@
       },
       {
         "name": "Sprint 45",
-        "project": "Jobs",
+        "project": "Reels",
         "startDate": "2026-03-04",
         "endDate": "2026-03-18",
         "committed": 30,
@@ -1931,7 +1931,7 @@
       },
       {
         "name": "Sprint 46",
-        "project": "Jobs",
+        "project": "Reels",
         "startDate": "2026-03-18",
         "endDate": "2026-04-01",
         "committed": 32,
@@ -1942,7 +1942,7 @@
       },
       {
         "name": "Sprint 47",
-        "project": "Jobs",
+        "project": "Reels",
         "startDate": "2026-04-01",
         "endDate": "2026-04-15",
         "committed": 32,
@@ -1953,7 +1953,7 @@
       },
       {
         "name": "Sprint 48",
-        "project": "Jobs",
+        "project": "Reels",
         "startDate": "2026-04-15",
         "endDate": "2026-04-29",
         "committed": 32,
@@ -1971,43 +1971,43 @@
         "avgCarryOver": 8
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "avgVelocity": 35,
         "avgCommitmentAccuracy": 93,
         "avgCarryOver": 10
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "avgVelocity": 31,
         "avgCommitmentAccuracy": 98,
         "avgCarryOver": 3
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "avgVelocity": 16,
         "avgCommitmentAccuracy": 88,
         "avgCarryOver": 12
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "avgVelocity": 10,
         "avgCommitmentAccuracy": 82,
         "avgCarryOver": 15
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "avgVelocity": 14,
         "avgCommitmentAccuracy": 92,
         "avgCarryOver": 7
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "avgVelocity": 8,
         "avgCommitmentAccuracy": 100,
         "avgCarryOver": 0
       },
       {
-        "project": "Client Onboarding",
+        "project": "Sign-up",
         "avgVelocity": 9,
         "avgCommitmentAccuracy": 90,
         "avgCarryOver": 10
@@ -2019,7 +2019,7 @@
       "designer": "Designer A",
       "projects": [
         "Feed",
-        "Jobs"
+        "Reels"
       ],
       "inFlight": 5,
       "storyPointsAssigned": 32,
@@ -2030,8 +2030,8 @@
     {
       "designer": "Designer B",
       "projects": [
-        "Messaging",
-        "Data Acceleration"
+        "DMs",
+        "Stories"
       ],
       "inFlight": 6,
       "storyPointsAssigned": 38,
@@ -2042,8 +2042,8 @@
     {
       "designer": "Designer C",
       "projects": [
-        "Premium",
-        "Data Acceleration"
+        "Creator",
+        "Stories"
       ],
       "inFlight": 3,
       "storyPointsAssigned": 18,
@@ -2054,9 +2054,9 @@
     {
       "designer": "Designer D",
       "projects": [
-        "Network",
-        "SnapPay",
-        "Client Onboarding"
+        "Explore",
+        "Checkout",
+        "Sign-up"
       ],
       "inFlight": 4,
       "storyPointsAssigned": 22,
@@ -2068,7 +2068,7 @@
       "designer": "Designer E",
       "projects": [
         "Feed",
-        "Messaging"
+        "DMs"
       ],
       "inFlight": 7,
       "storyPointsAssigned": 42,
@@ -2091,37 +2091,37 @@
         "coverage": 100
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "total": 21,
         "assigned": 20,
         "coverage": 95
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "total": 11,
         "assigned": 11,
         "coverage": 100
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "total": 9,
         "assigned": 8,
         "coverage": 89
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "total": 6,
         "assigned": 5,
         "coverage": 83
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "total": 6,
         "assigned": 6,
         "coverage": 100
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "total": 5,
         "assigned": 5,
         "coverage": 100
@@ -2217,31 +2217,31 @@
         "score": 95
       },
       {
-        "project": "Messaging",
+        "project": "DMs",
         "score": 82
       },
       {
-        "project": "Jobs",
+        "project": "Reels",
         "score": 91
       },
       {
-        "project": "Data Acceleration",
+        "project": "Stories",
         "score": 78
       },
       {
-        "project": "Premium",
+        "project": "Creator",
         "score": 75
       },
       {
-        "project": "Network",
+        "project": "Explore",
         "score": 94
       },
       {
-        "project": "SnapPay",
+        "project": "Checkout",
         "score": 96
       },
       {
-        "project": "Client Onboarding",
+        "project": "Sign-up",
         "score": 88
       }
     ]

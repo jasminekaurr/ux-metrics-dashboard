@@ -1,223 +1,199 @@
 {
   "monthly": [
-    {
-      "month": "Jan 2026",
-      "simple": 2,
-      "medium": 5,
-      "complex": 3,
-      "custom": 2
-    },
-    {
-      "month": "Feb 2026",
-      "simple": 3,
-      "medium": 6,
-      "complex": 4,
-      "custom": 1
-    },
-    {
-      "month": "Mar 2026",
-      "simple": 1,
-      "medium": 4,
-      "complex": 5,
-      "custom": 3
-    },
-    {
-      "month": "Apr 2026",
-      "simple": 4,
-      "medium": 7,
-      "complex": 6,
-      "custom": 2
-    }
+    { "month": "Jan 2026", "simple": 2, "medium": 5, "complex": 3, "custom": 2 },
+    { "month": "Feb 2026", "simple": 3, "medium": 6, "complex": 4, "custom": 1 },
+    { "month": "Mar 2026", "simple": 1, "medium": 4, "complex": 5, "custom": 3 },
+    { "month": "Apr 2026", "simple": 4, "medium": 7, "complex": 6, "custom": 2 }
   ],
   "components": [
     {
-      "name": "Advanced data table with inline editing",
+      "name": "Feed carousel with inline reactions",
       "project": "Feed",
       "type": "Complex",
       "designer": "Designer A",
       "hoursSpent": 28,
-      "purpose": "Custom table for task management with inline editing, sorting, filtering",
-      "domainCategory": "Data Management",
+      "purpose": "Custom carousel for multi-image posts with inline reaction affordances",
+      "domainCategory": "Content Display",
       "status": "Completed"
     },
     {
-      "name": "Multi-step workflow wizard",
-      "project": "Messaging",
+      "name": "DM group invite flow",
+      "project": "DMs",
       "type": "Custom",
       "designer": "Designer B",
       "hoursSpent": 42,
-      "purpose": "Complex workflow with branching logic for data entry process",
-      "domainCategory": "Workflow & Process",
+      "purpose": "Multi-step group chat creation with member search and permissions",
+      "domainCategory": "Direct Messages",
       "status": "Completed"
     },
     {
-      "name": "Transaction approval flow",
-      "project": "Jobs",
+      "name": "Reels timeline trimmer",
+      "project": "Reels",
       "type": "Complex",
       "designer": "Designer A",
       "hoursSpent": 24,
-      "purpose": "Multi-level approval system with escalation patterns",
-      "domainCategory": "Workflow & Process",
+      "purpose": "Frame-accurate trim UI with audio waveform overlay",
+      "domainCategory": "Creation Tools",
       "status": "Completed"
     },
     {
-      "name": "Real-time notification center",
-      "project": "Network",
+      "name": "Explore topic grid",
+      "project": "Explore",
       "type": "Medium",
       "designer": "Designer D",
       "hoursSpent": 10,
-      "purpose": "Notification hub with filtering and real-time updates",
-      "domainCategory": "Notifications & Alerts",
+      "purpose": "Topic discovery grid with dynamic aspect ratios",
+      "domainCategory": "Discovery",
       "status": "Completed"
     },
     {
-      "name": "Advanced filter builder",
-      "project": "Messaging",
+      "name": "DM poll composer",
+      "project": "DMs",
       "type": "Complex",
       "designer": "Designer B",
       "hoursSpent": 22,
-      "purpose": "Dynamic filter creation with complex logic operators",
-      "domainCategory": "User Input & Forms",
+      "purpose": "In-thread poll creation with live result preview",
+      "domainCategory": "Direct Messages",
       "status": "Completed"
     },
     {
-      "name": "Document preview modal",
-      "project": "Client Onboarding",
+      "name": "Stories sticker picker",
+      "project": "Stories",
       "type": "Medium",
-      "designer": "Designer D",
+      "designer": "Designer C",
       "hoursSpent": 9,
-      "purpose": "Preview uploaded documents with annotation capabilities",
-      "domainCategory": "Document Management",
+      "purpose": "Sticker tray with search, recents, and interactive stickers",
+      "domainCategory": "Stories",
       "status": "Completed"
     },
     {
-      "name": "API integration dashboard",
-      "project": "Data Acceleration",
+      "name": "Creator insights chart",
+      "project": "Creator",
       "type": "Complex",
       "designer": "Designer C",
       "hoursSpent": 26,
-      "purpose": "Dashboard for monitoring and managing API connections",
-      "domainCategory": "Analytics & Monitoring",
+      "purpose": "Reach and engagement charts for Creator Studio",
+      "domainCategory": "Analytics",
       "status": "Completed"
     },
     {
-      "name": "Error state illustrations",
-      "project": "Data Acceleration",
+      "name": "Reels cover frame picker",
+      "project": "Reels",
       "type": "Simple",
       "designer": "Designer C",
       "hoursSpent": 5,
-      "purpose": "Custom error state illustrations for various failure scenarios",
-      "domainCategory": "Visual Feedback",
+      "purpose": "Scrub-to-select cover frame from uploaded clip",
+      "domainCategory": "Creation Tools",
       "status": "Completed"
     },
     {
-      "name": "Payment confirmation flow",
-      "project": "SnapPay",
+      "name": "Shop checkout sheet",
+      "project": "Checkout",
       "type": "Medium",
       "designer": "Designer D",
       "hoursSpent": 11,
-      "purpose": "Multi-step payment confirmation with security verification",
-      "domainCategory": "Financial Transactions",
+      "purpose": "In-app purchase confirmation with shipping preview",
+      "domainCategory": "Commerce",
       "status": "Completed"
     },
     {
-      "name": "AI prompt input interface",
-      "project": "Premium",
+      "name": "Spark AI caption composer",
+      "project": "Creator",
       "type": "Complex",
       "designer": "Designer E",
       "hoursSpent": 30,
-      "purpose": "Advanced input interface with prompt suggestions and history",
+      "purpose": "AI caption suggestions with edit, regenerate, and confidence labels",
       "domainCategory": "AI & Automation",
       "status": "Completed"
     },
     {
-      "name": "Onboarding checklist widget",
-      "project": "Client Onboarding",
+      "name": "Sign-up progress tracker",
+      "project": "Sign-up",
       "type": "Medium",
       "designer": "Designer D",
       "hoursSpent": 8,
-      "purpose": "Interactive checklist with progress tracking",
-      "domainCategory": "Onboarding & Guidance",
+      "purpose": "Interactive progress for username, birthday, and follow suggestions",
+      "domainCategory": "Onboarding",
       "status": "Completed"
     },
     {
-      "name": "Quick action tooltips",
-      "project": "Jobs",
+      "name": "Reels audio sync tooltip",
+      "project": "Reels",
       "type": "Simple",
       "designer": "Designer A",
       "hoursSpent": 4,
-      "purpose": "Contextual tooltips for quick actions menu",
-      "domainCategory": "Visual Feedback",
+      "purpose": "Contextual tooltips for beat-sync editing",
+      "domainCategory": "Creation Tools",
       "status": "Completed"
     },
     {
-      "name": "Report generation interface",
+      "name": "Profile highlights editor",
+      "project": "Profile",
+      "type": "Medium",
+      "designer": "Designer E",
+      "hoursSpent": 12,
+      "purpose": "Cover selection and reordering for profile highlights",
+      "domainCategory": "Profile",
+      "status": "Completed"
+    },
+    {
+      "name": "Feed save collection picker",
       "project": "Feed",
       "type": "Medium",
       "designer": "Designer E",
       "hoursSpent": 12,
-      "purpose": "Interface for selecting and generating custom reports",
-      "domainCategory": "Analytics & Reporting",
+      "purpose": "Save-to-collection flow with create-new inline",
+      "domainCategory": "Content Display",
       "status": "Completed"
     },
     {
-      "name": "Data visualization legend",
-      "project": "Messaging",
+      "name": "Stories reply bar",
+      "project": "Stories",
       "type": "Simple",
       "designer": "Designer B",
       "hoursSpent": 6,
-      "purpose": "Interactive legend for complex data visualizations",
-      "domainCategory": "Analytics & Reporting",
+      "purpose": "Quick reply and reaction bar for story viewers",
+      "domainCategory": "Stories",
       "status": "Completed"
     },
     {
-      "name": "Status indicator system",
-      "project": "Network",
+      "name": "Explore filter chips",
+      "project": "Explore",
       "type": "Simple",
       "designer": "Designer D",
       "hoursSpent": 5,
-      "purpose": "Consistent status indicators across queue views",
-      "domainCategory": "Visual Feedback",
+      "purpose": "Horizontally scrollable topic filter chips",
+      "domainCategory": "Discovery",
       "status": "Completed"
     },
     {
-      "name": "Responsive mobile navigation",
-      "project": "Messaging",
+      "name": "DM voice message scrubber",
+      "project": "DMs",
       "type": "Medium",
       "designer": "Designer E",
       "hoursSpent": 10,
-      "purpose": "Mobile-optimized navigation for Messaging app",
-      "domainCategory": "Navigation & Discovery",
+      "purpose": "Waveform scrubber for voice messages with playback speed",
+      "domainCategory": "Direct Messages",
       "status": "Completed"
     },
     {
-      "name": "Empty state illustrations",
+      "name": "Feed empty state illustrations",
       "project": "Feed",
       "type": "Medium",
       "designer": "Designer A",
       "hoursSpent": 9,
-      "purpose": "Custom empty state designs for various views",
+      "purpose": "Custom empty states for new accounts and zero-follow feeds",
       "domainCategory": "Visual Feedback",
       "status": "Completed"
     },
     {
-      "name": "Settings panel",
-      "project": "Network",
+      "name": "Creator badge settings",
+      "project": "Creator",
       "type": "Medium",
       "designer": "Designer D",
       "hoursSpent": 11,
-      "purpose": "User settings panel with notification preferences",
-      "domainCategory": "Settings & Configuration",
-      "status": "Completed"
-    },
-    {
-      "name": "Feedback collection modal",
-      "project": "Premium",
-      "type": "Complex",
-      "designer": "Designer C",
-      "hoursSpent": 20,
-      "purpose": "Modal for collecting structured feedback on AI outputs",
-      "domainCategory": "AI & Automation",
+      "purpose": "Subscription badge visibility and preview controls",
+      "domainCategory": "Monetization",
       "status": "Completed"
     }
   ],
@@ -228,101 +204,21 @@
     "totalValue": 43800
   },
   "byProject": [
-    {
-      "project": "Feed",
-      "count": 3,
-      "hours": 49,
-      "value": 7350
-    },
-    {
-      "project": "Messaging",
-      "count": 5,
-      "hours": 60,
-      "value": 9000
-    },
-    {
-      "project": "Jobs",
-      "count": 2,
-      "hours": 28,
-      "value": 4200
-    },
-    {
-      "project": "Data Acceleration",
-      "count": 2,
-      "hours": 31,
-      "value": 4650
-    },
-    {
-      "project": "Premium",
-      "count": 2,
-      "hours": 50,
-      "value": 7500
-    },
-    {
-      "project": "Network",
-      "count": 3,
-      "hours": 27,
-      "value": 4050
-    },
-    {
-      "project": "SnapPay",
-      "count": 1,
-      "hours": 11,
-      "value": 1650
-    },
-    {
-      "project": "Client Onboarding",
-      "count": 2,
-      "hours": 17,
-      "value": 2550
-    }
+    { "project": "Feed", "count": 3, "hours": 49, "value": 7350 },
+    { "project": "DMs", "count": 4, "hours": 84, "value": 12600 },
+    { "project": "Reels", "count": 3, "hours": 33, "value": 4950 },
+    { "project": "Stories", "count": 2, "hours": 15, "value": 2250 },
+    { "project": "Creator", "count": 3, "hours": 51, "value": 7650 },
+    { "project": "Explore", "count": 2, "hours": 15, "value": 2250 },
+    { "project": "Checkout", "count": 1, "hours": 11, "value": 1650 },
+    { "project": "Sign-up", "count": 1, "hours": 8, "value": 1200 },
+    { "project": "Profile", "count": 1, "hours": 12, "value": 1800 }
   ],
   "byDesigner": [
-    {
-      "designer": "Designer A",
-      "count": 4,
-      "hours": 67,
-      "projects": [
-        "Feed",
-        "Jobs"
-      ]
-    },
-    {
-      "designer": "Designer B",
-      "count": 3,
-      "hours": 70,
-      "projects": [
-        "Messaging"
-      ]
-    },
-    {
-      "designer": "Designer C",
-      "count": 2,
-      "hours": 46,
-      "projects": [
-        "Data Acceleration",
-        "Premium"
-      ]
-    },
-    {
-      "designer": "Designer D",
-      "count": 6,
-      "hours": 54,
-      "projects": [
-        "Network",
-        "SnapPay",
-        "Client Onboarding"
-      ]
-    },
-    {
-      "designer": "Designer E",
-      "count": 4,
-      "hours": 82,
-      "projects": [
-        "Premium",
-        "Messaging",
-        "Feed"
-      ]
-    }
+    { "designer": "Designer A", "count": 4, "hours": 67, "projects": ["Feed", "Reels"] },
+    { "designer": "Designer B", "count": 3, "hours": 70, "projects": ["DMs", "Stories"] },
+    { "designer": "Designer C", "count": 3, "hours": 40, "projects": ["Stories", "Creator", "Reels"] },
+    { "designer": "Designer D", "count": 5, "hours": 45, "projects": ["Explore", "Checkout", "Sign-up", "Creator"] },
+    { "designer": "Designer E", "count": 4, "hours": 70, "projects": ["Creator", "DMs", "Feed", "Profile"] }
   ]
 }

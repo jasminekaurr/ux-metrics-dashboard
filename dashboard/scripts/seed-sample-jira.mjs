@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises'
+import { writeFile, mkdir } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -38,10 +38,10 @@ const fcubPayload = {
   browseBaseUrl: 'https://example.atlassian.net/browse',
   issues: [
     { id: 'DS-101', name: 'Profile header redesign', labels: ['DS', 'Profile'], components: ['Profile Header'] },
-    { id: 'DS-102', name: 'Feed card interaction patterns', labels: ['DS', 'Feed'], components: ['Feed Card', 'Profile Header'] },
-    { id: 'DS-103', name: 'Messaging thread layout refresh', labels: ['DS', 'Messaging'], components: ['Messaging Thread'] },
-    { id: 'DS-104', name: 'Job search filter panel', labels: ['DS', 'Jobs'], components: ['Job Search', 'Profile Header'] },
-    { id: 'DS-105', name: 'Notification preferences center', labels: ['DS', 'Notifications'], components: ['Notification Center'] },
+    { id: 'DS-102', name: 'Feed carousel interaction patterns', labels: ['DS', 'Feed'], components: ['Feed Card', 'Profile Header'] },
+    { id: 'DS-103', name: 'DM thread layout refresh', labels: ['DS', 'DMs'], components: ['DM Thread'] },
+    { id: 'DS-104', name: 'Reels editor toolbar', labels: ['DS', 'Reels'], components: ['Reels Editor', 'Profile Header'] },
+    { id: 'DS-105', name: 'Stories sticker tray', labels: ['DS', 'Stories'], components: ['Stories Tray'] },
   ],
 }
 
@@ -58,8 +58,3 @@ for (const [path, payload] of targets) {
   await writeFile(path, `${JSON.stringify(payload, null, 2)}\n`)
   console.log(`Wrote ${path}`)
 }
-
-const apexSource = resolve(dataDir, 'apex.json')
-const apexTarget = resolve(sampleDir, 'apex.json')
-await copyFile(apexSource, apexTarget)
-console.log(`Copied ${apexSource} -> ${apexTarget}`)

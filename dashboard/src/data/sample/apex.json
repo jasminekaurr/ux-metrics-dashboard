@@ -124,11 +124,11 @@
   ],
   "teamRanking": [
     {
-      "team": "Messaging",
+      "team": "DMs",
       "insertions": 23273
     },
     {
-      "team": "Jobs",
+      "team": "Reels",
       "insertions": 19507
     },
     {
@@ -136,63 +136,63 @@
       "insertions": 17072
     },
     {
-      "team": "Data Acceleration",
+      "team": "Stories",
       "insertions": 11800
     },
     {
-      "team": "Horizon Design System",
+      "team": "Prism Design System",
       "insertions": 6134
     },
     {
-      "team": "Network",
+      "team": "Explore",
       "insertions": 2790
     },
     {
-      "team": "Client Onboarding",
+      "team": "Sign-up",
       "insertions": 2157
     },
     {
-      "team": "Stabiliti",
+      "team": "Stability",
       "insertions": 1576
     },
     {
-      "team": "DataCompass",
+      "team": "Insights",
       "insertions": 1121
     },
     {
-      "team": "AppMarket",
+      "team": "Shop",
       "insertions": 1063
     },
     {
-      "team": "Insights UX",
+      "team": "Creator Tools",
       "insertions": 905
     },
     {
-      "team": "SnapPay",
+      "team": "Checkout",
       "insertions": 780
     },
     {
-      "team": "Premium",
+      "team": "Creator",
       "insertions": 729
     },
     {
-      "team": "Consulting Work - Internal",
+      "team": "Design Ops",
       "insertions": 558
     },
     {
-      "team": "Teller UX",
+      "team": "Live UX",
       "insertions": 300
     },
     {
-      "team": "Premier",
+      "team": "Subscriptions",
       "insertions": 188
     },
     {
-      "team": "EPP Modernization",
+      "team": "Platform Infra",
       "insertions": 158
     },
     {
-      "team": "CANS-IRIS",
+      "team": "Internal Tools",
       "insertions": 144
     },
     {
@@ -200,11 +200,11 @@
       "insertions": 129
     },
     {
-      "team": "CUS Business Analysts",
+      "team": "Growth Ops",
       "insertions": 112
     },
     {
-      "team": "DNA Verifast",
+      "team": "Stories QA",
       "insertions": 107
     },
     {
@@ -212,52 +212,52 @@
       "insertions": 73
     },
     {
-      "team": "Merchant Solutions Products",
+      "team": "Shop Payments",
       "insertions": 59
     },
     {
-      "team": "File Transfer",
+      "team": "Media Pipeline",
       "insertions": 52
     },
     {
-      "team": "CBS_Redesign",
+      "team": "Core App Shell",
       "insertions": 49
     },
     {
-      "team": "Access Advantage",
+      "team": "Access",
       "insertions": 20
     },
     {
-      "team": "CNS Modernization",
+      "team": "Notifications",
       "insertions": 17
     },
     {
-      "team": "Data Factory Dashboard",
+      "team": "Insights Hub",
       "insertions": 11
     },
     {
-      "team": "Universal Branch",
+      "team": "Profile Web",
       "insertions": 9
     },
     {
-      "team": "Signature",
+      "team": "Badges",
       "insertions": 2
     },
     {
-      "team": "Loancierge",
+      "team": "Shop Checkout",
       "insertions": 2
     },
     {
-      "team": "Gift & Stored Value",
+      "team": "Gifts",
       "insertions": 1
     },
     {
-      "team": "Armor Project",
+      "team": "Safety",
       "insertions": 1
     }
   ],
   "teamWeekly": {
-    "Messaging": {
+    "DMs": {
       "components": [
         165,
         1357,
@@ -316,7 +316,7 @@
         202
       ]
     },
-    "Jobs": {
+    "Reels": {
       "components": [
         10,
         145,
@@ -434,7 +434,7 @@
         810
       ]
     },
-    "Data Acceleration": {
+    "Stories": {
       "components": [
         0,
         0,
@@ -493,7 +493,7 @@
         0
       ]
     },
-    "Horizon Design System": {
+    "Prism Design System": {
       "components": [
         0,
         282,
@@ -552,7 +552,7 @@
         754
       ]
     },
-    "Network": {
+    "Explore": {
       "components": [
         0,
         28,
@@ -611,7 +611,7 @@
         37
       ]
     },
-    "Client Onboarding": {
+    "Sign-up": {
       "components": [
         9,
         0,
@@ -670,7 +670,7 @@
         0
       ]
     },
-    "Stabiliti": {
+    "Stability": {
       "components": [
         0,
         0,
@@ -729,7 +729,7 @@
         0
       ]
     },
-    "DataCompass": {
+    "Insights": {
       "components": [
         0,
         1,
@@ -788,7 +788,7 @@
         0
       ]
     },
-    "AppMarket": {
+    "Shop": {
       "components": [
         105,
         118,
@@ -849,12 +849,12 @@
     }
   },
   "detachments": {
-    "Jobs": {
+    "Reels": {
       "insertions": 19507,
       "detachments": 108,
       "rate": 0.6
     },
-    "Messaging": {
+    "DMs": {
       "insertions": 23273,
       "detachments": 78,
       "rate": 0.3
@@ -864,57 +864,57 @@
       "detachments": 74,
       "rate": 0.4
     },
-    "Network": {
+    "Explore": {
       "insertions": 2790,
       "detachments": 25,
       "rate": 0.9
     },
-    "Premier": {
+    "Subscriptions": {
       "insertions": 188,
       "detachments": 23,
       "rate": 12.2
     },
-    "DataCompass": {
+    "Insights": {
       "insertions": 1121,
       "detachments": 17,
       "rate": 1.5
     },
-    "AppMarket": {
+    "Shop": {
       "insertions": 1063,
       "detachments": 15,
       "rate": 1.4
     },
-    "Data Acceleration": {
+    "Stories": {
       "insertions": 11800,
       "detachments": 13,
       "rate": 0.1
     },
-    "Stabiliti": {
+    "Stability": {
       "insertions": 1576,
       "detachments": 13,
       "rate": 0.8
     },
-    "Horizon Design System": {
+    "Prism Design System": {
       "insertions": 6134,
       "detachments": 8,
       "rate": 0.1
     },
-    "SnapPay": {
+    "Checkout": {
       "insertions": 780,
       "detachments": 7,
       "rate": 0.9
     },
-    "File Transfer": {
+    "Media Pipeline": {
       "insertions": 52,
       "detachments": 4,
       "rate": 7.7
     },
-    "Consulting Work - Internal": {
+    "Design Ops": {
       "insertions": 558,
       "detachments": 4,
       "rate": 0.7
     },
-    "Merchant Solutions Products": {
+    "Shop Payments": {
       "insertions": 59,
       "detachments": 4,
       "rate": 6.8
@@ -924,27 +924,27 @@
       "detachments": 3,
       "rate": 2.3
     },
-    "CANS-IRIS": {
+    "Internal Tools": {
       "insertions": 144,
       "detachments": 3,
       "rate": 2.1
     },
-    "CBS_Redesign": {
+    "Core App Shell": {
       "insertions": 49,
       "detachments": 2,
       "rate": 4.1
     },
-    "EPP Modernization": {
+    "Platform Infra": {
       "insertions": 158,
       "detachments": 2,
       "rate": 1.3
     },
-    "Insights UX": {
+    "Creator Tools": {
       "insertions": 905,
       "detachments": 2,
       "rate": 0.2
     },
-    "CNS Modernization": {
+    "Notifications": {
       "insertions": 17,
       "detachments": 1,
       "rate": 5.9
@@ -954,65 +954,65 @@
       "detachments": 1,
       "rate": 1.4
     },
-    "Client Onboarding": {
+    "Sign-up": {
       "insertions": 2157,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Data Factory Dashboard": {
+    "Insights Hub": {
       "insertions": 11,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Signature": {
+    "Badges": {
       "insertions": 2,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "DNA Verifast": {
+    "Stories QA": {
       "insertions": 107,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "CUS Business Analysts": {
+    "Growth Ops": {
       "insertions": 112,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Teller UX": {
+    "Live UX": {
       "insertions": 300,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Premium": {
+    "Creator": {
       "insertions": 729,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Loancierge": {
+    "Shop Checkout": {
       "insertions": 2,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Gift & Stored Value": {
+    "Gifts": {
       "insertions": 1,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Armor Project": {
+    "Safety": {
       "insertions": 1,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Access Advantage": {
+    "Access": {
       "insertions": 20,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     },
-    "Universal Branch": {
+    "Profile Web": {
       "insertions": 9,
       "detachments": 0,
-      "rate": 0.0
+      "rate": 0
     }
   },
   "topComponents": [
@@ -1029,7 +1029,7 @@
       "files": 14
     },
     {
-      "name": "\u200aplaceholder",
+      "name": " placeholder",
       "instances": 9370,
       "teams": 22,
       "files": 102
@@ -1111,7 +1111,7 @@
     {
       "instances": 11397,
       "team": "Feed",
-      "file": "Task Admin"
+      "file": "Creator Studio"
     },
     {
       "instances": 6166,
@@ -1125,47 +1125,47 @@
     },
     {
       "instances": 4752,
-      "team": "Horizon Design System",
-      "file": "\u200aHorizon Design System"
+      "team": "Prism Design System",
+      "file": " Prism Design System"
     },
     {
       "instances": 3772,
-      "team": "Jobs",
-      "file": "UBA Master File"
+      "team": "Reels",
+      "file": "Reels Master File"
     },
     {
       "instances": 2859,
-      "team": "Jobs",
+      "team": "Reels",
       "file": "Cash Balancing"
     },
     {
       "instances": 2772,
-      "team": "Data Acceleration",
+      "team": "Stories",
       "file": "Client Widget"
     },
     {
       "instances": 2541,
-      "team": "Client Onboarding",
+      "team": "Sign-up",
       "file": "Client On Boarding"
     },
     {
       "instances": 2371,
-      "team": "Network",
+      "team": "Explore",
       "file": "My Queue"
     },
     {
       "instances": 1737,
-      "team": "Jobs",
+      "team": "Reels",
       "file": "Drawer Menu"
     },
     {
       "instances": 1699,
       "team": "Feed",
-      "file": "Task Admin (FCOM 642)"
+      "file": "Creator Studio (FCOM 642)"
     },
     {
       "instances": 1512,
-      "team": "Jobs",
+      "team": "Reels",
       "file": "Transactions"
     }
   ],

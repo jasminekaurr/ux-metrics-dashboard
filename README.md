@@ -2,7 +2,7 @@
 
 Open-source UX impact measurement and delivery intelligence dashboard for design teams.
 
-Track UX impact across delivery health, research coverage, strategic contribution, and design system adoption — with bundled LinkedIn-themed sample data, optional JSON uploads, or build-time Jira/Figma capture.
+Track UX impact across delivery health, research coverage, strategic contribution, and design system adoption — with bundled Instagram-themed sample data, optional JSON uploads, or build-time Jira/Figma capture.
 
 **[Live demo](https://jasminekaurr.github.io/ux-metrics-dashboard/)** · [Data format](docs/data-format.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISH.md)
 
@@ -18,7 +18,7 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:5173`. The dashboard runs immediately with bundled sample data themed around a fictional LinkedIn product design team.
+Visit `http://localhost:5173`. The dashboard runs immediately with bundled sample data themed around a fictional Instagram product design team.
 
 For extra-anonymized demo mode (Product Alpha, Product Beta, etc.):
 
@@ -78,7 +78,7 @@ ux-metrics-dashboard/
 
 | Script | Purpose |
 |--------|---------|
-| `npm run dev` | Start dev server with LinkedIn-themed sample data |
+| `npm run dev` | Start dev server with Instagram-themed sample data |
 | `npm run dev:external` | Dev server with anonymized product labels |
 | `npm run build:external` | Production build with anonymized labels (used for GitHub Pages) |
 | `npm run capture:jira` | Capture Jira label adoption data |
@@ -97,7 +97,7 @@ ux-metrics-dashboard/
 
 ## Demo data disclaimer
 
-All sample data is fictional. Product names (Feed, Messaging, Jobs, Network, Premium), ticket IDs, and narratives are illustrative demo content — not affiliated with or sourced from any real company.
+All sample data is fictional. Product names (Feed, Reels, DMs, Explore, Creator, Stories, Profile), ticket IDs, and narratives are illustrative demo content — not affiliated with or sourced from any real company.
 
 ## Contributors
 

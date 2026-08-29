@@ -15,7 +15,7 @@ Open `http://localhost:5173`.
 
 ```bash
 npm run build:external   # anonymized labels — used for GitHub Pages
-npm run build          # LinkedIn-themed demo labels
+npm run build          # Instagram-themed demo labels
 ```
 
 Production output is written to `../docs/`.

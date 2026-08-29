@@ -1,28 +1,28 @@
 [
   {
     "month": "January 2026",
-    "narrative": "In January 2026, UX decisions contributed an estimated $61,000 in cost value, helped ship 14 features on time, and established research coverage across 62% of design decisions — laying the foundation for a strong Q1.",
+    "narrative": "In January 2026, UX decisions contributed an estimated $61,000 in cost value, helped ship 14 features on time, and established research coverage across 62% of design decisions — laying the foundation for a strong Q1 across Feed, Reels, and DMs.",
     "topDecisions": [
       {
         "type": "Research Impact",
         "variant": "default",
-        "title": "Messaging Feature Survey (88% response rate) gave clear direction for improvement priorities",
-        "body": "21 of 24 panel members responded to the Messaging Feature Survey — identifying the most challenging features and focusing Q1 improvement efforts where they matter most.",
-        "outcome": "Clear prioritization signal from 88% of panel membership",
+        "title": "DMs Feature Survey (88% response rate) gave clear direction for improvement priorities",
+        "body": "21 of 24 creator panel participants responded to the DMs Feature Survey — identifying the most confusing chat flows and focusing Q1 improvement efforts where they matter most.",
+        "outcome": "Clear prioritization signal from 88% of panel participation",
         "evidence": [
           "Survey / Questionnaire",
-          "Client Panel"
+          "Creator Panel"
         ],
-        "project": "Messaging"
+        "project": "DMs"
       },
       {
         "type": "Rework Prevention",
         "variant": "success",
-        "title": "Feed Advisory Panel surfaced UX gaps before Q1 dev sprint kicked off",
-        "body": "Panel session with 78 members across 55 banks identified friction points in the new Feed experience ahead of Q1 development. Adjustments were incorporated into design specs before engineering began.",
+        "title": "Feed Creator Panel surfaced UX gaps before Q1 dev sprint kicked off",
+        "body": "Panel session with 78 creators across 55 cohorts identified friction points in the new Feed ranking controls ahead of Q1 development. Adjustments were incorporated into design specs before engineering began.",
         "outcome": "Issues resolved in design, not in production",
         "evidence": [
-          "Client Panel",
+          "Creator Panel",
           "User Interviews"
         ],
         "project": "Feed"
@@ -31,16 +31,16 @@
   },
   {
     "month": "February 2026",
-    "narrative": "In February 2026, UX decisions contributed an estimated $101,200 in cost value. The Feed Advisory Panel demo drove a 12% increase in new orders in 10 days — confirming that showing clients their feedback incorporated creates measurable business impact.",
+    "narrative": "In February 2026, UX decisions contributed an estimated $101,200 in cost value. The Feed Creator Panel demo drove a 12% increase in feature activations in 10 days — confirming that showing creators their feedback incorporated creates measurable product impact.",
     "topDecisions": [
       {
-        "type": "Client Impact",
+        "type": "Creator Impact",
         "variant": "success",
-        "title": "Feed Advisory Panel demo drove 12% increase in new orders in 10 days",
-        "body": "Director of Product JoAnna Freeland and Director of Dev Joe Myers confirmed new Feed orders are up 12% in 10 days. The increase was attributed to the panel demo — clients seeing their feedback incorporated visibly changed purchasing behavior.",
-        "outcome": "12% increase in new Feed orders in 10 days",
+        "title": "Feed Creator Panel demo drove 12% increase in activations in 10 days",
+        "body": "Director of Product and Director of Engineering confirmed new Feed controls adoption is up 12% in 10 days. The increase was attributed to the panel demo — creators seeing their feedback incorporated visibly changed engagement behavior.",
+        "outcome": "12% increase in Feed feature activations in 10 days",
         "evidence": [
-          "Client Panel",
+          "Creator Panel",
           "Stakeholder Alignment"
         ],
         "project": "Feed"
@@ -48,38 +48,38 @@
       {
         "type": "Research Impact",
         "variant": "default",
-        "title": "UBA Information Architecture V2 validated — 85.6% task success, up from 67.1%",
-        "body": "The second round of UBA tree testing (n=10, screened panel) achieved 85.6% overall task success — an 18.5% improvement over V1. 4 participants achieved 100%. Labeling friction dropped significantly, confirming the domain structure was directionally correct.",
+        "title": "Reels navigation IA V2 validated — 85.6% task success, up from 67.1%",
+        "body": "The second round of Reels tree testing (n=10, screened creators) achieved 85.6% overall task success — an 18.5% improvement over V1. Four participants achieved 100%. Labeling friction dropped significantly, confirming the tab structure was directionally correct.",
         "outcome": "+18.5% task success improvement over V1 baseline",
         "evidence": [
           "Tree Testing",
           "Usability Testing"
         ],
-        "project": "Jobs"
+        "project": "Reels"
       }
     ]
   },
   {
     "month": "March 2026",
-    "narrative": "In March 2026, UX decisions contributed an estimated $212,500 in cost value — including a $150,000 POC kill that prevented a misdirected full build. Design sprint lead reached 71%, keeping engineering unblocked across all major product areas.",
+    "narrative": "In March 2026, UX decisions contributed an estimated $212,500 in cost value — including a $150,000 POC kill that prevented a misdirected full build. Design sprint lead reached 71%, keeping engineering unblocked across Feed, Reels, and DMs.",
     "topDecisions": [
       {
         "type": "Cost Avoidance",
         "variant": "default",
         "title": "POC killed after validation testing — $150,000 in build cost avoided",
-        "body": "A product concept in active prototyping failed validation testing against user expectations. UX research surfaced fundamental misalignment between the proposed direction and user mental models. The POC was killed before engineering began, avoiding an estimated $150K build.",
+        "body": "A Stories remix concept in active prototyping failed validation testing against creator expectations. UX research surfaced fundamental misalignment between the proposed flow and how creators think about attribution. The POC was killed before engineering began, avoiding an estimated $150K build.",
         "outcome": "$150,000 in engineering build cost avoided",
         "evidence": [
           "Usability Testing",
           "Stakeholder Alignment"
         ],
-        "project": "Premium"
+        "project": "Creator"
       },
       {
         "type": "Rework Prevention",
         "variant": "success",
         "title": "Sprint lead at 71% — design ahead of engineering across most projects",
-        "body": "Design ran ahead of engineering in 71% of active projects in March, ensuring dev teams had validated specs before sprint kickoff. This reduced mid-sprint design changes and prevented downstream rework across Feed, Messaging, and Jobs.",
+        "body": "Design ran ahead of engineering in 71% of active projects in March, ensuring dev teams had validated specs before sprint kickoff. This reduced mid-sprint design changes and prevented downstream rework across Feed, DMs, and Reels.",
         "outcome": "Engineering unblocked — rework risk down quarter-over-quarter",
         "evidence": [
           "Design Review",
@@ -96,39 +96,39 @@
       {
         "type": "Cost Avoidance",
         "variant": "default",
-        "title": "Messaging abandoned a complex filter architecture after UXR showed users couldn't discover it",
-        "body": "A planned multi-level filter system was killed in week 2 of April after usability testing with 6 participants showed 0% task completion. Engineering had budgeted 3 sprints. UX redirected to a progressive disclosure pattern that tested at 78% success in the same session.",
+        "title": "DMs abandoned a complex filter architecture after UXR showed users couldn't discover it",
+        "body": "A planned multi-level inbox filter was killed in week 2 of April after usability testing with 6 participants showed 0% task completion. Engineering had budgeted 3 sprints. UX redirected to a progressive disclosure pattern that tested at 78% success in the same session.",
         "outcome": "$48,000 in avoided engineering spend",
         "evidence": [
           "Usability Testing",
           "Stakeholder Alignment"
         ],
-        "project": "Messaging"
+        "project": "DMs"
       },
       {
         "type": "Rework Prevention",
         "variant": "success",
-        "title": "Feed design review caught a data display error before dev handoff",
-        "body": "During a design review of the Task Admin module, a UX designer identified that the proposed table layout would truncate critical account numbers on standard viewport widths. The fix took 2 hours in Figma. The equivalent engineering fix in production was estimated at 3 days.",
+        "title": "Feed design review caught a carousel truncation bug before dev handoff",
+        "body": "During a design review of the Feed carousel module, a UX designer identified that the proposed card layout would crop captions on standard phone widths. The fix took 2 hours in Figma. The equivalent engineering fix in production was estimated at 3 days.",
         "outcome": "~$4,800 in rework avoided (vs. production fix)",
         "evidence": [
           "Design Review",
-          "Jira CORE-2241"
+          "Jira FEED-2241"
         ],
         "project": "Feed"
       },
       {
         "type": "Research Impact",
         "variant": "warning",
-        "title": "Jobs onboarding flow redesigned based on journey mapping findings",
-        "body": "A journey mapping session with 4 teller operators surfaced a consistent point of failure in cash balancing flows. The original flow required 7 steps for a task users expected to complete in 2. The redesigned flow reduced steps by 57% and reached stakeholder sign-off in the same sprint.",
+        "title": "Reels onboarding flow redesigned based on journey mapping findings",
+        "body": "A journey mapping session with 4 Reels creators surfaced a consistent point of failure in first-time publishing flows. The original flow required 7 steps for a task creators expected to complete in 2. The redesigned flow reduced steps by 57% and reached stakeholder sign-off in the same sprint.",
         "outcome": "Flow complexity reduced 57%; stakeholder sign-off in-sprint",
         "evidence": [
           "User Interviews",
           "Journey Mapping",
           "Stakeholder Alignment"
         ],
-        "project": "Jobs"
+        "project": "Reels"
       }
     ]
   }

@@ -1,52 +1,52 @@
 [
   {
-    "id": "task-admin-bulk",
-    "title": "Task Admin bulk actions",
+    "id": "reels-bulk-trim",
+    "title": "Reels bulk trim actions",
     "x": 30,
     "y": 82,
-    "problem": "Operators had to action queue items one at a time, making large workloads slow and error-prone.",
-    "evidence": "78% of tested users expected select-all behavior; task completion time averaged 4.2 min for batch work.",
-    "recommendation": "Introduce multi-select with a bulk action bar and clear selection state before building further queue features.",
-    "outcome": "Blocked downstream queue work until the interaction model is agreed; prototype validated with the ops panel.",
+    "problem": "Creators had to trim clips one at a time, making long edits slow and error-prone.",
+    "evidence": "78% of tested creators expected multi-select trim; edit sessions averaged 4.2 min for batch work.",
+    "recommendation": "Introduce multi-select with a bulk trim bar and clear selection state before building advanced timeline features.",
+    "outcome": "Blocked downstream timeline work until the interaction model is agreed; prototype validated with the Reels panel.",
     "metrics": [
       {
-        "label": "Users expecting select-all",
+        "label": "Creators expecting multi-select",
         "value": "78%"
       },
       {
-        "label": "Avg. batch task time",
+        "label": "Avg. batch edit time",
         "value": "4.2m"
       }
     ]
   },
   {
-    "id": "search-date-range",
-    "title": "Search date-range filtering",
+    "id": "explore-date-filter",
+    "title": "Explore topic filtering",
     "x": 38,
     "y": 68,
-    "problem": "Users could not filter account search results by date range, forcing manual scanning of long lists.",
-    "evidence": "Backend limitation surfaced during research; 6 of 8 participants abandoned the task.",
-    "recommendation": "Resolve the indexing constraint before shipping the redesigned filter panel.",
-    "outcome": "Flagged as a blocker to the search redesign; engineering scoping in progress.",
+    "problem": "Users could not filter Explore results by topic cluster, forcing manual scanning of long grids.",
+    "evidence": "Ranking limitation surfaced during research; 6 of 8 participants abandoned the task.",
+    "recommendation": "Resolve the taxonomy constraint before shipping the redesigned Explore filter panel.",
+    "outcome": "Flagged as a blocker to the Explore redesign; engineering scoping in progress.",
     "metrics": [
       {
         "label": "Task abandonment",
         "value": "6/8"
       },
       {
-        "label": "Affected products",
+        "label": "Affected surfaces",
         "value": "3"
       }
     ]
   },
   {
-    "id": "ai-confidence-labels",
-    "title": "AI response confidence labels",
+    "id": "spark-confidence-labels",
+    "title": "Spark AI confidence labels",
     "x": 72,
     "y": 78,
-    "problem": "Users could not judge how much to trust AI responses, reducing adoption of the assistant.",
-    "evidence": "Panel sessions showed hesitation and repeated manual verification of AI output.",
-    "recommendation": "Add confidence labels, reasoning surfaces, and fallback states to an already-shipping surface.",
+    "problem": "Creators could not judge how much to trust AI caption suggestions, reducing adoption of Spark AI.",
+    "evidence": "Panel sessions showed hesitation and repeated manual rewriting of AI output.",
+    "recommendation": "Add confidence labels, edit previews, and fallback states to an already-shipping surface.",
     "outcome": "Enhanced a live experience; trust and repeat usage improved in follow-up testing.",
     "metrics": [
       {
@@ -54,23 +54,23 @@
         "value": "+31%"
       },
       {
-        "label": "Manual re-checks",
+        "label": "Manual rewrites",
         "value": "−44%"
       }
     ]
   },
   {
-    "id": "onboarding-rework",
-    "title": "Onboarding flow rework",
+    "id": "signup-rework",
+    "title": "Sign-up flow rework",
     "x": 55,
     "y": 72,
-    "problem": "Account creation had a high drop-off rate, limiting activation of new users.",
-    "evidence": "Funnel analysis showed a 34% drop at the verification step.",
-    "recommendation": "Rework the step sequencing and guidance on the current onboarding flow.",
+    "problem": "Account creation had a high drop-off rate, limiting new user activation.",
+    "evidence": "Funnel analysis showed a 34% drop at the username step.",
+    "recommendation": "Rework the step sequencing and guidance on the current sign-up flow.",
     "outcome": "Enhanced a high-traffic flow; drop-off reduced in the redesigned path.",
     "metrics": [
       {
-        "label": "Verification drop-off",
+        "label": "Username drop-off",
         "value": "34% → 19%"
       },
       {
@@ -101,13 +101,13 @@
   },
   {
     "id": "design-system-ai-ready",
-    "title": "Making the design system AI-ready",
+    "title": "Making Prism AI-ready",
     "x": 32,
     "y": 46,
-    "problem": "AI-assisted design and vibe-coded prototypes drift from the system because the token layer alone carries values, not the reasoning behind them — so agents make logical-but-wrong choices.",
-    "evidence": "Components meant to be identical diverge across screens and sessions; agents can read a token's value but not when or why to use it, or how components relate.",
-    "recommendation": "Structure the system in three layers: a token layer (the raw values), an intent layer (what each token means and when to use it), and a guardrail layer (rules and design.md docs that constrain agent decisions).",
-    "outcome": "An early opportunity to make the system agent-ready, cutting AI-generated design debt and keeping output consistent across separate sessions.",
+    "problem": "AI-assisted design drifts from Prism because tokens carry values without usage intent — agents make logical-but-wrong choices.",
+    "evidence": "Components meant to be identical diverge across screens; agents read values but not when or why to apply them.",
+    "recommendation": "Structure Prism in three layers: tokens, intent metadata, and guardrail docs that constrain agent decisions.",
+    "outcome": "Early opportunity to make the system agent-ready, cutting AI-generated design debt across sessions.",
     "metrics": [
       {
         "label": "Layers defined",
@@ -120,14 +120,14 @@
     ]
   },
   {
-    "id": "prompt-zero-state",
-    "title": "Prompt builder zero-state",
+    "id": "stories-zero-state",
+    "title": "Stories creation zero-state",
     "x": 24,
     "y": 33,
-    "problem": "New users faced an empty prompt builder with no guidance on where to start.",
-    "evidence": "Early concept testing surfaced confusion and low first-session success.",
-    "recommendation": "Explore zero-state patterns and example prompts as a new capability.",
-    "outcome": "A new opportunity to improve first-run experience; concept validated for further investment.",
+    "problem": "New creators faced an empty Stories camera with no guidance on where to start.",
+    "evidence": "Early concept testing surfaced confusion and low first-session publish success.",
+    "recommendation": "Explore zero-state patterns and example templates as a new capability.",
+    "outcome": "New opportunity to improve first-run experience; concept validated for further investment.",
     "metrics": [
       {
         "label": "First-session success",
@@ -140,14 +140,14 @@
     ]
   },
   {
-    "id": "risk-communication",
-    "title": "Risk communication patterns",
+    "id": "safety-communication",
+    "title": "Safety notification patterns",
     "x": 18,
     "y": 40,
-    "problem": "Users felt anxious interpreting risk information presented in technical language.",
+    "problem": "Users felt anxious interpreting account restriction messages presented in technical language.",
     "evidence": "Qualitative sessions surfaced repeated confusion and elevated task stress.",
-    "recommendation": "Prototype plain-language risk patterns as a new, unmet-need direction.",
-    "outcome": "An opportunity to reduce user anxiety; early patterns tested positively.",
+    "recommendation": "Prototype plain-language safety patterns as a new, unmet-need direction.",
+    "outcome": "Opportunity to reduce user anxiety; early patterns tested positively.",
     "metrics": [
       {
         "label": "Perceived clarity",
@@ -160,14 +160,14 @@
     ]
   },
   {
-    "id": "transact-panel-groupings",
-    "title": "Transact panel groupings",
+    "id": "creator-studio-groupings",
+    "title": "Creator Studio panel groupings",
     "x": 66,
     "y": 40,
-    "problem": "Dense transaction screens forced heavy scrolling, slowing operators during high-volume work.",
+    "problem": "Dense Creator Studio screens forced heavy scrolling, slowing creators during high-volume publishing.",
     "evidence": "Session recordings showed repeated long scrolls to reach common panels; task time suffered.",
-    "recommendation": "Regroup transaction panels by frequency and task, collapsing rarely used sections to reduce scrolling.",
-    "outcome": "An optimization that cut scrolling and sped up common transaction tasks.",
+    "recommendation": "Regroup studio panels by frequency and task, collapsing rarely used sections.",
+    "outcome": "Optimization that cut scrolling and sped up common publishing tasks.",
     "metrics": [
       {
         "label": "Scroll distance",
@@ -184,10 +184,10 @@
     "title": "Cross-product design tokens",
     "x": 82,
     "y": 38,
-    "problem": "Inconsistent spacing and color across products slowed delivery and review.",
+    "problem": "Inconsistent spacing and color across Instagram surfaces slowed delivery and review.",
     "evidence": "Audit found 40+ divergent values for the same intent across teams.",
-    "recommendation": "Standardize a shared token set to simplify and speed up existing work.",
-    "outcome": "An optimization that reduced rework and sped up handoff across teams.",
+    "recommendation": "Standardize a shared Prism token set to simplify and speed up existing work.",
+    "outcome": "Reduced rework and sped up handoff across Feed, Reels, and DMs teams.",
     "metrics": [
       {
         "label": "Divergent values",
@@ -201,13 +201,13 @@
   },
   {
     "id": "notification-consolidation",
-    "title": "Notification center consolidation",
+    "title": "Activity center consolidation",
     "x": 70,
     "y": 28,
     "problem": "Notifications were spread across surfaces, adding noise and maintenance overhead.",
-    "evidence": "Support tickets cited duplicate and conflicting alerts.",
-    "recommendation": "Consolidate into one center to simplify the existing experience.",
-    "outcome": "An optimization that simplified the surface and reduced duplicate alerts.",
+    "evidence": "Support tickets cited duplicate and conflicting alerts for likes, mentions, and follows.",
+    "recommendation": "Consolidate into one activity center to simplify the existing experience.",
+    "outcome": "Simplified the surface and reduced duplicate alerts.",
     "metrics": [
       {
         "label": "Duplicate alerts",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T16:18:42.765Z",
+  "generatedAt": "2026-08-29T17:55:23.649Z",
   "browseBaseUrl": "https://example.atlassian.net/browse",
   "issues": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "id": "DS-102",
-      "name": "Feed card interaction patterns",
+      "name": "Feed carousel interaction patterns",
       "labels": [
         "DS",
         "Feed"
@@ -27,36 +27,36 @@
     },
     {
       "id": "DS-103",
-      "name": "Messaging thread layout refresh",
+      "name": "DM thread layout refresh",
       "labels": [
         "DS",
-        "Messaging"
+        "DMs"
       ],
       "components": [
-        "Messaging Thread"
+        "DM Thread"
       ]
     },
     {
       "id": "DS-104",
-      "name": "Job search filter panel",
+      "name": "Reels editor toolbar",
       "labels": [
         "DS",
-        "Jobs"
+        "Reels"
       ],
       "components": [
-        "Job Search",
+        "Reels Editor",
         "Profile Header"
       ]
     },
     {
       "id": "DS-105",
-      "name": "Notification preferences center",
+      "name": "Stories sticker tray",
       "labels": [
         "DS",
-        "Notifications"
+        "Stories"
       ],
       "components": [
-        "Notification Center"
+        "Stories Tray"
       ]
     }
   ]

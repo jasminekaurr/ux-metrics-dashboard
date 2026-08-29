@@ -72,7 +72,7 @@ Alternatively, push to `main` and let the GitHub Actions workflow rebuild automa
 
 Public deployments use `build:external`, which sets `VITE_ORG_MODE=external` to anonymize product names (Product Alpha, Product Beta, etc.).
 
-Local development defaults to the LinkedIn-themed demo labels (Feed, Messaging, Jobs, etc.).
+Local development defaults to the Instagram-themed demo labels (Feed, Reels, DMs, etc.).
 
 ## Troubleshooting Pages deploy
 

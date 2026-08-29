@@ -85,7 +85,7 @@
       "total": 26700
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "rework": 4200,
       "bugs": 3000,
       "avoidance": 48000,
@@ -93,7 +93,7 @@
       "total": 58100
     },
     {
-      "project": "Jobs",
+      "project": "Reels",
       "rework": 3800,
       "bugs": 1500,
       "avoidance": 0,
@@ -101,7 +101,7 @@
       "total": 7700
     },
     {
-      "project": "Data Acceleration",
+      "project": "Stories",
       "rework": 2200,
       "bugs": 1500,
       "avoidance": 0,
@@ -109,7 +109,7 @@
       "total": 5300
     },
     {
-      "project": "Premium",
+      "project": "Creator",
       "rework": 1400,
       "bugs": 1500,
       "avoidance": 0,
@@ -117,7 +117,7 @@
       "total": 3700
     },
     {
-      "project": "Network",
+      "project": "Explore",
       "rework": 800,
       "bugs": 0,
       "avoidance": 0,

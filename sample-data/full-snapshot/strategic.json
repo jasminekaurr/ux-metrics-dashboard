@@ -1,7 +1,7 @@
 {
   "initiatives": [
     {
-      "name": "Insights AI",
+      "name": "Spark AI",
       "type": "Agentic AI (Gen AI API Access)",
       "shortType": "Agentic AI",
       "status": "Actively delivering ROI",
@@ -149,46 +149,46 @@
   },
   "aiClientFacing": [
     {
-      "project": "Premium",
-      "feature": "AI-generated financial recommendations",
-      "contribution": "Designed confidence labels, reasoning surfaces, and fallback states for AI output.",
+      "project": "Creator",
+      "feature": "Spark AI caption suggestions",
+      "contribution": "Designed confidence labels, edit previews, and fallback states for AI-generated captions.",
       "stage": "Staging"
     },
     {
-      "project": "Data Acceleration",
-      "feature": "Natural language query interface for client widget",
+      "project": "Stories",
+      "feature": "Natural language sticker search",
       "contribution": "Defined error state UX, suggestion prompt patterns, and zero-state design.",
       "stage": "Validation"
     },
     {
-      "project": "SnapPay",
-      "feature": "AI fraud alert messaging",
-      "contribution": "Designed plain-language risk communication patterns to reduce user anxiety.",
+      "project": "Checkout",
+      "feature": "In-app purchase confirmation messaging",
+      "contribution": "Designed plain-language purchase status patterns to reduce checkout anxiety.",
       "stage": "Production"
     }
   ],
   "opportunities": [
     {
       "project": "Feed",
-      "description": "Identified opportunity to consolidate 3 separate admin workflows into a single task center. Proactively proposed to product — now scoped for Q3.",
+      "description": "Identified opportunity to consolidate 3 separate creator workflows into a single Creator Studio hub. Proactively proposed to product — now scoped for Q3.",
       "type": "Process Consolidation",
       "confidence": "Validated"
     },
     {
-      "project": "Jobs",
+      "project": "Reels",
       "description": "Reframed a \"notification redesign\" brief into a broader communication strategy encompassing in-app, email, and SMS. Stakeholders adopted the wider scope.",
       "type": "Brief Reframe",
       "confidence": "Stakeholder Aligned"
     },
     {
-      "project": "Premium",
+      "project": "Creator",
       "description": "Proposed a \"human-in-the-loop\" pattern library for AI features — reusable across AI projects. Approved as a design system initiative.",
       "type": "Design System Initiative",
       "confidence": "In Progress"
     },
     {
-      "project": "Messaging",
-      "description": "Discovered that 3 separate teams were designing their own empty state patterns. Flagged duplication — now standardized in Horizon.",
+      "project": "DMs",
+      "description": "Discovered that 3 separate teams were designing their own empty state patterns. Flagged duplication — now standardized in Prism.",
       "type": "Duplication Caught",
       "confidence": "Resolved"
     }
@@ -197,31 +197,31 @@
     {
       "project": "Feed",
       "outcome": "Direction change",
-      "note": "Task Admin table layout changed before dev handoff — no rework required.",
+      "note": "Creator Studio layout changed before dev handoff — no rework required.",
       "tag": "Rework Prevented"
     },
     {
-      "project": "Premium",
-      "outcome": "Client approval",
-      "note": "AI recommendations UI approved by client stakeholders after prototype review.",
-      "tag": "Client Outcome"
+      "project": "Creator",
+      "outcome": "Creator approval",
+      "note": "Spark AI caption UI approved by creator council after prototype review.",
+      "tag": "Creator Outcome"
     },
     {
-      "project": "Jobs",
+      "project": "Reels",
       "outcome": "Faster completion",
-      "note": "Operators completing cash balancing 40% faster in UAT vs. previous flow.",
+      "note": "Creators completing clip trimming 40% faster in UAT vs. previous flow.",
       "tag": "Efficiency Gain"
     },
     {
-      "project": "Messaging",
+      "project": "DMs",
       "outcome": "Feature kill",
       "note": "Complex filter system abandoned after usability testing — 3 sprint equivalent saved.",
       "tag": "Cost Avoidance"
     },
     {
-      "project": "SnapPay",
+      "project": "Checkout",
       "outcome": "Positive sentiment",
-      "note": "Fraud alert redesign received unsolicited positive feedback in user interviews.",
+      "note": "Checkout confirmation redesign received unsolicited positive feedback in user interviews.",
       "tag": "User Sentiment"
     }
   ]

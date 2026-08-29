@@ -1,105 +1,105 @@
 [
   {
-    "product": "AppMarket",
-    "study": "Fintech Generative Research",
+    "product": "Shop",
+    "study": "Shopping Tab Discovery Research",
     "status": "Active",
     "category": "Growth & acquisition",
     "expectedDecision": "Prioritize / De-scope"
   },
   {
-    "product": "AppMarket",
-    "study": "Market Study",
+    "product": "Shop",
+    "study": "Checkout Friction Benchmark",
     "status": "Active",
     "category": "Growth & acquisition",
     "expectedDecision": "Validate assumption"
   },
   {
     "product": "Feed",
-    "study": "Client Advisory Panel",
+    "study": "Creator Advisory Panel",
     "status": "Active",
     "category": "Growth & acquisition",
     "expectedDecision": "Redesign / Iterate"
   },
   {
     "product": "Feed",
-    "study": "Clover Integration Research",
+    "study": "Suggested Posts Trust Study",
     "status": "Planning",
     "category": "Efficiency & workflow",
     "expectedDecision": "Launch / Don't launch"
   },
   {
-    "product": "Data Compass",
-    "study": "Portal Redesign Research",
+    "product": "Insights",
+    "study": "Creator Analytics Redesign",
     "status": "Active",
     "category": "Efficiency & workflow",
     "expectedDecision": "Redesign / Iterate"
   },
   {
-    "product": "Data Compass",
-    "study": "AI Workshop — Frisco",
+    "product": "Insights",
+    "study": "AI Workshop — Reels Team",
     "status": "Complete",
     "category": "Strategic exploration",
     "expectedDecision": "Validate assumption"
   },
   {
-    "product": "Data Compass",
-    "study": "AI Workshop — Alpharetta",
+    "product": "Insights",
+    "study": "AI Workshop — DMs Team",
     "status": "Planning",
     "category": "Strategic exploration",
     "expectedDecision": "Redesign / Iterate"
   },
   {
-    "product": "Data Compass",
-    "study": "Benchmarking Market Assessment",
+    "product": "Insights",
+    "study": "Competitive Reels Benchmark",
     "status": "Active",
     "category": "Growth & acquisition",
     "expectedDecision": "Validate assumption"
   },
   {
-    "product": "Messaging",
-    "study": "Client Panel (Monthly)",
+    "product": "DMs",
+    "study": "Creator Panel (Monthly)",
     "status": "Active",
     "category": "Growth & acquisition",
     "expectedDecision": "Redesign / Iterate"
   },
   {
-    "product": "Messaging",
-    "study": "Feature Survey with Client Panel",
+    "product": "DMs",
+    "study": "Inbox Feature Survey",
     "status": "Complete",
     "category": "Efficiency & workflow",
     "expectedDecision": "Prioritize / De-scope"
   },
   {
-    "product": "Messaging",
-    "study": "New Deposit Account Wizard (NDAW)",
+    "product": "DMs",
+    "study": "Vanish Mode Comprehension Test",
     "status": "Planning",
     "category": "Efficiency & workflow",
     "expectedDecision": "Launch / Don't launch"
   },
   {
-    "product": "Jobs",
-    "study": "UBA Information Architecture Tree Test",
+    "product": "Reels",
+    "study": "Reels Navigation Tree Test",
     "status": "Active",
     "category": "Risk & compliance",
     "expectedDecision": "Redesign / Iterate"
   },
   {
-    "product": "Premium",
-    "study": "BAC Quick Search Demo & AI Survey",
+    "product": "Creator",
+    "study": "Spark AI Trust & Transparency Survey",
     "status": "Complete",
     "category": "Strategic exploration",
     "expectedDecision": "Validate assumption"
   },
   {
-    "product": "Qual Tool Comparison",
+    "product": "Research Ops",
     "study": "Qualitative Platform Evaluation",
     "status": "Active",
     "category": "Efficiency & workflow",
     "expectedDecision": "Launch / Don't launch"
   },
   {
-    "product": "Online Bill Pay",
-    "study": "Usability Test — Regions and Ally",
+    "product": "Subscriptions",
+    "study": "Badges Usability Test",
     "status": "Complete",
     "category": "Risk & compliance",
     "expectedDecision": "Launch / Don't launch"

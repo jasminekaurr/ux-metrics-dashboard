@@ -1,4 +1,18 @@
 {
+  "feedPanel": {
+    "totalMembers": 78,
+    "totalCohorts": 55,
+    "febParticipants": 59,
+    "febCohorts": 45,
+    "engagementRate": 76,
+    "janCohorts": 55,
+    "febCohortsTrend": 45
+  },
+  "reelsPanel": {
+    "totalMembers": 24,
+    "janCohorts": 12,
+    "febCohorts": 13
+  },
   "coreAdvance": {
     "totalMembers": 78,
     "totalBanks": 55,

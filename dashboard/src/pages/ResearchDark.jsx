@@ -133,35 +133,35 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
 
   const allInitiatives = [
     {
-      id: 'uba-ia',
-      product: 'Jobs',
-      study: 'UBA Information Architecture',
+      id: 'reels-ia',
+      product: 'Reels',
+      study: 'Reels Navigation Architecture',
       category: 'Risk & Compliance',
-      purpose: 'Validate domain model and navigation structure for member workflows',
+      purpose: 'Validate tab model and navigation structure for creator publishing flows',
       status: 'Complete',
       impactTag: 'Risk Reduction',
       participants: 18,
       detailedSummary: { type: 'uba', data: ubaIASpotlight },
     },
     {
-      id: 'task-assignment',
+      id: 'collab-posts',
       product: 'Feed',
-      study: 'Task Assignment Study',
+      study: 'Collab Post Tagging Study',
       category: 'Efficiency & Workflow',
-      purpose: 'Validate task assignment interaction model and mental models for group/user selection',
+      purpose: 'Validate co-author tagging interaction model and creator mental models for shared posts',
       status: 'Complete',
       impactTag: 'Risk Reduction',
       participants: 10,
       detailedSummary: {
         type: 'task-assignment',
         data: {
-          methodology: 'Usability testing with general population',
+          methodology: 'Usability testing with active creators',
           keyFindings: [
-            "Participants' mental models leaned towards assigning users within a group rather than selecting a group and a user separately",
-            'Group and User were understood as valid options, but their relationship was unclear',
-            'Search behavior often preceded filtering - users began typing directly into the dropdown before applying a filter',
-            'Confirmation cues (tags) were helpful but subtle, influencing recognition speed',
-            'Prototype constraints influenced clarity - single selection limitation caused confusion',
+            'Creators expected to tag collaborators from the compose screen, not a separate settings panel',
+            'Co-author avatars were understood, but approval flow timing was unclear',
+            'Search behavior often preceded filtering — creators typed handles before applying filters',
+            'Confirmation chips were helpful but subtle, influencing recognition speed',
+            'Single-collaborator prototype limitation caused confusion in multi-creator scenarios',
           ],
           issuesCaught: 5,
           severity: 'Medium',
@@ -171,7 +171,7 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
     {
       id: 'panel-health',
       product: 'Multiple',
-      study: 'Client Panel Health',
+      study: 'Creator Panel Health',
       category: 'Strategic Exploration',
       purpose: 'Maintain advisory panels for same-week validation capability',
       status: 'Active',
@@ -524,7 +524,7 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
                                           {init.detailedSummary.data.coreAdvance?.totalMembers}
                                         </div>
                                         <div style={{ fontFamily: MONO, fontSize: 9, color: 'var(--es-text-3)' }}>
-                                          {init.detailedSummary.data.coreAdvance?.totalBanks} banks
+                                          {init.detailedSummary.data.coreAdvance?.totalBanks} creator cohorts
                                         </div>
                                         <div style={{ marginTop: 8, padding: '4px 8px', background: 'rgba(0,191,42,0.15)', borderRadius: 3, fontFamily: MONO, fontSize: 9, color: 'var(--es-green)', border: '1px solid rgba(0,191,42,0.30)' }}>
                                           {init.detailedSummary.data.coreAdvance?.engagementRate}% engagement
@@ -537,12 +537,12 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
                                         borderTop: '2px solid #a78bfa',
                                         borderRadius: 'var(--es-r-sm)',
                                       }}>
-                                        <div style={{ fontFamily: MONO, fontSize: 9, color: 'var(--es-text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Messaging Panel</div>
+                                        <div style={{ fontFamily: MONO, fontSize: 9, color: 'var(--es-text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Reels Panel</div>
                                         <div style={{ fontFamily: 'var(--es-sans)', fontSize: 32, fontWeight: 300, color: '#a78bfa', letterSpacing: '-0.10em', lineHeight: 1, marginBottom: 4 }}>
                                           {init.detailedSummary.data.dnaUX?.totalMembers}
                                         </div>
                                         <div style={{ fontFamily: MONO, fontSize: 9, color: 'var(--es-green)' }}>
-                                          {init.detailedSummary.data.dnaUX?.janFIs} → {init.detailedSummary.data.dnaUX?.febFIs} FIs
+                                          {init.detailedSummary.data.dnaUX?.janFIs} → {init.detailedSummary.data.dnaUX?.febFIs} cohorts
                                         </div>
                                       </div>
                                     </div>

@@ -1,26 +1,23 @@
 /**
- * Demo organization labels — LinkedIn-themed sample data.
+ * Demo organization labels — Instagram-themed sample data.
  * Set VITE_ORG_MODE=external for extra-anonymized labels (Product Alpha, etc.).
- *
- *   npm run dev:external
- *   npm run build:external
  */
 
-const DATA_KEY_PRODUCTS = ['Feed', 'Messaging', 'Jobs', 'Network', 'Premium']
+const DATA_KEY_PRODUCTS = ['Feed', 'Reels', 'DMs', 'Explore', 'Creator']
 
 const demo = {
   mode: 'demo',
-  designSystemName: 'Horizon',
-  designSystemFull: 'Horizon Design System',
-  portfolioVisionPhrase: 'a unified member experience',
-  portfolioCohesion: 'member experience',
-  portfolioProducts: 'LinkedIn product surfaces',
-  uiFromPatterns: 'of member-facing UI built from shared Horizon patterns',
-  analyticsTag: 'Horizon Analytics',
-  aiLayer: 'Insights AI',
-  aiLayerDescription: 'Research synthesis assistant',
+  designSystemName: 'Prism',
+  designSystemFull: 'Prism Design System',
+  portfolioVisionPhrase: 'a cohesive creator and consumer experience',
+  portfolioCohesion: 'Instagram experience',
+  portfolioProducts: 'Instagram product surfaces',
+  uiFromPatterns: 'of Instagram UI built from shared Prism patterns',
+  analyticsTag: 'Prism Analytics',
+  aiLayer: 'Spark AI',
+  aiLayerDescription: 'Creative assistant layer',
   productDisplayNames: {},
-  launchProduct: 'Jobs',
+  launchProduct: 'Reels',
 }
 
 const external = {
@@ -36,12 +33,12 @@ const external = {
   aiLayerDescription: 'Optional AI layer',
   productDisplayNames: {
     Feed: 'Product Alpha',
-    Messaging: 'Product Beta',
-    Jobs: 'Product Gamma',
-    Network: 'Product Delta',
-    Premium: 'Product Epsilon',
+    Reels: 'Product Beta',
+    DMs: 'Product Gamma',
+    Explore: 'Product Delta',
+    Creator: 'Product Epsilon',
   },
-  launchProduct: 'Product Gamma',
+  launchProduct: 'Product Beta',
 }
 
 const mode = import.meta.env.VITE_ORG_MODE === 'external' ? 'external' : 'demo'
