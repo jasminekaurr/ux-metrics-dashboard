@@ -1,0 +1,228 @@
+{
+  "initiatives": [
+    {
+      "name": "Insights AI",
+      "type": "Agentic AI (Gen AI API Access)",
+      "shortType": "Agentic AI",
+      "status": "Actively delivering ROI",
+      "statusIndex": 3,
+      "previousStatus": "Learning investment",
+      "strategicValue": "Establishes internal standards and trust for GenAI usage across products",
+      "uxInvolvement": "Design · Optimization",
+      "keyMetric": "Live",
+      "keyMetricLabel": "Internal user adoption",
+      "uxContribution": "Interaction design for AI responses, prompt guidance, transparency patterns, and error states for internal Gen AI access.",
+      "color": "#0071e3",
+      "lastUpdated": "Apr 2026"
+    },
+    {
+      "name": "Hawk AI",
+      "type": "Agentic Change Management",
+      "shortType": "Change Management",
+      "status": "Risk reduction phase",
+      "statusIndex": 1,
+      "previousStatus": "Cheap exploration",
+      "strategicValue": "Reduces operational decision errors and standardizes change management flows",
+      "uxInvolvement": "Design · Research",
+      "keyMetric": "In Development",
+      "keyMetricLabel": "Adoption pending launch",
+      "uxContribution": "Shaping agent flows, task structures, and human intervention points for internal change management processes.",
+      "color": "#7c3aed",
+      "lastUpdated": "Apr 2026"
+    },
+    {
+      "name": "Digits",
+      "type": "Analytics Platform",
+      "shortType": "Analytics",
+      "status": "Learning investment",
+      "statusIndex": 2,
+      "strategicValue": "Creates a shared analytics language between UX, product, and leadership",
+      "uxInvolvement": "Design · Usability Testing",
+      "keyMetric": "POC in Validation",
+      "keyMetricLabel": "Usage data pending",
+      "uxContribution": "Designing dashboards and data visualizations to make behavioral and usage analytics interpretable and actionable.",
+      "color": "#f59e0b",
+      "lastUpdated": "Apr 2026"
+    },
+    {
+      "name": "UX Dashboard",
+      "type": "Work Visibility Platform",
+      "shortType": "Visibility",
+      "status": "Learning investment",
+      "statusIndex": 2,
+      "strategicValue": "Makes UX outcomes legible at leadership scale",
+      "uxInvolvement": "Design · Strategy",
+      "keyMetric": "POC in Validation",
+      "keyMetricLabel": "Leadership adoption tracked",
+      "uxContribution": "Creating the visibility layer that makes UX timelines and cross-product impact legible to senior management.",
+      "color": "#dc2626",
+      "lastUpdated": "Apr 2026"
+    }
+  ],
+  "innovationByMonth": [
+    3,
+    5,
+    4,
+    4
+  ],
+  "pocFunnel": [
+    {
+      "stage": "Discovery",
+      "count": 6
+    },
+    {
+      "stage": "Validation",
+      "count": 4
+    },
+    {
+      "stage": "Advancing to Product",
+      "count": 2
+    },
+    {
+      "stage": "Shipped",
+      "count": 1
+    },
+    {
+      "stage": "Killed (saves build cost)",
+      "count": 3
+    }
+  ],
+  "pocKills": [
+    {
+      "month": "Jan 2026",
+      "killed": 0,
+      "savedEach": 0,
+      "total": 0
+    },
+    {
+      "month": "Feb 2026",
+      "killed": 0,
+      "savedEach": 0,
+      "total": 0
+    },
+    {
+      "month": "Mar 2026",
+      "killed": 1,
+      "savedEach": 150000,
+      "total": 150000
+    },
+    {
+      "month": "Apr 2026",
+      "killed": 0,
+      "savedEach": 0,
+      "total": 0
+    }
+  ],
+  "aiInternalAdoption": [
+    {
+      "month": "Jan 2026",
+      "rate": 55
+    },
+    {
+      "month": "Feb 2026",
+      "rate": 64
+    },
+    {
+      "month": "Mar 2026",
+      "rate": 73
+    },
+    {
+      "month": "Apr 2026",
+      "rate": 82
+    }
+  ],
+  "aiTools": {
+    "Figma AI": 14,
+    "ChatGPT / GPT-4": 12,
+    "Claude (Anthropic)": 9,
+    "GitHub Copilot": 5,
+    "Notion AI": 4,
+    "Midjourney / DALL-E": 3
+  },
+  "aiUseCases": {
+    "Ideation / Brainstorming": 13,
+    "Research Synthesis": 11,
+    "Copy / Microcopy": 10,
+    "Documentation / Specs": 8,
+    "Prototyping": 6,
+    "Accessibility Review": 4
+  },
+  "aiClientFacing": [
+    {
+      "project": "Premium",
+      "feature": "AI-generated financial recommendations",
+      "contribution": "Designed confidence labels, reasoning surfaces, and fallback states for AI output.",
+      "stage": "Staging"
+    },
+    {
+      "project": "Data Acceleration",
+      "feature": "Natural language query interface for client widget",
+      "contribution": "Defined error state UX, suggestion prompt patterns, and zero-state design.",
+      "stage": "Validation"
+    },
+    {
+      "project": "SnapPay",
+      "feature": "AI fraud alert messaging",
+      "contribution": "Designed plain-language risk communication patterns to reduce user anxiety.",
+      "stage": "Production"
+    }
+  ],
+  "opportunities": [
+    {
+      "project": "Feed",
+      "description": "Identified opportunity to consolidate 3 separate admin workflows into a single task center. Proactively proposed to product — now scoped for Q3.",
+      "type": "Process Consolidation",
+      "confidence": "Validated"
+    },
+    {
+      "project": "Jobs",
+      "description": "Reframed a \"notification redesign\" brief into a broader communication strategy encompassing in-app, email, and SMS. Stakeholders adopted the wider scope.",
+      "type": "Brief Reframe",
+      "confidence": "Stakeholder Aligned"
+    },
+    {
+      "project": "Premium",
+      "description": "Proposed a \"human-in-the-loop\" pattern library for AI features — reusable across AI projects. Approved as a design system initiative.",
+      "type": "Design System Initiative",
+      "confidence": "In Progress"
+    },
+    {
+      "project": "Messaging",
+      "description": "Discovered that 3 separate teams were designing their own empty state patterns. Flagged duplication — now standardized in Horizon.",
+      "type": "Duplication Caught",
+      "confidence": "Resolved"
+    }
+  ],
+  "valueAddCards": [
+    {
+      "project": "Feed",
+      "outcome": "Direction change",
+      "note": "Task Admin table layout changed before dev handoff — no rework required.",
+      "tag": "Rework Prevented"
+    },
+    {
+      "project": "Premium",
+      "outcome": "Client approval",
+      "note": "AI recommendations UI approved by client stakeholders after prototype review.",
+      "tag": "Client Outcome"
+    },
+    {
+      "project": "Jobs",
+      "outcome": "Faster completion",
+      "note": "Operators completing cash balancing 40% faster in UAT vs. previous flow.",
+      "tag": "Efficiency Gain"
+    },
+    {
+      "project": "Messaging",
+      "outcome": "Feature kill",
+      "note": "Complex filter system abandoned after usability testing — 3 sprint equivalent saved.",
+      "tag": "Cost Avoidance"
+    },
+    {
+      "project": "SnapPay",
+      "outcome": "Positive sentiment",
+      "note": "Fraud alert redesign received unsolicited positive feedback in user interviews.",
+      "tag": "User Sentiment"
+    }
+  ]
+}

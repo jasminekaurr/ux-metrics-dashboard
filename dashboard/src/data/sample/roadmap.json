@@ -1,0 +1,2443 @@
+{
+  "monthlySummary": [
+    {
+      "month": "Jan 2026",
+      "shipped": 14,
+      "onTime": 71,
+      "inFlight": 18,
+      "tickets": {
+        "opened": 42,
+        "closed": 38
+      },
+      "experienceRiskIndex": 42,
+      "reworkRate": 15,
+      "atRiskReleases": 1,
+      "criticalBlockers": 3
+    },
+    {
+      "month": "Feb 2026",
+      "shipped": 21,
+      "onTime": 76,
+      "inFlight": 24,
+      "tickets": {
+        "opened": 58,
+        "closed": 51
+      },
+      "experienceRiskIndex": 38,
+      "reworkRate": 13,
+      "atRiskReleases": 1,
+      "criticalBlockers": 2
+    },
+    {
+      "month": "Mar 2026",
+      "shipped": 19,
+      "onTime": 79,
+      "inFlight": 21,
+      "tickets": {
+        "opened": 49,
+        "closed": 45
+      },
+      "experienceRiskIndex": 35,
+      "reworkRate": 12,
+      "atRiskReleases": 0,
+      "criticalBlockers": 1
+    },
+    {
+      "month": "Apr 2026",
+      "shipped": 18,
+      "onTime": 83,
+      "inFlight": 22,
+      "tickets": {
+        "opened": 44,
+        "closed": 41
+      },
+      "experienceRiskIndex": 32,
+      "reworkRate": 11,
+      "atRiskReleases": 1,
+      "criticalBlockers": 2
+    }
+  ],
+  "sprintLead": [
+    {
+      "month": "Jan 2026",
+      "ahead": 55,
+      "mostly": 27,
+      "behind": 18
+    },
+    {
+      "month": "Feb 2026",
+      "ahead": 63,
+      "mostly": 24,
+      "behind": 13
+    },
+    {
+      "month": "Mar 2026",
+      "ahead": 71,
+      "mostly": 20,
+      "behind": 9
+    },
+    {
+      "month": "Apr 2026",
+      "ahead": 79,
+      "mostly": 14,
+      "behind": 7
+    }
+  ],
+  "blockers": [
+    {
+      "category": "Delivery Risk",
+      "reason": "Scope change mid-sprint",
+      "count": 6,
+      "type": "delay"
+    },
+    {
+      "category": "Delivery Risk",
+      "reason": "Late feedback / approval",
+      "count": 4,
+      "type": "delay"
+    },
+    {
+      "category": "Delivery Risk",
+      "reason": "Cross-team dependency",
+      "count": 3,
+      "type": "delay"
+    },
+    {
+      "category": "Rework",
+      "reason": "Design reversed after handoff",
+      "count": 3,
+      "type": "rework"
+    },
+    {
+      "category": "Delivery Risk",
+      "reason": "Under-resourcing",
+      "count": 2,
+      "type": "delay"
+    },
+    {
+      "category": "Rework",
+      "reason": "Spec ambiguity / unclear requirements",
+      "count": 2,
+      "type": "rework"
+    },
+    {
+      "category": "Rework",
+      "reason": "Stakeholder direction changed",
+      "count": 1,
+      "type": "rework"
+    }
+  ],
+  "stageDistribution": [
+    {
+      "month": "Jan 2026",
+      "discovery": 5,
+      "validation": 4,
+      "execution": 7,
+      "optimization": 2,
+      "shelved": 2
+    },
+    {
+      "month": "Feb 2026",
+      "discovery": 6,
+      "validation": 6,
+      "execution": 9,
+      "optimization": 3,
+      "shelved": 1
+    },
+    {
+      "month": "Mar 2026",
+      "discovery": 4,
+      "validation": 5,
+      "execution": 8,
+      "optimization": 4,
+      "shelved": 0
+    },
+    {
+      "month": "Apr 2026",
+      "discovery": 4,
+      "validation": 5,
+      "execution": 9,
+      "optimization": 4,
+      "shelved": 0
+    }
+  ],
+  "projects": [
+    {
+      "name": "Feed",
+      "shipped": 3,
+      "onTime": 88,
+      "inFlight": 4,
+      "velocity": 11,
+      "stageBreakdown": {
+        "discovery": 0,
+        "validation": 1,
+        "execution": 2,
+        "optimization": 1,
+        "shelved": 0
+      },
+      "health": "good",
+      "healthReason": "On track with strong delivery metrics",
+      "blockedItems": 0,
+      "blockerAvgAge": 0,
+      "currentPhase": 3,
+      "phaseProgress": 72,
+      "phaseDistribution": {
+        "phase1": 3,
+        "phase2": 5,
+        "phase3": 8,
+        "phase4": 2,
+        "notAssigned": 1
+      }
+    },
+    {
+      "name": "Messaging",
+      "shipped": 2,
+      "onTime": 75,
+      "inFlight": 5,
+      "velocity": 8,
+      "stageBreakdown": {
+        "discovery": 1,
+        "validation": 2,
+        "execution": 2,
+        "optimization": 0,
+        "shelved": 0
+      },
+      "health": "good",
+      "healthReason": "Solid delivery with minor delays",
+      "blockedItems": 1,
+      "blockerAvgAge": 6,
+      "currentPhase": 2,
+      "phaseProgress": 65,
+      "phaseDistribution": {
+        "phase1": 2,
+        "phase2": 6,
+        "phase3": 4,
+        "phase4": 1,
+        "notAssigned": 2
+      }
+    },
+    {
+      "name": "Jobs",
+      "shipped": 3,
+      "onTime": 92,
+      "inFlight": 3,
+      "velocity": 8,
+      "stageBreakdown": {
+        "discovery": 0,
+        "validation": 1,
+        "execution": 2,
+        "optimization": 0,
+        "shelved": 0
+      },
+      "health": "good",
+      "healthReason": "Excellent on-time delivery",
+      "blockedItems": 0,
+      "blockerAvgAge": 0,
+      "currentPhase": 3,
+      "phaseProgress": 85,
+      "phaseDistribution": {
+        "phase1": 1,
+        "phase2": 3,
+        "phase3": 9,
+        "phase4": 4,
+        "notAssigned": 0
+      }
+    },
+    {
+      "name": "Data Acceleration",
+      "shipped": 2,
+      "onTime": 67,
+      "inFlight": 3,
+      "velocity": 5,
+      "stageBreakdown": {
+        "discovery": 1,
+        "validation": 1,
+        "execution": 1,
+        "optimization": 0,
+        "shelved": 0
+      },
+      "health": "warning",
+      "healthReason": "Below 70% on-time delivery, 2 blocked items",
+      "blockedItems": 2,
+      "blockerAvgAge": 8,
+      "currentPhase": 2,
+      "phaseProgress": 45,
+      "phaseDistribution": {
+        "phase1": 4,
+        "phase2": 4,
+        "phase3": 3,
+        "phase4": 1,
+        "notAssigned": 3
+      }
+    },
+    {
+      "name": "Premium",
+      "shipped": 1,
+      "onTime": 50,
+      "inFlight": 2,
+      "velocity": 3,
+      "stageBreakdown": {
+        "discovery": 1,
+        "validation": 0,
+        "execution": 1,
+        "optimization": 0,
+        "shelved": 0
+      },
+      "health": "warning",
+      "healthReason": "Only 50% on-time, 2 long-standing blockers",
+      "blockedItems": 2,
+      "blockerAvgAge": 12,
+      "currentPhase": 1,
+      "phaseProgress": 30,
+      "phaseDistribution": {
+        "phase1": 5,
+        "phase2": 2,
+        "phase3": 1,
+        "phase4": 0,
+        "notAssigned": 4
+      }
+    },
+    {
+      "name": "Network",
+      "shipped": 2,
+      "onTime": 83,
+      "inFlight": 2,
+      "velocity": 3,
+      "stageBreakdown": {
+        "discovery": 0,
+        "validation": 1,
+        "execution": 1,
+        "optimization": 0,
+        "shelved": 0
+      },
+      "health": "good",
+      "healthReason": "Consistent delivery",
+      "blockedItems": 0,
+      "blockerAvgAge": 0,
+      "currentPhase": 3,
+      "phaseProgress": 78,
+      "phaseDistribution": {
+        "phase1": 2,
+        "phase2": 3,
+        "phase3": 5,
+        "phase4": 2,
+        "notAssigned": 1
+      }
+    },
+    {
+      "name": "SnapPay",
+      "shipped": 1,
+      "onTime": 100,
+      "inFlight": 1,
+      "velocity": 3,
+      "stageBreakdown": {
+        "discovery": 0,
+        "validation": 0,
+        "execution": 1,
+        "optimization": 0,
+        "shelved": 0
+      },
+      "health": "good",
+      "healthReason": "Small but consistent delivery",
+      "blockedItems": 0,
+      "blockerAvgAge": 0,
+      "currentPhase": 4,
+      "phaseProgress": 95,
+      "phaseDistribution": {
+        "phase1": 0,
+        "phase2": 1,
+        "phase3": 2,
+        "phase4": 6,
+        "notAssigned": 0
+      }
+    },
+    {
+      "name": "Client Onboarding",
+      "shipped": 1,
+      "onTime": 80,
+      "inFlight": 2,
+      "velocity": 2,
+      "stageBreakdown": {
+        "discovery": 0,
+        "validation": 1,
+        "execution": 1,
+        "optimization": 0,
+        "shelved": 0
+      },
+      "health": "good",
+      "healthReason": "Healthy delivery pace",
+      "blockedItems": 0,
+      "blockerAvgAge": 0,
+      "currentPhase": 2,
+      "phaseProgress": 55,
+      "phaseDistribution": {
+        "phase1": 3,
+        "phase2": 4,
+        "phase3": 2,
+        "phase4": 1,
+        "notAssigned": 2
+      }
+    }
+  ],
+  "features": [
+    {
+      "project": "Feed",
+      "name": "Task Admin redesign — bulk action toolbar",
+      "tickets": "CORE-2201, CORE-2208",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Production",
+      "plannedShipDate": "2026-04-12",
+      "actualShipDate": "2026-04-10",
+      "daysDelay": -2,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Feed",
+      "name": "Advanced search filters",
+      "tickets": "CORE-2245",
+      "currentStage": "validation",
+      "plannedStage": "execution",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-04-20",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": [
+        "Late feedback"
+      ]
+    },
+    {
+      "project": "Feed",
+      "name": "Report export redesign",
+      "tickets": "CORE-2289, CORE-2290",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Staging",
+      "plannedShipDate": "2026-04-25",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Feed",
+      "name": "Task prioritization UI",
+      "tickets": "CORE-2301",
+      "currentStage": "optimization",
+      "plannedStage": "optimization",
+      "deploymentStage": "Production",
+      "plannedShipDate": "2026-04-05",
+      "actualShipDate": "2026-04-08",
+      "daysDelay": 3,
+      "onTime": false,
+      "blockers": [
+        "Scope change"
+      ]
+    },
+    {
+      "project": "Messaging",
+      "name": "Progressive disclosure filters (v1)",
+      "tickets": "DNA-884",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Staging",
+      "plannedShipDate": "2026-04-15",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Messaging",
+      "name": "Data visualization refresh",
+      "tickets": "DNA-901, DNA-905",
+      "currentStage": "validation",
+      "plannedStage": "execution",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-04-28",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": [
+        "Cross-team dependency"
+      ]
+    },
+    {
+      "project": "Messaging",
+      "name": "User preferences panel",
+      "tickets": "DNA-920",
+      "currentStage": "validation",
+      "plannedStage": "validation",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-05-05",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Messaging",
+      "name": "Dashboard widget customization",
+      "tickets": "DNA-934",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Handoff",
+      "plannedShipDate": "2026-04-30",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Messaging",
+      "name": "Mobile responsiveness improvements",
+      "tickets": "DNA-945",
+      "currentStage": "discovery",
+      "plannedStage": "validation",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-05-10",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": [
+        "Under-resourcing"
+      ]
+    },
+    {
+      "project": "Jobs",
+      "name": "Cash balancing flow — reduced steps",
+      "tickets": "UBA-319",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Production",
+      "plannedShipDate": "2026-04-14",
+      "actualShipDate": "2026-04-14",
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Jobs",
+      "name": "Transaction history redesign",
+      "tickets": "UBA-345",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Staging",
+      "plannedShipDate": "2026-04-22",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Jobs",
+      "name": "Quick actions menu",
+      "tickets": "UBA-362",
+      "currentStage": "validation",
+      "plannedStage": "execution",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-04-27",
+      "actualShipDate": null,
+      "daysDelay": 2,
+      "onTime": false,
+      "blockers": [
+        "Design reversed after handoff"
+      ]
+    },
+    {
+      "project": "Data Acceleration",
+      "name": "Client widget empty states",
+      "tickets": "DA-112, DA-115",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Handoff",
+      "plannedShipDate": "2026-04-18",
+      "actualShipDate": "2026-04-18",
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Data Acceleration",
+      "name": "API integration flow",
+      "tickets": "DA-128",
+      "currentStage": "validation",
+      "plannedStage": "validation",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-05-01",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Data Acceleration",
+      "name": "Error state improvements",
+      "tickets": "DA-141",
+      "currentStage": "discovery",
+      "plannedStage": "validation",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-05-08",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": [
+        "Spec ambiguity"
+      ]
+    },
+    {
+      "project": "Premium",
+      "name": "AI recommendations onboarding UX",
+      "tickets": "AI-44",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Staging",
+      "plannedShipDate": "2026-04-10",
+      "actualShipDate": "2026-04-16",
+      "daysDelay": 6,
+      "onTime": false,
+      "blockers": [
+        "Scope change",
+        "Stakeholder direction changed"
+      ]
+    },
+    {
+      "project": "Premium",
+      "name": "Prompt feedback mechanism",
+      "tickets": "AI-58",
+      "currentStage": "discovery",
+      "plannedStage": "validation",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-05-15",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Network",
+      "name": "My Queue — status indicators refresh",
+      "tickets": "PORT-67",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Production",
+      "plannedShipDate": "2026-04-11",
+      "actualShipDate": "2026-04-11",
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Network",
+      "name": "Notification preferences",
+      "tickets": "PORT-82",
+      "currentStage": "validation",
+      "plannedStage": "validation",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-04-29",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "SnapPay",
+      "name": "Payment confirmation micro-interactions",
+      "tickets": "SP-211",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Production",
+      "plannedShipDate": "2026-04-13",
+      "actualShipDate": "2026-04-13",
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Client Onboarding",
+      "name": "Stepper progress redesign",
+      "tickets": "CO-88, CO-91",
+      "currentStage": "execution",
+      "plannedStage": "execution",
+      "deploymentStage": "Handoff",
+      "plannedShipDate": "2026-04-19",
+      "actualShipDate": "2026-04-19",
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    },
+    {
+      "project": "Client Onboarding",
+      "name": "Document upload improvements",
+      "tickets": "CO-105",
+      "currentStage": "validation",
+      "plannedStage": "validation",
+      "deploymentStage": null,
+      "plannedShipDate": "2026-05-03",
+      "actualShipDate": null,
+      "daysDelay": 0,
+      "onTime": true,
+      "blockers": []
+    }
+  ],
+  "shippedFeatures": [
+    {
+      "project": "Feed",
+      "name": "Task Admin redesign — bulk action toolbar",
+      "tickets": "CORE-2201, CORE-2208",
+      "stage": "Production",
+      "onTime": true
+    },
+    {
+      "project": "Messaging",
+      "name": "Progressive disclosure filters (v1)",
+      "tickets": "DNA-884",
+      "stage": "Staging",
+      "onTime": true
+    },
+    {
+      "project": "Jobs",
+      "name": "Cash balancing flow — reduced steps",
+      "tickets": "UBA-319",
+      "stage": "Production",
+      "onTime": true
+    },
+    {
+      "project": "Data Acceleration",
+      "name": "Client widget empty states",
+      "tickets": "DA-112, DA-115",
+      "stage": "Handoff",
+      "onTime": true
+    },
+    {
+      "project": "Premium",
+      "name": "AI recommendations onboarding UX",
+      "tickets": "AI-44",
+      "stage": "Staging",
+      "onTime": false
+    },
+    {
+      "project": "Network",
+      "name": "My Queue — status indicators refresh",
+      "tickets": "PORT-67",
+      "stage": "Production",
+      "onTime": true
+    },
+    {
+      "project": "SnapPay",
+      "name": "Payment confirmation micro-interactions",
+      "tickets": "SP-211",
+      "stage": "Production",
+      "onTime": true
+    },
+    {
+      "project": "Client Onboarding",
+      "name": "Stepper progress redesign",
+      "tickets": "CO-88, CO-91",
+      "stage": "Handoff",
+      "onTime": true
+    }
+  ],
+  "projectTickets": [
+    {
+      "project": "Feed",
+      "opened": 12,
+      "closed": 11
+    },
+    {
+      "project": "Messaging",
+      "opened": 9,
+      "closed": 8
+    },
+    {
+      "project": "Jobs",
+      "opened": 8,
+      "closed": 8
+    },
+    {
+      "project": "Data Acceleration",
+      "opened": 6,
+      "closed": 5
+    },
+    {
+      "project": "Premium",
+      "opened": 4,
+      "closed": 3
+    },
+    {
+      "project": "Network",
+      "opened": 3,
+      "closed": 3
+    },
+    {
+      "project": "SnapPay",
+      "opened": 2,
+      "closed": 3
+    }
+  ],
+  "epics": [
+    {
+      "key": "CORE-EP-12",
+      "name": "Task Admin Modernization",
+      "project": "Feed",
+      "completion": 75,
+      "health": "good",
+      "plannedCompletion": "2026-05-15",
+      "actualCompletion": null,
+      "totalStories": 12,
+      "doneStories": 9,
+      "inProgressStories": 2,
+      "todoStories": 1,
+      "storyPoints": {
+        "total": 48,
+        "done": 36
+      }
+    },
+    {
+      "key": "DNA-EP-08",
+      "name": "Dashboard Personalization",
+      "project": "Messaging",
+      "completion": 60,
+      "health": "warning",
+      "plannedCompletion": "2026-06-01",
+      "actualCompletion": null,
+      "totalStories": 10,
+      "doneStories": 6,
+      "inProgressStories": 3,
+      "todoStories": 1,
+      "storyPoints": {
+        "total": 38,
+        "done": 23
+      }
+    },
+    {
+      "key": "UBA-EP-05",
+      "name": "Transaction Flow Optimization",
+      "project": "Jobs",
+      "completion": 90,
+      "health": "good",
+      "plannedCompletion": "2026-04-30",
+      "actualCompletion": null,
+      "totalStories": 8,
+      "doneStories": 7,
+      "inProgressStories": 1,
+      "todoStories": 0,
+      "storyPoints": {
+        "total": 32,
+        "done": 29
+      }
+    },
+    {
+      "key": "DA-EP-03",
+      "name": "API Integration Suite",
+      "project": "Data Acceleration",
+      "completion": 50,
+      "health": "risk",
+      "plannedCompletion": "2026-05-20",
+      "actualCompletion": null,
+      "totalStories": 6,
+      "doneStories": 3,
+      "inProgressStories": 2,
+      "todoStories": 1,
+      "storyPoints": {
+        "total": 24,
+        "done": 12
+      }
+    },
+    {
+      "key": "AI-EP-02",
+      "name": "AI Recommendations Engine",
+      "project": "Premium",
+      "completion": 40,
+      "health": "warning",
+      "plannedCompletion": "2026-06-15",
+      "actualCompletion": null,
+      "totalStories": 5,
+      "doneStories": 2,
+      "inProgressStories": 2,
+      "todoStories": 1,
+      "storyPoints": {
+        "total": 20,
+        "done": 8
+      }
+    },
+    {
+      "key": "PORT-EP-04",
+      "name": "Notification System Overhaul",
+      "project": "Network",
+      "completion": 67,
+      "health": "good",
+      "plannedCompletion": "2026-05-10",
+      "actualCompletion": null,
+      "totalStories": 6,
+      "doneStories": 4,
+      "inProgressStories": 2,
+      "todoStories": 0,
+      "storyPoints": {
+        "total": 18,
+        "done": 12
+      }
+    },
+    {
+      "key": "SP-EP-01",
+      "name": "Payment Experience Refresh",
+      "project": "SnapPay",
+      "completion": 100,
+      "health": "good",
+      "plannedCompletion": "2026-04-15",
+      "actualCompletion": "2026-04-13",
+      "totalStories": 4,
+      "doneStories": 4,
+      "inProgressStories": 0,
+      "todoStories": 0,
+      "storyPoints": {
+        "total": 16,
+        "done": 16
+      }
+    },
+    {
+      "key": "CO-EP-02",
+      "name": "Document Management Redesign",
+      "project": "Client Onboarding",
+      "completion": 50,
+      "health": "good",
+      "plannedCompletion": "2026-05-30",
+      "actualCompletion": null,
+      "totalStories": 4,
+      "doneStories": 2,
+      "inProgressStories": 2,
+      "todoStories": 0,
+      "storyPoints": {
+        "total": 12,
+        "done": 6
+      }
+    }
+  ],
+  "releases": [
+    {
+      "name": "Q2 2026 Release",
+      "version": "v2.4.0",
+      "projects": [
+        "Feed",
+        "Messaging",
+        "Jobs"
+      ],
+      "plannedDate": "2026-06-30",
+      "status": "on-track",
+      "readiness": 78,
+      "totalFeatures": 23,
+      "doneFeatures": 18,
+      "inProgressFeatures": 4,
+      "blockedFeatures": 1
+    },
+    {
+      "name": "Mid-Q2 Patch",
+      "version": "v2.3.5",
+      "projects": [
+        "Feed",
+        "Network"
+      ],
+      "plannedDate": "2026-05-15",
+      "status": "on-track",
+      "readiness": 92,
+      "totalFeatures": 12,
+      "doneFeatures": 11,
+      "inProgressFeatures": 1,
+      "blockedFeatures": 0
+    },
+    {
+      "name": "AI Beta Release",
+      "version": "v3.0.0-beta",
+      "projects": [
+        "Premium",
+        "Data Acceleration"
+      ],
+      "plannedDate": "2026-07-15",
+      "status": "at-risk",
+      "readiness": 45,
+      "totalFeatures": 11,
+      "doneFeatures": 5,
+      "inProgressFeatures": 4,
+      "blockedFeatures": 2
+    }
+  ],
+  "velocity": {
+    "monthly": [
+      {
+        "month": "Jan 2026",
+        "committed": 120,
+        "delivered": 102,
+        "achievement": 85
+      },
+      {
+        "month": "Feb 2026",
+        "committed": 135,
+        "delivered": 128,
+        "achievement": 95
+      },
+      {
+        "month": "Mar 2026",
+        "committed": 142,
+        "delivered": 138,
+        "achievement": 97
+      },
+      {
+        "month": "Apr 2026",
+        "committed": 145,
+        "delivered": 142,
+        "achievement": 98
+      }
+    ],
+    "byProject": [
+      {
+        "project": "Feed",
+        "committed": 42,
+        "delivered": 40,
+        "achievement": 95
+      },
+      {
+        "project": "Messaging",
+        "committed": 38,
+        "delivered": 36,
+        "achievement": 95
+      },
+      {
+        "project": "Jobs",
+        "committed": 32,
+        "delivered": 31,
+        "achievement": 97
+      },
+      {
+        "project": "Data Acceleration",
+        "committed": 18,
+        "delivered": 16,
+        "achievement": 89
+      },
+      {
+        "project": "Premium",
+        "committed": 12,
+        "delivered": 10,
+        "achievement": 83
+      },
+      {
+        "project": "Network",
+        "committed": 15,
+        "delivered": 14,
+        "achievement": 93
+      },
+      {
+        "project": "SnapPay",
+        "committed": 8,
+        "delivered": 8,
+        "achievement": 100
+      },
+      {
+        "project": "Client Onboarding",
+        "committed": 10,
+        "delivered": 9,
+        "achievement": 90
+      }
+    ]
+  },
+  "throughput": {
+    "monthly": [
+      {
+        "month": "Jan 2026",
+        "opened": 42,
+        "closed": 38,
+        "netFlow": -4
+      },
+      {
+        "month": "Feb 2026",
+        "opened": 58,
+        "closed": 51,
+        "netFlow": -7
+      },
+      {
+        "month": "Mar 2026",
+        "opened": 49,
+        "closed": 45,
+        "netFlow": -4
+      },
+      {
+        "month": "Apr 2026",
+        "opened": 44,
+        "closed": 41,
+        "netFlow": -3
+      }
+    ],
+    "byProject": [
+      {
+        "project": "Feed",
+        "opened": 12,
+        "closed": 11,
+        "netFlow": -1
+      },
+      {
+        "project": "Messaging",
+        "opened": 9,
+        "closed": 8,
+        "netFlow": -1
+      },
+      {
+        "project": "Jobs",
+        "opened": 8,
+        "closed": 8,
+        "netFlow": 0
+      },
+      {
+        "project": "Data Acceleration",
+        "opened": 6,
+        "closed": 5,
+        "netFlow": -1
+      },
+      {
+        "project": "Premium",
+        "opened": 4,
+        "closed": 3,
+        "netFlow": -1
+      },
+      {
+        "project": "Network",
+        "opened": 3,
+        "closed": 3,
+        "netFlow": 0
+      },
+      {
+        "project": "SnapPay",
+        "opened": 2,
+        "closed": 3,
+        "netFlow": 1
+      }
+    ]
+  },
+  "leadTime": {
+    "average": 4.2,
+    "p10": 2,
+    "p50": 4,
+    "p90": 7,
+    "byProject": [
+      {
+        "project": "Feed",
+        "average": 3.5,
+        "p50": 3,
+        "p90": 6
+      },
+      {
+        "project": "Messaging",
+        "average": 5.1,
+        "p50": 5,
+        "p90": 8
+      },
+      {
+        "project": "Jobs",
+        "average": 3.8,
+        "p50": 4,
+        "p90": 6
+      },
+      {
+        "project": "Data Acceleration",
+        "average": 4.9,
+        "p50": 5,
+        "p90": 7
+      },
+      {
+        "project": "Premium",
+        "average": 6.2,
+        "p50": 6,
+        "p90": 10
+      },
+      {
+        "project": "Network",
+        "average": 3.2,
+        "p50": 3,
+        "p90": 5
+      },
+      {
+        "project": "SnapPay",
+        "average": 2.8,
+        "p50": 3,
+        "p90": 4
+      },
+      {
+        "project": "Client Onboarding",
+        "average": 4.1,
+        "p50": 4,
+        "p90": 6
+      }
+    ],
+    "trend": [
+      {
+        "month": "Jan 2026",
+        "average": 5.2
+      },
+      {
+        "month": "Feb 2026",
+        "average": 4.8
+      },
+      {
+        "month": "Mar 2026",
+        "average": 4.5
+      },
+      {
+        "month": "Apr 2026",
+        "average": 4.2
+      }
+    ]
+  },
+  "timeInStage": {
+    "average": {
+      "discovery": 8,
+      "validation": 6,
+      "execution": 12,
+      "optimization": 4
+    },
+    "byProject": [
+      {
+        "project": "Feed",
+        "discovery": 7,
+        "validation": 5,
+        "execution": 11,
+        "optimization": 3
+      },
+      {
+        "project": "Messaging",
+        "discovery": 9,
+        "validation": 7,
+        "execution": 13,
+        "optimization": 4
+      },
+      {
+        "project": "Jobs",
+        "discovery": 6,
+        "validation": 5,
+        "execution": 10,
+        "optimization": 4
+      },
+      {
+        "project": "Data Acceleration",
+        "discovery": 10,
+        "validation": 6,
+        "execution": 14,
+        "optimization": 5
+      },
+      {
+        "project": "Premium",
+        "discovery": 12,
+        "validation": 8,
+        "execution": 15,
+        "optimization": 6
+      },
+      {
+        "project": "Network",
+        "discovery": 6,
+        "validation": 4,
+        "execution": 9,
+        "optimization": 3
+      },
+      {
+        "project": "SnapPay",
+        "discovery": 5,
+        "validation": 4,
+        "execution": 8,
+        "optimization": 2
+      },
+      {
+        "project": "Client Onboarding",
+        "discovery": 7,
+        "validation": 5,
+        "execution": 11,
+        "optimization": 3
+      }
+    ]
+  },
+  "reworkDetection": {
+    "totalIssues": 72,
+    "reworkedIssues": 8,
+    "reworkRate": 11,
+    "byProject": [
+      {
+        "project": "Feed",
+        "total": 14,
+        "reworked": 1,
+        "rate": 7
+      },
+      {
+        "project": "Messaging",
+        "total": 21,
+        "reworked": 3,
+        "rate": 14
+      },
+      {
+        "project": "Jobs",
+        "total": 11,
+        "reworked": 1,
+        "rate": 9
+      },
+      {
+        "project": "Data Acceleration",
+        "total": 9,
+        "reworked": 2,
+        "rate": 22
+      },
+      {
+        "project": "Premium",
+        "total": 6,
+        "reworked": 1,
+        "rate": 17
+      },
+      {
+        "project": "Network",
+        "total": 6,
+        "reworked": 0,
+        "rate": 0
+      },
+      {
+        "project": "SnapPay",
+        "total": 5,
+        "reworked": 0,
+        "rate": 0
+      }
+    ],
+    "costImpact": {
+      "storyPointsLost": 18,
+      "hoursLost": 94,
+      "estimatedCost": 18800
+    },
+    "trend": [
+      {
+        "month": "Jan 2026",
+        "rate": 15
+      },
+      {
+        "month": "Feb 2026",
+        "rate": 13
+      },
+      {
+        "month": "Mar 2026",
+        "rate": 12
+      },
+      {
+        "month": "Apr 2026",
+        "rate": 11
+      }
+    ]
+  },
+  "reworkTypes": {
+    "monthly": [
+      {
+        "month": "Jan 2026",
+        "uxFound": 2,
+        "postHandoff": 3,
+        "postRelease": 2
+      },
+      {
+        "month": "Feb 2026",
+        "uxFound": 3,
+        "postHandoff": 2,
+        "postRelease": 2
+      },
+      {
+        "month": "Mar 2026",
+        "uxFound": 3,
+        "postHandoff": 2,
+        "postRelease": 1
+      },
+      {
+        "month": "Apr 2026",
+        "uxFound": 3,
+        "postHandoff": 3,
+        "postRelease": 2
+      }
+    ],
+    "labels": {
+      "uxFound": "UX-found (prevented issues pre-dev)",
+      "postHandoff": "Post-handoff (design churn after dev started)",
+      "postRelease": "Post-release (support-driven fixes)"
+    }
+  },
+  "reopenRate": {
+    "totalClosed": 41,
+    "reopened": 3,
+    "rate": 7,
+    "byProject": [
+      {
+        "project": "Feed",
+        "closed": 11,
+        "reopened": 0,
+        "rate": 0
+      },
+      {
+        "project": "Messaging",
+        "closed": 8,
+        "reopened": 1,
+        "rate": 13
+      },
+      {
+        "project": "Jobs",
+        "closed": 8,
+        "reopened": 0,
+        "rate": 0
+      },
+      {
+        "project": "Data Acceleration",
+        "closed": 5,
+        "reopened": 1,
+        "rate": 20
+      },
+      {
+        "project": "Premium",
+        "closed": 3,
+        "reopened": 1,
+        "rate": 33
+      },
+      {
+        "project": "Network",
+        "closed": 3,
+        "reopened": 0,
+        "rate": 0
+      },
+      {
+        "project": "SnapPay",
+        "closed": 3,
+        "reopened": 0,
+        "rate": 0
+      }
+    ],
+    "trend": [
+      {
+        "month": "Jan 2026",
+        "rate": 11
+      },
+      {
+        "month": "Feb 2026",
+        "rate": 9
+      },
+      {
+        "month": "Mar 2026",
+        "rate": 8
+      },
+      {
+        "month": "Apr 2026",
+        "rate": 7
+      }
+    ]
+  },
+  "componentPerformance": [
+    {
+      "component": "Task Management",
+      "project": "Feed",
+      "shipped": 4,
+      "onTime": 88,
+      "inFlight": 2,
+      "health": "good"
+    },
+    {
+      "component": "Reporting",
+      "project": "Feed",
+      "shipped": 2,
+      "onTime": 75,
+      "inFlight": 3,
+      "health": "warning"
+    },
+    {
+      "component": "Admin Tools",
+      "project": "Feed",
+      "shipped": 2,
+      "onTime": 100,
+      "inFlight": 1,
+      "health": "good"
+    },
+    {
+      "component": "Dashboard",
+      "project": "Messaging",
+      "shipped": 3,
+      "onTime": 83,
+      "inFlight": 3,
+      "health": "good"
+    },
+    {
+      "component": "Filters & Search",
+      "project": "Messaging",
+      "shipped": 2,
+      "onTime": 67,
+      "inFlight": 2,
+      "health": "warning"
+    },
+    {
+      "component": "Data Visualization",
+      "project": "Messaging",
+      "shipped": 1,
+      "onTime": 50,
+      "inFlight": 2,
+      "health": "risk"
+    },
+    {
+      "component": "Transaction Flows",
+      "project": "Jobs",
+      "shipped": 3,
+      "onTime": 92,
+      "inFlight": 2,
+      "health": "good"
+    },
+    {
+      "component": "Quick Actions",
+      "project": "Jobs",
+      "shipped": 1,
+      "onTime": 100,
+      "inFlight": 1,
+      "health": "good"
+    },
+    {
+      "component": "API Integration",
+      "project": "Data Acceleration",
+      "shipped": 1,
+      "onTime": 50,
+      "inFlight": 2,
+      "health": "warning"
+    },
+    {
+      "component": "Client Widgets",
+      "project": "Data Acceleration",
+      "shipped": 2,
+      "onTime": 75,
+      "inFlight": 1,
+      "health": "good"
+    },
+    {
+      "component": "AI Recommendations",
+      "project": "Premium",
+      "shipped": 1,
+      "onTime": 50,
+      "inFlight": 1,
+      "health": "warning"
+    },
+    {
+      "component": "Feedback Mechanisms",
+      "project": "Premium",
+      "shipped": 0,
+      "onTime": 0,
+      "inFlight": 1,
+      "health": "risk"
+    },
+    {
+      "component": "My Queue",
+      "project": "Network",
+      "shipped": 2,
+      "onTime": 83,
+      "inFlight": 1,
+      "health": "good"
+    },
+    {
+      "component": "Notifications",
+      "project": "Network",
+      "shipped": 1,
+      "onTime": 100,
+      "inFlight": 1,
+      "health": "good"
+    },
+    {
+      "component": "Payment Flows",
+      "project": "SnapPay",
+      "shipped": 1,
+      "onTime": 100,
+      "inFlight": 1,
+      "health": "good"
+    },
+    {
+      "component": "Stepper UI",
+      "project": "Client Onboarding",
+      "shipped": 1,
+      "onTime": 80,
+      "inFlight": 1,
+      "health": "good"
+    },
+    {
+      "component": "Document Upload",
+      "project": "Client Onboarding",
+      "shipped": 0,
+      "onTime": 0,
+      "inFlight": 1,
+      "health": "good"
+    }
+  ],
+  "blockerIntelligence": {
+    "active": [
+      {
+        "blocker": "API endpoint not ready",
+        "affectedFeatures": [
+          "DNA-901",
+          "UBA-362"
+        ],
+        "affectedProjects": [
+          "Messaging",
+          "Jobs"
+        ],
+        "ageInDays": 8,
+        "priority": "critical",
+        "owner": "Backend Team"
+      },
+      {
+        "blocker": "Design system component pending",
+        "affectedFeatures": [
+          "CORE-2245"
+        ],
+        "affectedProjects": [
+          "Feed"
+        ],
+        "ageInDays": 5,
+        "priority": "major",
+        "owner": "Horizon Team"
+      },
+      {
+        "blocker": "Stakeholder approval pending",
+        "affectedFeatures": [
+          "AI-58"
+        ],
+        "affectedProjects": [
+          "Premium"
+        ],
+        "ageInDays": 12,
+        "priority": "critical",
+        "owner": "Product Leadership"
+      },
+      {
+        "blocker": "Resource availability",
+        "affectedFeatures": [
+          "DNA-945"
+        ],
+        "affectedProjects": [
+          "Messaging"
+        ],
+        "ageInDays": 6,
+        "priority": "major",
+        "owner": "Engineering"
+      }
+    ],
+    "resolutionTime": {
+      "average": 5.2,
+      "p50": 4,
+      "p90": 9
+    },
+    "trend": [
+      {
+        "month": "Jan 2026",
+        "average": 6.8
+      },
+      {
+        "month": "Feb 2026",
+        "average": 6.1
+      },
+      {
+        "month": "Mar 2026",
+        "average": 5.7
+      },
+      {
+        "month": "Apr 2026",
+        "average": 5.2
+      }
+    ],
+    "byProject": [
+      {
+        "project": "Feed",
+        "activeBlockers": 1,
+        "avgResolutionDays": 3.5
+      },
+      {
+        "project": "Messaging",
+        "activeBlockers": 3,
+        "avgResolutionDays": 6.8
+      },
+      {
+        "project": "Jobs",
+        "activeBlockers": 1,
+        "avgResolutionDays": 4.2
+      },
+      {
+        "project": "Data Acceleration",
+        "activeBlockers": 0,
+        "avgResolutionDays": 5
+      },
+      {
+        "project": "Premium",
+        "activeBlockers": 2,
+        "avgResolutionDays": 8.5
+      },
+      {
+        "project": "Network",
+        "activeBlockers": 0,
+        "avgResolutionDays": 3.2
+      },
+      {
+        "project": "SnapPay",
+        "activeBlockers": 0,
+        "avgResolutionDays": 2.8
+      }
+    ]
+  },
+  "crossProjectDeps": [
+    {
+      "blocking": {
+        "key": "CORE-2302",
+        "project": "Feed",
+        "name": "Shared auth component"
+      },
+      "blockedBy": [
+        {
+          "key": "DNA-905",
+          "project": "Messaging",
+          "name": "SSO integration"
+        },
+        {
+          "key": "UBA-362",
+          "project": "Jobs",
+          "name": "Login flow"
+        }
+      ],
+      "impact": "high"
+    },
+    {
+      "blocking": {
+        "key": "DA-115",
+        "project": "Data Acceleration",
+        "name": "Client widget API"
+      },
+      "blockedBy": [
+        {
+          "key": "PORT-82",
+          "project": "Network",
+          "name": "Real-time notifications"
+        }
+      ],
+      "impact": "medium"
+    }
+  ],
+  "priorityDistribution": {
+    "inFlight": {
+      "blocker": 2,
+      "critical": 6,
+      "major": 10,
+      "minor": 4
+    },
+    "overdue": {
+      "blocker": 1,
+      "critical": 2,
+      "major": 3,
+      "minor": 0
+    },
+    "byProject": [
+      {
+        "project": "Feed",
+        "blocker": 0,
+        "critical": 1,
+        "major": 2,
+        "minor": 1
+      },
+      {
+        "project": "Messaging",
+        "blocker": 1,
+        "critical": 2,
+        "major": 2,
+        "minor": 0
+      },
+      {
+        "project": "Jobs",
+        "blocker": 0,
+        "critical": 1,
+        "major": 2,
+        "minor": 0
+      },
+      {
+        "project": "Data Acceleration",
+        "blocker": 0,
+        "critical": 1,
+        "major": 1,
+        "minor": 1
+      },
+      {
+        "project": "Premium",
+        "blocker": 1,
+        "critical": 0,
+        "major": 1,
+        "minor": 0
+      },
+      {
+        "project": "Network",
+        "blocker": 0,
+        "critical": 1,
+        "major": 1,
+        "minor": 0
+      },
+      {
+        "project": "SnapPay",
+        "blocker": 0,
+        "critical": 0,
+        "major": 1,
+        "minor": 0
+      },
+      {
+        "project": "Client Onboarding",
+        "blocker": 0,
+        "critical": 0,
+        "major": 0,
+        "minor": 2
+      }
+    ]
+  },
+  "atRiskFeatures": [
+    {
+      "key": "DNA-901",
+      "project": "Messaging",
+      "name": "Data visualization refresh",
+      "riskType": "blocked",
+      "daysOverdue": 0,
+      "lastUpdate": "2026-04-18",
+      "assignee": "Designer B",
+      "riskReason": "Cross-team dependency blocking progress"
+    },
+    {
+      "key": "AI-58",
+      "project": "Premium",
+      "name": "Prompt feedback mechanism",
+      "riskType": "stale",
+      "daysOverdue": 0,
+      "lastUpdate": "2026-04-10",
+      "assignee": "Designer C",
+      "riskReason": "No updates in 12 days"
+    },
+    {
+      "key": "UBA-362",
+      "project": "Jobs",
+      "name": "Quick actions menu",
+      "riskType": "overdue",
+      "daysOverdue": 2,
+      "lastUpdate": "2026-04-20",
+      "assignee": "Designer A",
+      "riskReason": "Behind schedule due to design rework"
+    },
+    {
+      "key": "DA-141",
+      "project": "Data Acceleration",
+      "name": "Error state improvements",
+      "riskType": "missing-data",
+      "daysOverdue": 0,
+      "lastUpdate": "2026-04-19",
+      "assignee": null,
+      "riskReason": "Missing story points and assignee"
+    }
+  ],
+  "sprintPerformance": {
+    "last4Sprints": [
+      {
+        "name": "Sprint 45",
+        "project": "Feed",
+        "startDate": "2026-03-04",
+        "endDate": "2026-03-18",
+        "committed": 42,
+        "completed": 38,
+        "carryOver": 4,
+        "goalAchieved": true,
+        "velocity": 38
+      },
+      {
+        "name": "Sprint 46",
+        "project": "Feed",
+        "startDate": "2026-03-18",
+        "endDate": "2026-04-01",
+        "committed": 44,
+        "completed": 41,
+        "carryOver": 3,
+        "goalAchieved": true,
+        "velocity": 41
+      },
+      {
+        "name": "Sprint 47",
+        "project": "Feed",
+        "startDate": "2026-04-01",
+        "endDate": "2026-04-15",
+        "committed": 40,
+        "completed": 39,
+        "carryOver": 1,
+        "goalAchieved": true,
+        "velocity": 39
+      },
+      {
+        "name": "Sprint 48",
+        "project": "Feed",
+        "startDate": "2026-04-15",
+        "endDate": "2026-04-29",
+        "committed": 42,
+        "completed": 40,
+        "carryOver": 2,
+        "goalAchieved": true,
+        "velocity": 40
+      },
+      {
+        "name": "Sprint 45",
+        "project": "Messaging",
+        "startDate": "2026-03-04",
+        "endDate": "2026-03-18",
+        "committed": 36,
+        "completed": 32,
+        "carryOver": 4,
+        "goalAchieved": false,
+        "velocity": 32
+      },
+      {
+        "name": "Sprint 46",
+        "project": "Messaging",
+        "startDate": "2026-03-18",
+        "endDate": "2026-04-01",
+        "committed": 38,
+        "completed": 36,
+        "carryOver": 2,
+        "goalAchieved": true,
+        "velocity": 36
+      },
+      {
+        "name": "Sprint 47",
+        "project": "Messaging",
+        "startDate": "2026-04-01",
+        "endDate": "2026-04-15",
+        "committed": 38,
+        "completed": 37,
+        "carryOver": 1,
+        "goalAchieved": true,
+        "velocity": 37
+      },
+      {
+        "name": "Sprint 48",
+        "project": "Messaging",
+        "startDate": "2026-04-15",
+        "endDate": "2026-04-29",
+        "committed": 38,
+        "completed": 36,
+        "carryOver": 2,
+        "goalAchieved": true,
+        "velocity": 36
+      },
+      {
+        "name": "Sprint 45",
+        "project": "Jobs",
+        "startDate": "2026-03-04",
+        "endDate": "2026-03-18",
+        "committed": 30,
+        "completed": 29,
+        "carryOver": 1,
+        "goalAchieved": true,
+        "velocity": 29
+      },
+      {
+        "name": "Sprint 46",
+        "project": "Jobs",
+        "startDate": "2026-03-18",
+        "endDate": "2026-04-01",
+        "committed": 32,
+        "completed": 31,
+        "carryOver": 1,
+        "goalAchieved": true,
+        "velocity": 31
+      },
+      {
+        "name": "Sprint 47",
+        "project": "Jobs",
+        "startDate": "2026-04-01",
+        "endDate": "2026-04-15",
+        "committed": 32,
+        "completed": 32,
+        "carryOver": 0,
+        "goalAchieved": true,
+        "velocity": 32
+      },
+      {
+        "name": "Sprint 48",
+        "project": "Jobs",
+        "startDate": "2026-04-15",
+        "endDate": "2026-04-29",
+        "committed": 32,
+        "completed": 31,
+        "carryOver": 1,
+        "goalAchieved": true,
+        "velocity": 31
+      }
+    ],
+    "byProject": [
+      {
+        "project": "Feed",
+        "avgVelocity": 40,
+        "avgCommitmentAccuracy": 95,
+        "avgCarryOver": 8
+      },
+      {
+        "project": "Messaging",
+        "avgVelocity": 35,
+        "avgCommitmentAccuracy": 93,
+        "avgCarryOver": 10
+      },
+      {
+        "project": "Jobs",
+        "avgVelocity": 31,
+        "avgCommitmentAccuracy": 98,
+        "avgCarryOver": 3
+      },
+      {
+        "project": "Data Acceleration",
+        "avgVelocity": 16,
+        "avgCommitmentAccuracy": 88,
+        "avgCarryOver": 12
+      },
+      {
+        "project": "Premium",
+        "avgVelocity": 10,
+        "avgCommitmentAccuracy": 82,
+        "avgCarryOver": 15
+      },
+      {
+        "project": "Network",
+        "avgVelocity": 14,
+        "avgCommitmentAccuracy": 92,
+        "avgCarryOver": 7
+      },
+      {
+        "project": "SnapPay",
+        "avgVelocity": 8,
+        "avgCommitmentAccuracy": 100,
+        "avgCarryOver": 0
+      },
+      {
+        "project": "Client Onboarding",
+        "avgVelocity": 9,
+        "avgCommitmentAccuracy": 90,
+        "avgCarryOver": 10
+      }
+    ]
+  },
+  "designerWorkload": [
+    {
+      "designer": "Designer A",
+      "projects": [
+        "Feed",
+        "Jobs"
+      ],
+      "inFlight": 5,
+      "storyPointsAssigned": 32,
+      "storyPointsDelivered": 28,
+      "utilization": 88,
+      "status": "balanced"
+    },
+    {
+      "designer": "Designer B",
+      "projects": [
+        "Messaging",
+        "Data Acceleration"
+      ],
+      "inFlight": 6,
+      "storyPointsAssigned": 38,
+      "storyPointsDelivered": 32,
+      "utilization": 84,
+      "status": "balanced"
+    },
+    {
+      "designer": "Designer C",
+      "projects": [
+        "Premium",
+        "Data Acceleration"
+      ],
+      "inFlight": 3,
+      "storyPointsAssigned": 18,
+      "storyPointsDelivered": 14,
+      "utilization": 78,
+      "status": "balanced"
+    },
+    {
+      "designer": "Designer D",
+      "projects": [
+        "Network",
+        "SnapPay",
+        "Client Onboarding"
+      ],
+      "inFlight": 4,
+      "storyPointsAssigned": 22,
+      "storyPointsDelivered": 20,
+      "utilization": 91,
+      "status": "balanced"
+    },
+    {
+      "designer": "Designer E",
+      "projects": [
+        "Feed",
+        "Messaging"
+      ],
+      "inFlight": 7,
+      "storyPointsAssigned": 42,
+      "storyPointsDelivered": 36,
+      "utilization": 95,
+      "status": "overloaded"
+    }
+  ],
+  "assignmentCoverage": {
+    "totalIssues": 72,
+    "assigned": 68,
+    "unassigned": 4,
+    "coverage": 94,
+    "highPriorityUnassigned": 1,
+    "byProject": [
+      {
+        "project": "Feed",
+        "total": 14,
+        "assigned": 14,
+        "coverage": 100
+      },
+      {
+        "project": "Messaging",
+        "total": 21,
+        "assigned": 20,
+        "coverage": 95
+      },
+      {
+        "project": "Jobs",
+        "total": 11,
+        "assigned": 11,
+        "coverage": 100
+      },
+      {
+        "project": "Data Acceleration",
+        "total": 9,
+        "assigned": 8,
+        "coverage": 89
+      },
+      {
+        "project": "Premium",
+        "total": 6,
+        "assigned": 5,
+        "coverage": 83
+      },
+      {
+        "project": "Network",
+        "total": 6,
+        "assigned": 6,
+        "coverage": 100
+      },
+      {
+        "project": "SnapPay",
+        "total": 5,
+        "assigned": 5,
+        "coverage": 100
+      }
+    ]
+  },
+  "momTrends": {
+    "shipped": {
+      "current": 18,
+      "previous": 19,
+      "change": -5,
+      "direction": "down"
+    },
+    "onTime": {
+      "current": 83,
+      "previous": 79,
+      "change": 5,
+      "direction": "up"
+    },
+    "velocity": {
+      "current": 142,
+      "previous": 138,
+      "change": 3,
+      "direction": "up"
+    },
+    "leadTime": {
+      "current": 4.2,
+      "previous": 4.5,
+      "change": -7,
+      "direction": "up"
+    },
+    "reworkRate": {
+      "current": 11,
+      "previous": 12,
+      "change": -8,
+      "direction": "up"
+    }
+  },
+  "qoqTrends": {
+    "Q1": {
+      "shipped": 72,
+      "avgOnTime": 77,
+      "avgVelocity": 128
+    },
+    "Q2": {
+      "shipped": 18,
+      "avgOnTime": 83,
+      "avgVelocity": 142
+    }
+  },
+  "dataHygiene": {
+    "dueDate": {
+      "total": 72,
+      "missing": 8,
+      "coverage": 89
+    },
+    "storyPoints": {
+      "total": 72,
+      "missing": 12,
+      "coverage": 83
+    },
+    "component": {
+      "total": 72,
+      "missing": 4,
+      "coverage": 94
+    },
+    "assignee": {
+      "total": 72,
+      "missing": 4,
+      "coverage": 94
+    },
+    "labels": {
+      "ux-caught": {
+        "eligible": 15,
+        "applied": 12,
+        "adoption": 80
+      },
+      "ux-validated": {
+        "eligible": 30,
+        "applied": 22,
+        "adoption": 73
+      },
+      "rework": {
+        "eligible": 8,
+        "applied": 8,
+        "adoption": 100
+      }
+    },
+    "overallScore": 87,
+    "byProject": [
+      {
+        "project": "Feed",
+        "score": 95
+      },
+      {
+        "project": "Messaging",
+        "score": 82
+      },
+      {
+        "project": "Jobs",
+        "score": 91
+      },
+      {
+        "project": "Data Acceleration",
+        "score": 78
+      },
+      {
+        "project": "Premium",
+        "score": 75
+      },
+      {
+        "project": "Network",
+        "score": 94
+      },
+      {
+        "project": "SnapPay",
+        "score": 96
+      },
+      {
+        "project": "Client Onboarding",
+        "score": 88
+      }
+    ]
+  },
+  "issueStatusFlow": [
+    {
+      "issueType": "C360_Defect",
+      "inProgress": 0,
+      "codeTestComplete": 7,
+      "readyToDeploy": 6,
+      "total": 13
+    },
+    {
+      "issueType": "Feature",
+      "inProgress": 2,
+      "codeTestComplete": 19,
+      "readyToDeploy": 2,
+      "total": 23
+    }
+  ],
+  "defectAge": {
+    "totalDefects": 254,
+    "aged120Days": {
+      "count": 0,
+      "percentage": 0
+    },
+    "aged90Days": {
+      "count": 2,
+      "percentage": 0.8
+    },
+    "aged60Days": {
+      "count": 5,
+      "percentage": 2
+    },
+    "aged30Days": {
+      "count": 3,
+      "percentage": 1.2
+    },
+    "done": {
+      "count": 241,
+      "percentage": 95
+    }
+  },
+  "featureRefinement": {
+    "newFeatures": 236,
+    "inRefinement": 32,
+    "readyForDevelopment": 59,
+    "features": [
+      {
+        "key": "FPT-15829",
+        "summary": "Endpoints for rendering configuration in file json format",
+        "status": "TO DO",
+        "created": "2026-03-25",
+        "team": "Team Illuminati",
+        "assignee": "Unassigned",
+        "targetEnd": null
+      },
+      {
+        "key": "FPT-15825",
+        "summary": "Database optimization for Feed",
+        "status": "TO DO",
+        "created": "2026-03-25",
+        "team": "Team Illuminati",
+        "assignee": "Unassigned",
+        "targetEnd": null
+      },
+      {
+        "key": "FPT-14748",
+        "summary": "Premier UI - Deposits: Stop Pay - For User Specified Date Range",
+        "status": "TO DO",
+        "created": "2025-12-17",
+        "team": "UI - Fintech Guardians",
+        "assignee": "Unassigned",
+        "targetEnd": "2026-04-01"
+      },
+      {
+        "key": "FPT-6658",
+        "summary": "Expand Customer image links beyond Signature card (include Drives License)",
+        "status": "TO DO",
+        "created": "2024-10-30",
+        "team": null,
+        "assignee": "Unassigned",
+        "targetEnd": null
+      },
+      {
+        "key": "FPT-6577",
+        "summary": "Printing views consolidation",
+        "status": "TO DO",
+        "created": "2024-10-23",
+        "team": null,
+        "assignee": "Unassigned",
+        "targetEnd": null
+      },
+      {
+        "key": "FPT-5688",
+        "summary": "Enhance Account/Customer Search by Tax ID",
+        "status": "TO DO",
+        "created": "2024-08-26",
+        "team": null,
+        "assignee": "Unassigned",
+        "targetEnd": null
+      },
+      {
+        "key": "FPT-5677",
+        "summary": "Premier UIX - Add Holds tile to Savings using SAV0600",
+        "status": "TO DO",
+        "created": "2024-08-23",
+        "team": null,
+        "assignee": "Unassigned",
+        "targetEnd": null
+      },
+      {
+        "key": "FPT-713",
+        "summary": "Modify the Resource URL as per the APICOE standard - tech debt",
+        "status": "TO DO",
+        "created": "2023-07-18",
+        "team": null,
+        "assignee": "Patodi, Saurabh (Noida)",
+        "targetEnd": null
+      }
+    ]
+  },
+  "featureGroomingProgression": {
+    "weekly": [
+      {
+        "week": "W11, Mar 09",
+        "date": "2026-03-09",
+        "created": 8,
+        "inRefinement": 12,
+        "readyForDev": 15,
+        "inProgress": 18,
+        "completed": 5
+      },
+      {
+        "week": "W12, Mar 16",
+        "date": "2026-03-16",
+        "created": 10,
+        "inRefinement": 14,
+        "readyForDev": 12,
+        "inProgress": 15,
+        "completed": 7
+      },
+      {
+        "week": "W13, Mar 23",
+        "date": "2026-03-23",
+        "created": 6,
+        "inRefinement": 11,
+        "readyForDev": 16,
+        "inProgress": 12,
+        "completed": 8
+      },
+      {
+        "week": "W14, Mar 30",
+        "date": "2026-03-30",
+        "created": 9,
+        "inRefinement": 13,
+        "readyForDev": 14,
+        "inProgress": 16,
+        "completed": 6
+      },
+      {
+        "week": "W15, Apr 06",
+        "date": "2026-04-06",
+        "created": 12,
+        "inRefinement": 15,
+        "readyForDev": 11,
+        "inProgress": 19,
+        "completed": 9
+      },
+      {
+        "week": "W16, Apr 13",
+        "date": "2026-04-13",
+        "created": 7,
+        "inRefinement": 12,
+        "readyForDev": 13,
+        "inProgress": 17,
+        "completed": 10
+      },
+      {
+        "week": "W17, Apr 20",
+        "date": "2026-04-20",
+        "created": 11,
+        "inRefinement": 14,
+        "readyForDev": 15,
+        "inProgress": 14,
+        "completed": 8
+      },
+      {
+        "week": "W18, Apr 27",
+        "date": "2026-04-27",
+        "created": 9,
+        "inRefinement": 16,
+        "readyForDev": 12,
+        "inProgress": 16,
+        "completed": 7
+      }
+    ]
+  }
+}

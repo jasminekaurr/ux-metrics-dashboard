@@ -1,0 +1,206 @@
+.month-range-picker-section {
+  padding: 14px 18px 16px;
+  border-top: 1px solid var(--nav-border);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.month-range-picker-label {
+  font-family: var(--nav-mono);
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nav-text-3);
+  margin-bottom: 8px;
+}
+
+.month-range-display {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  background: var(--nav-surface-2);
+  border: 1px solid var(--nav-border-str);
+  border-radius: var(--nav-r);
+  font-family: var(--nav-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--nav-text-1);
+  cursor: pointer;
+  transition: background 150ms, border-color 150ms;
+  box-sizing: border-box;
+}
+
+.month-range-display:hover {
+  background: var(--nav-surface-3);
+  border-color: rgba(0, 191, 42, 0.30);
+}
+
+.range-text {
+  flex: 1;
+  text-align: left;
+}
+
+.expand-icon {
+  color: var(--nav-text-3);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+  color: var(--nav-green);
+}
+
+@keyframes nav-slide-down {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.month-calendar {
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  right: 10px;
+  margin-top: 4px;
+  background: var(--nav-surface-2);
+  border: 1px solid var(--nav-border-str);
+  border-radius: var(--nav-r);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.50), 0 0 0 1px rgba(255,255,255,0.04);
+  padding: 10px;
+  z-index: 200;
+  animation: nav-slide-down 0.18s ease-out;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.calendar-title {
+  font-family: var(--nav-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--nav-text-3);
+}
+
+.clear-btn {
+  font-family: var(--nav-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--nav-green);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 3px;
+  transition: background 120ms;
+}
+
+.clear-btn:hover {
+  background: var(--nav-green-t);
+}
+
+.preset-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.preset-btn {
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid var(--nav-border-str);
+  border-radius: var(--nav-r);
+  font-family: var(--nav-mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: var(--nav-text-2);
+  cursor: pointer;
+  transition: background 120ms, border-color 120ms, color 120ms;
+  text-align: left;
+}
+
+.preset-btn:hover {
+  background: rgba(0, 191, 42, 0.08);
+  border-color: rgba(0, 191, 42, 0.25);
+  color: var(--nav-green);
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.month-cell {
+  position: relative;
+  padding: 8px 6px;
+  border: 1px solid var(--nav-border-str);
+  background: transparent;
+  border-radius: var(--nav-r);
+  font-family: var(--nav-mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--nav-text-3);
+  cursor: pointer;
+  transition: background 100ms, color 100ms, border-color 100ms;
+  text-align: center;
+}
+
+.month-cell:hover {
+  background: var(--nav-green-t);
+  border-color: var(--nav-green);
+  color: var(--nav-text-2);
+}
+
+.month-cell.preview {
+  background: rgba(0, 191, 42, 0.06);
+  border-color: rgba(0, 191, 42, 0.22);
+  color: var(--nav-green);
+}
+
+.month-cell.selected {
+  background: var(--nav-green-t);
+  border-color: rgba(0, 191, 42, 0.35);
+  color: var(--nav-green);
+}
+
+.month-cell.selected.in-range {
+  background: rgba(0, 191, 42, 0.06);
+  border-color: rgba(0, 191, 42, 0.18);
+  opacity: 0.85;
+}
+
+.month-label {
+  position: relative;
+  z-index: 1;
+}
+
+.calendar-footer {
+  padding-top: 7px;
+  border-top: 1px solid var(--nav-border);
+}
+
+.instruction-text {
+  font-family: var(--nav-mono);
+  font-size: 8px;
+  letter-spacing: 0.05em;
+  color: var(--nav-text-3);
+  text-align: center;
+  line-height: 1.5;
+}

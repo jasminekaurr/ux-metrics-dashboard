@@ -1,0 +1,222 @@
+[
+  {
+    "id": "task-admin-bulk",
+    "title": "Task Admin bulk actions",
+    "x": 30,
+    "y": 82,
+    "problem": "Operators had to action queue items one at a time, making large workloads slow and error-prone.",
+    "evidence": "78% of tested users expected select-all behavior; task completion time averaged 4.2 min for batch work.",
+    "recommendation": "Introduce multi-select with a bulk action bar and clear selection state before building further queue features.",
+    "outcome": "Blocked downstream queue work until the interaction model is agreed; prototype validated with the ops panel.",
+    "metrics": [
+      {
+        "label": "Users expecting select-all",
+        "value": "78%"
+      },
+      {
+        "label": "Avg. batch task time",
+        "value": "4.2m"
+      }
+    ]
+  },
+  {
+    "id": "search-date-range",
+    "title": "Search date-range filtering",
+    "x": 38,
+    "y": 68,
+    "problem": "Users could not filter account search results by date range, forcing manual scanning of long lists.",
+    "evidence": "Backend limitation surfaced during research; 6 of 8 participants abandoned the task.",
+    "recommendation": "Resolve the indexing constraint before shipping the redesigned filter panel.",
+    "outcome": "Flagged as a blocker to the search redesign; engineering scoping in progress.",
+    "metrics": [
+      {
+        "label": "Task abandonment",
+        "value": "6/8"
+      },
+      {
+        "label": "Affected products",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "ai-confidence-labels",
+    "title": "AI response confidence labels",
+    "x": 72,
+    "y": 78,
+    "problem": "Users could not judge how much to trust AI responses, reducing adoption of the assistant.",
+    "evidence": "Panel sessions showed hesitation and repeated manual verification of AI output.",
+    "recommendation": "Add confidence labels, reasoning surfaces, and fallback states to an already-shipping surface.",
+    "outcome": "Enhanced a live experience; trust and repeat usage improved in follow-up testing.",
+    "metrics": [
+      {
+        "label": "Repeat usage",
+        "value": "+31%"
+      },
+      {
+        "label": "Manual re-checks",
+        "value": "−44%"
+      }
+    ]
+  },
+  {
+    "id": "onboarding-rework",
+    "title": "Onboarding flow rework",
+    "x": 55,
+    "y": 72,
+    "problem": "Account creation had a high drop-off rate, limiting activation of new users.",
+    "evidence": "Funnel analysis showed a 34% drop at the verification step.",
+    "recommendation": "Rework the step sequencing and guidance on the current onboarding flow.",
+    "outcome": "Enhanced a high-traffic flow; drop-off reduced in the redesigned path.",
+    "metrics": [
+      {
+        "label": "Verification drop-off",
+        "value": "34% → 19%"
+      },
+      {
+        "label": "Activation",
+        "value": "+22%"
+      }
+    ]
+  },
+  {
+    "id": "quantifying-ux",
+    "title": "Quantifying UX dashboard",
+    "x": 62,
+    "y": 64,
+    "problem": "Leadership had no consistent way to see UX's contribution, so its impact stayed invisible in planning conversations.",
+    "evidence": "Monthly reviews relied on anecdotes; there was no shared view of research coverage, delivery, and influence.",
+    "recommendation": "Build a single dashboard that quantifies UX contribution across research, delivery, and business impact.",
+    "outcome": "Enhanced how leadership sees UX; contribution is now legible and tracked month over month.",
+    "metrics": [
+      {
+        "label": "Signals tracked",
+        "value": "20+"
+      },
+      {
+        "label": "Update cadence",
+        "value": "Monthly"
+      }
+    ]
+  },
+  {
+    "id": "design-system-ai-ready",
+    "title": "Making the design system AI-ready",
+    "x": 32,
+    "y": 46,
+    "problem": "AI-assisted design and vibe-coded prototypes drift from the system because the token layer alone carries values, not the reasoning behind them — so agents make logical-but-wrong choices.",
+    "evidence": "Components meant to be identical diverge across screens and sessions; agents can read a token's value but not when or why to use it, or how components relate.",
+    "recommendation": "Structure the system in three layers: a token layer (the raw values), an intent layer (what each token means and when to use it), and a guardrail layer (rules and design.md docs that constrain agent decisions).",
+    "outcome": "An early opportunity to make the system agent-ready, cutting AI-generated design debt and keeping output consistent across separate sessions.",
+    "metrics": [
+      {
+        "label": "Layers defined",
+        "value": "3"
+      },
+      {
+        "label": "Cross-session drift",
+        "value": "Reduced"
+      }
+    ]
+  },
+  {
+    "id": "prompt-zero-state",
+    "title": "Prompt builder zero-state",
+    "x": 24,
+    "y": 33,
+    "problem": "New users faced an empty prompt builder with no guidance on where to start.",
+    "evidence": "Early concept testing surfaced confusion and low first-session success.",
+    "recommendation": "Explore zero-state patterns and example prompts as a new capability.",
+    "outcome": "A new opportunity to improve first-run experience; concept validated for further investment.",
+    "metrics": [
+      {
+        "label": "First-session success",
+        "value": "41%"
+      },
+      {
+        "label": "Concepts tested",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "risk-communication",
+    "title": "Risk communication patterns",
+    "x": 18,
+    "y": 40,
+    "problem": "Users felt anxious interpreting risk information presented in technical language.",
+    "evidence": "Qualitative sessions surfaced repeated confusion and elevated task stress.",
+    "recommendation": "Prototype plain-language risk patterns as a new, unmet-need direction.",
+    "outcome": "An opportunity to reduce user anxiety; early patterns tested positively.",
+    "metrics": [
+      {
+        "label": "Perceived clarity",
+        "value": "+2.1 pts"
+      },
+      {
+        "label": "Sessions run",
+        "value": "5"
+      }
+    ]
+  },
+  {
+    "id": "transact-panel-groupings",
+    "title": "Transact panel groupings",
+    "x": 66,
+    "y": 40,
+    "problem": "Dense transaction screens forced heavy scrolling, slowing operators during high-volume work.",
+    "evidence": "Session recordings showed repeated long scrolls to reach common panels; task time suffered.",
+    "recommendation": "Regroup transaction panels by frequency and task, collapsing rarely used sections to reduce scrolling.",
+    "outcome": "An optimization that cut scrolling and sped up common transaction tasks.",
+    "metrics": [
+      {
+        "label": "Scroll distance",
+        "value": "−48%"
+      },
+      {
+        "label": "Task time",
+        "value": "−22%"
+      }
+    ]
+  },
+  {
+    "id": "design-tokens",
+    "title": "Cross-product design tokens",
+    "x": 82,
+    "y": 38,
+    "problem": "Inconsistent spacing and color across products slowed delivery and review.",
+    "evidence": "Audit found 40+ divergent values for the same intent across teams.",
+    "recommendation": "Standardize a shared token set to simplify and speed up existing work.",
+    "outcome": "An optimization that reduced rework and sped up handoff across teams.",
+    "metrics": [
+      {
+        "label": "Divergent values",
+        "value": "40+ → 6"
+      },
+      {
+        "label": "Handoff time",
+        "value": "−35%"
+      }
+    ]
+  },
+  {
+    "id": "notification-consolidation",
+    "title": "Notification center consolidation",
+    "x": 70,
+    "y": 28,
+    "problem": "Notifications were spread across surfaces, adding noise and maintenance overhead.",
+    "evidence": "Support tickets cited duplicate and conflicting alerts.",
+    "recommendation": "Consolidate into one center to simplify the existing experience.",
+    "outcome": "An optimization that simplified the surface and reduced duplicate alerts.",
+    "metrics": [
+      {
+        "label": "Duplicate alerts",
+        "value": "−61%"
+      },
+      {
+        "label": "Surfaces",
+        "value": "4 → 1"
+      }
+    ]
+  }
+]

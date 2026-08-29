@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+dashboard/src/data/live/*
+!dashboard/src/data/live/.gitkeep
+.env.local
+.env
+dashboard/.env.local
+dashboard/.env

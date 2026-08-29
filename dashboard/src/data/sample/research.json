@@ -1,0 +1,185 @@
+{
+  "coverageRate": [
+    {
+      "month": "Jan 2026",
+      "backed": 62,
+      "intuition": 38
+    },
+    {
+      "month": "Feb 2026",
+      "backed": 68,
+      "intuition": 32
+    },
+    {
+      "month": "Mar 2026",
+      "backed": 72,
+      "intuition": 28
+    },
+    {
+      "month": "Apr 2026",
+      "backed": 76,
+      "intuition": 24
+    }
+  ],
+  "implementationRate": [
+    {
+      "month": "Jan 2026",
+      "rate": 52
+    },
+    {
+      "month": "Feb 2026",
+      "rate": 61
+    },
+    {
+      "month": "Mar 2026",
+      "rate": 68
+    },
+    {
+      "month": "Apr 2026",
+      "rate": 74
+    }
+  ],
+  "usabilityScores": [
+    {
+      "month": "Jan 2026",
+      "score": 4.1,
+      "participants": 18,
+      "sessions": 3
+    },
+    {
+      "month": "Feb 2026",
+      "score": 4.3,
+      "participants": 24,
+      "sessions": 4
+    },
+    {
+      "month": "Mar 2026",
+      "score": 4.4,
+      "participants": 22,
+      "sessions": 4
+    },
+    {
+      "month": "Apr 2026",
+      "score": 4.6,
+      "participants": 28,
+      "sessions": 5
+    }
+  ],
+  "decisionImpactRate": [
+    {
+      "month": "Jan 2026",
+      "impacted": 58
+    },
+    {
+      "month": "Feb 2026",
+      "impacted": 64
+    },
+    {
+      "month": "Mar 2026",
+      "impacted": 69
+    },
+    {
+      "month": "Apr 2026",
+      "impacted": 73
+    }
+  ],
+  "researchTypes": {
+    "Usability Testing": 12,
+    "User Interviews": 9,
+    "Analytics Review": 7,
+    "Competitive Research": 5,
+    "Survey / Questionnaire": 4,
+    "Stakeholder Interviews": 4
+  },
+  "journeyReframeRate": [
+    {
+      "month": "Jan 2026",
+      "rate": 42,
+      "count": 5
+    },
+    {
+      "month": "Feb 2026",
+      "rate": 51,
+      "count": 6
+    },
+    {
+      "month": "Mar 2026",
+      "rate": 58,
+      "count": 7
+    },
+    {
+      "month": "Apr 2026",
+      "rate": 63,
+      "count": 8
+    }
+  ],
+  "caseStudies": [
+    {
+      "project": "Jobs",
+      "title": "Mapping 13 legacy nav items to 6 validated domains — from hypothesis to validated IA",
+      "summary": "Three rounds of tree testing brought Jobs' Information Architecture from 67.1% task success (V1) to 97.8% (V3) with screened LinkedIn members. The 6-domain model now reflects how professionals actually reason — it is no longer a proposal.",
+      "category": "Risk Reduction",
+      "businessImpact": "Reduced IA ambiguity for member workflows, lowering training and navigation risk for product surfaces",
+      "tags": [
+        "Tree Testing",
+        "Information Architecture",
+        "Validated"
+      ],
+      "isReal": true
+    },
+    {
+      "project": "Feed",
+      "title": "Advisory Panel demo drove 12% increase in new orders in 10 days",
+      "summary": "Showing 78 client members (55 banks) how their feedback was incorporated into the new Feed experience directly influenced purchasing decisions. Director of Product and Director of Dev confirmed the uplift was attributed to the panel demo.",
+      "category": "Revenue Influence",
+      "businessImpact": "Direct revenue attribution: 12% increase in new Feed orders in 10 days from client validation",
+      "tags": [
+        "Client Panel",
+        "Business Impact",
+        "Validated"
+      ],
+      "isReal": true
+    },
+    {
+      "project": "Premium",
+      "title": "Designing trust signals for AI-generated recommendations",
+      "summary": "Research found users distrusted AI outputs without visible reasoning. Introduced confidence labels and source citations — approval rating improved from 34% to 71% in prototype testing.",
+      "category": "Speed / Acceleration",
+      "businessImpact": "Accelerated AI feature adoption by establishing trust patterns that reduced stakeholder hesitation",
+      "tags": [
+        "AI UX",
+        "Usability Testing"
+      ],
+      "isReal": false
+    },
+    {
+      "project": "Client Onboarding",
+      "title": "Stepper redesign based on drop-off pattern analysis",
+      "summary": "Stakeholder interviews revealed step 4 of onboarding had a 40% drop-off. Redesigned as a single progressive form, reducing cognitive load. Client stakeholder sign-off achieved in sprint.",
+      "category": "Risk Reduction",
+      "businessImpact": "Prevented potential 40% user drop-off, protecting onboarding conversion rates",
+      "tags": [
+        "Stakeholder Interviews",
+        "Rework Prevention"
+      ],
+      "isReal": false
+    }
+  ],
+  "clientValidation": [
+    {
+      "project": "Feed",
+      "note": "JoAnna Freeland (Director of Product) and Joe Myers (Director of Dev) confirmed new Feed orders are up 12% in 10 days, largely attributed to the advisory panel demo showing clients their feedback incorporated.",
+      "isReal": true
+    },
+    {
+      "project": "Jobs",
+      "note": "Positive UAT result — tellers completed cash balancing 40% faster than baseline.",
+      "isReal": false
+    },
+    {
+      "project": "Client Onboarding",
+      "note": "Client stakeholder review — approved with minor copy changes.",
+      "isReal": false
+    }
+  ]
+}

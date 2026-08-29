@@ -1,0 +1,107 @@
+[
+  {
+    "product": "AppMarket",
+    "study": "Fintech Generative Research",
+    "status": "Active",
+    "category": "Growth & acquisition",
+    "expectedDecision": "Prioritize / De-scope"
+  },
+  {
+    "product": "AppMarket",
+    "study": "Market Study",
+    "status": "Active",
+    "category": "Growth & acquisition",
+    "expectedDecision": "Validate assumption"
+  },
+  {
+    "product": "Feed",
+    "study": "Client Advisory Panel",
+    "status": "Active",
+    "category": "Growth & acquisition",
+    "expectedDecision": "Redesign / Iterate"
+  },
+  {
+    "product": "Feed",
+    "study": "Clover Integration Research",
+    "status": "Planning",
+    "category": "Efficiency & workflow",
+    "expectedDecision": "Launch / Don't launch"
+  },
+  {
+    "product": "Data Compass",
+    "study": "Portal Redesign Research",
+    "status": "Active",
+    "category": "Efficiency & workflow",
+    "expectedDecision": "Redesign / Iterate"
+  },
+  {
+    "product": "Data Compass",
+    "study": "AI Workshop — Frisco",
+    "status": "Complete",
+    "category": "Strategic exploration",
+    "expectedDecision": "Validate assumption"
+  },
+  {
+    "product": "Data Compass",
+    "study": "AI Workshop — Alpharetta",
+    "status": "Planning",
+    "category": "Strategic exploration",
+    "expectedDecision": "Redesign / Iterate"
+  },
+  {
+    "product": "Data Compass",
+    "study": "Benchmarking Market Assessment",
+    "status": "Active",
+    "category": "Growth & acquisition",
+    "expectedDecision": "Validate assumption"
+  },
+  {
+    "product": "Messaging",
+    "study": "Client Panel (Monthly)",
+    "status": "Active",
+    "category": "Growth & acquisition",
+    "expectedDecision": "Redesign / Iterate"
+  },
+  {
+    "product": "Messaging",
+    "study": "Feature Survey with Client Panel",
+    "status": "Complete",
+    "category": "Efficiency & workflow",
+    "expectedDecision": "Prioritize / De-scope"
+  },
+  {
+    "product": "Messaging",
+    "study": "New Deposit Account Wizard (NDAW)",
+    "status": "Planning",
+    "category": "Efficiency & workflow",
+    "expectedDecision": "Launch / Don't launch"
+  },
+  {
+    "product": "Jobs",
+    "study": "UBA Information Architecture Tree Test",
+    "status": "Active",
+    "category": "Risk & compliance",
+    "expectedDecision": "Redesign / Iterate"
+  },
+  {
+    "product": "Premium",
+    "study": "BAC Quick Search Demo & AI Survey",
+    "status": "Complete",
+    "category": "Strategic exploration",
+    "expectedDecision": "Validate assumption"
+  },
+  {
+    "product": "Qual Tool Comparison",
+    "study": "Qualitative Platform Evaluation",
+    "status": "Active",
+    "category": "Efficiency & workflow",
+    "expectedDecision": "Launch / Don't launch"
+  },
+  {
+    "product": "Online Bill Pay",
+    "study": "Usability Test — Regions and Ally",
+    "status": "Complete",
+    "category": "Risk & compliance",
+    "expectedDecision": "Launch / Don't launch"
+  }
+]

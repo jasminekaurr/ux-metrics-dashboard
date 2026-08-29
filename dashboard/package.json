@@ -1,0 +1,45 @@
+{
+  "name": "ux-metrics-dashboard",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:external": "VITE_ORG_MODE=external vite",
+    "build": "vite build",
+    "build:external": "VITE_ORG_MODE=external vite build",
+    "build:with-jira": "npm run capture:jira && npm run build",
+    "build:with-data": "npm run capture:all && npm run build",
+    "capture:jira": "node scripts/capture-jira-data.mjs",
+    "capture:figma": "node scripts/capture-figma-data.mjs",
+    "capture:fcub-venn": "node scripts/capture-fcub-component-venn.mjs",
+    "capture:fcub-comprehensive": "node scripts/capture-fcub-comprehensive.mjs",
+    "capture:all": "npm run capture:jira && npm run capture:figma",
+    "export:snapshot": "node scripts/export-data-snapshot.mjs",
+    "seed:sample-jira": "node scripts/seed-sample-jira.mjs",
+    "split:dummy": "node scripts/split-dummy-data.mjs",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "npm run build:external",
+    "deploy": "gh-pages -d ../docs -t --nojekyll"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "react": "^19.2.5",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "gh-pages": "^6.3.0",
+    "globals": "^17.5.0",
+    "vite": "^8.0.9"
+  }
+}

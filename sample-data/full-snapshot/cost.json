@@ -1,0 +1,156 @@
+{
+  "monthly": [
+    {
+      "month": "Jan 2026",
+      "rework": 14200,
+      "bugs": 9000,
+      "avoidance": 22000,
+      "sprintLead": 8000,
+      "pocKills": 0,
+      "apexReuse": 7800,
+      "total": 61000
+    },
+    {
+      "month": "Feb 2026",
+      "rework": 18600,
+      "bugs": 13500,
+      "avoidance": 48000,
+      "sprintLead": 12000,
+      "pocKills": 0,
+      "apexReuse": 9100,
+      "total": 101200
+    },
+    {
+      "month": "Mar 2026",
+      "rework": 15400,
+      "bugs": 10500,
+      "avoidance": 18000,
+      "sprintLead": 10000,
+      "pocKills": 150000,
+      "apexReuse": 8600,
+      "total": 212500
+    },
+    {
+      "month": "Apr 2026",
+      "rework": 18800,
+      "bugs": 12000,
+      "avoidance": 24000,
+      "sprintLead": 9600,
+      "pocKills": 0,
+      "apexReuse": 12000,
+      "total": 76400
+    }
+  ],
+  "riskImpact": [
+    {
+      "month": "Jan 2026",
+      "initiativesInfluenced": 58,
+      "totalInitiatives": 12,
+      "roadmapReframed": 3,
+      "pocsStoppedEarly": 0,
+      "highSeverityRisks": 4
+    },
+    {
+      "month": "Feb 2026",
+      "initiativesInfluenced": 64,
+      "totalInitiatives": 14,
+      "roadmapReframed": 5,
+      "pocsStoppedEarly": 0,
+      "highSeverityRisks": 6
+    },
+    {
+      "month": "Mar 2026",
+      "initiativesInfluenced": 69,
+      "totalInitiatives": 16,
+      "roadmapReframed": 7,
+      "pocsStoppedEarly": 1,
+      "highSeverityRisks": 5
+    },
+    {
+      "month": "Apr 2026",
+      "initiativesInfluenced": 73,
+      "totalInitiatives": 18,
+      "roadmapReframed": 8,
+      "pocsStoppedEarly": 0,
+      "highSeverityRisks": 7
+    }
+  ],
+  "byProject": [
+    {
+      "project": "Feed",
+      "rework": 6400,
+      "bugs": 4500,
+      "avoidance": 12000,
+      "apexReuse": 3800,
+      "total": 26700
+    },
+    {
+      "project": "Messaging",
+      "rework": 4200,
+      "bugs": 3000,
+      "avoidance": 48000,
+      "apexReuse": 2900,
+      "total": 58100
+    },
+    {
+      "project": "Jobs",
+      "rework": 3800,
+      "bugs": 1500,
+      "avoidance": 0,
+      "apexReuse": 2400,
+      "total": 7700
+    },
+    {
+      "project": "Data Acceleration",
+      "rework": 2200,
+      "bugs": 1500,
+      "avoidance": 0,
+      "apexReuse": 1600,
+      "total": 5300
+    },
+    {
+      "project": "Premium",
+      "rework": 1400,
+      "bugs": 1500,
+      "avoidance": 0,
+      "apexReuse": 800,
+      "total": 3700
+    },
+    {
+      "project": "Network",
+      "rework": 800,
+      "bugs": 0,
+      "avoidance": 0,
+      "apexReuse": 500,
+      "total": 1300
+    }
+  ],
+  "bugs": {
+    "caught": [
+      9,
+      14,
+      11,
+      13
+    ],
+    "months": [
+      "Jan 2026",
+      "Feb 2026",
+      "Mar 2026",
+      "Apr 2026"
+    ]
+  },
+  "reworkHours": [
+    68,
+    93,
+    77,
+    94
+  ],
+  "methodology": {
+    "designerRate": 125,
+    "engineerRate": 200,
+    "bugAtDesign": 500,
+    "bugAtDev": 5000,
+    "bugAtProd": 50000,
+    "note": "IBM 10x rule applied for bug stage multipliers. Sprint lead reported as capacity value, not hard cash. Cost avoidance is designer-estimated based on build cost of avoided direction."
+  }
+}

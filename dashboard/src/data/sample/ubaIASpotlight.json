@@ -1,0 +1,56 @@
+{
+  "rounds": [
+    {
+      "version": "V1",
+      "successRate": 67.1,
+      "n": 5,
+      "method": "Unmoderated panel",
+      "roles": "Ops & SysAdmin",
+      "improvement": null
+    },
+    {
+      "version": "V2",
+      "successRate": 85.6,
+      "n": 10,
+      "method": "Unmoderated panel",
+      "roles": "Ops & SysAdmin",
+      "improvement": "+18.5%"
+    },
+    {
+      "version": "V3",
+      "successRate": 97.8,
+      "n": 10,
+      "method": "Moderated client sessions",
+      "roles": "Senior Ops, Admin/IT",
+      "improvement": "+12.2%"
+    }
+  ],
+  "domains": [
+    {
+      "name": "System Settings",
+      "desc": "How the system behaves over time — branch ops, hours, device mgmt"
+    },
+    {
+      "name": "Roles & Access",
+      "desc": "Roles, permissions, and access control"
+    },
+    {
+      "name": "Transactions & Pricing",
+      "desc": "Fees, rules, and limits for movement of money"
+    },
+    {
+      "name": "Currency, Cash & Reconciliation",
+      "desc": "Control of physical/represented cash and currency (vaults & tills)"
+    },
+    {
+      "name": "Forms & Communications",
+      "desc": "What the system prints or shows (digital & printed)"
+    },
+    {
+      "name": "Compliance & Risk",
+      "desc": "Regulatory enforcement and audit posture — BSA/AML, CTR, SAR, OFAC"
+    }
+  ],
+  "finding": "This is no longer a hypothesis. It is a validated domain model.",
+  "context": "Mapped 13 legacy navigation items from Integrated Teller to 6 governed domains. The final IA (V4) reflects how professionals actually reason about governance, authority, risk, and execution."
+}

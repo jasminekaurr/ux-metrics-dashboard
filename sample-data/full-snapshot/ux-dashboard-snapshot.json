@@ -1,0 +1,6409 @@
+{
+  "months": [
+    "Jan 2026",
+    "Feb 2026",
+    "Mar 2026",
+    "Apr 2026"
+  ],
+  "executive": [
+    {
+      "month": "January 2026",
+      "narrative": "In January 2026, UX decisions contributed an estimated $61,000 in cost value, helped ship 14 features on time, and established research coverage across 62% of design decisions — laying the foundation for a strong Q1.",
+      "topDecisions": [
+        {
+          "type": "Research Impact",
+          "variant": "default",
+          "title": "Messaging Feature Survey (88% response rate) gave clear direction for improvement priorities",
+          "body": "21 of 24 panel members responded to the Messaging Feature Survey — identifying the most challenging features and focusing Q1 improvement efforts where they matter most.",
+          "outcome": "Clear prioritization signal from 88% of panel membership",
+          "evidence": [
+            "Survey / Questionnaire",
+            "Client Panel"
+          ],
+          "project": "Messaging"
+        },
+        {
+          "type": "Rework Prevention",
+          "variant": "success",
+          "title": "Feed Advisory Panel surfaced UX gaps before Q1 dev sprint kicked off",
+          "body": "Panel session with 78 members across 55 banks identified friction points in the new Feed experience ahead of Q1 development. Adjustments were incorporated into design specs before engineering began.",
+          "outcome": "Issues resolved in design, not in production",
+          "evidence": [
+            "Client Panel",
+            "User Interviews"
+          ],
+          "project": "Feed"
+        }
+      ]
+    },
+    {
+      "month": "February 2026",
+      "narrative": "In February 2026, UX decisions contributed an estimated $101,200 in cost value. The Feed Advisory Panel demo drove a 12% increase in new orders in 10 days — confirming that showing clients their feedback incorporated creates measurable business impact.",
+      "topDecisions": [
+        {
+          "type": "Client Impact",
+          "variant": "success",
+          "title": "Feed Advisory Panel demo drove 12% increase in new orders in 10 days",
+          "body": "Director of Product JoAnna Freeland and Director of Dev Joe Myers confirmed new Feed orders are up 12% in 10 days. The increase was attributed to the panel demo — clients seeing their feedback incorporated visibly changed purchasing behavior.",
+          "outcome": "12% increase in new Feed orders in 10 days",
+          "evidence": [
+            "Client Panel",
+            "Stakeholder Alignment"
+          ],
+          "project": "Feed"
+        },
+        {
+          "type": "Research Impact",
+          "variant": "default",
+          "title": "UBA Information Architecture V2 validated — 85.6% task success, up from 67.1%",
+          "body": "The second round of UBA tree testing (n=10, screened panel) achieved 85.6% overall task success — an 18.5% improvement over V1. 4 participants achieved 100%. Labeling friction dropped significantly, confirming the domain structure was directionally correct.",
+          "outcome": "+18.5% task success improvement over V1 baseline",
+          "evidence": [
+            "Tree Testing",
+            "Usability Testing"
+          ],
+          "project": "Jobs"
+        }
+      ]
+    },
+    {
+      "month": "March 2026",
+      "narrative": "In March 2026, UX decisions contributed an estimated $212,500 in cost value — including a $150,000 POC kill that prevented a misdirected full build. Design sprint lead reached 71%, keeping engineering unblocked across all major product areas.",
+      "topDecisions": [
+        {
+          "type": "Cost Avoidance",
+          "variant": "default",
+          "title": "POC killed after validation testing — $150,000 in build cost avoided",
+          "body": "A product concept in active prototyping failed validation testing against user expectations. UX research surfaced fundamental misalignment between the proposed direction and user mental models. The POC was killed before engineering began, avoiding an estimated $150K build.",
+          "outcome": "$150,000 in engineering build cost avoided",
+          "evidence": [
+            "Usability Testing",
+            "Stakeholder Alignment"
+          ],
+          "project": "Premium"
+        },
+        {
+          "type": "Rework Prevention",
+          "variant": "success",
+          "title": "Sprint lead at 71% — design ahead of engineering across most projects",
+          "body": "Design ran ahead of engineering in 71% of active projects in March, ensuring dev teams had validated specs before sprint kickoff. This reduced mid-sprint design changes and prevented downstream rework across Feed, Messaging, and Jobs.",
+          "outcome": "Engineering unblocked — rework risk down quarter-over-quarter",
+          "evidence": [
+            "Design Review",
+            "Sprint Planning"
+          ],
+          "project": "Cross-Team"
+        }
+      ]
+    },
+    {
+      "month": "April 2026",
+      "narrative": "In April 2026, UX decisions prevented an estimated $76,400 in avoidable spend, helped ship 18 validated features on time, and blocked two product directions that would have required significant rework in engineering.",
+      "topDecisions": [
+        {
+          "type": "Cost Avoidance",
+          "variant": "default",
+          "title": "Messaging abandoned a complex filter architecture after UXR showed users couldn't discover it",
+          "body": "A planned multi-level filter system was killed in week 2 of April after usability testing with 6 participants showed 0% task completion. Engineering had budgeted 3 sprints. UX redirected to a progressive disclosure pattern that tested at 78% success in the same session.",
+          "outcome": "$48,000 in avoided engineering spend",
+          "evidence": [
+            "Usability Testing",
+            "Stakeholder Alignment"
+          ],
+          "project": "Messaging"
+        },
+        {
+          "type": "Rework Prevention",
+          "variant": "success",
+          "title": "Feed design review caught a data display error before dev handoff",
+          "body": "During a design review of the Task Admin module, a UX designer identified that the proposed table layout would truncate critical account numbers on standard viewport widths. The fix took 2 hours in Figma. The equivalent engineering fix in production was estimated at 3 days.",
+          "outcome": "~$4,800 in rework avoided (vs. production fix)",
+          "evidence": [
+            "Design Review",
+            "Jira CORE-2241"
+          ],
+          "project": "Feed"
+        },
+        {
+          "type": "Research Impact",
+          "variant": "warning",
+          "title": "Jobs onboarding flow redesigned based on journey mapping findings",
+          "body": "A journey mapping session with 4 teller operators surfaced a consistent point of failure in cash balancing flows. The original flow required 7 steps for a task users expected to complete in 2. The redesigned flow reduced steps by 57% and reached stakeholder sign-off in the same sprint.",
+          "outcome": "Flow complexity reduced 57%; stakeholder sign-off in-sprint",
+          "evidence": [
+            "User Interviews",
+            "Journey Mapping",
+            "Stakeholder Alignment"
+          ],
+          "project": "Jobs"
+        }
+      ]
+    }
+  ],
+  "roadmap": {
+    "monthlySummary": [
+      {
+        "month": "Jan 2026",
+        "shipped": 14,
+        "onTime": 71,
+        "inFlight": 18,
+        "tickets": {
+          "opened": 42,
+          "closed": 38
+        },
+        "experienceRiskIndex": 42,
+        "reworkRate": 15,
+        "atRiskReleases": 1,
+        "criticalBlockers": 3
+      },
+      {
+        "month": "Feb 2026",
+        "shipped": 21,
+        "onTime": 76,
+        "inFlight": 24,
+        "tickets": {
+          "opened": 58,
+          "closed": 51
+        },
+        "experienceRiskIndex": 38,
+        "reworkRate": 13,
+        "atRiskReleases": 1,
+        "criticalBlockers": 2
+      },
+      {
+        "month": "Mar 2026",
+        "shipped": 19,
+        "onTime": 79,
+        "inFlight": 21,
+        "tickets": {
+          "opened": 49,
+          "closed": 45
+        },
+        "experienceRiskIndex": 35,
+        "reworkRate": 12,
+        "atRiskReleases": 0,
+        "criticalBlockers": 1
+      },
+      {
+        "month": "Apr 2026",
+        "shipped": 18,
+        "onTime": 83,
+        "inFlight": 22,
+        "tickets": {
+          "opened": 44,
+          "closed": 41
+        },
+        "experienceRiskIndex": 32,
+        "reworkRate": 11,
+        "atRiskReleases": 1,
+        "criticalBlockers": 2
+      }
+    ],
+    "sprintLead": [
+      {
+        "month": "Jan 2026",
+        "ahead": 55,
+        "mostly": 27,
+        "behind": 18
+      },
+      {
+        "month": "Feb 2026",
+        "ahead": 63,
+        "mostly": 24,
+        "behind": 13
+      },
+      {
+        "month": "Mar 2026",
+        "ahead": 71,
+        "mostly": 20,
+        "behind": 9
+      },
+      {
+        "month": "Apr 2026",
+        "ahead": 79,
+        "mostly": 14,
+        "behind": 7
+      }
+    ],
+    "blockers": [
+      {
+        "category": "Delivery Risk",
+        "reason": "Scope change mid-sprint",
+        "count": 6,
+        "type": "delay"
+      },
+      {
+        "category": "Delivery Risk",
+        "reason": "Late feedback / approval",
+        "count": 4,
+        "type": "delay"
+      },
+      {
+        "category": "Delivery Risk",
+        "reason": "Cross-team dependency",
+        "count": 3,
+        "type": "delay"
+      },
+      {
+        "category": "Rework",
+        "reason": "Design reversed after handoff",
+        "count": 3,
+        "type": "rework"
+      },
+      {
+        "category": "Delivery Risk",
+        "reason": "Under-resourcing",
+        "count": 2,
+        "type": "delay"
+      },
+      {
+        "category": "Rework",
+        "reason": "Spec ambiguity / unclear requirements",
+        "count": 2,
+        "type": "rework"
+      },
+      {
+        "category": "Rework",
+        "reason": "Stakeholder direction changed",
+        "count": 1,
+        "type": "rework"
+      }
+    ],
+    "stageDistribution": [
+      {
+        "month": "Jan 2026",
+        "discovery": 5,
+        "validation": 4,
+        "execution": 7,
+        "optimization": 2,
+        "shelved": 2
+      },
+      {
+        "month": "Feb 2026",
+        "discovery": 6,
+        "validation": 6,
+        "execution": 9,
+        "optimization": 3,
+        "shelved": 1
+      },
+      {
+        "month": "Mar 2026",
+        "discovery": 4,
+        "validation": 5,
+        "execution": 8,
+        "optimization": 4,
+        "shelved": 0
+      },
+      {
+        "month": "Apr 2026",
+        "discovery": 4,
+        "validation": 5,
+        "execution": 9,
+        "optimization": 4,
+        "shelved": 0
+      }
+    ],
+    "projects": [
+      {
+        "name": "Feed",
+        "shipped": 3,
+        "onTime": 88,
+        "inFlight": 4,
+        "velocity": 11,
+        "stageBreakdown": {
+          "discovery": 0,
+          "validation": 1,
+          "execution": 2,
+          "optimization": 1,
+          "shelved": 0
+        },
+        "health": "good",
+        "healthReason": "On track with strong delivery metrics",
+        "blockedItems": 0,
+        "blockerAvgAge": 0,
+        "currentPhase": 3,
+        "phaseProgress": 72,
+        "phaseDistribution": {
+          "phase1": 3,
+          "phase2": 5,
+          "phase3": 8,
+          "phase4": 2,
+          "notAssigned": 1
+        }
+      },
+      {
+        "name": "Messaging",
+        "shipped": 2,
+        "onTime": 75,
+        "inFlight": 5,
+        "velocity": 8,
+        "stageBreakdown": {
+          "discovery": 1,
+          "validation": 2,
+          "execution": 2,
+          "optimization": 0,
+          "shelved": 0
+        },
+        "health": "good",
+        "healthReason": "Solid delivery with minor delays",
+        "blockedItems": 1,
+        "blockerAvgAge": 6,
+        "currentPhase": 2,
+        "phaseProgress": 65,
+        "phaseDistribution": {
+          "phase1": 2,
+          "phase2": 6,
+          "phase3": 4,
+          "phase4": 1,
+          "notAssigned": 2
+        }
+      },
+      {
+        "name": "Jobs",
+        "shipped": 3,
+        "onTime": 92,
+        "inFlight": 3,
+        "velocity": 8,
+        "stageBreakdown": {
+          "discovery": 0,
+          "validation": 1,
+          "execution": 2,
+          "optimization": 0,
+          "shelved": 0
+        },
+        "health": "good",
+        "healthReason": "Excellent on-time delivery",
+        "blockedItems": 0,
+        "blockerAvgAge": 0,
+        "currentPhase": 3,
+        "phaseProgress": 85,
+        "phaseDistribution": {
+          "phase1": 1,
+          "phase2": 3,
+          "phase3": 9,
+          "phase4": 4,
+          "notAssigned": 0
+        }
+      },
+      {
+        "name": "Data Acceleration",
+        "shipped": 2,
+        "onTime": 67,
+        "inFlight": 3,
+        "velocity": 5,
+        "stageBreakdown": {
+          "discovery": 1,
+          "validation": 1,
+          "execution": 1,
+          "optimization": 0,
+          "shelved": 0
+        },
+        "health": "warning",
+        "healthReason": "Below 70% on-time delivery, 2 blocked items",
+        "blockedItems": 2,
+        "blockerAvgAge": 8,
+        "currentPhase": 2,
+        "phaseProgress": 45,
+        "phaseDistribution": {
+          "phase1": 4,
+          "phase2": 4,
+          "phase3": 3,
+          "phase4": 1,
+          "notAssigned": 3
+        }
+      },
+      {
+        "name": "Premium",
+        "shipped": 1,
+        "onTime": 50,
+        "inFlight": 2,
+        "velocity": 3,
+        "stageBreakdown": {
+          "discovery": 1,
+          "validation": 0,
+          "execution": 1,
+          "optimization": 0,
+          "shelved": 0
+        },
+        "health": "warning",
+        "healthReason": "Only 50% on-time, 2 long-standing blockers",
+        "blockedItems": 2,
+        "blockerAvgAge": 12,
+        "currentPhase": 1,
+        "phaseProgress": 30,
+        "phaseDistribution": {
+          "phase1": 5,
+          "phase2": 2,
+          "phase3": 1,
+          "phase4": 0,
+          "notAssigned": 4
+        }
+      },
+      {
+        "name": "Network",
+        "shipped": 2,
+        "onTime": 83,
+        "inFlight": 2,
+        "velocity": 3,
+        "stageBreakdown": {
+          "discovery": 0,
+          "validation": 1,
+          "execution": 1,
+          "optimization": 0,
+          "shelved": 0
+        },
+        "health": "good",
+        "healthReason": "Consistent delivery",
+        "blockedItems": 0,
+        "blockerAvgAge": 0,
+        "currentPhase": 3,
+        "phaseProgress": 78,
+        "phaseDistribution": {
+          "phase1": 2,
+          "phase2": 3,
+          "phase3": 5,
+          "phase4": 2,
+          "notAssigned": 1
+        }
+      },
+      {
+        "name": "SnapPay",
+        "shipped": 1,
+        "onTime": 100,
+        "inFlight": 1,
+        "velocity": 3,
+        "stageBreakdown": {
+          "discovery": 0,
+          "validation": 0,
+          "execution": 1,
+          "optimization": 0,
+          "shelved": 0
+        },
+        "health": "good",
+        "healthReason": "Small but consistent delivery",
+        "blockedItems": 0,
+        "blockerAvgAge": 0,
+        "currentPhase": 4,
+        "phaseProgress": 95,
+        "phaseDistribution": {
+          "phase1": 0,
+          "phase2": 1,
+          "phase3": 2,
+          "phase4": 6,
+          "notAssigned": 0
+        }
+      },
+      {
+        "name": "Client Onboarding",
+        "shipped": 1,
+        "onTime": 80,
+        "inFlight": 2,
+        "velocity": 2,
+        "stageBreakdown": {
+          "discovery": 0,
+          "validation": 1,
+          "execution": 1,
+          "optimization": 0,
+          "shelved": 0
+        },
+        "health": "good",
+        "healthReason": "Healthy delivery pace",
+        "blockedItems": 0,
+        "blockerAvgAge": 0,
+        "currentPhase": 2,
+        "phaseProgress": 55,
+        "phaseDistribution": {
+          "phase1": 3,
+          "phase2": 4,
+          "phase3": 2,
+          "phase4": 1,
+          "notAssigned": 2
+        }
+      }
+    ],
+    "features": [
+      {
+        "project": "Feed",
+        "name": "Task Admin redesign — bulk action toolbar",
+        "tickets": "CORE-2201, CORE-2208",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Production",
+        "plannedShipDate": "2026-04-12",
+        "actualShipDate": "2026-04-10",
+        "daysDelay": -2,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Feed",
+        "name": "Advanced search filters",
+        "tickets": "CORE-2245",
+        "currentStage": "validation",
+        "plannedStage": "execution",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-04-20",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": [
+          "Late feedback"
+        ]
+      },
+      {
+        "project": "Feed",
+        "name": "Report export redesign",
+        "tickets": "CORE-2289, CORE-2290",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Staging",
+        "plannedShipDate": "2026-04-25",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Feed",
+        "name": "Task prioritization UI",
+        "tickets": "CORE-2301",
+        "currentStage": "optimization",
+        "plannedStage": "optimization",
+        "deploymentStage": "Production",
+        "plannedShipDate": "2026-04-05",
+        "actualShipDate": "2026-04-08",
+        "daysDelay": 3,
+        "onTime": false,
+        "blockers": [
+          "Scope change"
+        ]
+      },
+      {
+        "project": "Messaging",
+        "name": "Progressive disclosure filters (v1)",
+        "tickets": "DNA-884",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Staging",
+        "plannedShipDate": "2026-04-15",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Messaging",
+        "name": "Data visualization refresh",
+        "tickets": "DNA-901, DNA-905",
+        "currentStage": "validation",
+        "plannedStage": "execution",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-04-28",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": [
+          "Cross-team dependency"
+        ]
+      },
+      {
+        "project": "Messaging",
+        "name": "User preferences panel",
+        "tickets": "DNA-920",
+        "currentStage": "validation",
+        "plannedStage": "validation",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-05-05",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Messaging",
+        "name": "Dashboard widget customization",
+        "tickets": "DNA-934",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Handoff",
+        "plannedShipDate": "2026-04-30",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Messaging",
+        "name": "Mobile responsiveness improvements",
+        "tickets": "DNA-945",
+        "currentStage": "discovery",
+        "plannedStage": "validation",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-05-10",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": [
+          "Under-resourcing"
+        ]
+      },
+      {
+        "project": "Jobs",
+        "name": "Cash balancing flow — reduced steps",
+        "tickets": "UBA-319",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Production",
+        "plannedShipDate": "2026-04-14",
+        "actualShipDate": "2026-04-14",
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Jobs",
+        "name": "Transaction history redesign",
+        "tickets": "UBA-345",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Staging",
+        "plannedShipDate": "2026-04-22",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Jobs",
+        "name": "Quick actions menu",
+        "tickets": "UBA-362",
+        "currentStage": "validation",
+        "plannedStage": "execution",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-04-27",
+        "actualShipDate": null,
+        "daysDelay": 2,
+        "onTime": false,
+        "blockers": [
+          "Design reversed after handoff"
+        ]
+      },
+      {
+        "project": "Data Acceleration",
+        "name": "Client widget empty states",
+        "tickets": "DA-112, DA-115",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Handoff",
+        "plannedShipDate": "2026-04-18",
+        "actualShipDate": "2026-04-18",
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Data Acceleration",
+        "name": "API integration flow",
+        "tickets": "DA-128",
+        "currentStage": "validation",
+        "plannedStage": "validation",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-05-01",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Data Acceleration",
+        "name": "Error state improvements",
+        "tickets": "DA-141",
+        "currentStage": "discovery",
+        "plannedStage": "validation",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-05-08",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": [
+          "Spec ambiguity"
+        ]
+      },
+      {
+        "project": "Premium",
+        "name": "AI recommendations onboarding UX",
+        "tickets": "AI-44",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Staging",
+        "plannedShipDate": "2026-04-10",
+        "actualShipDate": "2026-04-16",
+        "daysDelay": 6,
+        "onTime": false,
+        "blockers": [
+          "Scope change",
+          "Stakeholder direction changed"
+        ]
+      },
+      {
+        "project": "Premium",
+        "name": "Prompt feedback mechanism",
+        "tickets": "AI-58",
+        "currentStage": "discovery",
+        "plannedStage": "validation",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-05-15",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Network",
+        "name": "My Queue — status indicators refresh",
+        "tickets": "PORT-67",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Production",
+        "plannedShipDate": "2026-04-11",
+        "actualShipDate": "2026-04-11",
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Network",
+        "name": "Notification preferences",
+        "tickets": "PORT-82",
+        "currentStage": "validation",
+        "plannedStage": "validation",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-04-29",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "SnapPay",
+        "name": "Payment confirmation micro-interactions",
+        "tickets": "SP-211",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Production",
+        "plannedShipDate": "2026-04-13",
+        "actualShipDate": "2026-04-13",
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Client Onboarding",
+        "name": "Stepper progress redesign",
+        "tickets": "CO-88, CO-91",
+        "currentStage": "execution",
+        "plannedStage": "execution",
+        "deploymentStage": "Handoff",
+        "plannedShipDate": "2026-04-19",
+        "actualShipDate": "2026-04-19",
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      },
+      {
+        "project": "Client Onboarding",
+        "name": "Document upload improvements",
+        "tickets": "CO-105",
+        "currentStage": "validation",
+        "plannedStage": "validation",
+        "deploymentStage": null,
+        "plannedShipDate": "2026-05-03",
+        "actualShipDate": null,
+        "daysDelay": 0,
+        "onTime": true,
+        "blockers": []
+      }
+    ],
+    "shippedFeatures": [
+      {
+        "project": "Feed",
+        "name": "Task Admin redesign — bulk action toolbar",
+        "tickets": "CORE-2201, CORE-2208",
+        "stage": "Production",
+        "onTime": true
+      },
+      {
+        "project": "Messaging",
+        "name": "Progressive disclosure filters (v1)",
+        "tickets": "DNA-884",
+        "stage": "Staging",
+        "onTime": true
+      },
+      {
+        "project": "Jobs",
+        "name": "Cash balancing flow — reduced steps",
+        "tickets": "UBA-319",
+        "stage": "Production",
+        "onTime": true
+      },
+      {
+        "project": "Data Acceleration",
+        "name": "Client widget empty states",
+        "tickets": "DA-112, DA-115",
+        "stage": "Handoff",
+        "onTime": true
+      },
+      {
+        "project": "Premium",
+        "name": "AI recommendations onboarding UX",
+        "tickets": "AI-44",
+        "stage": "Staging",
+        "onTime": false
+      },
+      {
+        "project": "Network",
+        "name": "My Queue — status indicators refresh",
+        "tickets": "PORT-67",
+        "stage": "Production",
+        "onTime": true
+      },
+      {
+        "project": "SnapPay",
+        "name": "Payment confirmation micro-interactions",
+        "tickets": "SP-211",
+        "stage": "Production",
+        "onTime": true
+      },
+      {
+        "project": "Client Onboarding",
+        "name": "Stepper progress redesign",
+        "tickets": "CO-88, CO-91",
+        "stage": "Handoff",
+        "onTime": true
+      }
+    ],
+    "projectTickets": [
+      {
+        "project": "Feed",
+        "opened": 12,
+        "closed": 11
+      },
+      {
+        "project": "Messaging",
+        "opened": 9,
+        "closed": 8
+      },
+      {
+        "project": "Jobs",
+        "opened": 8,
+        "closed": 8
+      },
+      {
+        "project": "Data Acceleration",
+        "opened": 6,
+        "closed": 5
+      },
+      {
+        "project": "Premium",
+        "opened": 4,
+        "closed": 3
+      },
+      {
+        "project": "Network",
+        "opened": 3,
+        "closed": 3
+      },
+      {
+        "project": "SnapPay",
+        "opened": 2,
+        "closed": 3
+      }
+    ],
+    "epics": [
+      {
+        "key": "CORE-EP-12",
+        "name": "Task Admin Modernization",
+        "project": "Feed",
+        "completion": 75,
+        "health": "good",
+        "plannedCompletion": "2026-05-15",
+        "actualCompletion": null,
+        "totalStories": 12,
+        "doneStories": 9,
+        "inProgressStories": 2,
+        "todoStories": 1,
+        "storyPoints": {
+          "total": 48,
+          "done": 36
+        }
+      },
+      {
+        "key": "DNA-EP-08",
+        "name": "Dashboard Personalization",
+        "project": "Messaging",
+        "completion": 60,
+        "health": "warning",
+        "plannedCompletion": "2026-06-01",
+        "actualCompletion": null,
+        "totalStories": 10,
+        "doneStories": 6,
+        "inProgressStories": 3,
+        "todoStories": 1,
+        "storyPoints": {
+          "total": 38,
+          "done": 23
+        }
+      },
+      {
+        "key": "UBA-EP-05",
+        "name": "Transaction Flow Optimization",
+        "project": "Jobs",
+        "completion": 90,
+        "health": "good",
+        "plannedCompletion": "2026-04-30",
+        "actualCompletion": null,
+        "totalStories": 8,
+        "doneStories": 7,
+        "inProgressStories": 1,
+        "todoStories": 0,
+        "storyPoints": {
+          "total": 32,
+          "done": 29
+        }
+      },
+      {
+        "key": "DA-EP-03",
+        "name": "API Integration Suite",
+        "project": "Data Acceleration",
+        "completion": 50,
+        "health": "risk",
+        "plannedCompletion": "2026-05-20",
+        "actualCompletion": null,
+        "totalStories": 6,
+        "doneStories": 3,
+        "inProgressStories": 2,
+        "todoStories": 1,
+        "storyPoints": {
+          "total": 24,
+          "done": 12
+        }
+      },
+      {
+        "key": "AI-EP-02",
+        "name": "AI Recommendations Engine",
+        "project": "Premium",
+        "completion": 40,
+        "health": "warning",
+        "plannedCompletion": "2026-06-15",
+        "actualCompletion": null,
+        "totalStories": 5,
+        "doneStories": 2,
+        "inProgressStories": 2,
+        "todoStories": 1,
+        "storyPoints": {
+          "total": 20,
+          "done": 8
+        }
+      },
+      {
+        "key": "PORT-EP-04",
+        "name": "Notification System Overhaul",
+        "project": "Network",
+        "completion": 67,
+        "health": "good",
+        "plannedCompletion": "2026-05-10",
+        "actualCompletion": null,
+        "totalStories": 6,
+        "doneStories": 4,
+        "inProgressStories": 2,
+        "todoStories": 0,
+        "storyPoints": {
+          "total": 18,
+          "done": 12
+        }
+      },
+      {
+        "key": "SP-EP-01",
+        "name": "Payment Experience Refresh",
+        "project": "SnapPay",
+        "completion": 100,
+        "health": "good",
+        "plannedCompletion": "2026-04-15",
+        "actualCompletion": "2026-04-13",
+        "totalStories": 4,
+        "doneStories": 4,
+        "inProgressStories": 0,
+        "todoStories": 0,
+        "storyPoints": {
+          "total": 16,
+          "done": 16
+        }
+      },
+      {
+        "key": "CO-EP-02",
+        "name": "Document Management Redesign",
+        "project": "Client Onboarding",
+        "completion": 50,
+        "health": "good",
+        "plannedCompletion": "2026-05-30",
+        "actualCompletion": null,
+        "totalStories": 4,
+        "doneStories": 2,
+        "inProgressStories": 2,
+        "todoStories": 0,
+        "storyPoints": {
+          "total": 12,
+          "done": 6
+        }
+      }
+    ],
+    "releases": [
+      {
+        "name": "Q2 2026 Release",
+        "version": "v2.4.0",
+        "projects": [
+          "Feed",
+          "Messaging",
+          "Jobs"
+        ],
+        "plannedDate": "2026-06-30",
+        "status": "on-track",
+        "readiness": 78,
+        "totalFeatures": 23,
+        "doneFeatures": 18,
+        "inProgressFeatures": 4,
+        "blockedFeatures": 1
+      },
+      {
+        "name": "Mid-Q2 Patch",
+        "version": "v2.3.5",
+        "projects": [
+          "Feed",
+          "Network"
+        ],
+        "plannedDate": "2026-05-15",
+        "status": "on-track",
+        "readiness": 92,
+        "totalFeatures": 12,
+        "doneFeatures": 11,
+        "inProgressFeatures": 1,
+        "blockedFeatures": 0
+      },
+      {
+        "name": "AI Beta Release",
+        "version": "v3.0.0-beta",
+        "projects": [
+          "Premium",
+          "Data Acceleration"
+        ],
+        "plannedDate": "2026-07-15",
+        "status": "at-risk",
+        "readiness": 45,
+        "totalFeatures": 11,
+        "doneFeatures": 5,
+        "inProgressFeatures": 4,
+        "blockedFeatures": 2
+      }
+    ],
+    "velocity": {
+      "monthly": [
+        {
+          "month": "Jan 2026",
+          "committed": 120,
+          "delivered": 102,
+          "achievement": 85
+        },
+        {
+          "month": "Feb 2026",
+          "committed": 135,
+          "delivered": 128,
+          "achievement": 95
+        },
+        {
+          "month": "Mar 2026",
+          "committed": 142,
+          "delivered": 138,
+          "achievement": 97
+        },
+        {
+          "month": "Apr 2026",
+          "committed": 145,
+          "delivered": 142,
+          "achievement": 98
+        }
+      ],
+      "byProject": [
+        {
+          "project": "Feed",
+          "committed": 42,
+          "delivered": 40,
+          "achievement": 95
+        },
+        {
+          "project": "Messaging",
+          "committed": 38,
+          "delivered": 36,
+          "achievement": 95
+        },
+        {
+          "project": "Jobs",
+          "committed": 32,
+          "delivered": 31,
+          "achievement": 97
+        },
+        {
+          "project": "Data Acceleration",
+          "committed": 18,
+          "delivered": 16,
+          "achievement": 89
+        },
+        {
+          "project": "Premium",
+          "committed": 12,
+          "delivered": 10,
+          "achievement": 83
+        },
+        {
+          "project": "Network",
+          "committed": 15,
+          "delivered": 14,
+          "achievement": 93
+        },
+        {
+          "project": "SnapPay",
+          "committed": 8,
+          "delivered": 8,
+          "achievement": 100
+        },
+        {
+          "project": "Client Onboarding",
+          "committed": 10,
+          "delivered": 9,
+          "achievement": 90
+        }
+      ]
+    },
+    "throughput": {
+      "monthly": [
+        {
+          "month": "Jan 2026",
+          "opened": 42,
+          "closed": 38,
+          "netFlow": -4
+        },
+        {
+          "month": "Feb 2026",
+          "opened": 58,
+          "closed": 51,
+          "netFlow": -7
+        },
+        {
+          "month": "Mar 2026",
+          "opened": 49,
+          "closed": 45,
+          "netFlow": -4
+        },
+        {
+          "month": "Apr 2026",
+          "opened": 44,
+          "closed": 41,
+          "netFlow": -3
+        }
+      ],
+      "byProject": [
+        {
+          "project": "Feed",
+          "opened": 12,
+          "closed": 11,
+          "netFlow": -1
+        },
+        {
+          "project": "Messaging",
+          "opened": 9,
+          "closed": 8,
+          "netFlow": -1
+        },
+        {
+          "project": "Jobs",
+          "opened": 8,
+          "closed": 8,
+          "netFlow": 0
+        },
+        {
+          "project": "Data Acceleration",
+          "opened": 6,
+          "closed": 5,
+          "netFlow": -1
+        },
+        {
+          "project": "Premium",
+          "opened": 4,
+          "closed": 3,
+          "netFlow": -1
+        },
+        {
+          "project": "Network",
+          "opened": 3,
+          "closed": 3,
+          "netFlow": 0
+        },
+        {
+          "project": "SnapPay",
+          "opened": 2,
+          "closed": 3,
+          "netFlow": 1
+        }
+      ]
+    },
+    "leadTime": {
+      "average": 4.2,
+      "p10": 2,
+      "p50": 4,
+      "p90": 7,
+      "byProject": [
+        {
+          "project": "Feed",
+          "average": 3.5,
+          "p50": 3,
+          "p90": 6
+        },
+        {
+          "project": "Messaging",
+          "average": 5.1,
+          "p50": 5,
+          "p90": 8
+        },
+        {
+          "project": "Jobs",
+          "average": 3.8,
+          "p50": 4,
+          "p90": 6
+        },
+        {
+          "project": "Data Acceleration",
+          "average": 4.9,
+          "p50": 5,
+          "p90": 7
+        },
+        {
+          "project": "Premium",
+          "average": 6.2,
+          "p50": 6,
+          "p90": 10
+        },
+        {
+          "project": "Network",
+          "average": 3.2,
+          "p50": 3,
+          "p90": 5
+        },
+        {
+          "project": "SnapPay",
+          "average": 2.8,
+          "p50": 3,
+          "p90": 4
+        },
+        {
+          "project": "Client Onboarding",
+          "average": 4.1,
+          "p50": 4,
+          "p90": 6
+        }
+      ],
+      "trend": [
+        {
+          "month": "Jan 2026",
+          "average": 5.2
+        },
+        {
+          "month": "Feb 2026",
+          "average": 4.8
+        },
+        {
+          "month": "Mar 2026",
+          "average": 4.5
+        },
+        {
+          "month": "Apr 2026",
+          "average": 4.2
+        }
+      ]
+    },
+    "timeInStage": {
+      "average": {
+        "discovery": 8,
+        "validation": 6,
+        "execution": 12,
+        "optimization": 4
+      },
+      "byProject": [
+        {
+          "project": "Feed",
+          "discovery": 7,
+          "validation": 5,
+          "execution": 11,
+          "optimization": 3
+        },
+        {
+          "project": "Messaging",
+          "discovery": 9,
+          "validation": 7,
+          "execution": 13,
+          "optimization": 4
+        },
+        {
+          "project": "Jobs",
+          "discovery": 6,
+          "validation": 5,
+          "execution": 10,
+          "optimization": 4
+        },
+        {
+          "project": "Data Acceleration",
+          "discovery": 10,
+          "validation": 6,
+          "execution": 14,
+          "optimization": 5
+        },
+        {
+          "project": "Premium",
+          "discovery": 12,
+          "validation": 8,
+          "execution": 15,
+          "optimization": 6
+        },
+        {
+          "project": "Network",
+          "discovery": 6,
+          "validation": 4,
+          "execution": 9,
+          "optimization": 3
+        },
+        {
+          "project": "SnapPay",
+          "discovery": 5,
+          "validation": 4,
+          "execution": 8,
+          "optimization": 2
+        },
+        {
+          "project": "Client Onboarding",
+          "discovery": 7,
+          "validation": 5,
+          "execution": 11,
+          "optimization": 3
+        }
+      ]
+    },
+    "reworkDetection": {
+      "totalIssues": 72,
+      "reworkedIssues": 8,
+      "reworkRate": 11,
+      "byProject": [
+        {
+          "project": "Feed",
+          "total": 14,
+          "reworked": 1,
+          "rate": 7
+        },
+        {
+          "project": "Messaging",
+          "total": 21,
+          "reworked": 3,
+          "rate": 14
+        },
+        {
+          "project": "Jobs",
+          "total": 11,
+          "reworked": 1,
+          "rate": 9
+        },
+        {
+          "project": "Data Acceleration",
+          "total": 9,
+          "reworked": 2,
+          "rate": 22
+        },
+        {
+          "project": "Premium",
+          "total": 6,
+          "reworked": 1,
+          "rate": 17
+        },
+        {
+          "project": "Network",
+          "total": 6,
+          "reworked": 0,
+          "rate": 0
+        },
+        {
+          "project": "SnapPay",
+          "total": 5,
+          "reworked": 0,
+          "rate": 0
+        }
+      ],
+      "costImpact": {
+        "storyPointsLost": 18,
+        "hoursLost": 94,
+        "estimatedCost": 18800
+      },
+      "trend": [
+        {
+          "month": "Jan 2026",
+          "rate": 15
+        },
+        {
+          "month": "Feb 2026",
+          "rate": 13
+        },
+        {
+          "month": "Mar 2026",
+          "rate": 12
+        },
+        {
+          "month": "Apr 2026",
+          "rate": 11
+        }
+      ]
+    },
+    "reworkTypes": {
+      "monthly": [
+        {
+          "month": "Jan 2026",
+          "uxFound": 2,
+          "postHandoff": 3,
+          "postRelease": 2
+        },
+        {
+          "month": "Feb 2026",
+          "uxFound": 3,
+          "postHandoff": 2,
+          "postRelease": 2
+        },
+        {
+          "month": "Mar 2026",
+          "uxFound": 3,
+          "postHandoff": 2,
+          "postRelease": 1
+        },
+        {
+          "month": "Apr 2026",
+          "uxFound": 3,
+          "postHandoff": 3,
+          "postRelease": 2
+        }
+      ],
+      "labels": {
+        "uxFound": "UX-found (prevented issues pre-dev)",
+        "postHandoff": "Post-handoff (design churn after dev started)",
+        "postRelease": "Post-release (support-driven fixes)"
+      }
+    },
+    "reopenRate": {
+      "totalClosed": 41,
+      "reopened": 3,
+      "rate": 7,
+      "byProject": [
+        {
+          "project": "Feed",
+          "closed": 11,
+          "reopened": 0,
+          "rate": 0
+        },
+        {
+          "project": "Messaging",
+          "closed": 8,
+          "reopened": 1,
+          "rate": 13
+        },
+        {
+          "project": "Jobs",
+          "closed": 8,
+          "reopened": 0,
+          "rate": 0
+        },
+        {
+          "project": "Data Acceleration",
+          "closed": 5,
+          "reopened": 1,
+          "rate": 20
+        },
+        {
+          "project": "Premium",
+          "closed": 3,
+          "reopened": 1,
+          "rate": 33
+        },
+        {
+          "project": "Network",
+          "closed": 3,
+          "reopened": 0,
+          "rate": 0
+        },
+        {
+          "project": "SnapPay",
+          "closed": 3,
+          "reopened": 0,
+          "rate": 0
+        }
+      ],
+      "trend": [
+        {
+          "month": "Jan 2026",
+          "rate": 11
+        },
+        {
+          "month": "Feb 2026",
+          "rate": 9
+        },
+        {
+          "month": "Mar 2026",
+          "rate": 8
+        },
+        {
+          "month": "Apr 2026",
+          "rate": 7
+        }
+      ]
+    },
+    "componentPerformance": [
+      {
+        "component": "Task Management",
+        "project": "Feed",
+        "shipped": 4,
+        "onTime": 88,
+        "inFlight": 2,
+        "health": "good"
+      },
+      {
+        "component": "Reporting",
+        "project": "Feed",
+        "shipped": 2,
+        "onTime": 75,
+        "inFlight": 3,
+        "health": "warning"
+      },
+      {
+        "component": "Admin Tools",
+        "project": "Feed",
+        "shipped": 2,
+        "onTime": 100,
+        "inFlight": 1,
+        "health": "good"
+      },
+      {
+        "component": "Dashboard",
+        "project": "Messaging",
+        "shipped": 3,
+        "onTime": 83,
+        "inFlight": 3,
+        "health": "good"
+      },
+      {
+        "component": "Filters & Search",
+        "project": "Messaging",
+        "shipped": 2,
+        "onTime": 67,
+        "inFlight": 2,
+        "health": "warning"
+      },
+      {
+        "component": "Data Visualization",
+        "project": "Messaging",
+        "shipped": 1,
+        "onTime": 50,
+        "inFlight": 2,
+        "health": "risk"
+      },
+      {
+        "component": "Transaction Flows",
+        "project": "Jobs",
+        "shipped": 3,
+        "onTime": 92,
+        "inFlight": 2,
+        "health": "good"
+      },
+      {
+        "component": "Quick Actions",
+        "project": "Jobs",
+        "shipped": 1,
+        "onTime": 100,
+        "inFlight": 1,
+        "health": "good"
+      },
+      {
+        "component": "API Integration",
+        "project": "Data Acceleration",
+        "shipped": 1,
+        "onTime": 50,
+        "inFlight": 2,
+        "health": "warning"
+      },
+      {
+        "component": "Client Widgets",
+        "project": "Data Acceleration",
+        "shipped": 2,
+        "onTime": 75,
+        "inFlight": 1,
+        "health": "good"
+      },
+      {
+        "component": "AI Recommendations",
+        "project": "Premium",
+        "shipped": 1,
+        "onTime": 50,
+        "inFlight": 1,
+        "health": "warning"
+      },
+      {
+        "component": "Feedback Mechanisms",
+        "project": "Premium",
+        "shipped": 0,
+        "onTime": 0,
+        "inFlight": 1,
+        "health": "risk"
+      },
+      {
+        "component": "My Queue",
+        "project": "Network",
+        "shipped": 2,
+        "onTime": 83,
+        "inFlight": 1,
+        "health": "good"
+      },
+      {
+        "component": "Notifications",
+        "project": "Network",
+        "shipped": 1,
+        "onTime": 100,
+        "inFlight": 1,
+        "health": "good"
+      },
+      {
+        "component": "Payment Flows",
+        "project": "SnapPay",
+        "shipped": 1,
+        "onTime": 100,
+        "inFlight": 1,
+        "health": "good"
+      },
+      {
+        "component": "Stepper UI",
+        "project": "Client Onboarding",
+        "shipped": 1,
+        "onTime": 80,
+        "inFlight": 1,
+        "health": "good"
+      },
+      {
+        "component": "Document Upload",
+        "project": "Client Onboarding",
+        "shipped": 0,
+        "onTime": 0,
+        "inFlight": 1,
+        "health": "good"
+      }
+    ],
+    "blockerIntelligence": {
+      "active": [
+        {
+          "blocker": "API endpoint not ready",
+          "affectedFeatures": [
+            "DNA-901",
+            "UBA-362"
+          ],
+          "affectedProjects": [
+            "Messaging",
+            "Jobs"
+          ],
+          "ageInDays": 8,
+          "priority": "critical",
+          "owner": "Backend Team"
+        },
+        {
+          "blocker": "Design system component pending",
+          "affectedFeatures": [
+            "CORE-2245"
+          ],
+          "affectedProjects": [
+            "Feed"
+          ],
+          "ageInDays": 5,
+          "priority": "major",
+          "owner": "Horizon Team"
+        },
+        {
+          "blocker": "Stakeholder approval pending",
+          "affectedFeatures": [
+            "AI-58"
+          ],
+          "affectedProjects": [
+            "Premium"
+          ],
+          "ageInDays": 12,
+          "priority": "critical",
+          "owner": "Product Leadership"
+        },
+        {
+          "blocker": "Resource availability",
+          "affectedFeatures": [
+            "DNA-945"
+          ],
+          "affectedProjects": [
+            "Messaging"
+          ],
+          "ageInDays": 6,
+          "priority": "major",
+          "owner": "Engineering"
+        }
+      ],
+      "resolutionTime": {
+        "average": 5.2,
+        "p50": 4,
+        "p90": 9
+      },
+      "trend": [
+        {
+          "month": "Jan 2026",
+          "average": 6.8
+        },
+        {
+          "month": "Feb 2026",
+          "average": 6.1
+        },
+        {
+          "month": "Mar 2026",
+          "average": 5.7
+        },
+        {
+          "month": "Apr 2026",
+          "average": 5.2
+        }
+      ],
+      "byProject": [
+        {
+          "project": "Feed",
+          "activeBlockers": 1,
+          "avgResolutionDays": 3.5
+        },
+        {
+          "project": "Messaging",
+          "activeBlockers": 3,
+          "avgResolutionDays": 6.8
+        },
+        {
+          "project": "Jobs",
+          "activeBlockers": 1,
+          "avgResolutionDays": 4.2
+        },
+        {
+          "project": "Data Acceleration",
+          "activeBlockers": 0,
+          "avgResolutionDays": 5
+        },
+        {
+          "project": "Premium",
+          "activeBlockers": 2,
+          "avgResolutionDays": 8.5
+        },
+        {
+          "project": "Network",
+          "activeBlockers": 0,
+          "avgResolutionDays": 3.2
+        },
+        {
+          "project": "SnapPay",
+          "activeBlockers": 0,
+          "avgResolutionDays": 2.8
+        }
+      ]
+    },
+    "crossProjectDeps": [
+      {
+        "blocking": {
+          "key": "CORE-2302",
+          "project": "Feed",
+          "name": "Shared auth component"
+        },
+        "blockedBy": [
+          {
+            "key": "DNA-905",
+            "project": "Messaging",
+            "name": "SSO integration"
+          },
+          {
+            "key": "UBA-362",
+            "project": "Jobs",
+            "name": "Login flow"
+          }
+        ],
+        "impact": "high"
+      },
+      {
+        "blocking": {
+          "key": "DA-115",
+          "project": "Data Acceleration",
+          "name": "Client widget API"
+        },
+        "blockedBy": [
+          {
+            "key": "PORT-82",
+            "project": "Network",
+            "name": "Real-time notifications"
+          }
+        ],
+        "impact": "medium"
+      }
+    ],
+    "priorityDistribution": {
+      "inFlight": {
+        "blocker": 2,
+        "critical": 6,
+        "major": 10,
+        "minor": 4
+      },
+      "overdue": {
+        "blocker": 1,
+        "critical": 2,
+        "major": 3,
+        "minor": 0
+      },
+      "byProject": [
+        {
+          "project": "Feed",
+          "blocker": 0,
+          "critical": 1,
+          "major": 2,
+          "minor": 1
+        },
+        {
+          "project": "Messaging",
+          "blocker": 1,
+          "critical": 2,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "project": "Jobs",
+          "blocker": 0,
+          "critical": 1,
+          "major": 2,
+          "minor": 0
+        },
+        {
+          "project": "Data Acceleration",
+          "blocker": 0,
+          "critical": 1,
+          "major": 1,
+          "minor": 1
+        },
+        {
+          "project": "Premium",
+          "blocker": 1,
+          "critical": 0,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "project": "Network",
+          "blocker": 0,
+          "critical": 1,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "project": "SnapPay",
+          "blocker": 0,
+          "critical": 0,
+          "major": 1,
+          "minor": 0
+        },
+        {
+          "project": "Client Onboarding",
+          "blocker": 0,
+          "critical": 0,
+          "major": 0,
+          "minor": 2
+        }
+      ]
+    },
+    "atRiskFeatures": [
+      {
+        "key": "DNA-901",
+        "project": "Messaging",
+        "name": "Data visualization refresh",
+        "riskType": "blocked",
+        "daysOverdue": 0,
+        "lastUpdate": "2026-04-18",
+        "assignee": "Designer B",
+        "riskReason": "Cross-team dependency blocking progress"
+      },
+      {
+        "key": "AI-58",
+        "project": "Premium",
+        "name": "Prompt feedback mechanism",
+        "riskType": "stale",
+        "daysOverdue": 0,
+        "lastUpdate": "2026-04-10",
+        "assignee": "Designer C",
+        "riskReason": "No updates in 12 days"
+      },
+      {
+        "key": "UBA-362",
+        "project": "Jobs",
+        "name": "Quick actions menu",
+        "riskType": "overdue",
+        "daysOverdue": 2,
+        "lastUpdate": "2026-04-20",
+        "assignee": "Designer A",
+        "riskReason": "Behind schedule due to design rework"
+      },
+      {
+        "key": "DA-141",
+        "project": "Data Acceleration",
+        "name": "Error state improvements",
+        "riskType": "missing-data",
+        "daysOverdue": 0,
+        "lastUpdate": "2026-04-19",
+        "assignee": null,
+        "riskReason": "Missing story points and assignee"
+      }
+    ],
+    "sprintPerformance": {
+      "last4Sprints": [
+        {
+          "name": "Sprint 45",
+          "project": "Feed",
+          "startDate": "2026-03-04",
+          "endDate": "2026-03-18",
+          "committed": 42,
+          "completed": 38,
+          "carryOver": 4,
+          "goalAchieved": true,
+          "velocity": 38
+        },
+        {
+          "name": "Sprint 46",
+          "project": "Feed",
+          "startDate": "2026-03-18",
+          "endDate": "2026-04-01",
+          "committed": 44,
+          "completed": 41,
+          "carryOver": 3,
+          "goalAchieved": true,
+          "velocity": 41
+        },
+        {
+          "name": "Sprint 47",
+          "project": "Feed",
+          "startDate": "2026-04-01",
+          "endDate": "2026-04-15",
+          "committed": 40,
+          "completed": 39,
+          "carryOver": 1,
+          "goalAchieved": true,
+          "velocity": 39
+        },
+        {
+          "name": "Sprint 48",
+          "project": "Feed",
+          "startDate": "2026-04-15",
+          "endDate": "2026-04-29",
+          "committed": 42,
+          "completed": 40,
+          "carryOver": 2,
+          "goalAchieved": true,
+          "velocity": 40
+        },
+        {
+          "name": "Sprint 45",
+          "project": "Messaging",
+          "startDate": "2026-03-04",
+          "endDate": "2026-03-18",
+          "committed": 36,
+          "completed": 32,
+          "carryOver": 4,
+          "goalAchieved": false,
+          "velocity": 32
+        },
+        {
+          "name": "Sprint 46",
+          "project": "Messaging",
+          "startDate": "2026-03-18",
+          "endDate": "2026-04-01",
+          "committed": 38,
+          "completed": 36,
+          "carryOver": 2,
+          "goalAchieved": true,
+          "velocity": 36
+        },
+        {
+          "name": "Sprint 47",
+          "project": "Messaging",
+          "startDate": "2026-04-01",
+          "endDate": "2026-04-15",
+          "committed": 38,
+          "completed": 37,
+          "carryOver": 1,
+          "goalAchieved": true,
+          "velocity": 37
+        },
+        {
+          "name": "Sprint 48",
+          "project": "Messaging",
+          "startDate": "2026-04-15",
+          "endDate": "2026-04-29",
+          "committed": 38,
+          "completed": 36,
+          "carryOver": 2,
+          "goalAchieved": true,
+          "velocity": 36
+        },
+        {
+          "name": "Sprint 45",
+          "project": "Jobs",
+          "startDate": "2026-03-04",
+          "endDate": "2026-03-18",
+          "committed": 30,
+          "completed": 29,
+          "carryOver": 1,
+          "goalAchieved": true,
+          "velocity": 29
+        },
+        {
+          "name": "Sprint 46",
+          "project": "Jobs",
+          "startDate": "2026-03-18",
+          "endDate": "2026-04-01",
+          "committed": 32,
+          "completed": 31,
+          "carryOver": 1,
+          "goalAchieved": true,
+          "velocity": 31
+        },
+        {
+          "name": "Sprint 47",
+          "project": "Jobs",
+          "startDate": "2026-04-01",
+          "endDate": "2026-04-15",
+          "committed": 32,
+          "completed": 32,
+          "carryOver": 0,
+          "goalAchieved": true,
+          "velocity": 32
+        },
+        {
+          "name": "Sprint 48",
+          "project": "Jobs",
+          "startDate": "2026-04-15",
+          "endDate": "2026-04-29",
+          "committed": 32,
+          "completed": 31,
+          "carryOver": 1,
+          "goalAchieved": true,
+          "velocity": 31
+        }
+      ],
+      "byProject": [
+        {
+          "project": "Feed",
+          "avgVelocity": 40,
+          "avgCommitmentAccuracy": 95,
+          "avgCarryOver": 8
+        },
+        {
+          "project": "Messaging",
+          "avgVelocity": 35,
+          "avgCommitmentAccuracy": 93,
+          "avgCarryOver": 10
+        },
+        {
+          "project": "Jobs",
+          "avgVelocity": 31,
+          "avgCommitmentAccuracy": 98,
+          "avgCarryOver": 3
+        },
+        {
+          "project": "Data Acceleration",
+          "avgVelocity": 16,
+          "avgCommitmentAccuracy": 88,
+          "avgCarryOver": 12
+        },
+        {
+          "project": "Premium",
+          "avgVelocity": 10,
+          "avgCommitmentAccuracy": 82,
+          "avgCarryOver": 15
+        },
+        {
+          "project": "Network",
+          "avgVelocity": 14,
+          "avgCommitmentAccuracy": 92,
+          "avgCarryOver": 7
+        },
+        {
+          "project": "SnapPay",
+          "avgVelocity": 8,
+          "avgCommitmentAccuracy": 100,
+          "avgCarryOver": 0
+        },
+        {
+          "project": "Client Onboarding",
+          "avgVelocity": 9,
+          "avgCommitmentAccuracy": 90,
+          "avgCarryOver": 10
+        }
+      ]
+    },
+    "designerWorkload": [
+      {
+        "designer": "Designer A",
+        "projects": [
+          "Feed",
+          "Jobs"
+        ],
+        "inFlight": 5,
+        "storyPointsAssigned": 32,
+        "storyPointsDelivered": 28,
+        "utilization": 88,
+        "status": "balanced"
+      },
+      {
+        "designer": "Designer B",
+        "projects": [
+          "Messaging",
+          "Data Acceleration"
+        ],
+        "inFlight": 6,
+        "storyPointsAssigned": 38,
+        "storyPointsDelivered": 32,
+        "utilization": 84,
+        "status": "balanced"
+      },
+      {
+        "designer": "Designer C",
+        "projects": [
+          "Premium",
+          "Data Acceleration"
+        ],
+        "inFlight": 3,
+        "storyPointsAssigned": 18,
+        "storyPointsDelivered": 14,
+        "utilization": 78,
+        "status": "balanced"
+      },
+      {
+        "designer": "Designer D",
+        "projects": [
+          "Network",
+          "SnapPay",
+          "Client Onboarding"
+        ],
+        "inFlight": 4,
+        "storyPointsAssigned": 22,
+        "storyPointsDelivered": 20,
+        "utilization": 91,
+        "status": "balanced"
+      },
+      {
+        "designer": "Designer E",
+        "projects": [
+          "Feed",
+          "Messaging"
+        ],
+        "inFlight": 7,
+        "storyPointsAssigned": 42,
+        "storyPointsDelivered": 36,
+        "utilization": 95,
+        "status": "overloaded"
+      }
+    ],
+    "assignmentCoverage": {
+      "totalIssues": 72,
+      "assigned": 68,
+      "unassigned": 4,
+      "coverage": 94,
+      "highPriorityUnassigned": 1,
+      "byProject": [
+        {
+          "project": "Feed",
+          "total": 14,
+          "assigned": 14,
+          "coverage": 100
+        },
+        {
+          "project": "Messaging",
+          "total": 21,
+          "assigned": 20,
+          "coverage": 95
+        },
+        {
+          "project": "Jobs",
+          "total": 11,
+          "assigned": 11,
+          "coverage": 100
+        },
+        {
+          "project": "Data Acceleration",
+          "total": 9,
+          "assigned": 8,
+          "coverage": 89
+        },
+        {
+          "project": "Premium",
+          "total": 6,
+          "assigned": 5,
+          "coverage": 83
+        },
+        {
+          "project": "Network",
+          "total": 6,
+          "assigned": 6,
+          "coverage": 100
+        },
+        {
+          "project": "SnapPay",
+          "total": 5,
+          "assigned": 5,
+          "coverage": 100
+        }
+      ]
+    },
+    "momTrends": {
+      "shipped": {
+        "current": 18,
+        "previous": 19,
+        "change": -5,
+        "direction": "down"
+      },
+      "onTime": {
+        "current": 83,
+        "previous": 79,
+        "change": 5,
+        "direction": "up"
+      },
+      "velocity": {
+        "current": 142,
+        "previous": 138,
+        "change": 3,
+        "direction": "up"
+      },
+      "leadTime": {
+        "current": 4.2,
+        "previous": 4.5,
+        "change": -7,
+        "direction": "up"
+      },
+      "reworkRate": {
+        "current": 11,
+        "previous": 12,
+        "change": -8,
+        "direction": "up"
+      }
+    },
+    "qoqTrends": {
+      "Q1": {
+        "shipped": 72,
+        "avgOnTime": 77,
+        "avgVelocity": 128
+      },
+      "Q2": {
+        "shipped": 18,
+        "avgOnTime": 83,
+        "avgVelocity": 142
+      }
+    },
+    "dataHygiene": {
+      "dueDate": {
+        "total": 72,
+        "missing": 8,
+        "coverage": 89
+      },
+      "storyPoints": {
+        "total": 72,
+        "missing": 12,
+        "coverage": 83
+      },
+      "component": {
+        "total": 72,
+        "missing": 4,
+        "coverage": 94
+      },
+      "assignee": {
+        "total": 72,
+        "missing": 4,
+        "coverage": 94
+      },
+      "labels": {
+        "ux-caught": {
+          "eligible": 15,
+          "applied": 12,
+          "adoption": 80
+        },
+        "ux-validated": {
+          "eligible": 30,
+          "applied": 22,
+          "adoption": 73
+        },
+        "rework": {
+          "eligible": 8,
+          "applied": 8,
+          "adoption": 100
+        }
+      },
+      "overallScore": 87,
+      "byProject": [
+        {
+          "project": "Feed",
+          "score": 95
+        },
+        {
+          "project": "Messaging",
+          "score": 82
+        },
+        {
+          "project": "Jobs",
+          "score": 91
+        },
+        {
+          "project": "Data Acceleration",
+          "score": 78
+        },
+        {
+          "project": "Premium",
+          "score": 75
+        },
+        {
+          "project": "Network",
+          "score": 94
+        },
+        {
+          "project": "SnapPay",
+          "score": 96
+        },
+        {
+          "project": "Client Onboarding",
+          "score": 88
+        }
+      ]
+    },
+    "issueStatusFlow": [
+      {
+        "issueType": "C360_Defect",
+        "inProgress": 0,
+        "codeTestComplete": 7,
+        "readyToDeploy": 6,
+        "total": 13
+      },
+      {
+        "issueType": "Feature",
+        "inProgress": 2,
+        "codeTestComplete": 19,
+        "readyToDeploy": 2,
+        "total": 23
+      }
+    ],
+    "defectAge": {
+      "totalDefects": 254,
+      "aged120Days": {
+        "count": 0,
+        "percentage": 0
+      },
+      "aged90Days": {
+        "count": 2,
+        "percentage": 0.8
+      },
+      "aged60Days": {
+        "count": 5,
+        "percentage": 2
+      },
+      "aged30Days": {
+        "count": 3,
+        "percentage": 1.2
+      },
+      "done": {
+        "count": 241,
+        "percentage": 95
+      }
+    },
+    "featureRefinement": {
+      "newFeatures": 236,
+      "inRefinement": 32,
+      "readyForDevelopment": 59,
+      "features": [
+        {
+          "key": "FPT-15829",
+          "summary": "Endpoints for rendering configuration in file json format",
+          "status": "TO DO",
+          "created": "2026-03-25",
+          "team": "Team Illuminati",
+          "assignee": "Unassigned",
+          "targetEnd": null
+        },
+        {
+          "key": "FPT-15825",
+          "summary": "Database optimization for Feed",
+          "status": "TO DO",
+          "created": "2026-03-25",
+          "team": "Team Illuminati",
+          "assignee": "Unassigned",
+          "targetEnd": null
+        },
+        {
+          "key": "FPT-14748",
+          "summary": "Premier UI - Deposits: Stop Pay - For User Specified Date Range",
+          "status": "TO DO",
+          "created": "2025-12-17",
+          "team": "UI - Fintech Guardians",
+          "assignee": "Unassigned",
+          "targetEnd": "2026-04-01"
+        },
+        {
+          "key": "FPT-6658",
+          "summary": "Expand Customer image links beyond Signature card (include Drives License)",
+          "status": "TO DO",
+          "created": "2024-10-30",
+          "team": null,
+          "assignee": "Unassigned",
+          "targetEnd": null
+        },
+        {
+          "key": "FPT-6577",
+          "summary": "Printing views consolidation",
+          "status": "TO DO",
+          "created": "2024-10-23",
+          "team": null,
+          "assignee": "Unassigned",
+          "targetEnd": null
+        },
+        {
+          "key": "FPT-5688",
+          "summary": "Enhance Account/Customer Search by Tax ID",
+          "status": "TO DO",
+          "created": "2024-08-26",
+          "team": null,
+          "assignee": "Unassigned",
+          "targetEnd": null
+        },
+        {
+          "key": "FPT-5677",
+          "summary": "Premier UIX - Add Holds tile to Savings using SAV0600",
+          "status": "TO DO",
+          "created": "2024-08-23",
+          "team": null,
+          "assignee": "Unassigned",
+          "targetEnd": null
+        },
+        {
+          "key": "FPT-713",
+          "summary": "Modify the Resource URL as per the APICOE standard - tech debt",
+          "status": "TO DO",
+          "created": "2023-07-18",
+          "team": null,
+          "assignee": "Patodi, Saurabh (Noida)",
+          "targetEnd": null
+        }
+      ]
+    },
+    "featureGroomingProgression": {
+      "weekly": [
+        {
+          "week": "W11, Mar 09",
+          "date": "2026-03-09",
+          "created": 8,
+          "inRefinement": 12,
+          "readyForDev": 15,
+          "inProgress": 18,
+          "completed": 5
+        },
+        {
+          "week": "W12, Mar 16",
+          "date": "2026-03-16",
+          "created": 10,
+          "inRefinement": 14,
+          "readyForDev": 12,
+          "inProgress": 15,
+          "completed": 7
+        },
+        {
+          "week": "W13, Mar 23",
+          "date": "2026-03-23",
+          "created": 6,
+          "inRefinement": 11,
+          "readyForDev": 16,
+          "inProgress": 12,
+          "completed": 8
+        },
+        {
+          "week": "W14, Mar 30",
+          "date": "2026-03-30",
+          "created": 9,
+          "inRefinement": 13,
+          "readyForDev": 14,
+          "inProgress": 16,
+          "completed": 6
+        },
+        {
+          "week": "W15, Apr 06",
+          "date": "2026-04-06",
+          "created": 12,
+          "inRefinement": 15,
+          "readyForDev": 11,
+          "inProgress": 19,
+          "completed": 9
+        },
+        {
+          "week": "W16, Apr 13",
+          "date": "2026-04-13",
+          "created": 7,
+          "inRefinement": 12,
+          "readyForDev": 13,
+          "inProgress": 17,
+          "completed": 10
+        },
+        {
+          "week": "W17, Apr 20",
+          "date": "2026-04-20",
+          "created": 11,
+          "inRefinement": 14,
+          "readyForDev": 15,
+          "inProgress": 14,
+          "completed": 8
+        },
+        {
+          "week": "W18, Apr 27",
+          "date": "2026-04-27",
+          "created": 9,
+          "inRefinement": 16,
+          "readyForDev": 12,
+          "inProgress": 16,
+          "completed": 7
+        }
+      ]
+    }
+  },
+  "research": {
+    "coverageRate": [
+      {
+        "month": "Jan 2026",
+        "backed": 62,
+        "intuition": 38
+      },
+      {
+        "month": "Feb 2026",
+        "backed": 68,
+        "intuition": 32
+      },
+      {
+        "month": "Mar 2026",
+        "backed": 72,
+        "intuition": 28
+      },
+      {
+        "month": "Apr 2026",
+        "backed": 76,
+        "intuition": 24
+      }
+    ],
+    "implementationRate": [
+      {
+        "month": "Jan 2026",
+        "rate": 52
+      },
+      {
+        "month": "Feb 2026",
+        "rate": 61
+      },
+      {
+        "month": "Mar 2026",
+        "rate": 68
+      },
+      {
+        "month": "Apr 2026",
+        "rate": 74
+      }
+    ],
+    "usabilityScores": [
+      {
+        "month": "Jan 2026",
+        "score": 4.1,
+        "participants": 18,
+        "sessions": 3
+      },
+      {
+        "month": "Feb 2026",
+        "score": 4.3,
+        "participants": 24,
+        "sessions": 4
+      },
+      {
+        "month": "Mar 2026",
+        "score": 4.4,
+        "participants": 22,
+        "sessions": 4
+      },
+      {
+        "month": "Apr 2026",
+        "score": 4.6,
+        "participants": 28,
+        "sessions": 5
+      }
+    ],
+    "decisionImpactRate": [
+      {
+        "month": "Jan 2026",
+        "impacted": 58
+      },
+      {
+        "month": "Feb 2026",
+        "impacted": 64
+      },
+      {
+        "month": "Mar 2026",
+        "impacted": 69
+      },
+      {
+        "month": "Apr 2026",
+        "impacted": 73
+      }
+    ],
+    "researchTypes": {
+      "Usability Testing": 12,
+      "User Interviews": 9,
+      "Analytics Review": 7,
+      "Competitive Research": 5,
+      "Survey / Questionnaire": 4,
+      "Stakeholder Interviews": 4
+    },
+    "journeyReframeRate": [
+      {
+        "month": "Jan 2026",
+        "rate": 42,
+        "count": 5
+      },
+      {
+        "month": "Feb 2026",
+        "rate": 51,
+        "count": 6
+      },
+      {
+        "month": "Mar 2026",
+        "rate": 58,
+        "count": 7
+      },
+      {
+        "month": "Apr 2026",
+        "rate": 63,
+        "count": 8
+      }
+    ],
+    "caseStudies": [
+      {
+        "project": "Jobs",
+        "title": "Mapping 13 legacy nav items to 6 validated domains — from hypothesis to validated IA",
+        "summary": "Three rounds of tree testing brought Jobs' Information Architecture from 67.1% task success (V1) to 97.8% (V3) with screened LinkedIn members. The 6-domain model now reflects how professionals actually reason — it is no longer a proposal.",
+        "category": "Risk Reduction",
+        "businessImpact": "Reduced IA ambiguity for member workflows, lowering training and navigation risk for product surfaces",
+        "tags": [
+          "Tree Testing",
+          "Information Architecture",
+          "Validated"
+        ],
+        "isReal": true
+      },
+      {
+        "project": "Feed",
+        "title": "Advisory Panel demo drove 12% increase in new orders in 10 days",
+        "summary": "Showing 78 client members (55 banks) how their feedback was incorporated into the new Feed experience directly influenced purchasing decisions. Director of Product and Director of Dev confirmed the uplift was attributed to the panel demo.",
+        "category": "Revenue Influence",
+        "businessImpact": "Direct revenue attribution: 12% increase in new Feed orders in 10 days from client validation",
+        "tags": [
+          "Client Panel",
+          "Business Impact",
+          "Validated"
+        ],
+        "isReal": true
+      },
+      {
+        "project": "Premium",
+        "title": "Designing trust signals for AI-generated recommendations",
+        "summary": "Research found users distrusted AI outputs without visible reasoning. Introduced confidence labels and source citations — approval rating improved from 34% to 71% in prototype testing.",
+        "category": "Speed / Acceleration",
+        "businessImpact": "Accelerated AI feature adoption by establishing trust patterns that reduced stakeholder hesitation",
+        "tags": [
+          "AI UX",
+          "Usability Testing"
+        ],
+        "isReal": false
+      },
+      {
+        "project": "Client Onboarding",
+        "title": "Stepper redesign based on drop-off pattern analysis",
+        "summary": "Stakeholder interviews revealed step 4 of onboarding had a 40% drop-off. Redesigned as a single progressive form, reducing cognitive load. Client stakeholder sign-off achieved in sprint.",
+        "category": "Risk Reduction",
+        "businessImpact": "Prevented potential 40% user drop-off, protecting onboarding conversion rates",
+        "tags": [
+          "Stakeholder Interviews",
+          "Rework Prevention"
+        ],
+        "isReal": false
+      }
+    ],
+    "clientValidation": [
+      {
+        "project": "Feed",
+        "note": "JoAnna Freeland (Director of Product) and Joe Myers (Director of Dev) confirmed new Feed orders are up 12% in 10 days, largely attributed to the advisory panel demo showing clients their feedback incorporated.",
+        "isReal": true
+      },
+      {
+        "project": "Jobs",
+        "note": "Positive UAT result — tellers completed cash balancing 40% faster than baseline.",
+        "isReal": false
+      },
+      {
+        "project": "Client Onboarding",
+        "note": "Client stakeholder review — approved with minor copy changes.",
+        "isReal": false
+      }
+    ]
+  },
+  "cost": {
+    "monthly": [
+      {
+        "month": "Jan 2026",
+        "rework": 14200,
+        "bugs": 9000,
+        "avoidance": 22000,
+        "sprintLead": 8000,
+        "pocKills": 0,
+        "apexReuse": 7800,
+        "total": 61000
+      },
+      {
+        "month": "Feb 2026",
+        "rework": 18600,
+        "bugs": 13500,
+        "avoidance": 48000,
+        "sprintLead": 12000,
+        "pocKills": 0,
+        "apexReuse": 9100,
+        "total": 101200
+      },
+      {
+        "month": "Mar 2026",
+        "rework": 15400,
+        "bugs": 10500,
+        "avoidance": 18000,
+        "sprintLead": 10000,
+        "pocKills": 150000,
+        "apexReuse": 8600,
+        "total": 212500
+      },
+      {
+        "month": "Apr 2026",
+        "rework": 18800,
+        "bugs": 12000,
+        "avoidance": 24000,
+        "sprintLead": 9600,
+        "pocKills": 0,
+        "apexReuse": 12000,
+        "total": 76400
+      }
+    ],
+    "riskImpact": [
+      {
+        "month": "Jan 2026",
+        "initiativesInfluenced": 58,
+        "totalInitiatives": 12,
+        "roadmapReframed": 3,
+        "pocsStoppedEarly": 0,
+        "highSeverityRisks": 4
+      },
+      {
+        "month": "Feb 2026",
+        "initiativesInfluenced": 64,
+        "totalInitiatives": 14,
+        "roadmapReframed": 5,
+        "pocsStoppedEarly": 0,
+        "highSeverityRisks": 6
+      },
+      {
+        "month": "Mar 2026",
+        "initiativesInfluenced": 69,
+        "totalInitiatives": 16,
+        "roadmapReframed": 7,
+        "pocsStoppedEarly": 1,
+        "highSeverityRisks": 5
+      },
+      {
+        "month": "Apr 2026",
+        "initiativesInfluenced": 73,
+        "totalInitiatives": 18,
+        "roadmapReframed": 8,
+        "pocsStoppedEarly": 0,
+        "highSeverityRisks": 7
+      }
+    ],
+    "byProject": [
+      {
+        "project": "Feed",
+        "rework": 6400,
+        "bugs": 4500,
+        "avoidance": 12000,
+        "apexReuse": 3800,
+        "total": 26700
+      },
+      {
+        "project": "Messaging",
+        "rework": 4200,
+        "bugs": 3000,
+        "avoidance": 48000,
+        "apexReuse": 2900,
+        "total": 58100
+      },
+      {
+        "project": "Jobs",
+        "rework": 3800,
+        "bugs": 1500,
+        "avoidance": 0,
+        "apexReuse": 2400,
+        "total": 7700
+      },
+      {
+        "project": "Data Acceleration",
+        "rework": 2200,
+        "bugs": 1500,
+        "avoidance": 0,
+        "apexReuse": 1600,
+        "total": 5300
+      },
+      {
+        "project": "Premium",
+        "rework": 1400,
+        "bugs": 1500,
+        "avoidance": 0,
+        "apexReuse": 800,
+        "total": 3700
+      },
+      {
+        "project": "Network",
+        "rework": 800,
+        "bugs": 0,
+        "avoidance": 0,
+        "apexReuse": 500,
+        "total": 1300
+      }
+    ],
+    "bugs": {
+      "caught": [
+        9,
+        14,
+        11,
+        13
+      ],
+      "months": [
+        "Jan 2026",
+        "Feb 2026",
+        "Mar 2026",
+        "Apr 2026"
+      ]
+    },
+    "reworkHours": [
+      68,
+      93,
+      77,
+      94
+    ],
+    "methodology": {
+      "designerRate": 125,
+      "engineerRate": 200,
+      "bugAtDesign": 500,
+      "bugAtDev": 5000,
+      "bugAtProd": 50000,
+      "note": "IBM 10x rule applied for bug stage multipliers. Sprint lead reported as capacity value, not hard cash. Cost avoidance is designer-estimated based on build cost of avoided direction."
+    }
+  },
+  "projectComponents": {
+    "monthly": [
+      {
+        "month": "Jan 2026",
+        "simple": 2,
+        "medium": 5,
+        "complex": 3,
+        "custom": 2
+      },
+      {
+        "month": "Feb 2026",
+        "simple": 3,
+        "medium": 6,
+        "complex": 4,
+        "custom": 1
+      },
+      {
+        "month": "Mar 2026",
+        "simple": 1,
+        "medium": 4,
+        "complex": 5,
+        "custom": 3
+      },
+      {
+        "month": "Apr 2026",
+        "simple": 4,
+        "medium": 7,
+        "complex": 6,
+        "custom": 2
+      }
+    ],
+    "components": [
+      {
+        "name": "Advanced data table with inline editing",
+        "project": "Feed",
+        "type": "Complex",
+        "designer": "Designer A",
+        "hoursSpent": 28,
+        "purpose": "Custom table for task management with inline editing, sorting, filtering",
+        "domainCategory": "Data Management",
+        "status": "Completed"
+      },
+      {
+        "name": "Multi-step workflow wizard",
+        "project": "Messaging",
+        "type": "Custom",
+        "designer": "Designer B",
+        "hoursSpent": 42,
+        "purpose": "Complex workflow with branching logic for data entry process",
+        "domainCategory": "Workflow & Process",
+        "status": "Completed"
+      },
+      {
+        "name": "Transaction approval flow",
+        "project": "Jobs",
+        "type": "Complex",
+        "designer": "Designer A",
+        "hoursSpent": 24,
+        "purpose": "Multi-level approval system with escalation patterns",
+        "domainCategory": "Workflow & Process",
+        "status": "Completed"
+      },
+      {
+        "name": "Real-time notification center",
+        "project": "Network",
+        "type": "Medium",
+        "designer": "Designer D",
+        "hoursSpent": 10,
+        "purpose": "Notification hub with filtering and real-time updates",
+        "domainCategory": "Notifications & Alerts",
+        "status": "Completed"
+      },
+      {
+        "name": "Advanced filter builder",
+        "project": "Messaging",
+        "type": "Complex",
+        "designer": "Designer B",
+        "hoursSpent": 22,
+        "purpose": "Dynamic filter creation with complex logic operators",
+        "domainCategory": "User Input & Forms",
+        "status": "Completed"
+      },
+      {
+        "name": "Document preview modal",
+        "project": "Client Onboarding",
+        "type": "Medium",
+        "designer": "Designer D",
+        "hoursSpent": 9,
+        "purpose": "Preview uploaded documents with annotation capabilities",
+        "domainCategory": "Document Management",
+        "status": "Completed"
+      },
+      {
+        "name": "API integration dashboard",
+        "project": "Data Acceleration",
+        "type": "Complex",
+        "designer": "Designer C",
+        "hoursSpent": 26,
+        "purpose": "Dashboard for monitoring and managing API connections",
+        "domainCategory": "Analytics & Monitoring",
+        "status": "Completed"
+      },
+      {
+        "name": "Error state illustrations",
+        "project": "Data Acceleration",
+        "type": "Simple",
+        "designer": "Designer C",
+        "hoursSpent": 5,
+        "purpose": "Custom error state illustrations for various failure scenarios",
+        "domainCategory": "Visual Feedback",
+        "status": "Completed"
+      },
+      {
+        "name": "Payment confirmation flow",
+        "project": "SnapPay",
+        "type": "Medium",
+        "designer": "Designer D",
+        "hoursSpent": 11,
+        "purpose": "Multi-step payment confirmation with security verification",
+        "domainCategory": "Financial Transactions",
+        "status": "Completed"
+      },
+      {
+        "name": "AI prompt input interface",
+        "project": "Premium",
+        "type": "Complex",
+        "designer": "Designer E",
+        "hoursSpent": 30,
+        "purpose": "Advanced input interface with prompt suggestions and history",
+        "domainCategory": "AI & Automation",
+        "status": "Completed"
+      },
+      {
+        "name": "Onboarding checklist widget",
+        "project": "Client Onboarding",
+        "type": "Medium",
+        "designer": "Designer D",
+        "hoursSpent": 8,
+        "purpose": "Interactive checklist with progress tracking",
+        "domainCategory": "Onboarding & Guidance",
+        "status": "Completed"
+      },
+      {
+        "name": "Quick action tooltips",
+        "project": "Jobs",
+        "type": "Simple",
+        "designer": "Designer A",
+        "hoursSpent": 4,
+        "purpose": "Contextual tooltips for quick actions menu",
+        "domainCategory": "Visual Feedback",
+        "status": "Completed"
+      },
+      {
+        "name": "Report generation interface",
+        "project": "Feed",
+        "type": "Medium",
+        "designer": "Designer E",
+        "hoursSpent": 12,
+        "purpose": "Interface for selecting and generating custom reports",
+        "domainCategory": "Analytics & Reporting",
+        "status": "Completed"
+      },
+      {
+        "name": "Data visualization legend",
+        "project": "Messaging",
+        "type": "Simple",
+        "designer": "Designer B",
+        "hoursSpent": 6,
+        "purpose": "Interactive legend for complex data visualizations",
+        "domainCategory": "Analytics & Reporting",
+        "status": "Completed"
+      },
+      {
+        "name": "Status indicator system",
+        "project": "Network",
+        "type": "Simple",
+        "designer": "Designer D",
+        "hoursSpent": 5,
+        "purpose": "Consistent status indicators across queue views",
+        "domainCategory": "Visual Feedback",
+        "status": "Completed"
+      },
+      {
+        "name": "Responsive mobile navigation",
+        "project": "Messaging",
+        "type": "Medium",
+        "designer": "Designer E",
+        "hoursSpent": 10,
+        "purpose": "Mobile-optimized navigation for Messaging app",
+        "domainCategory": "Navigation & Discovery",
+        "status": "Completed"
+      },
+      {
+        "name": "Empty state illustrations",
+        "project": "Feed",
+        "type": "Medium",
+        "designer": "Designer A",
+        "hoursSpent": 9,
+        "purpose": "Custom empty state designs for various views",
+        "domainCategory": "Visual Feedback",
+        "status": "Completed"
+      },
+      {
+        "name": "Settings panel",
+        "project": "Network",
+        "type": "Medium",
+        "designer": "Designer D",
+        "hoursSpent": 11,
+        "purpose": "User settings panel with notification preferences",
+        "domainCategory": "Settings & Configuration",
+        "status": "Completed"
+      },
+      {
+        "name": "Feedback collection modal",
+        "project": "Premium",
+        "type": "Complex",
+        "designer": "Designer C",
+        "hoursSpent": 20,
+        "purpose": "Modal for collecting structured feedback on AI outputs",
+        "domainCategory": "AI & Automation",
+        "status": "Completed"
+      }
+    ],
+    "summary": {
+      "totalComponents": 19,
+      "totalHours": 292,
+      "avgHoursPerComponent": 15.4,
+      "totalValue": 43800
+    },
+    "byProject": [
+      {
+        "project": "Feed",
+        "count": 3,
+        "hours": 49,
+        "value": 7350
+      },
+      {
+        "project": "Messaging",
+        "count": 5,
+        "hours": 60,
+        "value": 9000
+      },
+      {
+        "project": "Jobs",
+        "count": 2,
+        "hours": 28,
+        "value": 4200
+      },
+      {
+        "project": "Data Acceleration",
+        "count": 2,
+        "hours": 31,
+        "value": 4650
+      },
+      {
+        "project": "Premium",
+        "count": 2,
+        "hours": 50,
+        "value": 7500
+      },
+      {
+        "project": "Network",
+        "count": 3,
+        "hours": 27,
+        "value": 4050
+      },
+      {
+        "project": "SnapPay",
+        "count": 1,
+        "hours": 11,
+        "value": 1650
+      },
+      {
+        "project": "Client Onboarding",
+        "count": 2,
+        "hours": 17,
+        "value": 2550
+      }
+    ],
+    "byDesigner": [
+      {
+        "designer": "Designer A",
+        "count": 4,
+        "hours": 67,
+        "projects": [
+          "Feed",
+          "Jobs"
+        ]
+      },
+      {
+        "designer": "Designer B",
+        "count": 3,
+        "hours": 70,
+        "projects": [
+          "Messaging"
+        ]
+      },
+      {
+        "designer": "Designer C",
+        "count": 2,
+        "hours": 46,
+        "projects": [
+          "Data Acceleration",
+          "Premium"
+        ]
+      },
+      {
+        "designer": "Designer D",
+        "count": 6,
+        "hours": 54,
+        "projects": [
+          "Network",
+          "SnapPay",
+          "Client Onboarding"
+        ]
+      },
+      {
+        "designer": "Designer E",
+        "count": 4,
+        "hours": 82,
+        "projects": [
+          "Premium",
+          "Messaging",
+          "Feed"
+        ]
+      }
+    ]
+  },
+  "strategic": {
+    "initiatives": [
+      {
+        "name": "Insights AI",
+        "type": "Agentic AI (Gen AI API Access)",
+        "shortType": "Agentic AI",
+        "status": "Actively delivering ROI",
+        "statusIndex": 3,
+        "previousStatus": "Learning investment",
+        "strategicValue": "Establishes internal standards and trust for GenAI usage across products",
+        "uxInvolvement": "Design · Optimization",
+        "keyMetric": "Live",
+        "keyMetricLabel": "Internal user adoption",
+        "uxContribution": "Interaction design for AI responses, prompt guidance, transparency patterns, and error states for internal Gen AI access.",
+        "color": "#0071e3",
+        "lastUpdated": "Apr 2026"
+      },
+      {
+        "name": "Hawk AI",
+        "type": "Agentic Change Management",
+        "shortType": "Change Management",
+        "status": "Risk reduction phase",
+        "statusIndex": 1,
+        "previousStatus": "Cheap exploration",
+        "strategicValue": "Reduces operational decision errors and standardizes change management flows",
+        "uxInvolvement": "Design · Research",
+        "keyMetric": "In Development",
+        "keyMetricLabel": "Adoption pending launch",
+        "uxContribution": "Shaping agent flows, task structures, and human intervention points for internal change management processes.",
+        "color": "#7c3aed",
+        "lastUpdated": "Apr 2026"
+      },
+      {
+        "name": "Digits",
+        "type": "Analytics Platform",
+        "shortType": "Analytics",
+        "status": "Learning investment",
+        "statusIndex": 2,
+        "strategicValue": "Creates a shared analytics language between UX, product, and leadership",
+        "uxInvolvement": "Design · Usability Testing",
+        "keyMetric": "POC in Validation",
+        "keyMetricLabel": "Usage data pending",
+        "uxContribution": "Designing dashboards and data visualizations to make behavioral and usage analytics interpretable and actionable.",
+        "color": "#f59e0b",
+        "lastUpdated": "Apr 2026"
+      },
+      {
+        "name": "UX Dashboard",
+        "type": "Work Visibility Platform",
+        "shortType": "Visibility",
+        "status": "Learning investment",
+        "statusIndex": 2,
+        "strategicValue": "Makes UX outcomes legible at leadership scale",
+        "uxInvolvement": "Design · Strategy",
+        "keyMetric": "POC in Validation",
+        "keyMetricLabel": "Leadership adoption tracked",
+        "uxContribution": "Creating the visibility layer that makes UX timelines and cross-product impact legible to senior management.",
+        "color": "#dc2626",
+        "lastUpdated": "Apr 2026"
+      }
+    ],
+    "innovationByMonth": [
+      3,
+      5,
+      4,
+      4
+    ],
+    "pocFunnel": [
+      {
+        "stage": "Discovery",
+        "count": 6
+      },
+      {
+        "stage": "Validation",
+        "count": 4
+      },
+      {
+        "stage": "Advancing to Product",
+        "count": 2
+      },
+      {
+        "stage": "Shipped",
+        "count": 1
+      },
+      {
+        "stage": "Killed (saves build cost)",
+        "count": 3
+      }
+    ],
+    "pocKills": [
+      {
+        "month": "Jan 2026",
+        "killed": 0,
+        "savedEach": 0,
+        "total": 0
+      },
+      {
+        "month": "Feb 2026",
+        "killed": 0,
+        "savedEach": 0,
+        "total": 0
+      },
+      {
+        "month": "Mar 2026",
+        "killed": 1,
+        "savedEach": 150000,
+        "total": 150000
+      },
+      {
+        "month": "Apr 2026",
+        "killed": 0,
+        "savedEach": 0,
+        "total": 0
+      }
+    ],
+    "aiInternalAdoption": [
+      {
+        "month": "Jan 2026",
+        "rate": 55
+      },
+      {
+        "month": "Feb 2026",
+        "rate": 64
+      },
+      {
+        "month": "Mar 2026",
+        "rate": 73
+      },
+      {
+        "month": "Apr 2026",
+        "rate": 82
+      }
+    ],
+    "aiTools": {
+      "Figma AI": 14,
+      "ChatGPT / GPT-4": 12,
+      "Claude (Anthropic)": 9,
+      "GitHub Copilot": 5,
+      "Notion AI": 4,
+      "Midjourney / DALL-E": 3
+    },
+    "aiUseCases": {
+      "Ideation / Brainstorming": 13,
+      "Research Synthesis": 11,
+      "Copy / Microcopy": 10,
+      "Documentation / Specs": 8,
+      "Prototyping": 6,
+      "Accessibility Review": 4
+    },
+    "aiClientFacing": [
+      {
+        "project": "Premium",
+        "feature": "AI-generated financial recommendations",
+        "contribution": "Designed confidence labels, reasoning surfaces, and fallback states for AI output.",
+        "stage": "Staging"
+      },
+      {
+        "project": "Data Acceleration",
+        "feature": "Natural language query interface for client widget",
+        "contribution": "Defined error state UX, suggestion prompt patterns, and zero-state design.",
+        "stage": "Validation"
+      },
+      {
+        "project": "SnapPay",
+        "feature": "AI fraud alert messaging",
+        "contribution": "Designed plain-language risk communication patterns to reduce user anxiety.",
+        "stage": "Production"
+      }
+    ],
+    "opportunities": [
+      {
+        "project": "Feed",
+        "description": "Identified opportunity to consolidate 3 separate admin workflows into a single task center. Proactively proposed to product — now scoped for Q3.",
+        "type": "Process Consolidation",
+        "confidence": "Validated"
+      },
+      {
+        "project": "Jobs",
+        "description": "Reframed a \"notification redesign\" brief into a broader communication strategy encompassing in-app, email, and SMS. Stakeholders adopted the wider scope.",
+        "type": "Brief Reframe",
+        "confidence": "Stakeholder Aligned"
+      },
+      {
+        "project": "Premium",
+        "description": "Proposed a \"human-in-the-loop\" pattern library for AI features — reusable across AI projects. Approved as a design system initiative.",
+        "type": "Design System Initiative",
+        "confidence": "In Progress"
+      },
+      {
+        "project": "Messaging",
+        "description": "Discovered that 3 separate teams were designing their own empty state patterns. Flagged duplication — now standardized in Horizon.",
+        "type": "Duplication Caught",
+        "confidence": "Resolved"
+      }
+    ],
+    "valueAddCards": [
+      {
+        "project": "Feed",
+        "outcome": "Direction change",
+        "note": "Task Admin table layout changed before dev handoff — no rework required.",
+        "tag": "Rework Prevented"
+      },
+      {
+        "project": "Premium",
+        "outcome": "Client approval",
+        "note": "AI recommendations UI approved by client stakeholders after prototype review.",
+        "tag": "Client Outcome"
+      },
+      {
+        "project": "Jobs",
+        "outcome": "Faster completion",
+        "note": "Operators completing cash balancing 40% faster in UAT vs. previous flow.",
+        "tag": "Efficiency Gain"
+      },
+      {
+        "project": "Messaging",
+        "outcome": "Feature kill",
+        "note": "Complex filter system abandoned after usability testing — 3 sprint equivalent saved.",
+        "tag": "Cost Avoidance"
+      },
+      {
+        "project": "SnapPay",
+        "outcome": "Positive sentiment",
+        "note": "Fraud alert redesign received unsolicited positive feedback in user interviews.",
+        "tag": "User Sentiment"
+      }
+    ]
+  },
+  "researchInitiatives": [
+    {
+      "product": "AppMarket",
+      "study": "Fintech Generative Research",
+      "status": "Active",
+      "category": "Growth & acquisition",
+      "expectedDecision": "Prioritize / De-scope"
+    },
+    {
+      "product": "AppMarket",
+      "study": "Market Study",
+      "status": "Active",
+      "category": "Growth & acquisition",
+      "expectedDecision": "Validate assumption"
+    },
+    {
+      "product": "Feed",
+      "study": "Client Advisory Panel",
+      "status": "Active",
+      "category": "Growth & acquisition",
+      "expectedDecision": "Redesign / Iterate"
+    },
+    {
+      "product": "Feed",
+      "study": "Clover Integration Research",
+      "status": "Planning",
+      "category": "Efficiency & workflow",
+      "expectedDecision": "Launch / Don't launch"
+    },
+    {
+      "product": "Data Compass",
+      "study": "Portal Redesign Research",
+      "status": "Active",
+      "category": "Efficiency & workflow",
+      "expectedDecision": "Redesign / Iterate"
+    },
+    {
+      "product": "Data Compass",
+      "study": "AI Workshop — Frisco",
+      "status": "Complete",
+      "category": "Strategic exploration",
+      "expectedDecision": "Validate assumption"
+    },
+    {
+      "product": "Data Compass",
+      "study": "AI Workshop — Alpharetta",
+      "status": "Planning",
+      "category": "Strategic exploration",
+      "expectedDecision": "Redesign / Iterate"
+    },
+    {
+      "product": "Data Compass",
+      "study": "Benchmarking Market Assessment",
+      "status": "Active",
+      "category": "Growth & acquisition",
+      "expectedDecision": "Validate assumption"
+    },
+    {
+      "product": "Messaging",
+      "study": "Client Panel (Monthly)",
+      "status": "Active",
+      "category": "Growth & acquisition",
+      "expectedDecision": "Redesign / Iterate"
+    },
+    {
+      "product": "Messaging",
+      "study": "Feature Survey with Client Panel",
+      "status": "Complete",
+      "category": "Efficiency & workflow",
+      "expectedDecision": "Prioritize / De-scope"
+    },
+    {
+      "product": "Messaging",
+      "study": "New Deposit Account Wizard (NDAW)",
+      "status": "Planning",
+      "category": "Efficiency & workflow",
+      "expectedDecision": "Launch / Don't launch"
+    },
+    {
+      "product": "Jobs",
+      "study": "UBA Information Architecture Tree Test",
+      "status": "Active",
+      "category": "Risk & compliance",
+      "expectedDecision": "Redesign / Iterate"
+    },
+    {
+      "product": "Premium",
+      "study": "BAC Quick Search Demo & AI Survey",
+      "status": "Complete",
+      "category": "Strategic exploration",
+      "expectedDecision": "Validate assumption"
+    },
+    {
+      "product": "Qual Tool Comparison",
+      "study": "Qualitative Platform Evaluation",
+      "status": "Active",
+      "category": "Efficiency & workflow",
+      "expectedDecision": "Launch / Don't launch"
+    },
+    {
+      "product": "Online Bill Pay",
+      "study": "Usability Test — Regions and Ally",
+      "status": "Complete",
+      "category": "Risk & compliance",
+      "expectedDecision": "Launch / Don't launch"
+    }
+  ],
+  "panelHealth": {
+    "coreAdvance": {
+      "totalMembers": 78,
+      "totalBanks": 55,
+      "febParticipants": 59,
+      "febBanks": 45,
+      "engagementRate": 76,
+      "janFIs": 55,
+      "febFIs": 45
+    },
+    "dnaUX": {
+      "totalMembers": 24,
+      "janFIs": 12,
+      "febFIs": 13
+    }
+  },
+  "ubaIASpotlight": {
+    "rounds": [
+      {
+        "version": "V1",
+        "successRate": 67.1,
+        "n": 5,
+        "method": "Unmoderated panel",
+        "roles": "Ops & SysAdmin",
+        "improvement": null
+      },
+      {
+        "version": "V2",
+        "successRate": 85.6,
+        "n": 10,
+        "method": "Unmoderated panel",
+        "roles": "Ops & SysAdmin",
+        "improvement": "+18.5%"
+      },
+      {
+        "version": "V3",
+        "successRate": 97.8,
+        "n": 10,
+        "method": "Moderated client sessions",
+        "roles": "Senior Ops, Admin/IT",
+        "improvement": "+12.2%"
+      }
+    ],
+    "domains": [
+      {
+        "name": "System Settings",
+        "desc": "How the system behaves over time — branch ops, hours, device mgmt"
+      },
+      {
+        "name": "Roles & Access",
+        "desc": "Roles, permissions, and access control"
+      },
+      {
+        "name": "Transactions & Pricing",
+        "desc": "Fees, rules, and limits for movement of money"
+      },
+      {
+        "name": "Currency, Cash & Reconciliation",
+        "desc": "Control of physical/represented cash and currency (vaults & tills)"
+      },
+      {
+        "name": "Forms & Communications",
+        "desc": "What the system prints or shows (digital & printed)"
+      },
+      {
+        "name": "Compliance & Risk",
+        "desc": "Regulatory enforcement and audit posture — BSA/AML, CTR, SAR, OFAC"
+      }
+    ],
+    "finding": "This is no longer a hypothesis. It is a validated domain model.",
+    "context": "Mapped 13 legacy navigation items from Integrated Teller to 6 governed domains. The final IA (V4) reflects how professionals actually reason about governance, authority, risk, and execution."
+  },
+  "researchAsks": [
+    {
+      "title": "Transcription tooling",
+      "blocker": "Feed and Messaging each run 5+ client sessions per month; manual note-taking from recordings is unsustainable",
+      "impact": "30–40% of researcher time spent on notes, increased synthesis lag, accuracy risk in documentation",
+      "unlock": "+3–5 studies/month, faster decision cycles, reduced researcher burnout, improved synthesis quality",
+      "decisionBy": "Q2 2026 — Tool approval",
+      "products": [
+        "Feed",
+        "Messaging"
+      ]
+    },
+    {
+      "title": "Client access for recruiting",
+      "blocker": "Researchers lack direct access to clients for study participation",
+      "impact": "Multi-week recruiting delays, reliance on account managers, limited panel diversity, missed validation windows",
+      "unlock": "Same-week recruiting for validation studies, faster feedback loops, increased study volume",
+      "decisionBy": "Q2 2026 — Access protocol approval",
+      "products": [
+        "All products"
+      ]
+    },
+    {
+      "title": "Qual platform tooling",
+      "blocker": "Recorder/plugin constraints, screener access, security/compliance needs under active evaluation",
+      "impact": "Manual workflows, inconsistent data capture, limited remote testing capability, compliance friction",
+      "unlock": "Standardized research ops, better artifact management, improved collaboration, compliant remote studies",
+      "decisionBy": "Q2 2026 — Platform selection & budget",
+      "products": [
+        "Jobs",
+        "Cross-team"
+      ]
+    }
+  ],
+  "strategicContributions": [
+    {
+      "id": "task-admin-bulk",
+      "title": "Task Admin bulk actions",
+      "x": 30,
+      "y": 82,
+      "problem": "Operators had to action queue items one at a time, making large workloads slow and error-prone.",
+      "evidence": "78% of tested users expected select-all behavior; task completion time averaged 4.2 min for batch work.",
+      "recommendation": "Introduce multi-select with a bulk action bar and clear selection state before building further queue features.",
+      "outcome": "Blocked downstream queue work until the interaction model is agreed; prototype validated with the ops panel.",
+      "metrics": [
+        {
+          "label": "Users expecting select-all",
+          "value": "78%"
+        },
+        {
+          "label": "Avg. batch task time",
+          "value": "4.2m"
+        }
+      ]
+    },
+    {
+      "id": "search-date-range",
+      "title": "Search date-range filtering",
+      "x": 38,
+      "y": 68,
+      "problem": "Users could not filter account search results by date range, forcing manual scanning of long lists.",
+      "evidence": "Backend limitation surfaced during research; 6 of 8 participants abandoned the task.",
+      "recommendation": "Resolve the indexing constraint before shipping the redesigned filter panel.",
+      "outcome": "Flagged as a blocker to the search redesign; engineering scoping in progress.",
+      "metrics": [
+        {
+          "label": "Task abandonment",
+          "value": "6/8"
+        },
+        {
+          "label": "Affected products",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "id": "ai-confidence-labels",
+      "title": "AI response confidence labels",
+      "x": 72,
+      "y": 78,
+      "problem": "Users could not judge how much to trust AI responses, reducing adoption of the assistant.",
+      "evidence": "Panel sessions showed hesitation and repeated manual verification of AI output.",
+      "recommendation": "Add confidence labels, reasoning surfaces, and fallback states to an already-shipping surface.",
+      "outcome": "Enhanced a live experience; trust and repeat usage improved in follow-up testing.",
+      "metrics": [
+        {
+          "label": "Repeat usage",
+          "value": "+31%"
+        },
+        {
+          "label": "Manual re-checks",
+          "value": "−44%"
+        }
+      ]
+    },
+    {
+      "id": "onboarding-rework",
+      "title": "Onboarding flow rework",
+      "x": 55,
+      "y": 72,
+      "problem": "Account creation had a high drop-off rate, limiting activation of new users.",
+      "evidence": "Funnel analysis showed a 34% drop at the verification step.",
+      "recommendation": "Rework the step sequencing and guidance on the current onboarding flow.",
+      "outcome": "Enhanced a high-traffic flow; drop-off reduced in the redesigned path.",
+      "metrics": [
+        {
+          "label": "Verification drop-off",
+          "value": "34% → 19%"
+        },
+        {
+          "label": "Activation",
+          "value": "+22%"
+        }
+      ]
+    },
+    {
+      "id": "quantifying-ux",
+      "title": "Quantifying UX dashboard",
+      "x": 62,
+      "y": 64,
+      "problem": "Leadership had no consistent way to see UX's contribution, so its impact stayed invisible in planning conversations.",
+      "evidence": "Monthly reviews relied on anecdotes; there was no shared view of research coverage, delivery, and influence.",
+      "recommendation": "Build a single dashboard that quantifies UX contribution across research, delivery, and business impact.",
+      "outcome": "Enhanced how leadership sees UX; contribution is now legible and tracked month over month.",
+      "metrics": [
+        {
+          "label": "Signals tracked",
+          "value": "20+"
+        },
+        {
+          "label": "Update cadence",
+          "value": "Monthly"
+        }
+      ]
+    },
+    {
+      "id": "design-system-ai-ready",
+      "title": "Making the design system AI-ready",
+      "x": 32,
+      "y": 46,
+      "problem": "AI-assisted design and vibe-coded prototypes drift from the system because the token layer alone carries values, not the reasoning behind them — so agents make logical-but-wrong choices.",
+      "evidence": "Components meant to be identical diverge across screens and sessions; agents can read a token's value but not when or why to use it, or how components relate.",
+      "recommendation": "Structure the system in three layers: a token layer (the raw values), an intent layer (what each token means and when to use it), and a guardrail layer (rules and design.md docs that constrain agent decisions).",
+      "outcome": "An early opportunity to make the system agent-ready, cutting AI-generated design debt and keeping output consistent across separate sessions.",
+      "metrics": [
+        {
+          "label": "Layers defined",
+          "value": "3"
+        },
+        {
+          "label": "Cross-session drift",
+          "value": "Reduced"
+        }
+      ]
+    },
+    {
+      "id": "prompt-zero-state",
+      "title": "Prompt builder zero-state",
+      "x": 24,
+      "y": 33,
+      "problem": "New users faced an empty prompt builder with no guidance on where to start.",
+      "evidence": "Early concept testing surfaced confusion and low first-session success.",
+      "recommendation": "Explore zero-state patterns and example prompts as a new capability.",
+      "outcome": "A new opportunity to improve first-run experience; concept validated for further investment.",
+      "metrics": [
+        {
+          "label": "First-session success",
+          "value": "41%"
+        },
+        {
+          "label": "Concepts tested",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "id": "risk-communication",
+      "title": "Risk communication patterns",
+      "x": 18,
+      "y": 40,
+      "problem": "Users felt anxious interpreting risk information presented in technical language.",
+      "evidence": "Qualitative sessions surfaced repeated confusion and elevated task stress.",
+      "recommendation": "Prototype plain-language risk patterns as a new, unmet-need direction.",
+      "outcome": "An opportunity to reduce user anxiety; early patterns tested positively.",
+      "metrics": [
+        {
+          "label": "Perceived clarity",
+          "value": "+2.1 pts"
+        },
+        {
+          "label": "Sessions run",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "id": "transact-panel-groupings",
+      "title": "Transact panel groupings",
+      "x": 66,
+      "y": 40,
+      "problem": "Dense transaction screens forced heavy scrolling, slowing operators during high-volume work.",
+      "evidence": "Session recordings showed repeated long scrolls to reach common panels; task time suffered.",
+      "recommendation": "Regroup transaction panels by frequency and task, collapsing rarely used sections to reduce scrolling.",
+      "outcome": "An optimization that cut scrolling and sped up common transaction tasks.",
+      "metrics": [
+        {
+          "label": "Scroll distance",
+          "value": "−48%"
+        },
+        {
+          "label": "Task time",
+          "value": "−22%"
+        }
+      ]
+    },
+    {
+      "id": "design-tokens",
+      "title": "Cross-product design tokens",
+      "x": 82,
+      "y": 38,
+      "problem": "Inconsistent spacing and color across products slowed delivery and review.",
+      "evidence": "Audit found 40+ divergent values for the same intent across teams.",
+      "recommendation": "Standardize a shared token set to simplify and speed up existing work.",
+      "outcome": "An optimization that reduced rework and sped up handoff across teams.",
+      "metrics": [
+        {
+          "label": "Divergent values",
+          "value": "40+ → 6"
+        },
+        {
+          "label": "Handoff time",
+          "value": "−35%"
+        }
+      ]
+    },
+    {
+      "id": "notification-consolidation",
+      "title": "Notification center consolidation",
+      "x": 70,
+      "y": 28,
+      "problem": "Notifications were spread across surfaces, adding noise and maintenance overhead.",
+      "evidence": "Support tickets cited duplicate and conflicting alerts.",
+      "recommendation": "Consolidate into one center to simplify the existing experience.",
+      "outcome": "An optimization that simplified the surface and reduced duplicate alerts.",
+      "metrics": [
+        {
+          "label": "Duplicate alerts",
+          "value": "−61%"
+        },
+        {
+          "label": "Surfaces",
+          "value": "4 → 1"
+        }
+      ]
+    }
+  ],
+  "apex": {
+    "weeks": [
+      "2025-12-28",
+      "2026-01-04",
+      "2026-01-11",
+      "2026-01-18",
+      "2026-01-25",
+      "2026-02-01",
+      "2026-02-08",
+      "2026-02-15",
+      "2026-02-22",
+      "2026-03-01",
+      "2026-03-08",
+      "2026-03-15",
+      "2026-03-22",
+      "2026-03-29",
+      "2026-04-05",
+      "2026-04-12",
+      "2026-04-19"
+    ],
+    "weeklyTotals": [
+      {
+        "week": "2025-12-28",
+        "components": 1237,
+        "styles": 601,
+        "variables": 1854
+      },
+      {
+        "week": "2026-01-04",
+        "components": 2792,
+        "styles": 2480,
+        "variables": 9030
+      },
+      {
+        "week": "2026-01-11",
+        "components": 2321,
+        "styles": 1550,
+        "variables": 6710
+      },
+      {
+        "week": "2026-01-18",
+        "components": 1351,
+        "styles": 1528,
+        "variables": 4282
+      },
+      {
+        "week": "2026-01-25",
+        "components": 2694,
+        "styles": 1518,
+        "variables": 5466
+      },
+      {
+        "week": "2026-02-01",
+        "components": 12351,
+        "styles": 9902,
+        "variables": 18771
+      },
+      {
+        "week": "2026-02-08",
+        "components": 8349,
+        "styles": 2664,
+        "variables": 16364
+      },
+      {
+        "week": "2026-02-15",
+        "components": 11386,
+        "styles": 3972,
+        "variables": 17742
+      },
+      {
+        "week": "2026-02-22",
+        "components": 8938,
+        "styles": 3579,
+        "variables": 12689
+      },
+      {
+        "week": "2026-03-01",
+        "components": 6162,
+        "styles": 2559,
+        "variables": 11970
+      },
+      {
+        "week": "2026-03-08",
+        "components": 4321,
+        "styles": 2480,
+        "variables": 6072
+      },
+      {
+        "week": "2026-03-15",
+        "components": 8165,
+        "styles": 4215,
+        "variables": 18008
+      },
+      {
+        "week": "2026-03-22",
+        "components": 6902,
+        "styles": 4103,
+        "variables": 9874
+      },
+      {
+        "week": "2026-03-29",
+        "components": 5964,
+        "styles": 3998,
+        "variables": 8440
+      },
+      {
+        "week": "2026-04-05",
+        "components": 2526,
+        "styles": 1628,
+        "variables": 4453
+      },
+      {
+        "week": "2026-04-12",
+        "components": 4043,
+        "styles": 2878,
+        "variables": 6492
+      },
+      {
+        "week": "2026-04-19",
+        "components": 1397,
+        "styles": 853,
+        "variables": 3256
+      }
+    ],
+    "teamRanking": [
+      {
+        "team": "Messaging",
+        "insertions": 23273
+      },
+      {
+        "team": "Jobs",
+        "insertions": 19507
+      },
+      {
+        "team": "Feed",
+        "insertions": 17072
+      },
+      {
+        "team": "Data Acceleration",
+        "insertions": 11800
+      },
+      {
+        "team": "Horizon Design System",
+        "insertions": 6134
+      },
+      {
+        "team": "Network",
+        "insertions": 2790
+      },
+      {
+        "team": "Client Onboarding",
+        "insertions": 2157
+      },
+      {
+        "team": "Stabiliti",
+        "insertions": 1576
+      },
+      {
+        "team": "DataCompass",
+        "insertions": 1121
+      },
+      {
+        "team": "AppMarket",
+        "insertions": 1063
+      },
+      {
+        "team": "Insights UX",
+        "insertions": 905
+      },
+      {
+        "team": "SnapPay",
+        "insertions": 780
+      },
+      {
+        "team": "Premium",
+        "insertions": 729
+      },
+      {
+        "team": "Consulting Work - Internal",
+        "insertions": 558
+      },
+      {
+        "team": "Teller UX",
+        "insertions": 300
+      },
+      {
+        "team": "Premier",
+        "insertions": 188
+      },
+      {
+        "team": "EPP Modernization",
+        "insertions": 158
+      },
+      {
+        "team": "CANS-IRIS",
+        "insertions": 144
+      },
+      {
+        "team": "Figma Guides",
+        "insertions": 129
+      },
+      {
+        "team": "CUS Business Analysts",
+        "insertions": 112
+      },
+      {
+        "team": "DNA Verifast",
+        "insertions": 107
+      },
+      {
+        "team": "CCM",
+        "insertions": 73
+      },
+      {
+        "team": "Merchant Solutions Products",
+        "insertions": 59
+      },
+      {
+        "team": "File Transfer",
+        "insertions": 52
+      },
+      {
+        "team": "CBS_Redesign",
+        "insertions": 49
+      },
+      {
+        "team": "Access Advantage",
+        "insertions": 20
+      },
+      {
+        "team": "CNS Modernization",
+        "insertions": 17
+      },
+      {
+        "team": "Data Factory Dashboard",
+        "insertions": 11
+      },
+      {
+        "team": "Universal Branch",
+        "insertions": 9
+      },
+      {
+        "team": "Signature",
+        "insertions": 2
+      },
+      {
+        "team": "Loancierge",
+        "insertions": 2
+      },
+      {
+        "team": "Gift & Stored Value",
+        "insertions": 1
+      },
+      {
+        "team": "Armor Project",
+        "insertions": 1
+      }
+    ],
+    "teamWeekly": {
+      "Messaging": {
+        "components": [
+          165,
+          1357,
+          596,
+          406,
+          1362,
+          2991,
+          2909,
+          3877,
+          250,
+          1534,
+          322,
+          1238,
+          708,
+          3037,
+          664,
+          1820,
+          37
+        ],
+        "styles": [
+          33,
+          821,
+          167,
+          173,
+          207,
+          326,
+          323,
+          669,
+          121,
+          355,
+          123,
+          251,
+          190,
+          935,
+          297,
+          441,
+          23
+        ],
+        "variables": [
+          200,
+          2272,
+          882,
+          629,
+          1041,
+          1961,
+          3075,
+          5235,
+          852,
+          1580,
+          480,
+          1914,
+          1034,
+          3323,
+          1148,
+          1898,
+          202
+        ]
+      },
+      "Jobs": {
+        "components": [
+          10,
+          145,
+          256,
+          39,
+          59,
+          83,
+          1307,
+          3878,
+          4005,
+          2612,
+          964,
+          4228,
+          1150,
+          207,
+          233,
+          331,
+          0
+        ],
+        "styles": [
+          11,
+          307,
+          205,
+          11,
+          46,
+          17,
+          508,
+          1586,
+          1710,
+          1000,
+          521,
+          2263,
+          548,
+          175,
+          176,
+          308,
+          0
+        ],
+        "variables": [
+          142,
+          3040,
+          3461,
+          858,
+          1141,
+          1186,
+          5759,
+          6460,
+          2485,
+          5214,
+          1459,
+          12709,
+          1979,
+          342,
+          301,
+          510,
+          0
+        ]
+      },
+      "Feed": {
+        "components": [
+          940,
+          781,
+          309,
+          382,
+          67,
+          501,
+          1563,
+          2260,
+          3116,
+          1070,
+          277,
+          509,
+          2450,
+          742,
+          604,
+          1098,
+          403
+        ],
+        "styles": [
+          270,
+          800,
+          612,
+          840,
+          127,
+          394,
+          683,
+          576,
+          1216,
+          1009,
+          133,
+          356,
+          1235,
+          1041,
+          417,
+          1685,
+          157
+        ],
+        "variables": [
+          814,
+          1166,
+          716,
+          1318,
+          171,
+          846,
+          1462,
+          2393,
+          4258,
+          3414,
+          595,
+          623,
+          2823,
+          899,
+          990,
+          2551,
+          810
+        ]
+      },
+      "Data Acceleration": {
+        "components": [
+          0,
+          0,
+          492,
+          0,
+          451,
+          7624,
+          134,
+          0,
+          0,
+          0,
+          461,
+          421,
+          1478,
+          551,
+          188,
+          0,
+          0
+        ],
+        "styles": [
+          0,
+          0,
+          113,
+          0,
+          572,
+          8024,
+          110,
+          0,
+          0,
+          0,
+          356,
+          330,
+          1279,
+          533,
+          188,
+          0,
+          0
+        ],
+        "variables": [
+          0,
+          0,
+          255,
+          0,
+          623,
+          11195,
+          104,
+          0,
+          0,
+          0,
+          544,
+          485,
+          1791,
+          215,
+          111,
+          0,
+          0
+        ]
+      },
+      "Horizon Design System": {
+        "components": [
+          0,
+          282,
+          41,
+          41,
+          22,
+          187,
+          1456,
+          288,
+          313,
+          680,
+          178,
+          916,
+          439,
+          605,
+          17,
+          68,
+          601
+        ],
+        "styles": [
+          0,
+          0,
+          0,
+          42,
+          0,
+          29,
+          587,
+          0,
+          0,
+          29,
+          0,
+          110,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "variables": [
+          0,
+          1111,
+          67,
+          153,
+          0,
+          1518,
+          2694,
+          426,
+          2466,
+          1138,
+          269,
+          663,
+          838,
+          1911,
+          2,
+          12,
+          754
+        ]
+      },
+      "Network": {
+        "components": [
+          0,
+          28,
+          2,
+          8,
+          38,
+          131,
+          263,
+          106,
+          552,
+          105,
+          483,
+          329,
+          22,
+          122,
+          380,
+          214,
+          7
+        ],
+        "styles": [
+          22,
+          9,
+          33,
+          47,
+          33,
+          28,
+          129,
+          6,
+          157,
+          32,
+          215,
+          171,
+          4,
+          98,
+          117,
+          218,
+          28
+        ],
+        "variables": [
+          15,
+          263,
+          22,
+          282,
+          580,
+          370,
+          1489,
+          306,
+          2067,
+          505,
+          952,
+          565,
+          32,
+          483,
+          751,
+          515,
+          37
+        ]
+      },
+      "Client Onboarding": {
+        "components": [
+          9,
+          0,
+          242,
+          179,
+          615,
+          91,
+          433,
+          588,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "styles": [
+          16,
+          0,
+          56,
+          156,
+          336,
+          58,
+          192,
+          228,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "variables": [
+          33,
+          0,
+          603,
+          479,
+          1598,
+          349,
+          1270,
+          1817,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "Stabiliti": {
+        "components": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1347,
+          6,
+          0,
+          174,
+          49,
+          0,
+          0
+        ],
+        "styles": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          413,
+          0,
+          0,
+          83,
+          43,
+          0,
+          0
+        ],
+        "variables": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1323,
+          3,
+          0,
+          230,
+          149,
+          0,
+          0
+        ]
+      },
+      "DataCompass": {
+        "components": [
+          0,
+          1,
+          0,
+          6,
+          4,
+          478,
+          121,
+          301,
+          31,
+          24,
+          112,
+          0,
+          43,
+          0,
+          0,
+          0,
+          0
+        ],
+        "styles": [
+          0,
+          0,
+          1,
+          5,
+          104,
+          738,
+          88,
+          768,
+          239,
+          115,
+          371,
+          0,
+          105,
+          0,
+          0,
+          0,
+          0
+        ],
+        "variables": [
+          0,
+          0,
+          0,
+          4,
+          21,
+          780,
+          113,
+          664,
+          73,
+          26,
+          89,
+          0,
+          74,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "AppMarket": {
+        "components": [
+          105,
+          118,
+          238,
+          131,
+          6,
+          89,
+          40,
+          0,
+          41,
+          0,
+          0,
+          0,
+          0,
+          7,
+          4,
+          175,
+          109
+        ],
+        "styles": [
+          135,
+          185,
+          238,
+          120,
+          3,
+          74,
+          29,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          1,
+          4,
+          8,
+          2
+        ],
+        "variables": [
+          632,
+          621,
+          545,
+          241,
+          17,
+          211,
+          170,
+          0,
+          77,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          423,
+          259
+        ]
+      }
+    },
+    "detachments": {
+      "Jobs": {
+        "insertions": 19507,
+        "detachments": 108,
+        "rate": 0.6
+      },
+      "Messaging": {
+        "insertions": 23273,
+        "detachments": 78,
+        "rate": 0.3
+      },
+      "Feed": {
+        "insertions": 17072,
+        "detachments": 74,
+        "rate": 0.4
+      },
+      "Network": {
+        "insertions": 2790,
+        "detachments": 25,
+        "rate": 0.9
+      },
+      "Premier": {
+        "insertions": 188,
+        "detachments": 23,
+        "rate": 12.2
+      },
+      "DataCompass": {
+        "insertions": 1121,
+        "detachments": 17,
+        "rate": 1.5
+      },
+      "AppMarket": {
+        "insertions": 1063,
+        "detachments": 15,
+        "rate": 1.4
+      },
+      "Data Acceleration": {
+        "insertions": 11800,
+        "detachments": 13,
+        "rate": 0.1
+      },
+      "Stabiliti": {
+        "insertions": 1576,
+        "detachments": 13,
+        "rate": 0.8
+      },
+      "Horizon Design System": {
+        "insertions": 6134,
+        "detachments": 8,
+        "rate": 0.1
+      },
+      "SnapPay": {
+        "insertions": 780,
+        "detachments": 7,
+        "rate": 0.9
+      },
+      "File Transfer": {
+        "insertions": 52,
+        "detachments": 4,
+        "rate": 7.7
+      },
+      "Consulting Work - Internal": {
+        "insertions": 558,
+        "detachments": 4,
+        "rate": 0.7
+      },
+      "Merchant Solutions Products": {
+        "insertions": 59,
+        "detachments": 4,
+        "rate": 6.8
+      },
+      "Figma Guides": {
+        "insertions": 129,
+        "detachments": 3,
+        "rate": 2.3
+      },
+      "CANS-IRIS": {
+        "insertions": 144,
+        "detachments": 3,
+        "rate": 2.1
+      },
+      "CBS_Redesign": {
+        "insertions": 49,
+        "detachments": 2,
+        "rate": 4.1
+      },
+      "EPP Modernization": {
+        "insertions": 158,
+        "detachments": 2,
+        "rate": 1.3
+      },
+      "Insights UX": {
+        "insertions": 905,
+        "detachments": 2,
+        "rate": 0.2
+      },
+      "CNS Modernization": {
+        "insertions": 17,
+        "detachments": 1,
+        "rate": 5.9
+      },
+      "CCM": {
+        "insertions": 73,
+        "detachments": 1,
+        "rate": 1.4
+      },
+      "Client Onboarding": {
+        "insertions": 2157,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Data Factory Dashboard": {
+        "insertions": 11,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Signature": {
+        "insertions": 2,
+        "detachments": 0,
+        "rate": 0
+      },
+      "DNA Verifast": {
+        "insertions": 107,
+        "detachments": 0,
+        "rate": 0
+      },
+      "CUS Business Analysts": {
+        "insertions": 112,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Teller UX": {
+        "insertions": 300,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Premium": {
+        "insertions": 729,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Loancierge": {
+        "insertions": 2,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Gift & Stored Value": {
+        "insertions": 1,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Armor Project": {
+        "insertions": 1,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Access Advantage": {
+        "insertions": 20,
+        "detachments": 0,
+        "rate": 0
+      },
+      "Universal Branch": {
+        "insertions": 9,
+        "detachments": 0,
+        "rate": 0
+      }
+    },
+    "topComponents": [
+      {
+        "name": "chevron-right",
+        "instances": 29174,
+        "teams": 15,
+        "files": 43
+      },
+      {
+        "name": "tag / shape=rectangle, color=yellow, style=light, disable=false",
+        "instances": 15935,
+        "teams": 2,
+        "files": 14
+      },
+      {
+        "name": " placeholder",
+        "instances": 9370,
+        "teams": 22,
+        "files": 102
+      },
+      {
+        "name": "tag / shape=rectangle, color=blue, style=light, disable=false",
+        "instances": 5865,
+        "teams": 7,
+        "files": 22
+      },
+      {
+        "name": "vertical-menu",
+        "instances": 5398,
+        "teams": 18,
+        "files": 72
+      },
+      {
+        "name": "chevron-down",
+        "instances": 4593,
+        "teams": 24,
+        "files": 103
+      },
+      {
+        "name": "text-input / state=default, disable=false",
+        "instances": 3805,
+        "teams": 21,
+        "files": 90
+      },
+      {
+        "name": "tag / shape=pill, color=blue, style=light, disable=false",
+        "instances": 3716,
+        "teams": 2,
+        "files": 17
+      },
+      {
+        "name": "tag / shape=pill, color=green, style=light, disable=false",
+        "instances": 3254,
+        "teams": 4,
+        "files": 17
+      },
+      {
+        "name": "inline-input / state=default, select=false, disable=false",
+        "instances": 3249,
+        "teams": 3,
+        "files": 7
+      },
+      {
+        "name": "checkbox / state=default, select=unchecked, disabled=false",
+        "instances": 3196,
+        "teams": 17,
+        "files": 66
+      },
+      {
+        "name": "horizontal-menu",
+        "instances": 3110,
+        "teams": 8,
+        "files": 15
+      },
+      {
+        "name": "dropdown / state=default, select=false, disable=false",
+        "instances": 2561,
+        "teams": 16,
+        "files": 77
+      },
+      {
+        "name": "tag / shape=rectangle, color=purple, style=light, disable=false",
+        "instances": 2555,
+        "teams": 3,
+        "files": 18
+      },
+      {
+        "name": "tag / shape=rectangle, color=gray, style=light, disable=false",
+        "instances": 1922,
+        "teams": 15,
+        "files": 44
+      }
+    ],
+    "topFiles": [
+      {
+        "instances": 11397,
+        "team": "Feed",
+        "file": "Task Admin"
+      },
+      {
+        "instances": 6166,
+        "team": "Feed",
+        "file": "Admin UI"
+      },
+      {
+        "instances": 5498,
+        "team": "Feed",
+        "file": "Task tile"
+      },
+      {
+        "instances": 4752,
+        "team": "Horizon Design System",
+        "file": " Horizon Design System"
+      },
+      {
+        "instances": 3772,
+        "team": "Jobs",
+        "file": "UBA Master File"
+      },
+      {
+        "instances": 2859,
+        "team": "Jobs",
+        "file": "Cash Balancing"
+      },
+      {
+        "instances": 2772,
+        "team": "Data Acceleration",
+        "file": "Client Widget"
+      },
+      {
+        "instances": 2541,
+        "team": "Client Onboarding",
+        "file": "Client On Boarding"
+      },
+      {
+        "instances": 2371,
+        "team": "Network",
+        "file": "My Queue"
+      },
+      {
+        "instances": 1737,
+        "team": "Jobs",
+        "file": "Drawer Menu"
+      },
+      {
+        "instances": 1699,
+        "team": "Feed",
+        "file": "Task Admin (FCOM 642)"
+      },
+      {
+        "instances": 1512,
+        "team": "Jobs",
+        "file": "Transactions"
+      }
+    ],
+    "summary": {
+      "totalInsertions": 90899,
+      "activeTeams": 33,
+      "totalInstances": 177378,
+      "peakWeek": "2026-02-01",
+      "peakWeekInsertions": 12351
+    }
+  },
+  "jiraLabelAdoption": {
+    "generatedAt": "2026-08-29T16:18:42.764Z",
+    "browseBaseUrl": "https://example.atlassian.net/browse",
+    "query": {
+      "projectKeys": [],
+      "labelMap": {},
+      "extraJql": ""
+    },
+    "issues": [
+      {
+        "id": "FEED-2201",
+        "name": "Promoted posts indistinguishable from organic — diary study flagged trust gap",
+        "labels": [
+          "Research-Driven"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-2201"
+      },
+      {
+        "id": "MSG-945",
+        "name": "72% of participants missed reply threading in group conversations",
+        "labels": [
+          "Research-Driven"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-945"
+      },
+      {
+        "id": "PROF-167",
+        "name": "Profile completeness nudges feel pushy — research surfaced trust concerns",
+        "labels": [
+          "Research-Driven"
+        ],
+        "status": "In Progress",
+        "project": "PROF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PROF-167"
+      },
+      {
+        "id": "JOBS-2215",
+        "name": "Easy Apply steps misaligned with candidate mental model in moderated tests",
+        "labels": [
+          "Research-Driven"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-2215"
+      },
+      {
+        "id": "NET-967",
+        "name": "Connection request copy causes uncertainty about relationship context",
+        "labels": [
+          "Research-Driven"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-967"
+      },
+      {
+        "id": "CRE-445",
+        "name": "Creator analytics metrics prioritized wrong per creator panel feedback",
+        "labels": [
+          "Research-Driven"
+        ],
+        "status": "In Progress",
+        "project": "CRE",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/CRE-445"
+      },
+      {
+        "id": "NOTIF-189",
+        "name": "Notification grouping logic confusing — card sort study with 24 members",
+        "labels": [
+          "Research-Driven"
+        ],
+        "status": "In Progress",
+        "project": "NOTIF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NOTIF-189"
+      },
+      {
+        "id": "PREM-92",
+        "name": "Premium upsell prompts misaligned with member expectations in concept test",
+        "labels": [
+          "Research-Driven"
+        ],
+        "status": "In Progress",
+        "project": "PREM",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PREM-92"
+      },
+      {
+        "id": "FEED-901",
+        "name": "Feed card spacing revised for consistency across mobile and web",
+        "labels": [
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-901"
+      },
+      {
+        "id": "DS-505",
+        "name": "Button hierarchy rework across Harmony design system components",
+        "labels": [
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "DS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/DS-505"
+      },
+      {
+        "id": "PROF-2234",
+        "name": "Profile header layout refinement for brand and readability alignment",
+        "labels": [
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "PROF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PROF-2234"
+      },
+      {
+        "id": "MSG-456",
+        "name": "Message bubble layout standardized across iOS, Android, and web",
+        "labels": [
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-456"
+      },
+      {
+        "id": "JOBS-912",
+        "name": "Job card typography overhaul for faster scan in search results",
+        "labels": [
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-912"
+      },
+      {
+        "id": "NET-201",
+        "name": "People You May Know card pattern updated to new networking spec",
+        "labels": [
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-201"
+      },
+      {
+        "id": "FEED-956",
+        "name": "Graph API cannot return live reaction counts — skeleton state required",
+        "labels": [
+          "Post-Handoff"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-956"
+      },
+      {
+        "id": "MSG-194",
+        "name": "Read receipts blocked by message sync limitations on older clients",
+        "labels": [
+          "Post-Handoff"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-194"
+      },
+      {
+        "id": "JOBS-2289",
+        "name": "Job listing API pagination forces infinite scroll instead of paged design",
+        "labels": [
+          "Post-Handoff"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-2289"
+      },
+      {
+        "id": "REC-78",
+        "name": "Recruiter InMail template latency exceeds assumed loading thresholds",
+        "labels": [
+          "Post-Handoff"
+        ],
+        "status": "In Progress",
+        "project": "REC",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/REC-78"
+      },
+      {
+        "id": "MSG-989",
+        "name": "Tab order incorrect in compose modal on desktop web",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-989"
+      },
+      {
+        "id": "PROF-425",
+        "name": "Profile edit button contrast below 4.5:1 on dark mode",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "PROF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PROF-425"
+      },
+      {
+        "id": "FEED-2256",
+        "name": "Focus indicators missing on reaction picker and overflow menu",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-2256"
+      },
+      {
+        "id": "JOBS-178",
+        "name": "Screen reader announces wrong label for salary range chips",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-178"
+      },
+      {
+        "id": "NET-998",
+        "name": "Connection removal error messages lack clear recovery guidance",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-998"
+      },
+      {
+        "id": "MSG-467",
+        "name": "Reaction emoji touch targets below 44×44px on mobile",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-467"
+      },
+      {
+        "id": "DS-534",
+        "name": "Keyboard navigation skips filter chips on Jobs search",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "DS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/DS-534"
+      },
+      {
+        "id": "REC-101",
+        "name": "InMail send loading state causes duplicate-send confusion",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "REC",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/REC-101"
+      },
+      {
+        "id": "FEED-2298",
+        "name": "Comment input validation timing disrupts posting flow",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-2298"
+      },
+      {
+        "id": "PROF-1023",
+        "name": "Skill endorsement autocomplete missing required ARIA attributes",
+        "labels": [
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "PROF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PROF-1023"
+      },
+      {
+        "id": "FEED-345",
+        "name": "Feed relevance controls redesigned after unmoderated study on control discoverability",
+        "labels": [
+          "Research-Driven",
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-345"
+      },
+      {
+        "id": "JOBS-418",
+        "name": "Easy Apply confirmation step revised after usability testing showed drop-off",
+        "labels": [
+          "Research-Driven",
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-418"
+      },
+      {
+        "id": "CRE-58",
+        "name": "Creator post scheduling flow redesigned per diary study on planning behavior",
+        "labels": [
+          "Research-Driven",
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "CRE",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/CRE-58"
+      },
+      {
+        "id": "NET-2267",
+        "name": "Connection filter interface rebuilt from card sorting and tree testing",
+        "labels": [
+          "Research-Driven",
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-2267"
+      },
+      {
+        "id": "JOBS-978",
+        "name": "Job alert results layout revised based on eye-tracking in search sessions",
+        "labels": [
+          "Research-Driven",
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-978"
+      },
+      {
+        "id": "NOTIF-212",
+        "name": "Notification center redesign driven by member feedback and funnel analysis",
+        "labels": [
+          "Research-Driven",
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "NOTIF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NOTIF-212"
+      },
+      {
+        "id": "PROF-489",
+        "name": "Skills section restructured per open card sort with 30 professionals",
+        "labels": [
+          "Research-Driven",
+          "Design Revision"
+        ],
+        "status": "In Progress",
+        "project": "PROF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PROF-489"
+      },
+      {
+        "id": "FEED-2310",
+        "name": "Mobile feed filter discoverability improved — research plus WCAG audit",
+        "labels": [
+          "Research-Driven",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-2310"
+      },
+      {
+        "id": "MSG-128",
+        "name": "Empty inbox state guidance insufficient — testing and accessibility review",
+        "labels": [
+          "Research-Driven",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-128"
+      },
+      {
+        "id": "NET-402",
+        "name": "Invite-to-connect placement fixed — research and keyboard trap failure",
+        "labels": [
+          "Research-Driven",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-402"
+      },
+      {
+        "id": "JOBS-1034",
+        "name": "Salary filter contrast issues found in research sessions and a11y audit",
+        "labels": [
+          "Research-Driven",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-1034"
+      },
+      {
+        "id": "PREM-223",
+        "name": "Premium trial error recovery inadequate per testing and WCAG review",
+        "labels": [
+          "Research-Driven",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "PREM",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PREM-223"
+      },
+      {
+        "id": "FEED-2245",
+        "name": "Feed video card layout redesigned after Graph API thumbnail constraints",
+        "labels": [
+          "Design Revision",
+          "Post-Handoff"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-2245"
+      },
+      {
+        "id": "MSG-362",
+        "name": "Voice message UI reversed after backend clip-length limitations found",
+        "labels": [
+          "Design Revision",
+          "Post-Handoff"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-362"
+      },
+      {
+        "id": "NOTIF-182",
+        "name": "Notification badge layout revised for clarity and contrast compliance",
+        "labels": [
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "NOTIF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NOTIF-182"
+      },
+      {
+        "id": "JOBS-141",
+        "name": "Job save error states improved after accessibility critique",
+        "labels": [
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-141"
+      },
+      {
+        "id": "DS-545",
+        "name": "Harmony component spacing adjusted for WCAG touch-target compliance",
+        "labels": [
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "DS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/DS-545"
+      },
+      {
+        "id": "REC-112",
+        "name": "InMail CTA button sizes increased to meet minimum touch targets",
+        "labels": [
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "REC",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/REC-112"
+      },
+      {
+        "id": "PROF-2312",
+        "name": "Profile edit modals redesigned for full keyboard accessibility",
+        "labels": [
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "PROF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PROF-2312"
+      },
+      {
+        "id": "NET-1045",
+        "name": "Connection table headers restructured for screen reader support",
+        "labels": [
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-1045"
+      },
+      {
+        "id": "FEED-2323",
+        "name": "Reaction batch limit required accessible loading feedback after API discovery",
+        "labels": [
+          "Post-Handoff",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-2323"
+      },
+      {
+        "id": "DS-521",
+        "name": "Detached Harmony component exposed missing focus indicator in production",
+        "labels": [
+          "Post-Handoff",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "DS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/DS-521"
+      },
+      {
+        "id": "JOBS-501",
+        "name": "Job apply timeout handling needs accessible error feedback",
+        "labels": [
+          "Post-Handoff",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-501"
+      },
+      {
+        "id": "JOBS-1002",
+        "name": "Job search filters — research-led redesign with full WCAG compliance",
+        "labels": [
+          "Research-Driven",
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-1002"
+      },
+      {
+        "id": "PROF-2334",
+        "name": "Open-to-work visibility controls redesigned from research and a11y audit",
+        "labels": [
+          "Research-Driven",
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "PROF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PROF-2334"
+      },
+      {
+        "id": "MSG-234",
+        "name": "Messaging quick replies rebuilt from research with screen reader support",
+        "labels": [
+          "Research-Driven",
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-234"
+      },
+      {
+        "id": "FEED-512",
+        "name": "Comment thread overhaul — research, design revision, and accessibility pass",
+        "labels": [
+          "Research-Driven",
+          "Design Revision",
+          "Usability Fix"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-512"
+      },
+      {
+        "id": "REC-2208",
+        "name": "Compliance field required on recruiter outreach templates",
+        "labels": [
+          "Requirements Update"
+        ],
+        "status": "In Progress",
+        "project": "REC",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/REC-2208"
+      },
+      {
+        "id": "JOBS-923",
+        "name": "PM requested remote-only filter in job search results",
+        "labels": [
+          "Requirements Update"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-923"
+      },
+      {
+        "id": "NET-378",
+        "name": "Connection approval workflow needs manager-visibility tier",
+        "labels": [
+          "Requirements Update"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-378"
+      },
+      {
+        "id": "PROF-245",
+        "name": "New verification badge field required in profile editor",
+        "labels": [
+          "Requirements Update"
+        ],
+        "status": "In Progress",
+        "project": "PROF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PROF-245"
+      },
+      {
+        "id": "PREM-123",
+        "name": "PM requires trial conversion event logging in checkout flow",
+        "labels": [
+          "Requirements Update"
+        ],
+        "status": "In Progress",
+        "project": "PREM",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/PREM-123"
+      },
+      {
+        "id": "FEED-2256B",
+        "name": "VP requested engagement indicator on feed post cards",
+        "labels": [
+          "Stakeholder Feedback"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-2256B"
+      },
+      {
+        "id": "CRE-978B",
+        "name": "PM feedback — add export to creator analytics dashboard",
+        "labels": [
+          "Stakeholder Feedback"
+        ],
+        "status": "In Progress",
+        "project": "CRE",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/CRE-978B"
+      },
+      {
+        "id": "MSG-410",
+        "name": "Design review identified missing confirmation before deleting thread",
+        "labels": [
+          "Stakeholder Feedback"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-410"
+      },
+      {
+        "id": "DS-556",
+        "name": "Leadership wants bulk moderation actions in admin tooling UI",
+        "labels": [
+          "Stakeholder Feedback"
+        ],
+        "status": "In Progress",
+        "project": "DS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/DS-556"
+      },
+      {
+        "id": "NOTIF-256",
+        "name": "Stakeholder requested read-state visibility in notification tray",
+        "labels": [
+          "Stakeholder Feedback"
+        ],
+        "status": "In Progress",
+        "project": "NOTIF",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NOTIF-256"
+      },
+      {
+        "id": "REC-134",
+        "name": "Recruiter team feedback on pipeline kanban column density",
+        "labels": [
+          "Stakeholder Feedback"
+        ],
+        "status": "In Progress",
+        "project": "REC",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/REC-134"
+      },
+      {
+        "id": "NET-2345",
+        "name": "Internal demo feedback requires invite preview panel in connection flow",
+        "labels": [
+          "Stakeholder Feedback"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-2345"
+      },
+      {
+        "id": "FEED-2278",
+        "name": "Feed controls expanded to include topic mute and author mute",
+        "labels": [
+          "Scope Expansion"
+        ],
+        "status": "In Progress",
+        "project": "FEED",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/FEED-2278"
+      },
+      {
+        "id": "JOBS-995",
+        "name": "Job search scope expanded to include closed and archived listings",
+        "labels": [
+          "Scope Expansion"
+        ],
+        "status": "In Progress",
+        "project": "JOBS",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/JOBS-995"
+      },
+      {
+        "id": "MSG-438",
+        "name": "Messaging now includes scheduled send within original compose scope",
+        "labels": [
+          "Scope Expansion"
+        ],
+        "status": "In Progress",
+        "project": "MSG",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/MSG-438"
+      },
+      {
+        "id": "NET-267",
+        "name": "Additional connection types added beyond original networking MVP",
+        "labels": [
+          "Scope Expansion"
+        ],
+        "status": "In Progress",
+        "project": "NET",
+        "issueType": "Story",
+        "priority": "Medium",
+        "assignee": "",
+        "components": [],
+        "parent": "",
+        "created": "2026-01-15T10:00:00.000Z",
+        "updated": "2026-04-01T10:00:00.000Z",
+        "url": "https://example.atlassian.net/browse/NET-267"
+      }
+    ]
+  },
+  "fcubComponentVenn": {
+    "generatedAt": "2026-08-29T16:18:42.765Z",
+    "browseBaseUrl": "https://example.atlassian.net/browse",
+    "issues": [
+      {
+        "id": "DS-101",
+        "name": "Profile header redesign",
+        "labels": [
+          "DS",
+          "Profile"
+        ],
+        "components": [
+          "Profile Header"
+        ]
+      },
+      {
+        "id": "DS-102",
+        "name": "Feed card interaction patterns",
+        "labels": [
+          "DS",
+          "Feed"
+        ],
+        "components": [
+          "Feed Card",
+          "Profile Header"
+        ]
+      },
+      {
+        "id": "DS-103",
+        "name": "Messaging thread layout refresh",
+        "labels": [
+          "DS",
+          "Messaging"
+        ],
+        "components": [
+          "Messaging Thread"
+        ]
+      },
+      {
+        "id": "DS-104",
+        "name": "Job search filter panel",
+        "labels": [
+          "DS",
+          "Jobs"
+        ],
+        "components": [
+          "Job Search",
+          "Profile Header"
+        ]
+      },
+      {
+        "id": "DS-105",
+        "name": "Notification preferences center",
+        "labels": [
+          "DS",
+          "Notifications"
+        ],
+        "components": [
+          "Notification Center"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Transcription tooling",
+    "blocker": "Feed and Messaging each run 5+ client sessions per month; manual note-taking from recordings is unsustainable",
+    "impact": "30–40% of researcher time spent on notes, increased synthesis lag, accuracy risk in documentation",
+    "unlock": "+3–5 studies/month, faster decision cycles, reduced researcher burnout, improved synthesis quality",
+    "decisionBy": "Q2 2026 — Tool approval",
+    "products": [
+      "Feed",
+      "Messaging"
+    ]
+  },
+  {
+    "title": "Client access for recruiting",
+    "blocker": "Researchers lack direct access to clients for study participation",
+    "impact": "Multi-week recruiting delays, reliance on account managers, limited panel diversity, missed validation windows",
+    "unlock": "Same-week recruiting for validation studies, faster feedback loops, increased study volume",
+    "decisionBy": "Q2 2026 — Access protocol approval",
+    "products": [
+      "All products"
+    ]
+  },
+  {
+    "title": "Qual platform tooling",
+    "blocker": "Recorder/plugin constraints, screener access, security/compliance needs under active evaluation",
+    "impact": "Manual workflows, inconsistent data capture, limited remote testing capability, compliance friction",
+    "unlock": "Standardized research ops, better artifact management, improved collaboration, compliant remote studies",
+    "decisionBy": "Q2 2026 — Platform selection & budget",
+    "products": [
+      "Jobs",
+      "Cross-team"
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-08-29T16:18:42.765Z",
+  "browseBaseUrl": "https://example.atlassian.net/browse",
+  "issues": [
+    {
+      "id": "DS-101",
+      "name": "Profile header redesign",
+      "labels": ["DS", "Profile"],
+      "components": ["Profile Header"]
+    },
+    {
+      "id": "DS-102",
+      "name": "Feed card interaction patterns",
+      "labels": ["DS", "Feed"],
+      "components": ["Feed Card", "Profile Header"]
+    },
+    {
+      "id": "DS-103",
+      "name": "Messaging thread layout refresh",
+      "labels": ["DS", "Messaging"],
+      "components": ["Messaging Thread"]
+    },
+    {
+      "id": "DS-104",
+      "name": "Job search filter panel",
+      "labels": ["DS", "Jobs"],
+      "components": ["Job Search", "Profile Header"]
+    },
+    {
+      "id": "DS-105",
+      "name": "Notification preferences center",
+      "labels": ["DS", "Notifications"],
+      "components": ["Notification Center"]
+    }
+  ]
+}
