@@ -9,7 +9,9 @@ import APEXDark from './pages/APEXDark'
 import ResearchDark from './pages/ResearchDark'
 import AnalyticsDark from './pages/AnalyticsDark'
 import RoadmapDark from './pages/RoadmapDark'
+import StrategicDark from './pages/StrategicDark'
 import DataSettings from './pages/DataSettings'
+import './index.css'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
