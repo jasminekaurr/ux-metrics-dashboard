@@ -14,6 +14,9 @@ export const JIRA_BROWSE_BASE_URL = toBrowseBaseUrl(
     jiraLabelAdoption.browseBaseUrl
 )
 
-export function getJiraBrowseUrl(issueKey) {
-  return `${JIRA_BROWSE_BASE_URL}/${encodeURIComponent(issueKey)}`
+export function getJiraBrowseUrl(issueKey, browseBaseUrl) {
+  const base = browseBaseUrl
+    ? toBrowseBaseUrl(browseBaseUrl)
+    : JIRA_BROWSE_BASE_URL
+  return `${base}/${encodeURIComponent(issueKey)}`
 }

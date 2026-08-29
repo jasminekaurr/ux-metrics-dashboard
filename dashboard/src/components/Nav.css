@@ -224,6 +224,9 @@
   padding: 14px 18px 18px;
   border-top: 1px solid var(--nav-border);
   flex-shrink: 0;
+  position: relative;
+  z-index: 120;
+  overflow: visible;
 }
 
 .nav-footer-label {
@@ -256,6 +259,16 @@
 }
 
 /* Theme toggle */
+.nav-footer .theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--nav-border);
+  margin-top: 12px;
+  flex-shrink: 0;
+}
+
 .theme-toggle {
   display: flex;
   align-items: center;

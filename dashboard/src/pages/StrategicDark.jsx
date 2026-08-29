@@ -25,9 +25,7 @@ const DETAIL_FIELDS = [
   ['Outcome', 'outcome'],
 ]
 
-// Show a focused set of example contributions for now.
-const VISIBLE_IDS = ['quantifying-ux', 'design-system-ai-ready', 'transact-panel-groupings']
-
+// Show all contributions from strategicContributions.json.
 export default function StrategicDark() {
   const { strategicContributions } = useDashboardData()
   const { theme } = useTheme()
@@ -36,7 +34,7 @@ export default function StrategicDark() {
   const [hoveredId, setHoveredId] = useState(null)
   const [lastSelected, setLastSelected] = useState(null)
 
-  const cards = strategicContributions.filter(c => VISIBLE_IDS.includes(c.id))
+  const cards = strategicContributions
   const selected = strategicContributions.find(c => c.id === selectedId) || null
 
   const selectCard = (id) => {
@@ -59,9 +57,6 @@ export default function StrategicDark() {
         <div className="es-header-inner">
           <div className="es-eyebrow">Strategic Contribution</div>
           <h1 className="es-title">Strategic Design Contribution<span className="es-cursor" /></h1>
-          <p className="es-subtitle">
-            Every contribution mapped by business impact and product maturity. Select a card to see the detail.
-          </p>
         </div>
       </div>
 

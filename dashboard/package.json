@@ -16,6 +16,7 @@
     "capture:fcub-comprehensive": "node scripts/capture-fcub-comprehensive.mjs",
     "capture:all": "npm run capture:jira && npm run capture:figma",
     "export:snapshot": "node scripts/export-data-snapshot.mjs",
+    "validate:data": "node scripts/validate-data.mjs",
     "seed:sample-jira": "node scripts/seed-sample-jira.mjs",
     "split:dummy": "node scripts/split-dummy-data.mjs",
     "lint": "eslint .",

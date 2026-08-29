@@ -16,4 +16,8 @@ npm run export:snapshot
 
 ## Use
 
-Upload `ux-dashboard-snapshot.json` via **Data Settings** in the dashboard, or replace files in `dashboard/src/data/sample/` before building.
+- Replace files in `dashboard/src/data/sample/` before building, or
+- Upload via **Data Settings** in the app (`/data`) without rebuilding, or
+- Merge partial overrides programmatically via `dashboard/src/data/providerCore.js`.
+
+See [Data format](../docs/data-format.md) for schemas and [DATA-MANIFEST.json](../docs/DATA-MANIFEST.json) for which files power which pages.

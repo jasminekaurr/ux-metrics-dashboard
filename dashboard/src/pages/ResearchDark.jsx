@@ -4,6 +4,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { useDashboardData } from '../context/DataContext'
 import { useTheme } from '../context/ThemeContext'
 import { getChartTheme } from '../utils/chartTheme'
+import SectionHelp from '../components/SectionHelp'
 import './ExecutiveSummary.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
@@ -214,9 +215,6 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
             UX Research
           </div>
           <h1 className="es-title">Research Impact<span className="es-cursor" /></h1>
-          <p className="es-subtitle">
-            Three ways UXR creates value: reducing risk, accelerating delivery, and influencing revenue
-          </p>
         </div>
       </div>
 
@@ -230,9 +228,11 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Research Overview
-                <span className="es-src-tag">Cumulative</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: research.json (cumulative totals) */}
+                  Research Overview
+                </div>
               </div>
               <SplitText className="bq-section-h">Research impact at a glance</SplitText>
             </div>
@@ -422,24 +422,18 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
                                   {/* Supporting details below */}
                                   <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                                     <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                                      <div className="bq-callout">
-                                        <div className="bq-callout-icon" style={{ color: 'var(--es-blue)' }}>◎</div>
-                                        <div>
-                                          <div className="bq-callout-title">Business Impact</div>
-                                          <div className="bq-callout-body">
-                                            Reduced IA ambiguity for member workflows, lowering training and navigation risk for product surfaces.
-                                          </div>
-                                        </div>
+                                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                        <span style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--es-text-3)' }}>Business Impact</span>
+                                        <SectionHelp title="Business Impact">
+                                          Reduced IA ambiguity for member workflows, lowering training and navigation risk for product surfaces.
+                                        </SectionHelp>
                                       </div>
-                                      <div className="bq-callout">
-                                        <div className="bq-callout-icon">◎</div>
-                                        <div>
-                                          <div className="bq-callout-title">ROI</div>
-                                          <div className="bq-callout-body">
-                                            3 rounds of validation replaced 6+ months of post-launch IA iteration.
-                                            Achieved {init.detailedSummary.data.rounds?.[2]?.successRate}% task success before engineering began.
-                                          </div>
-                                        </div>
+                                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                        <span style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--es-text-3)' }}>ROI</span>
+                                        <SectionHelp title="ROI">
+                                          3 rounds of validation replaced 6+ months of post-launch IA iteration.
+                                          Achieved {init.detailedSummary.data.rounds?.[2]?.successRate}% task success before engineering began.
+                                        </SectionHelp>
                                       </div>
                                     </div>
                                     <div style={{ flex: '1 1 260px', display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -469,23 +463,17 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
                               {init.detailedSummary.type === 'task-assignment' && (
                                 <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                                   <div style={{ flex: '1 1 240px', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                                    <div className="bq-callout">
-                                      <div className="bq-callout-icon" style={{ color: 'var(--es-red)' }}>◎</div>
-                                      <div>
-                                        <div className="bq-callout-title">Business Impact</div>
-                                        <div className="bq-callout-body">
-                                          Identified critical mental model mismatches in task assignment flow before development, preventing user confusion and support tickets.
-                                        </div>
-                                      </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                      <span style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--es-text-3)' }}>Business Impact</span>
+                                      <SectionHelp title="Business Impact">
+                                        Identified critical mental model mismatches in task assignment flow before development, preventing user confusion and support tickets.
+                                      </SectionHelp>
                                     </div>
-                                    <div className="bq-callout">
-                                      <div className="bq-callout-icon">◎</div>
-                                      <div>
-                                        <div className="bq-callout-title">ROI</div>
-                                        <div className="bq-callout-body">
-                                          {init.detailedSummary.data.issuesCaught} medium-severity usability issues caught before development — avoiding costly post-launch iterations.
-                                        </div>
-                                      </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                      <span style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--es-text-3)' }}>ROI</span>
+                                      <SectionHelp title="ROI">
+                                        {init.detailedSummary.data.issuesCaught} medium-severity usability issues caught before development — avoiding costly post-launch iterations.
+                                      </SectionHelp>
                                     </div>
                                   </div>
                                   <div style={{ flex: '1 1 240px' }}>
@@ -549,14 +537,11 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
                                   </div>
 
                                   {/* ROI details below */}
-                                  <div className="bq-callout">
-                                    <div className="bq-callout-icon">◎</div>
-                                    <div>
-                                      <div className="bq-callout-title">ROI</div>
-                                      <div className="bq-callout-body">
-                                        Panels enabled same-week validation for 6 initiatives, replacing multi-month recruiting cycles.
-                                      </div>
-                                    </div>
+                                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                    <span style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--es-text-3)' }}>ROI</span>
+                                    <SectionHelp title="ROI">
+                                      Panels enabled same-week validation for 6 initiatives, replacing multi-month recruiting cycles.
+                                    </SectionHelp>
                                   </div>
                                 </div>
                               )}
@@ -580,22 +565,17 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Research Types
-                <span className="es-src-tag">Cumulative</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: research.json researchTypes */}
+                  Research Types
+                </div>
+                <SectionHelp>
+                  A balanced portfolio of research methods — qualitative and evaluative — ensures we are both discovering
+                  and validating the right problems before engineering investment.
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">Distribution of research methods</SplitText>
-            </div>
-          </div>
-
-          <div className="bq-callout" style={{ marginBottom: 28 }}>
-            <div className="bq-callout-icon">◎</div>
-            <div>
-              <div className="bq-callout-title">Research method mix across all initiatives</div>
-              <div className="bq-callout-body">
-                A balanced portfolio of research methods — qualitative and evaluative — ensures we're both discovering
-                and validating the right problems before engineering investment.
-              </div>
             </div>
           </div>
 

@@ -1,0 +1,244 @@
+{
+  "monthlySummary": [
+    {
+      "month": "Jan 2026",
+      "taskCompletionRate": 72,
+      "avgTimeOnTaskSec": 98,
+      "errorRate": 9.4,
+      "funnelCompletionRate": 58,
+      "featureAdoptionRate": 51,
+      "avgPagesPerSession": 4.1,
+      "nps": 28,
+      "csat": 4.0,
+      "susScore": 67
+    },
+    {
+      "month": "Feb 2026",
+      "taskCompletionRate": 74,
+      "avgTimeOnTaskSec": 94,
+      "errorRate": 8.7,
+      "funnelCompletionRate": 61,
+      "featureAdoptionRate": 54,
+      "avgPagesPerSession": 4.3,
+      "nps": 31,
+      "csat": 4.1,
+      "susScore": 69
+    },
+    {
+      "month": "Mar 2026",
+      "taskCompletionRate": 78,
+      "avgTimeOnTaskSec": 89,
+      "errorRate": 7.9,
+      "funnelCompletionRate": 64,
+      "featureAdoptionRate": 58,
+      "avgPagesPerSession": 4.5,
+      "nps": 35,
+      "csat": 4.3,
+      "susScore": 72
+    },
+    {
+      "month": "Apr 2026",
+      "taskCompletionRate": 81,
+      "avgTimeOnTaskSec": 84,
+      "errorRate": 6.8,
+      "funnelCompletionRate": 68,
+      "featureAdoptionRate": 62,
+      "avgPagesPerSession": 4.7,
+      "nps": 38,
+      "csat": 4.5,
+      "susScore": 76
+    }
+  ],
+  "metrics": [
+    {
+      "id": "task-completion",
+      "title": "Task Completion Rate",
+      "description": "Can users actually accomplish what they came to do? The foundational usability metric.",
+      "whyItMatters": "A <70% task completion rate is a hard signal of UX failure. This is the first number executives should ask for.",
+      "field": "taskCompletionRate",
+      "unit": "%",
+      "direction": "higher"
+    },
+    {
+      "id": "time-on-task",
+      "title": "Time on Task",
+      "description": "How long does it take to complete a critical flow? Shorter = more efficient design.",
+      "whyItMatters": "Baseline comparison before/after redesigns. Quantifies efficiency gains in seconds and dollars.",
+      "field": "avgTimeOnTaskSec",
+      "unit": "s",
+      "direction": "lower"
+    },
+    {
+      "id": "error-rate",
+      "title": "Error Rate",
+      "description": "How often do users make recoverable or unrecoverable mistakes in key flows?",
+      "whyItMatters": "High error rates mean higher support costs. Reducing errors = reducing ticket volume.",
+      "field": "errorRate",
+      "unit": "%",
+      "direction": "lower"
+    },
+    {
+      "id": "funnel-completion",
+      "title": "Funnel Drop-off",
+      "description": "Where are users abandoning key flows? Which step has the highest exit rate?",
+      "whyItMatters": "Identifies exactly where UX debt lives. Prioritises redesign effort by business impact.",
+      "field": "funnelCompletionRate",
+      "unit": "%",
+      "direction": "higher"
+    },
+    {
+      "id": "feature-adoption",
+      "title": "Feature Adoption Rate",
+      "description": "Are shipped features actually being used? What % of eligible users engage within 30 days?",
+      "whyItMatters": "Tells us if what we shipped mattered. Low adoption = the feature missed the user need.",
+      "field": "featureAdoptionRate",
+      "unit": "%",
+      "direction": "higher"
+    },
+    {
+      "id": "page-engagement",
+      "title": "Page-level Engagement",
+      "description": "Which screens get traffic? Which are dead ends that nobody reaches?",
+      "whyItMatters": "Navigation design validation. High traffic to wrong screens signals IA problems.",
+      "field": "avgPagesPerSession",
+      "unit": " pages",
+      "direction": "higher"
+    },
+    {
+      "id": "nps-csat",
+      "title": "NPS / CSAT",
+      "description": "Periodic user satisfaction signals tied to product interactions.",
+      "whyItMatters": "Executive-facing satisfaction number. Links UX investment to user sentiment over time.",
+      "field": "nps",
+      "unit": "",
+      "direction": "higher"
+    },
+    {
+      "id": "sus-score",
+      "title": "SUS Score (Live Baseline)",
+      "description": "System Usability Scale as an ongoing benchmark — not just from discrete test sessions.",
+      "whyItMatters": "Standardised, comparable across quarters and against industry benchmarks (68 = industry average).",
+      "field": "susScore",
+      "unit": "",
+      "direction": "higher"
+    }
+  ],
+  "funnels": [
+    {
+      "id": "post-creation",
+      "name": "Post creation",
+      "product": "Feed",
+      "steps": [
+        { "name": "Open composer", "entered": 12400, "exited": 2100, "exitRate": 17 },
+        { "name": "Add media", "entered": 10300, "exited": 1850, "exitRate": 18 },
+        { "name": "Apply edits", "entered": 8450, "exited": 1260, "exitRate": 15 },
+        { "name": "Write caption", "entered": 7190, "exited": 980, "exitRate": 14 },
+        { "name": "Publish", "entered": 6210, "exited": 420, "exitRate": 7 }
+      ]
+    },
+    {
+      "id": "dm-thread",
+      "name": "Start DM thread",
+      "product": "DMs",
+      "steps": [
+        { "name": "Open inbox", "entered": 9800, "exited": 1200, "exitRate": 12 },
+        { "name": "Select recipient", "entered": 8600, "exited": 1540, "exitRate": 18 },
+        { "name": "Send first message", "entered": 7060, "exited": 890, "exitRate": 13 },
+        { "name": "Receive reply", "entered": 6170, "exited": 310, "exitRate": 5 }
+      ]
+    }
+  ],
+  "featureAdoption": [
+    {
+      "feature": "Reels Remix",
+      "product": "Reels",
+      "eligibleUsers": 8200000,
+      "adoptedUsers": 1960000,
+      "adoptionRate": 24,
+      "daysSinceLaunch": 45
+    },
+    {
+      "feature": "Collab Posts",
+      "product": "Feed",
+      "eligibleUsers": 12400000,
+      "adoptedUsers": 3720000,
+      "adoptionRate": 30,
+      "daysSinceLaunch": 62
+    },
+    {
+      "feature": "Spark AI captions",
+      "product": "Creator",
+      "eligibleUsers": 3100000,
+      "adoptedUsers": 1085000,
+      "adoptionRate": 35,
+      "daysSinceLaunch": 28
+    },
+    {
+      "feature": "Close Friends feed filter",
+      "product": "Feed",
+      "eligibleUsers": 12400000,
+      "adoptedUsers": 5580000,
+      "adoptionRate": 45,
+      "daysSinceLaunch": 90
+    }
+  ],
+  "topPages": [
+    {
+      "page": "Home Feed",
+      "sessions": 4820000,
+      "avgTimeSec": 142,
+      "bounceRate": 12,
+      "trend": "stable"
+    },
+    {
+      "page": "Reels viewer",
+      "sessions": 3910000,
+      "avgTimeSec": 198,
+      "bounceRate": 9,
+      "trend": "up"
+    },
+    {
+      "page": "DM inbox",
+      "sessions": 2140000,
+      "avgTimeSec": 86,
+      "bounceRate": 18,
+      "trend": "down"
+    },
+    {
+      "page": "Explore grid",
+      "sessions": 1680000,
+      "avgTimeSec": 124,
+      "bounceRate": 22,
+      "trend": "up"
+    },
+    {
+      "page": "Profile settings",
+      "sessions": 620000,
+      "avgTimeSec": 54,
+      "bounceRate": 34,
+      "trend": "stable"
+    }
+  ],
+  "insights": [
+    {
+      "title": "Composer drop-off is improving",
+      "body": "Post creation funnel completion rose 10 points over four months after the simplified media picker shipped in Feed.",
+      "severity": "positive"
+    },
+    {
+      "title": "DM recipient search is the top friction point",
+      "body": "18% exit rate at recipient selection — highest step in the start-DM funnel. Matches usability findings from March research.",
+      "severity": "watch"
+    },
+    {
+      "title": "Spark AI adoption outpacing launch targets",
+      "body": "35% adoption within 28 days among eligible creators — 8 points above the 30-day goal set at launch.",
+      "severity": "positive"
+    },
+    {
+      "title": "Profile settings bounce rate needs attention",
+      "body": "34% bounce suggests users arrive from deep links but cannot complete account tasks without hunting for controls.",
+      "severity": "critical"
+    }
+  ]
+}

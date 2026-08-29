@@ -11,8 +11,9 @@
 If you discover a security issue, please report it responsibly:
 
 1. **Do not** open a public GitHub issue for security vulnerabilities.
-2. Email the maintainer with a description of the issue, steps to reproduce, and potential impact.
-3. Allow reasonable time for a fix before public disclosure.
+2. Open a **private security advisory** on GitHub: **Security → Advisories → Report a vulnerability**, or email the repository owner listed on the [GitHub repo](https://github.com/jasminekaurr/ux-metrics-dashboard).
+3. Include a description, steps to reproduce, and potential impact.
+4. Allow reasonable time for a fix before public disclosure.
 
 ## Credential handling
 

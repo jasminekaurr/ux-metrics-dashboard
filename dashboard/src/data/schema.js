@@ -12,6 +12,17 @@ export const DATA_SCHEMA = {
   research: {
     description: 'Research coverage, implementation, usability, and decision impact metrics.',
   },
+  analytics: {
+    description: 'Product analytics: task success, funnels, feature adoption, page engagement, and satisfaction scores.',
+    shape: {
+      monthlySummary: 'Array indexed with MONTHS — headline KPIs per month',
+      metrics: 'Metric definitions with field keys into monthlySummary',
+      funnels: 'Step-by-step funnel drop-off data',
+      featureAdoption: 'Shipped feature uptake within eligible users',
+      topPages: 'High-traffic screens with engagement signals',
+      insights: 'Narrative findings for leadership review',
+    },
+  },
   cost: {
     description: 'Business impact and monthly cost breakdown.',
   },

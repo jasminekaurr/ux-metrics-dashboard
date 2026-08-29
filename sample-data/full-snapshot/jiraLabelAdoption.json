@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T17:55:23.648Z",
+  "generatedAt": "2026-08-29T18:12:58.975Z",
   "browseBaseUrl": "https://example.atlassian.net/browse",
   "query": {
     "projectKeys": [],
@@ -314,7 +314,7 @@
       "url": "https://example.atlassian.net/browse/STOR-78"
     },
     {
-      "id": "FEED-345",
+      "id": "FEED-346",
       "name": "Carousel swipe affordance unclear — usability test identified issue",
       "labels": [
         "Usability Fix"
@@ -328,7 +328,7 @@
       "parent": "",
       "created": "2026-01-15T10:00:00.000Z",
       "updated": "2026-04-01T10:00:00.000Z",
-      "url": "https://example.atlassian.net/browse/FEED-345"
+      "url": "https://example.atlassian.net/browse/FEED-346"
     },
     {
       "id": "DM-418",
@@ -553,6 +553,42 @@
       "url": "https://example.atlassian.net/browse/FEED-345"
     },
     {
+      "id": "DS-418",
+      "name": "Story sticker tray timing revised after creator usability study",
+      "labels": [
+        "Research-Driven",
+        "Design Revision"
+      ],
+      "status": "In Progress",
+      "project": "DS",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/DS-418"
+    },
+    {
+      "id": "CRE-58",
+      "name": "Spark AI feedback controls redesigned per creator trust research",
+      "labels": [
+        "Research-Driven",
+        "Design Revision"
+      ],
+      "status": "In Progress",
+      "project": "CRE",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/CRE-58"
+    },
+    {
       "id": "REEL-521",
       "name": "Cover frame picker exposed focus issue post-handoff",
       "labels": [
@@ -569,6 +605,42 @@
       "created": "2026-01-15T10:00:00.000Z",
       "updated": "2026-04-01T10:00:00.000Z",
       "url": "https://example.atlassian.net/browse/REEL-521"
+    },
+    {
+      "id": "FEED-2289",
+      "name": "Collab publish flow required loading state for screen readers",
+      "labels": [
+        "Post-Handoff",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "FEED",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/FEED-2289"
+    },
+    {
+      "id": "DS-521",
+      "name": "Prism modal detachment exposed focus indicator gap",
+      "labels": [
+        "Post-Handoff",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "DS",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/DS-521"
     },
     {
       "id": "DM-534",
@@ -589,6 +661,150 @@
       "url": "https://example.atlassian.net/browse/DM-534"
     },
     {
+      "id": "FEED-2311",
+      "name": "DM quick-reply discoverability improved — research + accessibility",
+      "labels": [
+        "Research-Driven",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "FEED",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/FEED-2311"
+    },
+    {
+      "id": "STOR-128",
+      "name": "Story empty state guidance insufficient — testing + WCAG issue",
+      "labels": [
+        "Research-Driven",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "STOR",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/STOR-128"
+    },
+    {
+      "id": "REEL-402",
+      "name": "Remix share menu placement — research + accessibility fix",
+      "labels": [
+        "Research-Driven",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "REEL",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/REEL-402"
+    },
+    {
+      "id": "FEED-2245",
+      "name": "Collab post card layout redesigned after API constraints surfaced",
+      "labels": [
+        "Design Revision",
+        "Post-Handoff"
+      ],
+      "status": "In Progress",
+      "project": "FEED",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/FEED-2245"
+    },
+    {
+      "id": "REEL-362",
+      "name": "Reels trim controls reversed after export pipeline limitations",
+      "labels": [
+        "Design Revision",
+        "Post-Handoff"
+      ],
+      "status": "In Progress",
+      "project": "REEL",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/REEL-362"
+    },
+    {
+      "id": "CRE-72",
+      "name": "Suggested Reels cards reworked after metadata format issues",
+      "labels": [
+        "Design Revision",
+        "Post-Handoff"
+      ],
+      "status": "In Progress",
+      "project": "CRE",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/CRE-72"
+    },
+    {
+      "id": "EXPL-182",
+      "name": "Explore topic rail revised for clarity and contrast",
+      "labels": [
+        "Design Revision",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "EXPL",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/EXPL-182"
+    },
+    {
+      "id": "STOR-141",
+      "name": "Story error states improved after accessibility critique",
+      "labels": [
+        "Design Revision",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "STOR",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/STOR-141"
+    },
+    {
       "id": "CRE-101",
       "name": "Spark AI caption suggestions reworked after trust study",
       "labels": [
@@ -606,6 +822,44 @@
       "created": "2026-01-15T10:00:00.000Z",
       "updated": "2026-04-01T10:00:00.000Z",
       "url": "https://example.atlassian.net/browse/CRE-101"
+    },
+    {
+      "id": "REEL-1002",
+      "name": "Comment thread sorting — research + redesign + WCAG compliance",
+      "labels": [
+        "Research-Driven",
+        "Design Revision",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "REEL",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/REEL-1002"
+    },
+    {
+      "id": "FEED-2267",
+      "name": "Collab invite form redesigned from research and accessibility audit",
+      "labels": [
+        "Research-Driven",
+        "Design Revision",
+        "Usability Fix"
+      ],
+      "status": "In Progress",
+      "project": "FEED",
+      "issueType": "Story",
+      "priority": "Medium",
+      "assignee": "",
+      "components": [],
+      "parent": "",
+      "created": "2026-01-15T10:00:00.000Z",
+      "updated": "2026-04-01T10:00:00.000Z",
+      "url": "https://example.atlassian.net/browse/FEED-2267"
     }
   ]
 }

@@ -37,13 +37,11 @@ How to publish or update the public UX Metrics Dashboard repository.
 
 ## Updating from a private repo
 
-If you maintain a private repo with internal planning files, regenerate the public export there:
+If you maintain a private fork with internal-only files, exclude them before pushing to a public remote:
 
-```bash
-./scripts/prepare-public-export.sh
-```
-
-Then copy the `oss-export/` output into this public repo and push.
+- Remove or gitignore `dashboard/src/data/live/`, `.env.local`, and internal planning docs
+- Run `npm run validate:data`, `npm run lint`, and `npm run build:external` before publishing
+- Rebuild `docs/` for the live demo (`npm run build:external` from `dashboard/`)
 
 ## What stays private
 
@@ -73,6 +71,14 @@ Alternatively, push to `main` and let the GitHub Actions workflow rebuild automa
 Public deployments use `build:external`, which sets `VITE_ORG_MODE=external` to anonymize product names (Product Alpha, Product Beta, etc.).
 
 Local development defaults to the Instagram-themed demo labels (Feed, Reels, DMs, etc.).
+
+## Custom GitHub Pages base path
+
+The default production base path is `/ux-metrics-dashboard/`. For a fork hosted at `https://<user>.github.io/` (repo root), build with:
+
+```bash
+VITE_BASE_PATH=/ npm run build:external
+```
 
 ## Troubleshooting Pages deploy
 

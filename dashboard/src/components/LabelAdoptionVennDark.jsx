@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react'
 import { useTheme } from '../context/ThemeContext'
-import { getJiraBrowseUrl } from '../utils/jira'
 import { useDashboardData } from '../context/DataContext'
+import { getJiraBrowseUrl } from '../utils/jira'
+import { ticketsFromJiraAdoption, ticketBrowseUrl } from '../utils/jiraLabelData'
 import {
   ALL_TICKETS,
   UX_LABELS,
@@ -59,7 +60,12 @@ function radiusFromCount(count, scale) {
 
 export default function LabelAdoptionVennDark() {
   const { jiraLabelAdoption } = useDashboardData()
-  const ACTIVE_TICKETS = jiraLabelAdoption?.issues?.length ? jiraLabelAdoption.issues : ALL_TICKETS
+  const browseBaseUrl = jiraLabelAdoption?.browseBaseUrl
+
+  const ACTIVE_TICKETS = useMemo(() => {
+    const captured = ticketsFromJiraAdoption(jiraLabelAdoption)
+    return captured.length > 0 ? captured : ALL_TICKETS
+  }, [jiraLabelAdoption])
 
   // selected can be: null, a single category string, or an array of labels for region selection
   const [selected, setSelected] = useState(null)
@@ -247,18 +253,12 @@ export default function LabelAdoptionVennDark() {
         background: 'linear-gradient(180deg, rgba(56,152,236,0.04) 0%, transparent 100%)',
       }}>
         <div style={{
-          fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.12em',
-          color: 'var(--es-text-3)', marginBottom: 6,
-        }}>
-          Interactive Venn Diagram
-        </div>
-        <div style={{
           fontFamily: SANS, fontSize: 14, fontWeight: 500,
           color: 'var(--es-text-1)', letterSpacing: '-0.01em',
         }}>
           {total} labeled tickets across {Object.keys(COLORS).length} categories
           <span style={{ fontSize: 11, color: 'var(--es-text-3)', marginLeft: 10, fontWeight: 400 }}>
-            Click a circle to explore
+            Click a circle or overlap to explore
           </span>
         </div>
       </div>
@@ -656,7 +656,7 @@ export default function LabelAdoptionVennDark() {
                 {selectedTickets.map((t, i) => (
                   <a
                     key={t.id}
-                    href={getJiraBrowseUrl(t.id)}
+                    href={ticketBrowseUrl(t, browseBaseUrl, getJiraBrowseUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

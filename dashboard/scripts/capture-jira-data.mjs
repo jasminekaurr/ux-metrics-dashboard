@@ -10,13 +10,13 @@ const envPaths = [
 ]
 
 const DEFAULT_LABEL_MAP = {
-  'UXR Identified': 'ux-validated',
-  'Design Rework': 'rework',
-  'Post-Handoff Change': 'post-handoff-change',
-  'Usability Issue': 'usability-issue',
-  'BA Change Request': 'ba-change-request',
-  'Iteration Feedback': 'iteration-feedback',
-  'Scope Change': 'scope-change',
+  'Research-Driven': 'ux-validated',
+  'Design Revision': 'rework',
+  'Post-Handoff': 'post-handoff-change',
+  'Usability Fix': 'usability-issue',
+  'Requirements Update': 'ba-change-request',
+  'Stakeholder Feedback': 'iteration-feedback',
+  'Scope Expansion': 'scope-change',
 }
 
 function requireEnv(name) {

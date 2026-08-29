@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useDashboardData } from '../context/DataContext'
 import { labels, countKeyProducts } from '../config/orgLabels'
-import LabelAdoptionDark from '../components/LabelAdoptionDark'
 import LabelAdoptionVennDark from '../components/LabelAdoptionVennDark'
+import ExecutiveSummaryPlayground from '../components/ExecutiveSummaryPlayground'
+import SectionHelp from '../components/SectionHelp'
 import { useTheme } from '../context/ThemeContext'
 import './ExecutiveSummary.css'
 
@@ -71,24 +72,25 @@ function SplitText({ children, className }) {
 }
 
 export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
-  const { roadmap, strategic, MONTHS, projectComponents, apexData } = useDashboardData()
+  const { roadmap, strategic, MONTHS, projectComponents, apexData, analytics } = useDashboardData()
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   const STATUS_STAGE_COLOR = useMemo(() => getStatusStageColors(isDark), [isDark])
 
-  const [barChartExpanded, setBarChartExpanded] = useState(false)
   const idx = selectedMonthIndex
   const { monthlySummary, featureRefinement, blockerIntelligence } = roadmap
 
-  const aprMonth = projectComponents.monthly[3]
-  const aprInsertions = apexData.weeklyTotals.reduce((sum, w) => sum + w.components, 0)
-  const estimatedLocalInstances = (aprMonth.simple * 3) + (aprMonth.medium * 5) + (aprMonth.complex * 8) + (aprMonth.custom * 10)
-  const reuseRate = Math.round((aprInsertions / (aprInsertions + estimatedLocalInstances)) * 100)
-
-  const marMonth = projectComponents.monthly[2]
-  const marInsertions = apexData.weeklyTotals.slice(0, -4).reduce((sum, w) => sum + w.components, 0)
-  const marLocalInstances = (marMonth.simple * 3) + (marMonth.medium * 5) + (marMonth.complex * 8) + (marMonth.custom * 10)
-  const reuseRatePrev = Math.round((marInsertions / (marInsertions + marLocalInstances)) * 100)
+  const currentMonth = projectComponents.monthly[idx] ?? projectComponents.monthly.at(-1)
+  const prevMonth = projectComponents.monthly[Math.max(0, idx - 1)]
+  const weeksPerMonth = Math.max(1, Math.round(apexData.weeklyTotals.length / MONTHS.length))
+  const currentWeeks = apexData.weeklyTotals.slice(idx * weeksPerMonth, (idx + 1) * weeksPerMonth)
+  const prevWeeks = apexData.weeklyTotals.slice(Math.max(0, idx - 1) * weeksPerMonth, idx * weeksPerMonth)
+  const monthInsertions = currentWeeks.reduce((sum, w) => sum + w.components, 0)
+  const prevInsertions = prevWeeks.reduce((sum, w) => sum + w.components, 0)
+  const estimatedLocalInstances = (currentMonth.simple * 3) + (currentMonth.medium * 5) + (currentMonth.complex * 8) + (currentMonth.custom * 10)
+  const reuseRate = Math.round((monthInsertions / (monthInsertions + estimatedLocalInstances)) * 100)
+  const prevLocalInstances = (prevMonth.simple * 3) + (prevMonth.medium * 5) + (prevMonth.complex * 8) + (prevMonth.custom * 10)
+  const reuseRatePrev = Math.round((prevInsertions / (prevInsertions + prevLocalInstances)) * 100)
   const reuseMoM = reuseRate - reuseRatePrev
 
   const customFeaturesCount = countKeyProducts(projectComponents.components)
@@ -103,7 +105,6 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
   const blockerColor = blockerIntelligence.active.length > 0 ? semanticColors.red : semanticColors.green
 
   const [deliveryRef, deliveryVisible] = useReveal()
-  const [vennRef, vennVisible] = useReveal()
   const [blockersRef, blockersVisible] = useReveal()
   const [pipelineRef, pipelineVisible] = useReveal()
   const [apexRef, apexVisible] = useReveal()
@@ -120,24 +121,69 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
   const reuseAnim       = useCountUp(reuseRate,   apexVisible, 1000,  40)
   const customFeatAnim  = useCountUp(customFeaturesCount, apexVisible, 900, 110)
 
+  const analyticsMonth = analytics.monthlySummary[idx] ?? analytics.monthlySummary.at(-1)
+  const taskCompletionAnim = useCountUp(analyticsMonth.taskCompletionRate, analyticsVisible, 900, 40)
+  const analyticsErrorAnim = useCountUp(analyticsMonth.errorRate, analyticsVisible, 900, 110)
+  const susScoreAnim = useCountUp(analyticsMonth.susScore, analyticsVisible, 900, 180)
+  const npsAnim = useCountUp(analyticsMonth.nps, analyticsVisible, 900, 250)
+
+  const [viewMode, setViewMode] = useState('full')
+
+  const pipelineMetrics = useMemo(() => ({
+    shipped: monthlySummary[idx].shipped,
+    todo: featureRefinement.newFeatures,
+    progress: refinementInProgress,
+    review: refinementInReview,
+    hold: blockerIntelligence.active.length,
+  }), [monthlySummary, idx, featureRefinement.newFeatures, refinementInProgress, refinementInReview, blockerIntelligence.active.length])
+
   return (
-    <div className="es-page">
+    <div className={`es-page es-page--executive-summary${viewMode === 'playground' ? ' es-page--playground' : ''}`}>
       <div className="es-header">
         <div className="es-header-inner">
-          <div className="es-eyebrow">
-            Executive Summary
+          <div className="es-header-row">
+            <div className="es-header-copy">
+              <div className="es-eyebrow">
+                Executive Summary
+              </div>
+              <h1 className="es-title">UX Impact<span className="es-cursor" /></h1>
+            </div>
+            <div className="es-view-toggle" role="tablist" aria-label="Executive summary view">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={viewMode === 'full'}
+                className={`es-view-toggle-btn${viewMode === 'full' ? ' active' : ''}`}
+                onClick={() => setViewMode('full')}
+              >
+                Full view
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={viewMode === 'playground'}
+                className={`es-view-toggle-btn${viewMode === 'playground' ? ' active' : ''}`}
+                onClick={() => setViewMode('playground')}
+              >
+                Playground
+              </button>
+            </div>
           </div>
-          <h1 className="es-title">UX Impact — {MONTHS[idx]}<span className="es-cursor" /></h1>
-          <p className="es-subtitle">
-            A comprehensive view of UX contribution across delivery, data integrity, blockers,
-            strategic initiatives, and design system adoption.
-          </p>
         </div>
       </div>
 
+      {viewMode === 'playground' ? (
+        <div className="es-content es-content-playground">
+          <ExecutiveSummaryPlayground
+            selectedMonthIndex={idx}
+            pipelineMetrics={pipelineMetrics}
+            reuseRate={reuseRate}
+          />
+        </div>
+      ) : (
       <div className="es-content">
 
-        {/* ── A) Delivery Pipeline Overview ───────────────────────────────────── */}
+        {/* ── A) Delivery pipeline & label adoption ───────────────────────────── */}
         <div
           ref={deliveryRef}
           className={`bq-reveal${deliveryVisible ? ' visible' : ''}`}
@@ -145,118 +191,64 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Delivery Pipeline Overview
-                <span className="es-src-tag">From Roadmap</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: roadmap.json + jiraLabelAdoption.json */}
+                  Delivery &amp; Data Integrity
+                </div>
+                <SectionHelp title="Why it matters">
+                  Pipeline metrics show what shipped and what is in motion. Label adoption shows whether teams
+                  instrument and trust UX taxonomy in delivery — together they answer if work is moving and measurable.
+                </SectionHelp>
               </div>
-              <SplitText className="bq-section-h">What shipped and what's in motion</SplitText>
+              <SplitText className="bq-section-h">What shipped and how teams label work</SplitText>
             </div>
           </div>
 
           <div style={{
-            display: 'flex',
             background: 'var(--es-surface)',
             borderRadius: 'var(--es-r)',
             border: '1px solid var(--es-border-str)',
             overflow: 'hidden',
           }}>
-            {[
-              { num: shippedAnim,    caption: 'Shipped',      sub: MONTHS[idx],             cls: 'green' },
-              { num: newFeatAnim,    caption: 'To Do',        sub: 'Backlog items',         cls: 'blue' },
-              { num: inProgressAnim, caption: 'In Progress',  sub: 'Refinement split',      cls: 'amber' },
-              { num: inReviewAnim,   caption: 'In Review',    sub: 'Refinement split',      cls: '' },
-              {
-                num: blockersAnim,
-                caption: 'On Hold',
-                sub: blockerIntelligence.active.length === 0 ? 'Nothing on hold' : 'Needs attention',
-                cls: blockerIntelligence.active.length > 0 ? 'red' : 'green',
-                accentColor: blockerColor,
-              },
-            ].map((s, i) => (
-              <div
-                key={i}
-                className="bq-stat-item bq-stagger-item"
-                style={{
-                  borderRight: i < 4 ? '1px dashed var(--es-border-str)' : 'none',
-                  borderTop: s.accentColor ? `3px solid ${s.accentColor}` : undefined,
-                }}
-              >
-                <div className={`bq-stat-num ${s.cls}`}>{s.num}</div>
-                <div className="bq-stat-caption">{s.caption}</div>
-                <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>{s.sub}</div>
+            <div className="es-combined-section-block">
+              <div style={{ display: 'flex', overflow: 'hidden' }}>
+                {[
+                  { num: shippedAnim,    caption: 'Shipped',      sub: MONTHS[idx],             cls: 'green' },
+                  { num: newFeatAnim,    caption: 'To Do',        sub: 'Backlog items',         cls: 'blue' },
+                  { num: inProgressAnim, caption: 'In Progress',  sub: 'Refinement split',      cls: 'amber' },
+                  { num: inReviewAnim,   caption: 'In Review',    sub: 'Refinement split',      cls: '' },
+                  {
+                    num: blockersAnim,
+                    caption: 'On Hold',
+                    sub: blockerIntelligence.active.length === 0 ? 'Nothing on hold' : 'Needs attention',
+                    cls: blockerIntelligence.active.length > 0 ? 'red' : 'green',
+                    accentColor: blockerColor,
+                  },
+                ].map((s, i, arr) => (
+                  <div
+                    key={s.caption}
+                    className="bq-stat-item bq-stagger-item"
+                    style={{
+                      borderRight: i < arr.length - 1 ? '1px dashed var(--es-border-str)' : 'none',
+                      borderTop: s.accentColor ? `3px solid ${s.accentColor}` : undefined,
+                    }}
+                  >
+                    <div className={`bq-stat-num ${s.cls}`}>{s.num}</div>
+                    <div className="bq-stat-caption">{s.caption}</div>
+                    <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>{s.sub}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="es-combined-section-block">
+              <div className="es-combined-section-label">UX label adoption</div>
+              <LabelAdoptionVennDark />
+            </div>
           </div>
         </div>
 
-        {/* ── B) Data Trust & Instrumentation ─────────────────────────────────── */}
-        <div
-          ref={vennRef}
-          className={`bq-reveal${vennVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 52 }}
-        >
-          <div className="bq-section-top">
-            <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Data Trust &amp; Instrumentation
-                <span className="es-src-tag">From Roadmap</span>
-              </div>
-              <SplitText className="bq-section-h">UX label adoption — overlapping categories</SplitText>
-            </div>
-          </div>
-
-          <div style={{
-            background: 'var(--es-surface)',
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)',
-            overflow: 'hidden',
-          }}>
-            {/* Collapsible header for bar chart */}
-            <div
-              onClick={() => setBarChartExpanded(!barChartExpanded)}
-              style={{
-                padding: '12px 20px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                cursor: 'pointer',
-                borderBottom: barChartExpanded ? '1px solid var(--es-border-str)' : 'none',
-                background: 'var(--es-surface-2)',
-              }}
-            >
-              <div style={{
-                fontFamily: MONO,
-                fontSize: 9,
-                letterSpacing: '0.10em',
-                textTransform: 'uppercase',
-                color: 'var(--es-text-3)',
-              }}>
-                Bar Chart View
-              </div>
-              <span style={{
-                fontSize: 14,
-                color: 'var(--es-text-3)',
-                transition: 'transform 200ms ease',
-                transform: barChartExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
-              }}>
-                ›
-              </span>
-            </div>
-            {barChartExpanded && <LabelAdoptionDark />}
-          </div>
-
-          <div style={{
-            background: 'var(--es-surface)',
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)',
-            overflow: 'hidden',
-            marginTop: 16,
-          }}>
-            <LabelAdoptionVennDark />
-          </div>
-        </div>
-
-        {/* ── C) Active Blockers ───────────────────────────────────────────────── */}
+        {/* ── B) Active Blockers ───────────────────────────────────────────────── */}
         {blockerIntelligence.active.length > 0 && (
           <div
             ref={blockersRef}
@@ -266,8 +258,8 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
             <div className="bq-section-top">
               <div>
                 <div className="es-eyebrow" style={{ marginBottom: 8 }}>
+                  {/* Source: roadmap.json blockerIntelligence */}
                   Active Blockers with Impact
-                  <span className="es-src-tag">From Roadmap</span>
                 </div>
                 <SplitText className="bq-section-h">Blockers requiring leadership attention</SplitText>
               </div>
@@ -323,17 +315,18 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Initiative Status Pipeline
-                <span className="es-src-tag">From Strategic Contribution</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: strategic.json */}
+                  Initiative Status Pipeline
+                </div>
+                <SectionHelp>
+                  Quick glance at status of all strategic initiatives — from early exploration through scaling ROI.
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">Strategic initiatives across the innovation lifecycle</SplitText>
             </div>
           </div>
-
-          <p style={{ fontSize: 13, color: 'var(--es-text-3)', marginBottom: 16, lineHeight: 1.6 }}>
-            Quick glance at status of all strategic initiatives — from early exploration through scaling ROI
-          </p>
 
           {/* Stage headers */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 6, marginBottom: 6 }}>
@@ -422,9 +415,14 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Design System Adoption
-                <span className="es-src-tag">From Design System Page</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: projectComponents.json / apex.json */}
+                  Design System Adoption
+                </div>
+                <SectionHelp>
+                  Reuse rate shows pattern adoption; custom feature count indicates where {labels.designSystemName} needs to grow richer.
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">{labels.designSystemName} reuse rate and custom feature footprint</SplitText>
             </div>
@@ -456,14 +454,11 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
               <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>
                 Across {labels.portfolioProducts} this month
               </div>
-              <div style={{ marginTop: 8, fontFamily: MONO, fontSize: 10, fontStyle: 'italic', color: 'var(--es-text-3)' }}>
-                Indicates where {labels.designSystemName} needs to grow richer
-              </div>
             </div>
           </div>
         </div>
 
-        {/* ── F) Analytics Coming Soon ─────────────────────────────────────────── */}
+        {/* ── F) Product Analytics ─────────────────────────────────────────────── */}
         <div
           ref={analyticsRef}
           className={`bq-reveal${analyticsVisible ? ' visible' : ''}`}
@@ -472,34 +467,41 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
           <div className="bq-section-top">
             <div>
               <div className="es-eyebrow" style={{ marginBottom: 8 }}>
+                {/* Source: analytics.json — replace with your analytics platform export */}
                 Analytics
-                <span style={{
-                  fontFamily: MONO, fontSize: 9, letterSpacing: '0.07em',
-                  padding: '2px 8px', borderRadius: 12, marginLeft: 10,
-                  background: 'rgba(124,58,237,0.12)', color: '#a78bfa',
-                  border: '1px dashed rgba(167,139,250,0.40)',
-                }}>Coming Soon</span>
               </div>
-              <SplitText className="bq-section-h">Advanced analytics platform</SplitText>
+              <SplitText className="bq-section-h">Product analytics at a glance</SplitText>
             </div>
           </div>
 
-          <div className="bq-callout bq-stagger-item" style={{
-            borderColor: 'rgba(167,139,250,0.35)',
-            borderStyle: 'dashed',
+          <div style={{
+            display: 'flex',
+            background: 'var(--es-surface)',
+            borderRadius: 'var(--es-r)',
+            border: '1px solid var(--es-border-str)',
+            overflow: 'hidden',
           }}>
-            <div className="bq-callout-icon" style={{ color: '#a78bfa' }}>◎</div>
-            <div>
-              <div className="bq-callout-title" style={{ color: '#a78bfa' }}>In-depth analytics capabilities</div>
-              <div className="bq-callout-body">
-                Trend analysis, comparative metrics, predictive insights, and custom reporting will be available soon.
-                This will enable deeper understanding of UX impact across time and projects.
+            {[
+              { num: `${Math.round(taskCompletionAnim)}%`, caption: 'Task Completion', sub: MONTHS[idx], cls: analyticsMonth.taskCompletionRate >= 70 ? 'green' : 'amber' },
+              { num: `${analyticsErrorAnim.toFixed(1)}%`, caption: 'Error Rate', sub: 'Critical flows', cls: analyticsMonth.errorRate <= 8 ? 'green' : 'red' },
+              { num: Math.round(susScoreAnim), caption: 'SUS Score', sub: 'Live baseline', cls: analyticsMonth.susScore >= 68 ? 'green' : 'amber' },
+              { num: Math.round(npsAnim), caption: 'NPS', sub: 'Product sentiment', cls: 'blue' },
+            ].map((s, i, arr) => (
+              <div
+                key={s.caption}
+                className="bq-stat-item bq-stagger-item"
+                style={{ borderRight: i < arr.length - 1 ? '1px dashed var(--es-border-str)' : 'none' }}
+              >
+                <div className={`bq-stat-num ${s.cls}`}>{s.num}</div>
+                <div className="bq-stat-caption">{s.caption}</div>
+                <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>{s.sub}</div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
       </div>
+      )}
     </div>
   )
 }

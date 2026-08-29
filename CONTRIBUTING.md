@@ -13,9 +13,11 @@ npm run dev
 ## Data changes
 
 - Default demo data lives in `dashboard/src/data/sample/*.json`.
-- After editing `dummy.js` during migration, regenerate sample files with `npm run split:dummy`.
+- Month **labels** in the nav are generated at runtime (rolling window ending at the current month); `months.json` controls how many slots exist.
 - Regenerate downloadable snapshots with `npm run export:snapshot`.
+- Validate bundled data with `npm run validate:data`.
 - Keep sample data fictional — no real company names, URLs, or user data.
+- Document new fields in [docs/data-format.md](docs/data-format.md) and update [docs/DATA-MANIFEST.json](docs/DATA-MANIFEST.json) when wiring changes.
 
 ## Adding a metric
 

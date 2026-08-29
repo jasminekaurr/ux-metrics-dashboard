@@ -1,3 +1,5 @@
+import { buildRollingMonthLabels } from '../utils/monthLabels.js'
+
 const STORAGE_KEY = 'ux-dashboard-data-upload'
 
 function deepMerge(base, override) {
@@ -62,6 +64,15 @@ export function buildDataFromSources(sampleData, liveOverrides = {}, uploadOverr
     else merged[key] = value
   }
 
+  const hasCustomMonths = Boolean(
+    uploads?.MONTHS
+    || uploads?.months
+    || liveOverrides?.months
+  )
+  if (!hasCustomMonths && Array.isArray(merged.MONTHS)) {
+    merged.MONTHS = buildRollingMonthLabels(merged.MONTHS.length)
+  }
+
   return merged
 }
 
@@ -70,6 +81,7 @@ export const DATA_FILE_NAMES = [
   'executive',
   'roadmap',
   'research',
+  'analytics',
   'cost',
   'projectComponents',
   'strategic',

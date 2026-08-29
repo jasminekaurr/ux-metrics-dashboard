@@ -6,6 +6,7 @@ import {
 import { useDashboardData } from '../context/DataContext'
 import { useTheme } from '../context/ThemeContext'
 import { getChartTheme, getChartColors } from '../utils/chartTheme'
+import SectionHelp from '../components/SectionHelp'
 import './ExecutiveSummary.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
@@ -154,7 +155,6 @@ export default function RoadmapDark({ selectedMonthIndex }) {
   }, [blockerIntelligence.active])
 
   const blockerReasonTotal = blockerReasonCategories.reduce((sum, cat) => sum + cat.count, 0)
-  const blockerReasonMax = Math.max(...blockerReasonCategories.map(cat => cat.count), 1)
 
   const blockerReasonPieData = useMemo(() => ({
     labels: blockerReasonCategories.map(cat => cat.label),
@@ -176,9 +176,6 @@ export default function RoadmapDark({ selectedMonthIndex }) {
             Delivery & Roadmap
           </div>
           <h1 className="es-title">Project Roadmap<span className="es-cursor" /></h1>
-          <p className="es-subtitle">
-            Cross-project comparison, delivery health, and feature progress tracking
-          </p>
         </div>
       </div>
 
@@ -188,21 +185,17 @@ export default function RoadmapDark({ selectedMonthIndex }) {
         <div ref={kpiRef} className={`bq-reveal${kpiVisible ? ' visible' : ''}`} style={{ paddingTop: 40 }}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Delivery Health
-                <span className="es-src-tag">Jira</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: roadmap.json (Jira capture) */}
+                  Delivery Health
+                </div>
+                <SectionHelp>
+                  Tracking shipped work, refinement progress, and on-hold items gives leadership visibility into
+                  delivery predictability and team health.
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">Delivery health</SplitText>
-            </div>
-          </div>
-
-          <div className="bq-callout" style={{ marginBottom: 20 }}>
-            <div className="bq-callout-icon">◎</div>
-            <div>
-              <div className="bq-callout-title">Why it matters</div>
-              <div className="bq-callout-body">
-                Tracking shipped work (same as in-dev for UX), refinement progress, and on-hold items gives leadership visibility into delivery predictability and team health. When on-hold items are low and features move steadily from in progress to in review, we can commit confidently to release timelines.
-              </div>
             </div>
           </div>
 
@@ -233,25 +226,20 @@ export default function RoadmapDark({ selectedMonthIndex }) {
         <div ref={velocityRef} className={`bq-reveal${velocityVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Velocity & Throughput
-                <span className="es-src-tag">Jira</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: roadmap.json velocity / throughput */}
+                  Velocity & Throughput
+                </div>
+                <SectionHelp title="This period">
+                  Throughput is improving as blockers decline; commitment accuracy is at{' '}
+                  {roadmap.velocity.monthly[idx].achievement}% for {MONTHS[idx]}.
+                  Team delivered {roadmap.velocity.monthly[idx].delivered} of {roadmap.velocity.monthly[idx].committed} committed story points.
+                  Ticket flow is {throughput.monthly[idx].netFlow >= 0 ? 'positive' : 'negative'} (
+                  {Math.abs(throughput.monthly[idx].netFlow)} net {throughput.monthly[idx].netFlow >= 0 ? 'closed' : 'opened'}).
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">Ticket flow and delivery velocity</SplitText>
-            </div>
-          </div>
-
-          <div className="bq-callout" style={{ marginBottom: 20 }}>
-            <div className="bq-callout-icon">◎</div>
-            <div className="bq-callout-body">
-              Throughput is improving as blockers decline; commitment accuracy is at{' '}
-              <strong style={{ color: 'var(--es-text-1)' }}>{roadmap.velocity.monthly[idx].achievement}%</strong> for {MONTHS[idx]}.
-              Team delivered {roadmap.velocity.monthly[idx].delivered} of {roadmap.velocity.monthly[idx].committed} committed story points.
-              Ticket flow is{' '}
-              <span style={{ color: throughput.monthly[idx].netFlow >= 0 ? 'var(--es-green)' : 'var(--es-red)' }}>
-                {throughput.monthly[idx].netFlow >= 0 ? 'positive' : 'negative'}
-              </span>{' '}
-              ({Math.abs(throughput.monthly[idx].netFlow)} net {throughput.monthly[idx].netFlow >= 0 ? 'closed' : 'opened'}).
             </div>
           </div>
 
@@ -304,37 +292,31 @@ export default function RoadmapDark({ selectedMonthIndex }) {
         <div ref={reworkRef} className={`bq-reveal${reworkVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Rework + Blockers
-                <span className="es-src-tag">User Input</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: roadmap.json blockerIntelligence — user-maintained qualitative input */}
+                  Rework + Blockers
+                </div>
+                <SectionHelp>
+                  Blockers are most actionable when grouped by reason category. Category trends show where to
+                  focus intervention first (dependency, approval, or capacity) to unblock more work faster.
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">Rework prevention and active blockers</SplitText>
             </div>
           </div>
 
-          <div className="bq-callout" style={{ marginBottom: 20 }}>
-            <div className="bq-callout-icon">◎</div>
-            <div>
-              <div className="bq-callout-title">Why it matters</div>
-              <div className="bq-callout-body">
-                Blockers are most actionable when grouped by reason category rather than reviewed one-by-one. Category trends show where to focus intervention first (dependency, approval, or capacity) to unblock more work faster.
-              </div>
-            </div>
-          </div>
-
-          {/* Active blocker categories donut chart */}
           <div className="bq-stagger-item" style={{
             background: 'var(--es-surface)',
             border: '1px solid var(--es-border-str)',
             borderRadius: 'var(--es-r)',
             overflow: 'hidden',
-            marginBottom: 12,
           }}>
             <div style={{ padding: '20px 24px 14px', borderBottom: '1px solid var(--es-border)' }}>
               <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--es-text-1)', marginBottom: 3 }}>Active blocker categories — {MONTHS[idx]}</div>
-              <div style={{ fontSize: 11, color: 'var(--es-text-3)' }}>Pie view of blocker reasons by category</div>
+              <div style={{ fontSize: 11, color: 'var(--es-text-3)' }}>Distribution, age, and example reasons by category</div>
             </div>
-            <div style={{ padding: '24px 24px 20px', display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap' }}>
+            <div style={{ padding: '24px 24px 20px', display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap', borderBottom: '1px solid var(--es-border)' }}>
               <div style={{ position: 'relative', width: 200, height: 200, flexShrink: 0 }}>
                 {reworkVisible && (
                   <Doughnut
@@ -343,9 +325,7 @@ export default function RoadmapDark({ selectedMonthIndex }) {
                       responsive: true, maintainAspectRatio: false,
                       animation: { animateRotate: true, animateScale: true, duration: 900, easing: 'easeOutQuart' },
                       plugins: {
-                        legend: {
-                          display: false,
-                        },
+                        legend: { display: false },
                         tooltip: CHART_TOOLTIP,
                       },
                       cutout: '58%',
@@ -390,37 +370,16 @@ export default function RoadmapDark({ selectedMonthIndex }) {
                 })}
               </div>
             </div>
-          </div>
-
-          {/* Active blockers by reason category */}
-          <div className="bq-stagger-item" style={{
-            background: 'var(--es-surface)',
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)',
-            overflow: 'hidden',
-          }}>
-            <div style={{ padding: '20px 24px 14px', borderBottom: '1px solid var(--es-border)' }}>
-              <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--es-text-1)', marginBottom: 3 }}>Active blocker reasons by category</div>
-              <div style={{ fontSize: 11, color: 'var(--es-text-3)' }}>Category count, average age, and example reasons</div>
-            </div>
-            <div style={{ padding: '24px 24px 16px' }}>
+            <div style={{ padding: '20px 24px 16px' }}>
               {blockerReasonCategories.map(category => (
-                <div key={category.key} style={{ marginBottom: 14 }}>
+                <div key={`${category.key}-detail`} style={{ marginBottom: 14 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, gap: 12 }}>
                     <div style={{ color: 'var(--es-text-1)', fontSize: 12, fontWeight: 500 }}>{category.label}</div>
                     <div style={{ fontFamily: MONO, fontSize: 10, color: 'var(--es-text-3)' }}>
                       {category.count} blockers · avg age {category.avgAgeDays}d
                     </div>
                   </div>
-                  <div className="es-prog-track">
-                    {reworkVisible && (
-                      <div
-                        className="es-prog-fill amber"
-                        style={{ '--fill-pct': `${(category.count / blockerReasonMax) * 100}%` }}
-                      />
-                    )}
-                  </div>
-                  <div style={{ marginTop: 6, fontFamily: MONO, fontSize: 10, color: 'var(--es-text-3)' }}>
+                  <div style={{ fontFamily: MONO, fontSize: 10, color: 'var(--es-text-3)', lineHeight: 1.5 }}>
                     Reasons: {category.reasons.join(' • ')}
                   </div>
                 </div>
@@ -433,20 +392,14 @@ export default function RoadmapDark({ selectedMonthIndex }) {
         <div ref={timelineRef} className={`bq-reveal${timelineVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Release Timeline
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>Release Timeline</div>
+                <SectionHelp>
+                  Phase progress and milestone tracking gives stakeholders confidence in release predictability.
+                  Consistent phase movement supports committing to roadmap timelines with higher certainty.
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">Project release progress</SplitText>
-            </div>
-          </div>
-
-          <div className="bq-callout" style={{ marginBottom: 20 }}>
-            <div className="bq-callout-icon">◎</div>
-            <div>
-              <div className="bq-callout-title">Why it matters</div>
-              <div className="bq-callout-body">
-                Phase progress and milestone tracking gives stakeholders confidence in release predictability. When projects move through phases consistently and hit their target dates, we can commit to roadmap timelines with higher certainty and reduce last-minute surprises.
-              </div>
             </div>
           </div>
 

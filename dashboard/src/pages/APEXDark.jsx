@@ -8,6 +8,7 @@ import { useDashboardData } from '../context/DataContext'
 import { useTheme } from '../context/ThemeContext'
 import { getChartTheme, getChartColors } from '../utils/chartTheme'
 import { labels, filterKeyProducts } from '../config/orgLabels'
+import SectionHelp from '../components/SectionHelp'
 import './ExecutiveSummary.css'
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, ArcElement, Tooltip, Legend, Filler)
@@ -91,7 +92,7 @@ function SplitText({ children, className }) {
 }
 
 export default function APEXDark() {
-  const { projectComponents, apexData } = useDashboardData()
+  const { projectComponents, apexData, MONTHS } = useDashboardData()
   const [openBands, setOpenBands] = useState({})
   const [loadMoreCounts, setLoadMoreCounts] = useState({})
   const [activeTab, setActiveTab] = useState(0)
@@ -137,6 +138,8 @@ export default function APEXDark() {
   }))
 
   const { summary, weeks, weeklyTotals, teamWeekly, detachments } = apexData
+  const latestIdx = Math.max(0, MONTHS.length - 1)
+  const prevIdx = Math.max(0, latestIdx - 1)
 
   const weekLabels = weeks.map(fmtWeek)
   const monthlyInsertions = weeklyToMonthly(weeklyTotals, 'components')
@@ -160,12 +163,13 @@ export default function APEXDark() {
     })
   }
 
-  const aprMonth = projectComponents.monthly[3]
+  const aprMonth = projectComponents.monthly[latestIdx] ?? projectComponents.monthly.at(-1)
   const aprInsertions = monthlyInsertions[months[months.length - 1]] || 0
   const estimatedLocal = (aprMonth.simple * 3) + (aprMonth.medium * 5) + (aprMonth.complex * 8) + (aprMonth.custom * 10)
   const reuseRate = Math.round((aprInsertions / (aprInsertions + estimatedLocal)) * 100)
-  const marMonth = projectComponents.monthly[2]
-  const marIns = monthlyInsertions['Mar'] || 0
+  const marMonth = projectComponents.monthly[prevIdx]
+  const prevMonthKey = months[months.length - 2]
+  const marIns = prevMonthKey ? (monthlyInsertions[prevMonthKey] || 0) : 0
   const marLocal = (marMonth.simple * 3) + (marMonth.medium * 5) + (marMonth.complex * 8) + (marMonth.custom * 10)
   const reuseRatePrev = Math.round((marIns / (marIns + marLocal)) * 100)
   const reuseMoM = reuseRatePrev ? reuseRate - reuseRatePrev : 0
@@ -267,10 +271,6 @@ export default function APEXDark() {
             Design System
           </div>
           <h1 className="es-title">{labels.designSystemFull}<span className="es-cursor" /></h1>
-          <p className="es-subtitle">
-            Building a rich {labels.designSystemName} design system to create {labels.portfolioVisionPhrase} — where every product feels
-            connected through consistent patterns and visual language
-          </p>
         </div>
       </div>
 
@@ -285,8 +285,8 @@ export default function APEXDark() {
           <div className="bq-section-top">
             <div>
               <div className="es-eyebrow" style={{ marginBottom: 8 }}>
+                {/* Source: apex.json (Figma analytics capture) */}
                 Adoption
-                <span className="es-src-tag">{labels.analyticsTag}</span>
               </div>
               <SplitText className="bq-section-h">Component adoption across teams</SplitText>            </div>
           </div>
@@ -332,8 +332,8 @@ export default function APEXDark() {
           <div className="bq-section-top">
             <div>
               <div className="es-eyebrow" style={{ marginBottom: 8 }}>
+                {/* Source: apex.json weeklyTotals */}
                 Component Momentum
-                <span className="es-src-tag">Weekly</span>
               </div>
               <SplitText className="bq-section-h">Teams are building with {labels.designSystemName}</SplitText>
             </div>
@@ -384,24 +384,17 @@ export default function APEXDark() {
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Design System Integrity
-                <span className="es-src-tag">{labels.analyticsTag}</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: apex.json detachments */}
+                  Design System Integrity
+                </div>
+                <SectionHelp title="Why design system integrity matters">
+                  High detachment fragments the {labels.portfolioCohesion}. Users notice when products do not feel connected.
+                  Detachment shows where {labels.designSystemName} needs to grow while maintaining one visual language.
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">Detachment health — team distribution</SplitText>
-            </div>
-          </div>
-
-          {/* Why it matters — at the top so context comes first */}
-          <div className="bq-callout" style={{ marginBottom: 28 }}>
-            <div className="bq-callout-icon">◎</div>
-            <div>
-              <div className="bq-callout-title">Why Design System Integrity Matters</div>
-              <div className="bq-callout-body">
-                High detachment isn't just technical debt — it fragments the {labels.portfolioCohesion}. Users notice when
-                products don't feel connected. Detachment shows where {labels.designSystemName} needs to grow to support diverse product
-                needs while maintaining the visual language that makes the portfolio feel like one platform.
-              </div>
             </div>
           </div>
 
@@ -549,22 +542,17 @@ export default function APEXDark() {
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
-                Where Teams Build Beyond {labels.designSystemName}
-                <span className="es-src-tag">User Input</span>
+              <div className="es-section-heading-row">
+                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                  {/* Source: projectComponents.json components — user-maintained inventory */}
+                  Where Teams Build Beyond {labels.designSystemName}
+                </div>
+                <SectionHelp title={`Custom features and ${labels.designSystemName}`}>
+                  These {filteredComponents.length} features show where teams needed flexibility beyond current {labels.designSystemName} patterns —
+                  candidates for future system expansion and portfolio consistency.
+                </SectionHelp>
               </div>
               <SplitText className="bq-section-h">Custom features map system growth</SplitText>
-            </div>
-          </div>
-
-          <div className="bq-callout" style={{ marginBottom: 28 }}>
-            <div className="bq-callout-icon">◎</div>
-            <div>
-              <div className="bq-callout-title">Custom features reveal where {labels.designSystemName} needs to grow richer</div>
-              <div className="bq-callout-body">
-                These {filteredComponents.length} features show where teams needed flexibility beyond current {labels.designSystemName} patterns —
-                candidates for future system expansion. Each custom build is an opportunity to bring more consistency across the portfolio.
-              </div>
             </div>
           </div>
 

@@ -13,12 +13,14 @@ import strategicContributions from './strategicContributions.json'
 import apex from './apex.json'
 import jiraLabelAdoption from './jiraLabelAdoption.json'
 import fcubComponentVenn from './fcubComponentVenn.json'
+import analytics from './analytics.json'
 
 const sampleData = {
   MONTHS: months,
   executive,
   roadmap,
   research,
+  analytics,
   cost,
   projectComponents,
   strategic,

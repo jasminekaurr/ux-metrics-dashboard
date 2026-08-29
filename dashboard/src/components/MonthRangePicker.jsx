@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+import { buildMonthPresets, getCalendarYear, getLatestMonthIndex } from '../utils/monthLabels'
 import './MonthRangePicker.css'
 
 export default function MonthRangePicker({ months, selectedRange, onChange }) {
@@ -6,33 +7,28 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [rangeStart, setRangeStart] = useState(null)
 
-  // Preset ranges
-  const presets = [
-    { label: 'Last 3 months', range: [1, 3] },
-    { label: 'All months', range: [0, 3] },
-    { label: 'Current month', range: [3, 3] },
-  ]
+  const latestIdx = getLatestMonthIndex(MONTHS.length)
+  const presets = useMemo(() => buildMonthPresets(MONTHS.length), [MONTHS.length])
+  const calendarYear = useMemo(() => getCalendarYear(MONTHS), [MONTHS])
 
-  // selectedRange is [startIdx, endIdx] where both same = single month
   const isSingleMonth = selectedRange[0] === selectedRange[1]
 
   const handleMonthClick = (monthIdx) => {
     if (rangeStart === null) {
-      // First click - start a potential range
       setRangeStart(monthIdx)
       onChange([monthIdx, monthIdx])
-    } else {
-      // Second click - complete the range
-      const start = Math.min(rangeStart, monthIdx)
-      const end = Math.max(rangeStart, monthIdx)
-      onChange([start, end])
-      setRangeStart(null)
+      return
     }
+
+    const start = Math.min(rangeStart, monthIdx)
+    const end = Math.max(rangeStart, monthIdx)
+    onChange([start, end])
+    setRangeStart(null)
   }
 
   const handleClearRange = () => {
     setRangeStart(null)
-    onChange([3, 3]) // Reset to April (latest month)
+    onChange([latestIdx, latestIdx])
   }
 
   const getDisplayText = () => {
@@ -42,9 +38,7 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
     return `${MONTHS[selectedRange[0]].split(' ')[0]} - ${MONTHS[selectedRange[1]].split(' ')[0]}`
   }
 
-  const isMonthInRange = (idx) => {
-    return idx >= selectedRange[0] && idx <= selectedRange[1]
-  }
+  const isMonthInRange = (idx) => idx >= selectedRange[0] && idx <= selectedRange[1]
 
   const getMonthClassName = (idx) => {
     const classes = ['month-cell']
@@ -71,6 +65,8 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
       <button
         className="month-range-display"
         onClick={() => setIsExpanded(!isExpanded)}
+        aria-expanded={isExpanded}
+        aria-haspopup="dialog"
       >
         <span className="range-text">{getDisplayText()}</span>
         <svg
@@ -79,27 +75,28 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
           height="12"
           viewBox="0 0 12 12"
           fill="none"
+          aria-hidden="true"
         >
           <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
 
       {isExpanded && (
-        <div className="month-calendar">
+        <div className="month-calendar" role="dialog" aria-label="Select viewing period">
           <div className="calendar-header">
-            <span className="calendar-title">2026 Months</span>
+            <span className="calendar-title">{calendarYear} months</span>
             {!isSingleMonth && (
-              <button className="clear-btn" onClick={handleClearRange}>
+              <button className="clear-btn" type="button" onClick={handleClearRange}>
                 Clear range
               </button>
             )}
           </div>
 
-          {/* Quick Presets */}
           <div className="preset-section">
-            {presets.map((preset, idx) => (
+            {presets.map((preset) => (
               <button
-                key={idx}
+                key={preset.label}
+                type="button"
                 className="preset-btn"
                 onClick={() => {
                   onChange(preset.range)
@@ -114,7 +111,8 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
           <div className="month-grid">
             {MONTHS.map((month, idx) => (
               <button
-                key={idx}
+                key={month}
+                type="button"
                 className={getMonthClassName(idx)}
                 onClick={() => handleMonthClick(idx)}
               >
@@ -127,8 +125,7 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
             <div className="instruction-text">
               {rangeStart === null
                 ? 'Click a month to select, or click two months for a range'
-                : 'Click another month to complete range'
-              }
+                : 'Click another month to complete range'}
             </div>
           </div>
         </div>

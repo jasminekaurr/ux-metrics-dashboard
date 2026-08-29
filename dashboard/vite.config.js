@@ -1,15 +1,22 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
+import { fileURLToPath } from 'node:url'
 
-// Project Pages URL: https://<user>.github.io/ux-metrics-dashboard/
-const pagesBase = '/ux-metrics-dashboard/'
+// GitHub Pages subpath. Override for forks: VITE_BASE_PATH=/ npm run build
+const defaultBase = '/ux-metrics-dashboard/'
+const projectRoot = fileURLToPath(new URL('.', import.meta.url))
 
-export default defineConfig(({ command }) => ({
-  plugins: [react()],
-  // Dev uses /. Production build uses the repo subpath for GitHub Pages.
-  base: command === 'build' ? pagesBase : '/',
-  build: {
-    outDir: '../docs',
-    emptyOutDir: true,
-  },
-}))
+export default defineConfig(({ command, mode }) => {
+  const env = loadEnv(mode, projectRoot, '')
+  const pagesBase = env.VITE_BASE_PATH || defaultBase
+
+  return {
+    plugins: [react()],
+    // Dev uses /. Production build uses the repo subpath unless overridden.
+    base: command === 'build' ? pagesBase : '/',
+    build: {
+      outDir: '../docs',
+      emptyOutDir: true,
+    },
+  }
+})

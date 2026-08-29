@@ -27,8 +27,9 @@ Production output is written to `../docs/`.
 | `src/data/sample/` | Bundled demo JSON (committed) |
 | `src/data/live/` | Capture script output (gitignored) |
 | `src/config/orgLabels.js` | Demo vs anonymized label modes |
+| `src/utils/monthLabels.js` | Rolling month labels for the nav picker |
 
-See [Data format](../docs/data-format.md) for the full JSON schema.
+See [Data format](../docs/data-format.md) for the full JSON schema, user-maintained fields, and integration options.
 
 ## Capture scripts
 

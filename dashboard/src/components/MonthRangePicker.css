@@ -55,24 +55,24 @@
   color: var(--nav-green);
 }
 
-@keyframes nav-slide-down {
-  from { opacity: 0; transform: translateY(-6px); }
+@keyframes nav-slide-up {
+  from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
 
 .month-calendar {
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 10px;
   right: 10px;
-  margin-top: 4px;
+  margin-bottom: 4px;
   background: var(--nav-surface-2);
   border: 1px solid var(--nav-border-str);
   border-radius: var(--nav-r);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.50), 0 0 0 1px rgba(255,255,255,0.04);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.50), 0 0 0 1px rgba(255,255,255,0.04);
   padding: 10px;
   z-index: 200;
-  animation: nav-slide-down 0.18s ease-out;
+  animation: nav-slide-up 0.18s ease-out;
 }
 
 .calendar-header {

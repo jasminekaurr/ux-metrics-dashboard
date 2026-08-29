@@ -28,5 +28,8 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Validate sample data
+        run: npm run validate:data
+
       - name: Build external demo
         run: npm run build:external
