@@ -12,7 +12,6 @@ const pages = [
   { to: '/analytics', label: 'Analytics', icon: '◬' },
   { to: '/roadmap', label: 'Roadmap', icon: '◷' },
   { to: '/strategic', label: 'Strategic Design Contribution', icon: '◈' },
-  { to: '/data', label: 'Data Settings', icon: '⬆' },
 ]
 
 const navClass = ({ isActive }) => 'nav-item' + (isActive ? ' active' : '')

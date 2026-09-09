@@ -28,7 +28,7 @@ npm run capture:figma
 ```
 sample/*.json  →  provider.js  →  buildDataFromSources()  →  DataContext  →  pages
 live/*.json    ↗  (gitignored, build-time capture)
-localStorage   ↗  (runtime upload via /data → Data Settings)
+localStorage   ↗  (optional runtime upload via DataContext — see docs/DATA-SETTINGS.md)
 ```
 
 Merge order (later wins): **sample → live → upload**.
@@ -52,8 +52,7 @@ Key files:
 | `/research` | `ResearchDark.jsx` | `research`, `panelHealth`, `ubaIASpotlight` (+ hardcoded initiative cards) |
 | `/analytics` | `AnalyticsDark.jsx` | `analytics` |
 | `/roadmap` | `RoadmapDark.jsx` | `roadmap` |
-| `/strategic` | `StrategicDark.jsx` | `strategic`, `strategicContributions` |
-| `/data` | `DataSettings.jsx` | upload/export all `DATA_FILE_NAMES` |
+| `/strategic` | `StrategicDark.jsx` | `strategic`, `strategicContributions` (demo filters to 3 cards) |
 
 ### Label Venn diagram
 

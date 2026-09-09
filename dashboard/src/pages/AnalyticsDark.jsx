@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect, useRef } from 'react'
 import { useDashboardData } from '../context/DataContext'
 import { useTheme } from '../context/ThemeContext'
 import SectionHelp from '../components/SectionHelp'
+import SplitText from '../components/SplitText'
 import './ExecutiveSummary.css'
 
 const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
@@ -42,24 +43,6 @@ function useCountUp(target, shouldStart, duration = 1100, delay = 0) {
     return () => { clearTimeout(tid); cancelAnimationFrame(raf) }
   }, [target, shouldStart, duration, delay])
   return value
-}
-
-function SplitText({ children, className }) {
-  const text = String(children)
-  return (
-    <h2 className={className} aria-label={text}>
-      {text.split('').map((ch, i, arr) => (
-        <span
-          key={i}
-          className="bq-split-char"
-          style={{ transitionDelay: `${Math.round((i / arr.length) * 700)}ms` }}
-          aria-hidden="true"
-        >
-          {ch === ' ' ? '\u00A0' : ch}
-        </span>
-      ))}
-    </h2>
-  )
 }
 
 function formatMetricValue(value, unit) {
@@ -297,20 +280,20 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
             <thead>
               <tr>
                 <th className="bq-th">Feature</th>
-                <th className="bq-th">Product</th>
-                <th className="bq-th">Adoption</th>
-                <th className="bq-th bq-th-last">Days live</th>
+                <th className="bq-th bq-th-center">Product</th>
+                <th className="bq-th bq-th-center">Adoption</th>
+                <th className="bq-th bq-th-last bq-th-center">Days live</th>
               </tr>
             </thead>
             <tbody>
               {analytics.featureAdoption.map((row) => (
                 <tr key={row.feature} className="bq-feature-tr">
                   <td className="bq-td bq-td-feature">{row.feature}</td>
-                  <td className="bq-td"><span className="es-chip blue">{row.product}</span></td>
-                  <td className="bq-td" style={{ fontFamily: MONO, fontSize: 12 }}>
+                  <td className="bq-td bq-td-center"><span className="es-chip blue">{row.product}</span></td>
+                  <td className="bq-td bq-td-center" style={{ fontFamily: MONO, fontSize: 12 }}>
                     {row.adoptionRate}% <span style={{ color: 'var(--es-text-3)' }}>({(row.adoptedUsers / 1000000).toFixed(1)}M)</span>
                   </td>
-                  <td className="bq-td bq-td-purpose">{row.daysSinceLaunch}</td>
+                  <td className="bq-td bq-td-purpose bq-td-center">{row.daysSinceLaunch}</td>
                 </tr>
               ))}
             </tbody>

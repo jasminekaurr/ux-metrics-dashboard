@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UX Metrics Dashboard data manifest",
+  "description": "Machine-readable map of data files to UI routes. Update when wiring changes.",
+  "version": "1.0.0",
+  "mergeOrder": ["sample", "live", "upload"],
+  "samplePath": "dashboard/src/data/sample/",
+  "livePath": "dashboard/src/data/live/",
+  "providerEntry": "dashboard/src/data/provider.js",
+  "contextEntry": "dashboard/src/context/DataContext.jsx",
+  "files": {
+    "months.json": {
+      "key": "MONTHS",
+      "wiring": "active",
+      "routes": ["/", "/research", "/analytics", "/roadmap", "/strategic"]
+    },
+    "roadmap.json": {
+      "key": "roadmap",
+      "wiring": "active",
+      "routes": ["/", "/roadmap"]
+    },
+    "research.json": {
+      "key": "research",
+      "wiring": "active",
+      "routes": ["/", "/research"]
+    },
+    "analytics.json": {
+      "key": "analytics",
+      "wiring": "active",
+      "routes": ["/", "/analytics"],
+      "integrationGuide": "integrations/analytics/README.md"
+    },
+    "strategic.json": {
+      "key": "strategic",
+      "wiring": "active",
+      "routes": ["/", "/strategic"]
+    },
+    "strategicContributions.json": {
+      "key": "strategicContributions",
+      "wiring": "active",
+      "routes": ["/strategic"],
+      "notes": "Demo UI filters to three VISIBLE_IDS in StrategicDark.jsx"
+    },
+    "projectComponents.json": {
+      "key": "projectComponents",
+      "wiring": "active",
+      "routes": ["/", "/apex"],
+      "source": "user_input"
+    },
+    "apex.json": {
+      "key": "apexData",
+      "wiring": "active",
+      "routes": ["/apex"],
+      "captureScript": "capture:figma"
+    },
+    "jiraLabelAdoption.json": {
+      "key": "jiraLabelAdoption",
+      "wiring": "active",
+      "routes": ["/"],
+      "components": ["LabelAdoptionVennDark"],
+      "captureScript": "capture:jira",
+      "fallback": "dashboard/src/data/uxLabelTickets.js"
+    },
+    "panelHealth.json": {
+      "key": "panelHealth",
+      "wiring": "active",
+      "routes": ["/research"]
+    },
+    "ubaIASpotlight.json": {
+      "key": "ubaIASpotlight",
+      "wiring": "active",
+      "routes": ["/research"]
+    },
+    "executive.json": { "key": "executive", "wiring": "exported_only", "routes": [] },
+    "cost.json": { "key": "cost", "wiring": "exported_only", "routes": [] },
+    "researchInitiatives.json": { "key": "researchInitiatives", "wiring": "exported_only", "routes": [] },
+    "researchAsks.json": { "key": "researchAsks", "wiring": "exported_only", "routes": [] },
+    "fcubComponentVenn.json": { "key": "fcubComponentVenn", "wiring": "exported_only", "routes": [] }
+  }
+}

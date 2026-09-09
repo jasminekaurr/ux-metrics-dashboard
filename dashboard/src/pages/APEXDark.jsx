@@ -9,6 +9,7 @@ import { useTheme } from '../context/ThemeContext'
 import { getChartTheme, getChartColors } from '../utils/chartTheme'
 import { labels, filterKeyProducts } from '../config/orgLabels'
 import SectionHelp from '../components/SectionHelp'
+import SplitText from '../components/SplitText'
 import './ExecutiveSummary.css'
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, ArcElement, Tooltip, Legend, Filler)
@@ -69,26 +70,6 @@ function useCountUp(target, shouldStart, duration = 1100, delay = 0) {
     return () => { clearTimeout(tid); cancelAnimationFrame(raf) }
   }, [target, shouldStart, duration, delay])
   return value
-}
-
-// Splits a heading into per-character spans that reveal like Bequant's typewriter
-// Characters start at opacity: 0.07 (ghost text) and animate to 1 on scroll
-function SplitText({ children, className }) {
-  const text = String(children)
-  return (
-    <h2 className={className} aria-label={text}>
-      {text.split('').map((ch, i, arr) => (
-        <span
-          key={i}
-          className="bq-split-char"
-          style={{ transitionDelay: `${Math.round((i / arr.length) * 700)}ms` }}
-          aria-hidden="true"
-        >
-          {ch === ' ' ? '\u00A0' : ch}
-        </span>
-      ))}
-    </h2>
-  )
 }
 
 export default function APEXDark() {

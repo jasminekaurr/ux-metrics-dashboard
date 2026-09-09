@@ -16,7 +16,7 @@ export default defineConfig(({ command, mode }) => {
     base: command === 'build' ? pagesBase : '/',
     build: {
       outDir: '../docs',
-      emptyOutDir: true,
+      emptyOutDir: false,
     },
   }
 })

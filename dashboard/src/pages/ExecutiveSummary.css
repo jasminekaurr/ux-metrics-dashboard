@@ -1254,6 +1254,14 @@
   padding-left: 16px;
 }
 .bq-th:not(:first-child):not(.bq-th-last) { padding-left: 16px; }
+.bq-th-center,
+.bq-td-center {
+  text-align: center;
+}
+.bq-td-center {
+  padding-left: 16px;
+  padding-right: 16px;
+}
 
 .bq-project-row .bq-project-cell {
   padding: 20px 0 4px;

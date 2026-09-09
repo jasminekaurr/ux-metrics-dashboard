@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "dev:external": "VITE_ORG_MODE=external vite",
-    "build": "vite build",
-    "build:external": "VITE_ORG_MODE=external vite build",
+    "build": "node scripts/clean-pages-output.mjs && vite build",
+    "build:external": "node scripts/clean-pages-output.mjs && VITE_ORG_MODE=external vite build",
     "build:with-jira": "npm run capture:jira && npm run build",
     "build:with-data": "npm run capture:all && npm run build",
     "capture:jira": "node scripts/capture-jira-data.mjs",

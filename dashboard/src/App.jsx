@@ -10,7 +10,6 @@ import ResearchDark from './pages/ResearchDark'
 import AnalyticsDark from './pages/AnalyticsDark'
 import RoadmapDark from './pages/RoadmapDark'
 import StrategicDark from './pages/StrategicDark'
-import DataSettings from './pages/DataSettings'
 import './index.css'
 
 function ScrollToTop() {
@@ -47,7 +46,6 @@ function AppShell() {
             <Route path="/analytics" element={<AnalyticsDark selectedMonthIndex={selectedMonthIndex} />} />
             <Route path="/roadmap" element={<RoadmapDark selectedMonthIndex={selectedMonthIndex} selectedMonthRange={clampedRange} />} />
             <Route path="/strategic" element={<StrategicDark selectedMonthIndex={selectedMonthIndex} selectedMonthRange={clampedRange} />} />
-            <Route path="/data" element={<DataSettings />} />
           </Routes>
         </main>
       </div>

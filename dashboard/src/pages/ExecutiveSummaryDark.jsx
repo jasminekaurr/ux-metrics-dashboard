@@ -4,6 +4,7 @@ import { labels, countKeyProducts } from '../config/orgLabels'
 import LabelAdoptionVennDark from '../components/LabelAdoptionVennDark'
 import ExecutiveSummaryPlayground from '../components/ExecutiveSummaryPlayground'
 import SectionHelp from '../components/SectionHelp'
+import SplitText from '../components/SplitText'
 import { useTheme } from '../context/ThemeContext'
 import './ExecutiveSummary.css'
 
@@ -51,24 +52,6 @@ function useCountUp(target, shouldStart, duration = 1100, delay = 0) {
     return () => { clearTimeout(tid); cancelAnimationFrame(raf) }
   }, [target, shouldStart, duration, delay])
   return value
-}
-
-function SplitText({ children, className }) {
-  const text = String(children)
-  return (
-    <h2 className={className} aria-label={text}>
-      {text.split('').map((ch, i, arr) => (
-        <span
-          key={i}
-          className="bq-split-char"
-          style={{ transitionDelay: `${Math.round((i / arr.length) * 700)}ms` }}
-          aria-hidden="true"
-        >
-          {ch === ' ' ? '\u00A0' : ch}
-        </span>
-      ))}
-    </h2>
-  )
 }
 
 export default function ExecutiveSummaryDark({ selectedMonthIndex }) {

@@ -58,9 +58,7 @@ npm run build
 
 Capture scripts write to `dashboard/src/data/live/` (gitignored). The data provider merges `sample → live → upload` at runtime.
 
-### 4. Runtime upload (no rebuild)
-
-Open **Data Settings** in the left nav (`/data`). Upload a full snapshot JSON or individual domain files. Overrides persist in your browser's localStorage for that session.
+How to attach your data (edit sample JSON, snapshot export, or capture scripts): [Data settings](docs/DATA-SETTINGS.md).
 
 ## Viewing period
 
@@ -98,6 +96,7 @@ ux-metrics-dashboard/
 ## Documentation
 
 - [Architecture](docs/ARCHITECTURE.md) — how data flows to pages
+- [Data settings](docs/DATA-SETTINGS.md) — how to attach your own JSON / captures
 - [Data manifest](docs/DATA-MANIFEST.json) — machine-readable file → route map (for AI tools)
 - [AGENTS.md](AGENTS.md) — guide for AI coding agents
 - [Data format](docs/data-format.md) — JSON schema, rolling months, user-maintained input, product analytics

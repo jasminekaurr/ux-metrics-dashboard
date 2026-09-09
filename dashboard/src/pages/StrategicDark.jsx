@@ -25,7 +25,9 @@ const DETAIL_FIELDS = [
   ['Outcome', 'outcome'],
 ]
 
-// Show all contributions from strategicContributions.json.
+// Demo shows three contributions — one each from Blocker, Enhancement, Optimization.
+const VISIBLE_IDS = ['reels-bulk-trim', 'spark-confidence-labels', 'creator-studio-groupings']
+
 export default function StrategicDark() {
   const { strategicContributions } = useDashboardData()
   const { theme } = useTheme()
@@ -34,7 +36,7 @@ export default function StrategicDark() {
   const [hoveredId, setHoveredId] = useState(null)
   const [lastSelected, setLastSelected] = useState(null)
 
-  const cards = strategicContributions
+  const cards = strategicContributions.filter(c => VISIBLE_IDS.includes(c.id))
   const selected = strategicContributions.find(c => c.id === selectedId) || null
 
   const selectCard = (id) => {
