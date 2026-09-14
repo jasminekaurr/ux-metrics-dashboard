@@ -64,3 +64,36 @@ Do not change behavior. Return files touched.
 **Key decisions:** Only capture-*.mjs scripts needed headers (other scripts already had them); comments only, no logic edits.
 
 **Errors encountered:** None
+
+
+### Prompt 4 — 2026-09-14
+Perform pragmatic CSS extraction for the UX Metrics Dashboard at /Users/jasminekaur/Documents/GitHub/ux-metrics-dashboard/dashboard/src/
+
+GOALS:
+1. Expand index.css :root with font tokens + .font-mono
+2. DELETE App.css if unused
+3. Create page/component CSS files with static layout/typography classes
+4. Pragmatic conversion rules (static → className, dynamic stays inline)
+5. Update MONO → FONT_MONO from typography.js
+6. Do not break the build
+
+**TL;DR:** Created 8 co-located Dark CSS files, confirmed index.css font tokens and App.css removal, converted ~289 static `style={{}}` blocks to BEM-ish classes, and switched remaining pages to `FONT_MONO`. Lint + `build:external` pass.
+
+**Files changed:**
+- `dashboard/src/index.css` — already had `--font-mono` / `--font-sans` / `.font-mono` (confirmed)
+- `dashboard/src/App.css` — already deleted / unused (confirmed absent)
+- `dashboard/src/pages/ResearchDark.css` — [NEW] Research layout/typography
+- `dashboard/src/pages/StrategicDark.css` — [NEW] matrix + drawer chrome
+- `dashboard/src/pages/APEXDark.css` — [NEW] adoption/integrity layout
+- `dashboard/src/pages/ExecutiveSummaryDark.css` — [NEW] exec summary shells/pipeline
+- `dashboard/src/pages/PresentationDark.css` — [NEW] slide chrome
+- `dashboard/src/pages/AnalyticsDark.css` — [NEW] metrics/funnel/pages
+- `dashboard/src/pages/RoadmapDark.css` — [NEW] chart cards/projects
+- `dashboard/src/components/LabelAdoptionVennDark.css` — [NEW] Venn chrome
+- Matching JSX pages/components — className migrations + FONT_MONO imports
+- `scratchpad/css-extraction-v1.md` — [NEW] plan
+
+**Key decisions:** Left dynamic styles inline (theme colors, animated values, chart fills, tooltip positions, conditional borders). Used page-scoped BEM prefixes (`rd-`, `sd-`, `apex-`, `esd-`, `pres-`, `an-`, `rm-`, `lav-`). Kept shared dark theme in ExecutiveSummary.css.
+
+**Errors encountered:** Unused map indices after removing borderRight inline styles — fixed for lint. ResearchDark briefly referenced undefined `bq-stats-strip` classes — restored to `rd-stats-row` / `rd-section--pt40`.
+
