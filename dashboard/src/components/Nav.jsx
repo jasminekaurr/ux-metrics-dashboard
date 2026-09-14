@@ -1,3 +1,9 @@
+/**
+ * Nav.jsx — top navigation and month-range controls.
+ *
+ * Renders route links, theme toggle, and MonthRangePicker; labels pull from
+ * orgLabels for design-system naming. Related: components/MonthRangePicker.jsx.
+ */
 import { NavLink } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import { useDashboardData } from '../context/DataContext'

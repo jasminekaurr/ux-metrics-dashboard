@@ -1,3 +1,9 @@
+/**
+ * RoadmapDark.jsx — delivery/roadmap health route (/roadmap).
+ *
+ * Visualizes projects, velocity, blockers, and epic status for the selected
+ * month. Related: data/sample/roadmap.json.
+ */
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { Doughnut } from 'react-chartjs-2'
 import {
@@ -8,11 +14,11 @@ import { useTheme } from '../context/ThemeContext'
 import { getChartTheme, getChartColors } from '../utils/chartTheme'
 import SectionHelp from '../components/SectionHelp'
 import SplitText from '../components/SplitText'
+import { FONT_MONO as MONO } from '../config/typography'
 import './ExecutiveSummary.css'
+import './RoadmapDark.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
-
-const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
 
 function useReveal() {
   const ref = useRef(null)
@@ -165,11 +171,11 @@ export default function RoadmapDark({ selectedMonthIndex }) {
       <div className="es-content">
 
         {/* ── Delivery Health KPIs ──────────────────────────────────────────── */}
-        <div ref={kpiRef} className={`bq-reveal${kpiVisible ? ' visible' : ''}`} style={{ paddingTop: 40 }}>
+        <div ref={kpiRef} className={`bq-reveal${kpiVisible ? ' visible' : ''} rm-section--pt40`}>
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow rm-eyebrow--flush">
                   {/* Source: roadmap.json (Jira capture) */}
                   Delivery Health
                 </div>
@@ -206,11 +212,11 @@ export default function RoadmapDark({ selectedMonthIndex }) {
         </div>
 
         {/* ── Velocity & Throughput ─────────────────────────────────────────── */}
-        <div ref={velocityRef} className={`bq-reveal${velocityVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
+        <div ref={velocityRef} className={`bq-reveal${velocityVisible ? ' visible' : ''} rm-section--pt52`}>
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow rm-eyebrow--flush">
                   {/* Source: roadmap.json velocity / throughput */}
                   Velocity & Throughput
                 </div>
@@ -226,18 +232,13 @@ export default function RoadmapDark({ selectedMonthIndex }) {
             </div>
           </div>
 
-          <div className="bq-stagger-item" style={{
-            background: 'var(--es-surface)',
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)',
-            overflow: 'hidden',
-          }}>
-            <div style={{ padding: '20px 24px 14px', borderBottom: '1px solid var(--es-border)' }}>
-              <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--es-text-1)', marginBottom: 3 }}>Project throughput ratio — Closed vs Opened</div>
-              <div style={{ fontSize: 11, color: 'var(--es-text-3)' }}>Project-wise progress bars with close/open ratio</div>
+          <div className="bq-stagger-item rm-chart-card">
+            <div className="rm-chart-hd">
+              <div className="rm-chart-title">Project throughput ratio — Closed vs Opened</div>
+              <div className="rm-chart-sub">Project-wise progress bars with close/open ratio</div>
             </div>
-            <div style={{ padding: '24px 24px 16px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <div className="rm-chart-body">
+              <div className="rm-prog-stack">
                 {throughputByProject.map(projectFlow => (
                   <div key={projectFlow.project} className="es-prog-row" style={{ alignItems: 'center' }}>
                     <div className="es-prog-label" style={{ width: 170, flexShrink: 0 }}>{projectFlow.project}</div>
@@ -255,13 +256,7 @@ export default function RoadmapDark({ selectedMonthIndex }) {
                     <div className="es-prog-val" style={{ minWidth: 88, textAlign: 'right' }}>
                       {projectFlow.closed}/{projectFlow.opened}
                     </div>
-                    <div style={{
-                      minWidth: 48,
-                      textAlign: 'right',
-                      fontFamily: MONO,
-                      fontSize: 10,
-                      color: projectFlow.ratio >= 1 ? 'var(--es-green)' : 'var(--es-text-3)',
-                    }}>
+                    <div className="rm-ratio" style={{ color: projectFlow.ratio >= 1 ? 'var(--es-green)' : 'var(--es-text-3)' }}>
                       {projectFlow.ratioPct}%
                     </div>
                   </div>
@@ -272,11 +267,11 @@ export default function RoadmapDark({ selectedMonthIndex }) {
         </div>
 
         {/* ── Rework + Blockers ─────────────────────────────────────────────── */}
-        <div ref={reworkRef} className={`bq-reveal${reworkVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
+        <div ref={reworkRef} className={`bq-reveal${reworkVisible ? ' visible' : ''} rm-section--pt52`}>
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow rm-eyebrow--flush">
                   {/* Source: roadmap.json blockerIntelligence — user-maintained qualitative input */}
                   Rework + Blockers
                 </div>
@@ -289,18 +284,13 @@ export default function RoadmapDark({ selectedMonthIndex }) {
             </div>
           </div>
 
-          <div className="bq-stagger-item" style={{
-            background: 'var(--es-surface)',
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)',
-            overflow: 'hidden',
-          }}>
-            <div style={{ padding: '20px 24px 14px', borderBottom: '1px solid var(--es-border)' }}>
-              <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--es-text-1)', marginBottom: 3 }}>Active blocker categories — {MONTHS[idx]}</div>
-              <div style={{ fontSize: 11, color: 'var(--es-text-3)' }}>Distribution, age, and example reasons by category</div>
+          <div className="bq-stagger-item rm-chart-card">
+            <div className="rm-chart-hd">
+              <div className="rm-chart-title">Active blocker categories — {MONTHS[idx]}</div>
+              <div className="rm-chart-sub">Distribution, age, and example reasons by category</div>
             </div>
             <div style={{ padding: '24px 24px 20px', display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap', borderBottom: '1px solid var(--es-border)' }}>
-              <div style={{ position: 'relative', width: 200, height: 200, flexShrink: 0 }}>
+              <div className="rm-donut-wrap">
                 {reworkVisible && (
                   <Doughnut
                     data={blockerReasonPieData}
@@ -315,10 +305,7 @@ export default function RoadmapDark({ selectedMonthIndex }) {
                     }}
                   />
                 )}
-                <div style={{
-                  position: 'absolute', top: '50%', left: '50%',
-                  transform: 'translate(-50%,-50%)', textAlign: 'center', pointerEvents: 'none',
-                }}>
+                <div className="rm-donut-center">
                   <div style={{ fontFamily: MONO, fontSize: 28, fontWeight: 300, color: 'var(--es-text-1)', letterSpacing: '-0.05em', lineHeight: 1 }}>
                     {blockerReasonTotal}
                   </div>
@@ -327,18 +314,18 @@ export default function RoadmapDark({ selectedMonthIndex }) {
                   </div>
                 </div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: 1 }}>
+              <div className="rm-legend-col">
                 {blockerReasonCategories.map((category, i) => {
                   const colors = [chartColors.red, chartColors.amber, chartColors.blue, chartColors.gray]
                   const color = colors[i % colors.length]
                   return (
                   <div key={category.key}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <div style={{ width: 8, height: 8, borderRadius: 2, background: color, flexShrink: 0 }} />
-                        <span style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--es-text-3)' }}>{category.label}</span>
+                    <div className="rm-legend-row">
+                      <div className="rm-legend-left">
+                        <div className="rm-swatch" style={{ background: color }} />
+                        <span className="rm-mono-label" style={{ letterSpacing: '0.08em' }}>{category.label}</span>
                       </div>
-                      <span style={{ fontFamily: MONO, fontSize: 13, fontWeight: 300, color: 'var(--es-text-1)' }}>{category.count}</span>
+                      <span className="rm-detail-meta" style={{ fontSize: 13, fontWeight: 300, color: 'var(--es-text-1)' }}>{category.count}</span>
                     </div>
                     <div className="es-prog-track">
                       {reworkVisible && (
@@ -353,16 +340,16 @@ export default function RoadmapDark({ selectedMonthIndex }) {
                 })}
               </div>
             </div>
-            <div style={{ padding: '20px 24px 16px' }}>
+            <div className="rm-detail-pad">
               {blockerReasonCategories.map(category => (
-                <div key={`${category.key}-detail`} style={{ marginBottom: 14 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, gap: 12 }}>
-                    <div style={{ color: 'var(--es-text-1)', fontSize: 12, fontWeight: 500 }}>{category.label}</div>
-                    <div style={{ fontFamily: MONO, fontSize: 10, color: 'var(--es-text-3)' }}>
+                <div key={`${category.key}-detail`} className="rm-detail-block">
+                  <div className="rm-detail-head">
+                    <div className="rm-detail-title">{category.label}</div>
+                    <div className="rm-detail-meta">
                       {category.count} blockers · avg age {category.avgAgeDays}d
                     </div>
                   </div>
-                  <div style={{ fontFamily: MONO, fontSize: 10, color: 'var(--es-text-3)', lineHeight: 1.5 }}>
+                  <div className="rm-detail-meta" style={{ lineHeight: 1.5 }}>
                     Reasons: {category.reasons.join(' • ')}
                   </div>
                 </div>
@@ -372,11 +359,11 @@ export default function RoadmapDark({ selectedMonthIndex }) {
         </div>
 
         {/* ── Release Timeline ──────────────────────────────────────────────── */}
-        <div ref={timelineRef} className={`bq-reveal${timelineVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
+        <div ref={timelineRef} className={`bq-reveal${timelineVisible ? ' visible' : ''} rm-section--pt52`}>
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>Release Timeline</div>
+                <div className="es-eyebrow rm-eyebrow--flush">Release Timeline</div>
                 <SectionHelp>
                   Phase progress and milestone tracking gives stakeholders confidence in release predictability.
                   Consistent phase movement supports committing to roadmap timelines with higher certainty.
@@ -386,26 +373,20 @@ export default function RoadmapDark({ selectedMonthIndex }) {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+          <div className="rm-projects-grid">
             {projects.map((p) => (
-              <div key={p.name} className="bq-stagger-item" style={{
-                background: 'var(--es-surface)',
-                border: '1px solid var(--es-border-str)',
-                borderRadius: 'var(--es-r)',
-                padding: 20,
-                display: 'flex', flexDirection: 'column', gap: 14,
-              }}>
+              <div key={p.name} className="bq-stagger-item rm-project-card">
                 <div>
-                  <div style={{ fontSize: 15, fontWeight: 300, color: 'var(--es-text-1)', letterSpacing: '-0.02em', marginBottom: 4 }}>{p.name}</div>
-                  <div style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--es-text-3)' }}>
+                  <div className="rm-project-name">{p.name}</div>
+                  <div className="rm-project-phase">
                     Phase {p.currentPhase || 2} — In progress
                   </div>
                 </div>
 
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <span style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--es-text-3)' }}>Phase Progress</span>
-                    <span style={{ fontFamily: MONO, fontSize: 20, fontWeight: 300, color: 'var(--es-text-1)', letterSpacing: '-0.05em', lineHeight: 1 }}>{p.phaseProgress || 65}%</span>
+                  <div className="rm-progress-head">
+                    <span className="rm-progress-label">Phase Progress</span>
+                    <span className="rm-progress-pct">{p.phaseProgress || 65}%</span>
                   </div>
                   <div className="es-prog-track">
                     {timelineVisible && (
@@ -417,7 +398,7 @@ export default function RoadmapDark({ selectedMonthIndex }) {
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+                <div className="rm-phase-chips">
                   {['P1','P2','P3','P4'].map((ph, pi) => (
                     <span key={ph} className="es-chip">
                       {ph}: {[p.phaseDistribution?.phase1, p.phaseDistribution?.phase2, p.phaseDistribution?.phase3, p.phaseDistribution?.phase4][pi] || [2,5,8,3][pi]}
@@ -427,15 +408,7 @@ export default function RoadmapDark({ selectedMonthIndex }) {
                 </div>
 
                 <button
-                  style={{
-                    width: '100%', padding: '8px 12px', fontSize: 11, fontFamily: MONO,
-                    letterSpacing: '0.06em', textTransform: 'uppercase',
-                    color: 'var(--es-text-2)',
-                    background: 'transparent',
-                    border: '1px solid var(--es-border-str)',
-                    borderRadius: 'var(--es-r-sm)', cursor: 'pointer',
-                    transition: 'background 150ms ease, border-color 150ms ease',
-                  }}
+                  className="rm-jira-btn"
                   onMouseOver={e => { e.currentTarget.style.background = 'var(--es-surface-2)'; e.currentTarget.style.borderColor = 'var(--es-text-3)' }}
                   onMouseOut={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--es-border-str)' }}
                   onClick={() => window.open('https://jira.example.com', '_blank')}

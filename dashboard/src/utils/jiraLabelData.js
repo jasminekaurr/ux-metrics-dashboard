@@ -1,5 +1,8 @@
 /**
- * Normalize Jira label-adoption capture output for Venn / adoption views.
+ * jiraLabelData.js — normalize Jira label-adoption capture for UI.
+ *
+ * Maps capture issues into ticket objects and resolves browse URLs for Venn /
+ * adoption views. Related: utils/jira.js, components/LabelAdoptionVennDark.jsx.
  */
 
 export function ticketsFromJiraAdoption(data) {

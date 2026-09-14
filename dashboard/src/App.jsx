@@ -1,3 +1,10 @@
+/**
+ * App.jsx — root router and dashboard shell.
+ *
+ * Wraps pages in ThemeProvider + DataProvider, wires HashRouter routes, and
+ * owns the shared month-range selection passed to Nav and page views.
+ * Related: context/DataContext.jsx, components/Nav.jsx.
+ */
 import { useState, useEffect } from 'react'
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'

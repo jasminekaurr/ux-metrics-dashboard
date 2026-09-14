@@ -1,0 +1,164 @@
+/*
+ * LabelAdoptionVennDark.css — chrome around the interactive Venn.
+ * SVG fills, tooltip placement, and theme colors stay inline.
+ */
+.lav-root {
+  font-family: var(--font-mono);
+  background: var(--es-surface);
+}
+.lav-header {
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid var(--es-border-str);
+  background: linear-gradient(180deg, rgba(56,152,236,0.04) 0%, transparent 100%);
+}
+.lav-header-title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--es-text-1);
+  letter-spacing: -0.01em;
+}
+.lav-header-hint {
+  font-size: 11px;
+  color: var(--es-text-3);
+  margin-left: 10px;
+  font-weight: 400;
+}
+.lav-body {
+  display: flex;
+  height: 560px;
+}
+.lav-diagram {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+}
+.lav-svg {
+  display: block;
+  max-width: 700px;
+}
+.lav-side {
+  flex: 0 0 340px;
+  border-left: 1px solid var(--es-border-str);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.lav-side-hd {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--es-border-str);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.lav-chip-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.lav-count {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.lav-count-unit {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--es-text-3);
+  letter-spacing: 0.06em;
+  margin-left: 6px;
+}
+.lav-side-note {
+  font-size: 10px;
+  color: var(--es-text-3);
+  margin-top: 6px;
+  font-family: var(--font-sans);
+  line-height: 1.4;
+}
+.lav-close {
+  border: 1px solid var(--es-border-str);
+  color: var(--es-text-3);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lav-ticket-list {
+  flex: 1;
+  overflow-y: auto;
+}
+.lav-ticket {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 150ms;
+}
+.lav-ticket-id {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}
+.lav-ticket-name {
+  font-size: 12px;
+  color: var(--es-text-2);
+  line-height: 1.55;
+  font-family: var(--font-sans);
+}
+.lav-ticket-labels {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  align-items: center;
+}
+.lav-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px;
+}
+.lav-tooltip {
+  font-family: var(--font-mono);
+  background: var(--es-surface);
+  border: 1px solid var(--es-border-str);
+  border-radius: 6px;
+  padding: 9px 11px;
+}
+.lav-tooltip-icons {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.lav-tooltip-title {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.lav-tooltip-desc {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--es-text-2);
+  margin-top: 4px;
+}

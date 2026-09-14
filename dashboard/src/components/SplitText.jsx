@@ -1,3 +1,9 @@
+/**
+ * SplitText.jsx — character-stagger heading animation.
+ *
+ * Flattens React children to a string and wraps each character for staggered
+ * entrance styling across dashboard pages.
+ */
 import { Children, isValidElement } from 'react'
 
 /**

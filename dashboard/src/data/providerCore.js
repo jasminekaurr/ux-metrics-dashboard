@@ -1,7 +1,34 @@
+/**
+ * providerCore.js — merge, rolling months, and upload persistence.
+ *
+ * Deep-merges sample → live → upload, normalizes month arrays, and reads/writes
+ * localStorage uploads. Related: data/provider.js, utils/monthLabels.js.
+ *
+ * Merge order (later wins for the same key):
+ *   1. sample  — bundled demo JSON from data/sample/
+ *   2. live    — optional capture outputs from data/live/*.json (gitignored)
+ *   3. upload  — optional runtime JSON from localStorage (Data Settings UI)
+ *
+ * deepMerge rules:
+ *   - Arrays are replaced wholesale (not concatenated element-wise).
+ *   - Plain objects recurse key-by-key; scalars / null from override win.
+ *   - Live layer assigns top-level keys (with apex→apexData, months→MONTHS aliases).
+ *   - Upload layer deepMerges into keys that already exist on the merged object.
+ *
+ * Rolling months: unless live/upload supplies custom months, MONTHS is rewritten
+ * via buildRollingMonthLabels() so charts always show a trailing N-month window.
+ *
+ * DATA_FILE_NAMES lists the canonical upload/snapshot file stems (no .json).
+ * Keep in sync with sample/index.js, schema.js, and docs/DATA-MANIFEST.json.
+ */
 import { buildRollingMonthLabels } from '../utils/monthLabels.js'
 
 const STORAGE_KEY = 'ux-dashboard-data-upload'
 
+/**
+ * Recursively merge override onto base.
+ * Arrays and non-objects from override replace base values entirely.
+ */
 function deepMerge(base, override) {
   if (override === undefined || override === null) return base
   if (Array.isArray(override)) return override
@@ -16,6 +43,7 @@ function deepMerge(base, override) {
   return result
 }
 
+/** Map alternate upload keys (months, apex) onto internal names (MONTHS, apexData). */
 function normalizeUploads(uploads = {}) {
   const normalized = { ...uploads }
   if (normalized.months && !normalized.MONTHS) {
@@ -47,16 +75,25 @@ export function clearUploads() {
   window.localStorage.removeItem(STORAGE_KEY)
 }
 
+/**
+ * Build the runtime data object consumers read from DataContext.
+ *
+ * @param {object} sampleData - Bundled sample bundle (from sample/index.js)
+ * @param {object} liveOverrides - Map of file-stem → parsed JSON from live/
+ * @param {object} uploadOverrides - Partial overrides from localStorage upload
+ */
 export function buildDataFromSources(sampleData, liveOverrides = {}, uploadOverrides = {}) {
   const uploads = normalizeUploads(uploadOverrides)
   const merged = { ...sampleData }
 
+  // Live wins over sample for matching keys (aliases remapped to internal names).
   for (const [key, value] of Object.entries(liveOverrides)) {
     if (key === 'apex') merged.apexData = value
     else if (key === 'months') merged.MONTHS = value
     else merged[key] = value
   }
 
+  // Upload wins last: deepMerge into existing keys so partial JSON can patch objects.
   for (const [key, value] of Object.entries(uploads)) {
     if (key === 'apex') merged.apexData = value
     else if (key === 'months') merged.MONTHS = value
@@ -64,6 +101,7 @@ export function buildDataFromSources(sampleData, liveOverrides = {}, uploadOverr
     else merged[key] = value
   }
 
+  // Only roll months when neither live nor upload provided an explicit calendar.
   const hasCustomMonths = Boolean(
     uploads?.MONTHS
     || uploads?.months
@@ -76,6 +114,11 @@ export function buildDataFromSources(sampleData, liveOverrides = {}, uploadOverr
   return merged
 }
 
+/**
+ * Canonical data-file stems for upload UI, snapshot export, and validation.
+ * Filenames are `{name}.json` under sample/ or live/.
+ * Note: 'apex' maps to runtime key apexData; 'months' maps to MONTHS.
+ */
 export const DATA_FILE_NAMES = [
   'months',
   'executive',

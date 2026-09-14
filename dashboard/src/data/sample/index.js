@@ -1,3 +1,10 @@
+/**
+ * sample/index.js — bundles committed sample JSON into one object.
+ *
+ * @CUSTOMIZE — Edit the JSON files under data/sample/*.json (not this barrel)
+ * to swap demo metrics; keep keys aligned with providerCore DATA_FILE_NAMES.
+ * Related: data/provider.js, docs/data-format.md.
+ */
 import months from './months.json'
 import executive from './executive.json'
 import roadmap from './roadmap.json'

@@ -8,6 +8,8 @@ Data schemas: [`docs/data-format.md`](docs/data-format.md)
 
 Open-source **UX Metrics Dashboard** — a static React (Vite) app that visualizes design-team impact from JSON data. No backend. Data merges at runtime in the browser.
 
+**Adopter edits:** search the repo for `@CUSTOMIZE` (documented in the root README). Prefer changing tagged spots and `dashboard/src/data/sample/*.json` over scattering hardcodes in page components.
+
 ## Quick commands
 
 ```bash
@@ -49,7 +51,7 @@ Key files:
 |-------|-----------|-------------------|
 | `/` | `ExecutiveSummaryDark.jsx` | `roadmap`, `research`, `strategic`, `projectComponents`, `analytics`, `jiraLabelAdoption` |
 | `/apex` | `APEXDark.jsx` | `apexData`, `projectComponents` |
-| `/research` | `ResearchDark.jsx` | `research`, `panelHealth`, `ubaIASpotlight` (+ hardcoded initiative cards) |
+| `/research` | `ResearchDark.jsx` | `research`, `panelHealth`, `ubaIASpotlight`, `researchInitiatives` |
 | `/analytics` | `AnalyticsDark.jsx` | `analytics` |
 | `/roadmap` | `RoadmapDark.jsx` | `roadmap` |
 | `/strategic` | `StrategicDark.jsx` | `strategic`, `strategicContributions` (demo filters to 3 cards) |
@@ -64,7 +66,7 @@ Label taxonomy constants live in `uxLabelTickets.js` (`UX_LABELS`, `LABEL_DEFINI
 
 These are exported/imported for forward compatibility and upload; see `docs/DATA-MANIFEST.json` `wiring` field:
 
-- `executive.json`, `cost.json`, `researchInitiatives.json`, `researchAsks.json`, `fcubComponentVenn.json`
+- `executive.json`, `cost.json`, `researchAsks.json`
 
 ## Environment variables
 

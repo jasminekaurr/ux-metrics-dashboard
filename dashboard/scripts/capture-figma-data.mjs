@@ -1,3 +1,7 @@
+/**
+ * Capture Figma design-system usage → src/data/live/apex.json (APEX page).
+ * Needs FIGMA_* env from .env.local. Run: npm run capture:figma
+ */
 import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'

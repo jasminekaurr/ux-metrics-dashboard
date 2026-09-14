@@ -1,0 +1,160 @@
+/*
+ * APEXDark.css — layout extracted from APEXDark.jsx
+ * Band colors, chart data, and open-state borders stay inline.
+ */
+
+/* Section spacing */
+.apex-section--pt40 { padding-top: 40px; }
+.apex-section--pt52 { padding-top: 52px; }
+.apex-section--pt52-pb60 { padding-top: 52px; padding-bottom: 60px; }
+.apex-eyebrow--flush { margin-bottom: 0; }
+.apex-eyebrow--spaced { margin-bottom: 8px; }
+
+/* Stats row shell */
+.apex-stats-row {
+  display: flex;
+  background: var(--es-surface);
+  border-radius: var(--es-r);
+  border: 1px solid var(--es-border-str);
+  overflow: hidden;
+}
+.apex-stats-row > .bq-stat-item:not(:last-child),
+.apex-stats-row > *:not(:last-child).bq-stat-item {
+  border-right: 1px dashed var(--es-border-str);
+}
+.apex-stat-sub {
+  font-size: 11px;
+  color: var(--es-text-3);
+  margin-top: 3px;
+}
+
+/* Card / stack shells */
+.apex-card-shell {
+  background: var(--es-surface);
+  border: 1px solid var(--es-border-str);
+  border-radius: var(--es-r);
+  overflow: hidden;
+}
+.apex-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.apex-stack--tight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.apex-mono-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--es-text-3);
+}
+.apex-mono-label--mb10 {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--es-text-3);
+  margin-bottom: 10px;
+}
+.apex-donut-wrap {
+  width: 240px;
+  height: 240px;
+  flex-shrink: 0;
+  position: relative;
+}
+.apex-donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.apex-row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.apex-chip-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.apex-momentum-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.apex-tab-col {
+  width: 270px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.apex-chart-col {
+  flex: 1;
+  height: 240px;
+}
+.apex-integrity-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.apex-band-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.apex-band-label {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--es-text-2);
+  letter-spacing: 0.04em;
+}
+.apex-band-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.apex-team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.apex-team-name {
+  font-size: 13px;
+  color: var(--es-text-2);
+}
+.apex-team-rate {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--es-text-1);
+  letter-spacing: -0.05em;
+}
+.apex-donut-value {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--es-text-1);
+  line-height: 1;
+}
+.apex-donut-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--es-text-3);
+  margin-top: 4px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

@@ -1,3 +1,9 @@
+/**
+ * LabelAdoptionVennDark.jsx — interactive UX-label Venn diagram.
+ *
+ * Merges live/capture jiraLabelAdoption with sample tickets; supports region
+ * click and ticket browse links. Related: data/uxLabelTickets.js, utils/jiraLabelData.js.
+ */
 import { useState, useMemo } from 'react'
 import { useTheme } from '../context/ThemeContext'
 import { useDashboardData } from '../context/DataContext'
@@ -11,9 +17,8 @@ import {
   VENN_ICONS,
   intersectionDescription,
 } from '../data/uxLabelTickets'
-
-const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
-const SANS = '"Alliance No. 2", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif'
+import { FONT_MONO as MONO, FONT_SANS as SANS } from '../config/typography'
+import './LabelAdoptionVennDark.css'
 
 const COLORS = VENN_COLORS
 const DESCRIPTIONS = VENN_DESCRIPTIONS
@@ -244,30 +249,23 @@ export default function LabelAdoptionVennDark() {
   const isCircleHovered = (id) => hovered === id
 
   return (
-    <div style={{ fontFamily: MONO, background: 'var(--es-surface)' }}>
+    <div className="lav-root">
 
       {/* Header */}
-      <div style={{
-        padding: '18px 24px 14px',
-        borderBottom: '1px solid var(--es-border-str)',
-        background: 'linear-gradient(180deg, rgba(56,152,236,0.04) 0%, transparent 100%)',
-      }}>
-        <div style={{
-          fontFamily: SANS, fontSize: 14, fontWeight: 500,
-          color: 'var(--es-text-1)', letterSpacing: '-0.01em',
-        }}>
+      <div className="lav-header">
+        <div className="lav-header-title">
           {total} labeled tickets across {Object.keys(COLORS).length} categories
-          <span style={{ fontSize: 11, color: 'var(--es-text-3)', marginLeft: 10, fontWeight: 400 }}>
+          <span className="lav-header-hint">
             Click a circle or overlap to explore
           </span>
         </div>
       </div>
 
-      <div style={{ display: 'flex', height: 560 }}>
+      <div className="lav-body">
 
         {/* ── Venn Diagram ── */}
-        <div style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px 16px' }}>
-          <svg width="100%" height="480" viewBox="0 0 700 470" style={{ display: 'block', maxWidth: 700 }}>
+        <div className="lav-diagram">
+          <svg width="100%" height="480" viewBox="0 0 700 470" className="lav-svg">
             <defs>
               {/* Glow filters per category */}
               {Object.entries(COLORS).map(([name, c]) => (
@@ -533,17 +531,11 @@ export default function LabelAdoptionVennDark() {
               if (ty < 6) ty = hoverTip.belowY + 6
               return (
                 <foreignObject x={tx} y={ty} width={TIP_W} height={TIP_H} style={{ pointerEvents: 'none', overflow: 'visible' }}>
-                  <div style={{
-                    fontFamily: MONO,
-                    background: 'var(--es-surface)',
-                    border: '1px solid var(--es-border-str)',
-                    borderRadius: 6,
-                    padding: '9px 11px',
-                    boxShadow: isDark
+                  <div className="lav-tooltip" style={{ boxShadow: isDark
                       ? '0 8px 24px rgba(0,0,0,0.50), 0 0 0 1px rgba(255,255,255,0.04)'
-                      : '0 8px 24px rgba(0,0,0,0.12)',
+                      : '0 8px 24px rgba(0,0,0,0.12)'
                   }}>
-                    <div style={{ display: 'flex', gap: 5, marginBottom: 8 }}>
+                    <div className="lav-tooltip-icons">
                       {hoverTip.labels.map(l => {
                         const col = COLORS[l]?.h ?? '#888'
                         return (
@@ -559,16 +551,10 @@ export default function LabelAdoptionVennDark() {
                         )
                       })}
                     </div>
-                    <div style={{
-                      fontSize: 9, fontWeight: 600, letterSpacing: '0.1em',
-                      textTransform: 'uppercase', color: titleColor,
-                    }}>
+                    <div className="lav-tooltip-title" style={{ color: titleColor }}>
                       {hoverTip.title}
                     </div>
-                    <div style={{
-                      fontFamily: SANS, fontSize: 11, lineHeight: 1.45,
-                      color: 'var(--es-text-2)', marginTop: 4,
-                    }}>
+                    <div className="lav-tooltip-desc">
                       {hoverTip.desc}
                     </div>
                   </div>
@@ -579,23 +565,13 @@ export default function LabelAdoptionVennDark() {
         </div>
 
         {/* ── Ticket panel ── */}
-        <div style={{
-          flex: '0 0 340px',
-          borderLeft: '1px solid var(--es-border-str)',
-          display: 'flex', flexDirection: 'column',
-          overflow: 'hidden',
-        }}>
+        <div className="lav-side">
           {selected ? (
             <>
-              <div style={{
-                padding: '16px 20px',
-                borderBottom: '1px solid var(--es-border-str)',
-                background: `linear-gradient(135deg, ${activeColor}10 0%, transparent 100%)`,
-                display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
-              }}>
+              <div className="lav-side-hd" style={{ background: `linear-gradient(135deg, ${activeColor}10 0%, transparent 100%)` }}>
                 <div>
                   {/* Label chips for selected region/category */}
-                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 10 }}>
+                  <div className="lav-chip-row">
                     {selectedLabels.map(label => (
                       <span key={label} style={{
                         fontSize: 8, letterSpacing: '0.08em', textTransform: 'uppercase',
@@ -609,80 +585,51 @@ export default function LabelAdoptionVennDark() {
                       </span>
                     ))}
                   </div>
-                  <div style={{
-                    fontFamily: SANS, fontSize: 24, fontWeight: 300,
-                    color: activeColor, letterSpacing: '-0.04em', lineHeight: 1,
-                  }}>
+                  <div className="lav-count" style={{ color: activeColor }}>
                     {selectedTickets.length}
-                    <span style={{
-                      fontSize: 10, fontFamily: MONO, fontWeight: 400,
-                      color: 'var(--es-text-3)', letterSpacing: '0.06em', marginLeft: 6,
-                    }}>
+                    <span className="lav-count-unit">
                       ticket{selectedTickets.length !== 1 ? 's' : ''}
                     </span>
                   </div>
                   {Array.isArray(selected) && selected.length > 1 && (
-                    <div style={{
-                      fontSize: 10, color: 'var(--es-text-3)', marginTop: 6,
-                      fontFamily: SANS, lineHeight: 1.4,
-                    }}>
+                    <div className="lav-side-note">
                       Tickets with exactly these {selected.length} labels
                     </div>
                   )}
                   {!Array.isArray(selected) && selectedTickets.filter(t => t.labels.length > 1).length > 0 && (
-                    <div style={{
-                      fontSize: 10, color: 'var(--es-text-3)', marginTop: 6,
-                      fontFamily: SANS, lineHeight: 1.4,
-                    }}>
+                    <div className="lav-side-note">
                       Including {selectedTickets.filter(t => t.labels.length > 1).length} with overlapping labels
                     </div>
                   )}
                 </div>
                 <button
                   onClick={() => setSelected(null)}
-                  style={{
-                    background: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)', border: '1px solid var(--es-border-str)',
-                    color: 'var(--es-text-3)', cursor: 'pointer',
-                    fontFamily: MONO, fontSize: 10,
-                    width: 28, height: 28, borderRadius: 4,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  }}
+                  className="lav-close" style={{ background: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)' }}
                 >
                   ✕
                 </button>
               </div>
 
-              <div style={{ flex: 1, overflowY: 'auto' }}>
+              <div className="lav-ticket-list">
                 {selectedTickets.map((t, i) => (
                   <a
                     key={t.id}
                     href={ticketBrowseUrl(t, browseBaseUrl, getJiraBrowseUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      display: 'flex', gap: 12, alignItems: 'flex-start',
-                      padding: '12px 20px', textDecoration: 'none',
-                      borderBottom: i < selectedTickets.length - 1 ? '1px solid var(--es-border-str)' : 'none',
-                      transition: 'background 150ms',
-                    }}
+                    className="lav-ticket" style={{ borderBottom: i < selectedTickets.length - 1 ? '1px solid var(--es-border-str)' : 'none' }}
                     onMouseEnter={(e) => e.currentTarget.style.background = isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.03)'}
                     onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                   >
-                    <div style={{
-                      fontSize: 9, color: activeColor, letterSpacing: '0.06em',
-                      fontWeight: 600, flexShrink: 0, marginTop: 2, fontFamily: MONO,
-                    }}>
+                    <div className="lav-ticket-id" style={{ color: activeColor }}>
                       {t.id}
                     </div>
                     <div>
-                      <div style={{
-                        fontSize: 12, color: 'var(--es-text-2)', lineHeight: 1.55,
-                        fontFamily: SANS,
-                      }}>
+                      <div className="lav-ticket-name">
                         {t.name}
                       </div>
                       {t.labels.length > 1 && (
-                        <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', marginTop: 6, alignItems: 'center' }}>
+                        <div className="lav-ticket-labels">
                           {t.labels.map(l => (
                             <span key={l} style={{
                               fontSize: 7, letterSpacing: '0.06em', textTransform: 'uppercase',
@@ -703,11 +650,7 @@ export default function LabelAdoptionVennDark() {
               </div>
             </>
           ) : (
-            <div style={{
-              flex: 1, display: 'flex', flexDirection: 'column',
-              alignItems: 'center', justifyContent: 'center',
-              gap: 12, padding: 32,
-            }}>
+            <div className="lav-empty">
               <svg width="48" height="48" viewBox="0 0 48 48" style={{ opacity: 0.15 }}>
                 <circle cx="18" cy="20" r="14" fill="none" stroke={isDark ? 'white' : 'black'} strokeWidth="1.5" />
                 <circle cx="30" cy="20" r="14" fill="none" stroke={isDark ? 'white' : 'black'} strokeWidth="1.5" />

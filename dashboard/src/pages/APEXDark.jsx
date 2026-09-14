@@ -1,3 +1,9 @@
+/**
+ * APEXDark.jsx — design-system metrics route (/apex).
+ *
+ * Charts adoption, component growth, and project coverage from apexData and
+ * projectComponents. Related: config/orgLabels.js.
+ */
 import React, { useState, useEffect, useRef, useMemo } from 'react'
 import { Line, Doughnut } from 'react-chartjs-2'
 import {
@@ -8,13 +14,15 @@ import { useDashboardData } from '../context/DataContext'
 import { useTheme } from '../context/ThemeContext'
 import { getChartTheme, getChartColors } from '../utils/chartTheme'
 import { labels, filterKeyProducts } from '../config/orgLabels'
+import { getApexBandConfig, APEX_LIST_INITIAL_SHOW, APEX_LIST_LOAD_MORE_STEP } from '../config/apexBands'
+import { computeReuseRate } from '../config/reuseWeights'
+import { FONT_MONO as MONO } from '../config/typography'
 import SectionHelp from '../components/SectionHelp'
 import SplitText from '../components/SplitText'
 import './ExecutiveSummary.css'
+import './APEXDark.css'
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, ArcElement, Tooltip, Legend, Filler)
-
-const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
 
 function fmtWeek(w) {
   const d = new Date(w)
@@ -103,15 +111,9 @@ export default function APEXDark() {
     },
   }), [chartTheme])
 
-  const BAND_CONFIG = useMemo(() => ({
-    healthy:  { label: 'Healthy (0–1%)',  color: chartColors.green, fill: chartColors.greenFill, darkBg: isDark ? 'rgba(0,191,42,0.08)' : 'rgba(22,163,74,0.06)' },
-    watch:    { label: 'Watch (1–3%)',    color: chartColors.blue, fill: chartColors.blueFill, darkBg: isDark ? 'rgba(56,152,236,0.08)' : 'rgba(37,99,235,0.06)' },
-    risk:     { label: 'Risk (3–8%)',     color: chartColors.amber, fill: chartColors.amberFill, darkBg: isDark ? 'rgba(245,217,11,0.08)' : 'rgba(217,119,6,0.06)' },
-    critical: { label: 'Critical (>8%)', color: chartColors.red, fill: chartColors.redFill, darkBg: isDark ? 'rgba(255,45,45,0.08)' : 'rgba(220,38,38,0.06)' },
-  }), [chartColors, isDark])
-
-  const INITIAL_SHOW = 3
-  const LOAD_MORE_STEP = 3
+  const BAND_CONFIG = useMemo(() => getApexBandConfig(isDark), [isDark])
+  const INITIAL_SHOW = APEX_LIST_INITIAL_SHOW
+  const LOAD_MORE_STEP = APEX_LIST_LOAD_MORE_STEP
 
   const toggleBand = key => setOpenBands(prev => ({ ...prev, [key]: !prev[key] }))
   const loadMore = (key, total) => setLoadMoreCounts(prev => ({
@@ -146,13 +148,11 @@ export default function APEXDark() {
 
   const aprMonth = projectComponents.monthly[latestIdx] ?? projectComponents.monthly.at(-1)
   const aprInsertions = monthlyInsertions[months[months.length - 1]] || 0
-  const estimatedLocal = (aprMonth.simple * 3) + (aprMonth.medium * 5) + (aprMonth.complex * 8) + (aprMonth.custom * 10)
-  const reuseRate = Math.round((aprInsertions / (aprInsertions + estimatedLocal)) * 100)
+  const reuseRate = computeReuseRate(aprInsertions, aprMonth)
   const marMonth = projectComponents.monthly[prevIdx]
   const prevMonthKey = months[months.length - 2]
   const marIns = prevMonthKey ? (monthlyInsertions[prevMonthKey] || 0) : 0
-  const marLocal = (marMonth.simple * 3) + (marMonth.medium * 5) + (marMonth.complex * 8) + (marMonth.custom * 10)
-  const reuseRatePrev = Math.round((marIns / (marIns + marLocal)) * 100)
+  const reuseRatePrev = computeReuseRate(marIns, marMonth)
   const reuseMoM = reuseRatePrev ? reuseRate - reuseRatePrev : 0
 
   const rollingAvg = weeklyTotals.map((_, i) => {
@@ -260,25 +260,18 @@ export default function APEXDark() {
         {/* ── Adoption stats row ─────────────────────────────────────────────── */}
         <div
           ref={statsRef}
-          className={`bq-reveal${statsVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 40 }}
+          className={`bq-reveal${statsVisible ? ' visible' : ''} apex-section--pt40`}
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
+              <div className="es-eyebrow apex-eyebrow--spaced">
                 {/* Source: apex.json (Figma analytics capture) */}
                 Adoption
               </div>
               <SplitText className="bq-section-h">Component adoption across teams</SplitText>            </div>
           </div>
 
-          <div style={{
-            display: 'flex',
-            background: 'var(--es-surface)',
-            borderRadius: 'var(--es-r)',
-            border: '1px solid var(--es-border-str)',
-            overflow: 'hidden',
-          }}>
+          <div className="apex-stats-row">
             {[
               { num: `${reuseRateAnim}%`, caption: 'Reuse Rate', delta: reuseMoM, deltaLabel: '', cls: reuseColorClass },
               { num: activeTeamsAnim, caption: 'Active Teams', cls: 'amber' },
@@ -290,10 +283,10 @@ export default function APEXDark() {
                 cls: insertionTrend === '↑' ? 'green' : insertionTrend === '↓' ? 'red' : 'amber',
               },
             ].map((s, i) => (
-              <div key={i} className="bq-stat-item bq-stagger-item" style={{ borderRight: i < 3 ? '1px dashed var(--es-border-str)' : 'none' }}>
+              <div key={i} className="bq-stat-item bq-stagger-item">
                 <div className={`bq-stat-num ${s.cls}`}>{s.num}</div>
                 <div className="bq-stat-caption">{s.caption}</div>
-                <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>{s.sub}</div>
+                <div className="apex-stat-sub">{s.sub}</div>
                 {s.delta !== undefined && (
                   <div className={`bq-stat-delta ${s.delta >= 0 ? 'up' : 'down'}`}>
                     {s.delta > 0 ? '↑' : '↓'} {Math.abs(s.delta)}{s.deltaLabel}
@@ -307,12 +300,11 @@ export default function APEXDark() {
         {/* ── Component Momentum ─────────────────────────────────────────────── */}
         <div
           ref={chartRef}
-          className={`bq-reveal${chartVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 52 }}
+          className={`bq-reveal${chartVisible ? ' visible' : ''} apex-section--pt52`}
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
+              <div className="es-eyebrow apex-eyebrow--spaced">
                 {/* Source: apex.json weeklyTotals */}
                 Component Momentum
               </div>
@@ -320,8 +312,8 @@ export default function APEXDark() {
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start' }}>
-            <div style={{ width: 270, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 3 }}>
+          <div className="apex-momentum-layout">
+            <div className="apex-tab-col">
               {narrativeTabs.map((tab, i) => (
                 <div
                   key={i}
@@ -337,7 +329,7 @@ export default function APEXDark() {
                 </div>
               ))}
             </div>
-            <div style={{ flex: 1, height: 240 }}>
+            <div className="apex-chart-col">
               <Line
                 data={momentumData}
                 options={{
@@ -360,13 +352,12 @@ export default function APEXDark() {
         {/* ── Design System Integrity ────────────────────────────────────────── */}
         <div
           ref={integrityRef}
-          className={`bq-reveal${integrityVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 52 }}
+          className={`bq-reveal${integrityVisible ? ' visible' : ''} apex-section--pt52`}
         >
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow apex-eyebrow--flush">
                   {/* Source: apex.json detachments */}
                   Design System Integrity
                 </div>
@@ -379,9 +370,9 @@ export default function APEXDark() {
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start' }}>
+          <div className="apex-integrity-layout">
             {/* Donut chart */}
-            <div className="bq-stagger-item" style={{ width: 240, height: 240, flexShrink: 0, position: 'relative' }}>
+            <div className="bq-stagger-item apex-donut-wrap">
               {integrityVisible && (
                 <Doughnut
                   data={donutData}
@@ -399,10 +390,7 @@ export default function APEXDark() {
                   }}
                 />
               )}
-              <div style={{
-                position: 'absolute', top: '50%', left: '50%',
-                transform: 'translate(-50%,-50%)', textAlign: 'center', pointerEvents: 'none',
-              }}>
+              <div className="apex-donut-center">
                 <div style={{ fontFamily: MONO, fontSize: 32, fontWeight: 300, color: 'var(--es-text-1)', lineHeight: 1 }}>
                   {Object.values(bandCategories).reduce((s, t) => s + t.length, 0)}
                 </div>
@@ -413,7 +401,7 @@ export default function APEXDark() {
             </div>
 
             {/* Band accordions */}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <div className="apex-band-list">
               {Object.entries(BAND_CONFIG).map(([key, cfg], i) => {
                 const teams = bandCategories[key].sort((a, b) => b[1].rate - a[1].rate)
                 const isOpen = !!openBands[key]
@@ -435,8 +423,8 @@ export default function APEXDark() {
                         transition: 'background 150ms, border-color 150ms',
                       }}
                     >
-                      <div style={{ width: 8, height: 8, borderRadius: 2, background: cfg.color, flexShrink: 0 }} />
-                      <div style={{ flex: 1, fontFamily: MONO, fontSize: 10, color: 'var(--es-text-2)', letterSpacing: '0.04em' }}>
+                      <div className="apex-band-swatch" style={{ background: cfg.color }} />
+                      <div className="apex-band-label">
                         {cfg.label}
                       </div>
                       <div style={{ fontFamily: MONO, fontSize: 28, fontWeight: 300, color: cfg.color, letterSpacing: '-0.08em', lineHeight: 1, marginRight: 10 }}>
@@ -464,13 +452,9 @@ export default function APEXDark() {
                         animation: 'es-fade-in-up 0.2s ease-out both',
                       }}>
                         {visible.map(([team, v], idx) => (
-                          <div key={team} style={{
-                            display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                            padding: '8px 0',
-                            borderBottom: idx < visible.length - 1 ? '1px dashed var(--es-border-str)' : 'none',
-                          }}>
-                            <span style={{ fontSize: 13, color: 'var(--es-text-2)' }}>{team}</span>
-                            <span style={{ fontFamily: MONO, fontSize: 18, fontWeight: 300, color: 'var(--es-text-1)', letterSpacing: '-0.05em' }}>
+                          <div key={team} className="apex-team-row" style={{ borderBottom: idx < visible.length - 1 ? '1px dashed var(--es-border-str)' : 'none' }}>
+                            <span className="apex-team-name">{team}</span>
+                            <span className="apex-team-rate">
                               {v.rate}%
                             </span>
                           </div>
@@ -518,13 +502,12 @@ export default function APEXDark() {
         {/* ── Custom Features ────────────────────────────────────────────────── */}
         <div
           ref={featuresRef}
-          className={`bq-reveal${featuresVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 52, paddingBottom: 60 }}
+          className={`bq-reveal${featuresVisible ? ' visible' : ''} apex-section--pt52-pb60`}
         >
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow apex-eyebrow--flush">
                   {/* Source: projectComponents.json components — user-maintained inventory */}
                   Where Teams Build Beyond {labels.designSystemName}
                 </div>

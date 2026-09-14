@@ -1,79 +1,24 @@
+/**
+ * LabelAdoptionVenn.jsx — light-theme multi-label Venn of UX tickets.
+ *
+ * Legacy overlap visualization. Prefer LabelAdoptionVennDark for executive wiring.
+ * Ticket fallbacks come from uxLabelTickets.js (single source of truth).
+ * Related: data/uxLabelTickets.js, data/jiraLabelAdoption.json.
+ */
 import { useState } from 'react'
 import jiraLabelAdoption from '../data/jiraLabelAdoption.json'
+import { ALL_TICKETS, LABEL_DEFINITIONS, UX_LABELS } from '../data/uxLabelTickets'
 import { getJiraBrowseUrl } from '../utils/jira'
 import './LabelAdoption.css'
 
-// Restructured data to show tickets with multiple labels (overlaps)
-const ALL_TICKETS = [
-  // UXR Identified only
-  { id: 'FEED-2201', name: 'Creator Studio multi-select actions — users expect select-all functionality', labels: ['UXR Identified'] },
-  { id: 'REEL-945', name: 'Search refinement needed — 78% of users couldn\'t find creators', labels: ['UXR Identified'] },
-  { id: 'EXPL-167', name: 'Inbox status indicators unclear — research surfaced confusion', labels: ['UXR Identified'] },
+const LABEL_INFO = Object.fromEntries(
+  LABEL_DEFINITIONS.map(({ key, color, desc }) => [key, { color, description: desc }]),
+)
 
-  // Design Rework only
-  { id: 'REEL-901', name: 'Feed module arrangement revised for consistency', labels: ['Design Rework'] },
-  { id: 'DS-505', name: 'Button hierarchy rework across pattern library', labels: ['Design Rework'] },
-
-  // Post-Handoff Change only
-  { id: 'REEL-956', name: 'Backend limitation found — search can\'t filter by date range', labels: ['Post-Handoff Change'] },
-  { id: 'EXPL-194', name: 'Real-time updates blocked by server limitations', labels: ['Post-Handoff Change'] },
-
-  // Usability Issue only
-  { id: 'REEL-989', name: 'Tab order incorrect in modal dialogs', labels: ['Usability Issue'] },
-  { id: 'REEL-425', name: 'Button text contrast below 4.5:1 ratio', labels: ['Usability Issue'] },
-
-  // UXR + Design Rework (research led to design revision)
-  { id: 'REEL-345', name: 'Reels analytics redesign based on panel feedback', labels: ['UXR Identified', 'Design Rework'] },
-  { id: 'DS-418', name: 'Carousel swipe timing revised after usability testing', labels: ['UXR Identified', 'Design Rework'] },
-  { id: 'CRE-58', name: 'Spark AI feedback mechanism redesigned per user research', labels: ['UXR Identified', 'Design Rework'] },
-
-  // UXR + Usability Issue (research found usability problem)
-  { id: 'FEED-2310', name: 'Mobile nav discoverability improved — accessibility + research', labels: ['UXR Identified', 'Usability Issue'] },
-  { id: 'STOR-128', name: 'Empty state guidance insufficient — testing + WCAG issue', labels: ['UXR Identified', 'Usability Issue'] },
-  { id: 'REEL-402', name: 'Share actions menu placement — research + accessibility fix', labels: ['UXR Identified', 'Usability Issue'] },
-
-  // Design Rework + Post-Handoff Change (design changed after handoff)
-  { id: 'FEED-2245', name: 'Creator Studio card layout redesigned due to API constraints', labels: ['Design Rework', 'Post-Handoff Change'] },
-  { id: 'REEL-362', name: 'Share actions menu reversed after backend limitations found', labels: ['Design Rework', 'Post-Handoff Change'] },
-  { id: 'CRE-72', name: 'Suggested post cards reworked after data format issues', labels: ['Design Rework', 'Post-Handoff Change'] },
-
-  // Design Rework + Usability Issue (rework addressed usability)
-  { id: 'EXPL-182', name: 'Activity center layout revised for clarity and contrast', labels: ['Design Rework', 'Usability Issue'] },
-  { id: 'STOR-141', name: 'Error state improvements after accessibility critique', labels: ['Design Rework', 'Usability Issue'] },
-
-  // Post-Handoff + Usability Issue (handoff revealed usability issue)
-  { id: 'FEED-2289', name: 'Bulk action limit required loading state for accessibility', labels: ['Post-Handoff Change', 'Usability Issue'] },
-  { id: 'DS-521', name: 'Component detachment exposed focus indicator issue', labels: ['Post-Handoff Change', 'Usability Issue'] },
-
-  // UXR + Design Rework + Usability Issue (all three)
-  { id: 'REEL-1002', name: 'Comment thread sorting — research + redesign + WCAG compliance', labels: ['UXR Identified', 'Design Rework', 'Usability Issue'] },
-  { id: 'FEED-2267', name: 'Form inputs redesigned based on research and accessibility audit', labels: ['UXR Identified', 'Design Rework', 'Usability Issue'] },
-
-  // PM Change Request (separate)
-  { id: 'FEED-2208', name: 'Additional field required for creator verification', labels: ['PM Change Request'] },
-  { id: 'REEL-923', name: 'PM requested profile type filter in search results', labels: ['PM Change Request'] },
-  { id: 'REEL-378', name: 'Engagement approval levels need third tier', labels: ['PM Change Request'] },
-
-  // Iteration Feedback (separate)
-  { id: 'FEED-2256', name: 'Product lead requested priority indicator on task cards', labels: ['Iteration Feedback'] },
-  { id: 'REEL-978', name: 'PM feedback — add share sheet to insights', labels: ['Iteration Feedback'] },
-  { id: 'REEL-410', name: 'Design review identified missing confirmation dialog', labels: ['Iteration Feedback'] },
-
-  // Scope Change (separate)
-  { id: 'FEED-2278', name: 'Bulk actions expanded to include collab publish flow', labels: ['Scope Change'] },
-  { id: 'REEL-995', name: 'Search scope expanded to include archived creators', labels: ['Scope Change'] },
-  { id: 'REEL-438', name: 'Reels analytics now includes pending engagements', labels: ['Scope Change'] },
-]
-
-const LABEL_INFO = {
-  'UXR Identified': { color: '#0071e3', description: 'Changes originating from user research findings' },
-  'Design Rework': { color: '#f59e0b', description: 'Revisions to previously completed or approved design' },
-  'Post-Handoff Change': { color: '#dc2626', description: 'Changes identified after design handoff to engineering' },
-  'Usability Issue': { color: '#0891b2', description: 'Fixes addressing usability or accessibility concerns' },
-  'PM Change Request': { color: '#7c3aed', description: 'Updates requested by a PM after initial definition' },
-  'Iteration Feedback': { color: '#34a853', description: 'Changes resulting from internal or stakeholder feedback' },
-  'Scope Change': { color: '#d97706', description: 'Changes that expand or materially alter original scope' },
-}
+// Ensure every UX label key is present even if definitions drift
+Object.values(UX_LABELS).forEach((key) => {
+  if (!LABEL_INFO[key]) LABEL_INFO[key] = { color: '#6e6e73', description: key }
+})
 
 const JIRA_TICKETS = jiraLabelAdoption.issues?.length ? jiraLabelAdoption.issues : null
 const ACTIVE_TICKETS = JIRA_TICKETS || ALL_TICKETS
@@ -95,19 +40,19 @@ export default function LabelAdoptionVenn() {
 
   // Calculate counts for each region
   const counts = {
-    uxr_only: getTicketsByLabels(['UXR Identified']).length,
-    design_only: getTicketsByLabels(['Design Rework']).length,
-    handoff_only: getTicketsByLabels(['Post-Handoff Change']).length,
-    usability_only: getTicketsByLabels(['Usability Issue']).length,
-    uxr_design: getTicketsByLabels(['UXR Identified', 'Design Rework']).length,
-    uxr_usability: getTicketsByLabels(['UXR Identified', 'Usability Issue']).length,
-    design_handoff: getTicketsByLabels(['Design Rework', 'Post-Handoff Change']).length,
-    design_usability: getTicketsByLabels(['Design Rework', 'Usability Issue']).length,
-    handoff_usability: getTicketsByLabels(['Post-Handoff Change', 'Usability Issue']).length,
-    uxr_design_usability: getTicketsByLabels(['UXR Identified', 'Design Rework', 'Usability Issue']).length,
-    ba: getTicketsByLabels(['PM Change Request']).length,
-    feedback: getTicketsByLabels(['Iteration Feedback']).length,
-    scope: getTicketsByLabels(['Scope Change']).length,
+    uxr_only: getTicketsByLabels(['Research-Driven']).length,
+    design_only: getTicketsByLabels(['Design Revision']).length,
+    handoff_only: getTicketsByLabels(['Post-Handoff']).length,
+    usability_only: getTicketsByLabels(['Usability Fix']).length,
+    uxr_design: getTicketsByLabels(['Research-Driven', 'Design Revision']).length,
+    uxr_usability: getTicketsByLabels(['Research-Driven', 'Usability Fix']).length,
+    design_handoff: getTicketsByLabels(['Design Revision', 'Post-Handoff']).length,
+    design_usability: getTicketsByLabels(['Design Revision', 'Usability Fix']).length,
+    handoff_usability: getTicketsByLabels(['Post-Handoff', 'Usability Fix']).length,
+    uxr_design_usability: getTicketsByLabels(['Research-Driven', 'Design Revision', 'Usability Fix']).length,
+    ba: getTicketsByLabels(['Requirements Update']).length,
+    feedback: getTicketsByLabels(['Stakeholder Feedback']).length,
+    scope: getTicketsByLabels(['Scope Expansion']).length,
   }
 
   const handleRegionClick = (labels) => {
@@ -184,20 +129,20 @@ export default function LabelAdoptionVenn() {
                 </defs>
 
                 {/* Main 4 overlapping circles */}
-                <circle cx="300" cy="200" r="120" fill={LABEL_INFO['UXR Identified'].color} fillOpacity="0.25" stroke={LABEL_INFO['UXR Identified'].color} strokeWidth="2" />
-                <circle cx="500" cy="200" r="120" fill={LABEL_INFO['Design Rework'].color} fillOpacity="0.25" stroke={LABEL_INFO['Design Rework'].color} strokeWidth="2" />
-                <circle cx="300" cy="360" r="120" fill={LABEL_INFO['Post-Handoff Change'].color} fillOpacity="0.25" stroke={LABEL_INFO['Post-Handoff Change'].color} strokeWidth="2" />
-                <circle cx="500" cy="360" r="120" fill={LABEL_INFO['Usability Issue'].color} fillOpacity="0.25" stroke={LABEL_INFO['Usability Issue'].color} strokeWidth="2" />
+                <circle cx="300" cy="200" r="120" fill={LABEL_INFO['Research-Driven'].color} fillOpacity="0.25" stroke={LABEL_INFO['Research-Driven'].color} strokeWidth="2" />
+                <circle cx="500" cy="200" r="120" fill={LABEL_INFO['Design Revision'].color} fillOpacity="0.25" stroke={LABEL_INFO['Design Revision'].color} strokeWidth="2" />
+                <circle cx="300" cy="360" r="120" fill={LABEL_INFO['Post-Handoff'].color} fillOpacity="0.25" stroke={LABEL_INFO['Post-Handoff'].color} strokeWidth="2" />
+                <circle cx="500" cy="360" r="120" fill={LABEL_INFO['Usability Fix'].color} fillOpacity="0.25" stroke={LABEL_INFO['Usability Fix'].color} strokeWidth="2" />
 
                 {/* Interactive regions for each section */}
 
                 {/* UXR only (top-left, outside overlaps) */}
                 <circle
                   cx="240" cy="150" r="30"
-                  fill={LABEL_INFO['UXR Identified'].color}
-                  fillOpacity={selectedLabels === 'UXR Identified' ? 0.8 : hoveredRegion === 'uxr_only' ? 0.6 : 0.5}
+                  fill={LABEL_INFO['Research-Driven'].color}
+                  fillOpacity={selectedLabels === 'Research-Driven' ? 0.8 : hoveredRegion === 'uxr_only' ? 0.6 : 0.5}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['UXR Identified'])}
+                  onClick={() => handleRegionClick(['Research-Driven'])}
                   onMouseEnter={() => setHoveredRegion('uxr_only')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -208,10 +153,10 @@ export default function LabelAdoptionVenn() {
                 {/* Design only (top-right, outside overlaps) */}
                 <circle
                   cx="560" cy="150" r="30"
-                  fill={LABEL_INFO['Design Rework'].color}
-                  fillOpacity={selectedLabels === 'Design Rework' ? 0.8 : hoveredRegion === 'design_only' ? 0.6 : 0.5}
+                  fill={LABEL_INFO['Design Revision'].color}
+                  fillOpacity={selectedLabels === 'Design Revision' ? 0.8 : hoveredRegion === 'design_only' ? 0.6 : 0.5}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['Design Rework'])}
+                  onClick={() => handleRegionClick(['Design Revision'])}
                   onMouseEnter={() => setHoveredRegion('design_only')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -222,10 +167,10 @@ export default function LabelAdoptionVenn() {
                 {/* Handoff only (bottom-left, outside overlaps) */}
                 <circle
                   cx="240" cy="410" r="30"
-                  fill={LABEL_INFO['Post-Handoff Change'].color}
-                  fillOpacity={selectedLabels === 'Post-Handoff Change' ? 0.8 : hoveredRegion === 'handoff_only' ? 0.6 : 0.5}
+                  fill={LABEL_INFO['Post-Handoff'].color}
+                  fillOpacity={selectedLabels === 'Post-Handoff' ? 0.8 : hoveredRegion === 'handoff_only' ? 0.6 : 0.5}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['Post-Handoff Change'])}
+                  onClick={() => handleRegionClick(['Post-Handoff'])}
                   onMouseEnter={() => setHoveredRegion('handoff_only')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -236,10 +181,10 @@ export default function LabelAdoptionVenn() {
                 {/* Usability only (bottom-right, outside overlaps) */}
                 <circle
                   cx="560" cy="410" r="30"
-                  fill={LABEL_INFO['Usability Issue'].color}
-                  fillOpacity={selectedLabels === 'Usability Issue' ? 0.8 : hoveredRegion === 'usability_only' ? 0.6 : 0.5}
+                  fill={LABEL_INFO['Usability Fix'].color}
+                  fillOpacity={selectedLabels === 'Usability Fix' ? 0.8 : hoveredRegion === 'usability_only' ? 0.6 : 0.5}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['Usability Issue'])}
+                  onClick={() => handleRegionClick(['Usability Fix'])}
                   onMouseEnter={() => setHoveredRegion('usability_only')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -251,9 +196,9 @@ export default function LabelAdoptionVenn() {
                 <circle
                   cx="400" cy="200" r="25"
                   fill="#8b5cf6"
-                  fillOpacity={selectedLabels === 'Design Rework,UXR Identified' ? 0.9 : hoveredRegion === 'uxr_design' ? 0.7 : 0.6}
+                  fillOpacity={selectedLabels === 'Design Revision,Research-Driven' ? 0.9 : hoveredRegion === 'uxr_design' ? 0.7 : 0.6}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['UXR Identified', 'Design Rework'])}
+                  onClick={() => handleRegionClick(['Research-Driven', 'Design Revision'])}
                   onMouseEnter={() => setHoveredRegion('uxr_design')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -265,9 +210,9 @@ export default function LabelAdoptionVenn() {
                 <circle
                   cx="340" cy="280" r="25"
                   fill="#0891b2"
-                  fillOpacity={selectedLabels === 'UXR Identified,Usability Issue' ? 0.9 : hoveredRegion === 'uxr_usability' ? 0.7 : 0.6}
+                  fillOpacity={selectedLabels === 'Research-Driven,Usability Fix' ? 0.9 : hoveredRegion === 'uxr_usability' ? 0.7 : 0.6}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['UXR Identified', 'Usability Issue'])}
+                  onClick={() => handleRegionClick(['Research-Driven', 'Usability Fix'])}
                   onMouseEnter={() => setHoveredRegion('uxr_usability')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -279,9 +224,9 @@ export default function LabelAdoptionVenn() {
                 <circle
                   cx="460" cy="280" r="25"
                   fill="#f97316"
-                  fillOpacity={selectedLabels === 'Design Rework,Post-Handoff Change' ? 0.9 : hoveredRegion === 'design_handoff' ? 0.7 : 0.6}
+                  fillOpacity={selectedLabels === 'Design Revision,Post-Handoff' ? 0.9 : hoveredRegion === 'design_handoff' ? 0.7 : 0.6}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['Design Rework', 'Post-Handoff Change'])}
+                  onClick={() => handleRegionClick(['Design Revision', 'Post-Handoff'])}
                   onMouseEnter={() => setHoveredRegion('design_handoff')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -293,9 +238,9 @@ export default function LabelAdoptionVenn() {
                 <circle
                   cx="540" cy="280" r="25"
                   fill="#16a34a"
-                  fillOpacity={selectedLabels === 'Design Rework,Usability Issue' ? 0.9 : hoveredRegion === 'design_usability' ? 0.7 : 0.6}
+                  fillOpacity={selectedLabels === 'Design Revision,Usability Fix' ? 0.9 : hoveredRegion === 'design_usability' ? 0.7 : 0.6}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['Design Rework', 'Usability Issue'])}
+                  onClick={() => handleRegionClick(['Design Revision', 'Usability Fix'])}
                   onMouseEnter={() => setHoveredRegion('design_usability')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -307,9 +252,9 @@ export default function LabelAdoptionVenn() {
                 <circle
                   cx="400" cy="360" r="25"
                   fill="#be123c"
-                  fillOpacity={selectedLabels === 'Post-Handoff Change,Usability Issue' ? 0.9 : hoveredRegion === 'handoff_usability' ? 0.7 : 0.6}
+                  fillOpacity={selectedLabels === 'Post-Handoff,Usability Fix' ? 0.9 : hoveredRegion === 'handoff_usability' ? 0.7 : 0.6}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['Post-Handoff Change', 'Usability Issue'])}
+                  onClick={() => handleRegionClick(['Post-Handoff', 'Usability Fix'])}
                   onMouseEnter={() => setHoveredRegion('handoff_usability')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -321,9 +266,9 @@ export default function LabelAdoptionVenn() {
                 <circle
                   cx="400" cy="280" r="20"
                   fill="#1d4ed8"
-                  fillOpacity={selectedLabels === 'Design Rework,UXR Identified,Usability Issue' ? 0.95 : hoveredRegion === 'uxr_design_usability' ? 0.8 : 0.7}
+                  fillOpacity={selectedLabels === 'Design Revision,Research-Driven,Usability Issue' ? 0.95 : hoveredRegion === 'uxr_design_usability' ? 0.8 : 0.7}
                   style={{ cursor: 'pointer', transition: 'all 0.2s' }}
-                  onClick={() => handleRegionClick(['UXR Identified', 'Design Rework', 'Usability Issue'])}
+                  onClick={() => handleRegionClick(['Research-Driven', 'Design Revision', 'Usability Fix'])}
                   onMouseEnter={() => setHoveredRegion('uxr_design_usability')}
                   onMouseLeave={() => setHoveredRegion(null)}
                 />
@@ -332,30 +277,30 @@ export default function LabelAdoptionVenn() {
                 </text>
 
                 {/* Labels for main circles */}
-                <text x="300" y="120" textAnchor="middle" fill={LABEL_INFO['UXR Identified'].color} fontSize="12" fontWeight="700">UXR Identified</text>
-                <text x="500" y="120" textAnchor="middle" fill={LABEL_INFO['Design Rework'].color} fontSize="12" fontWeight="700">Design Rework</text>
-                <text x="300" y="465" textAnchor="middle" fill={LABEL_INFO['Post-Handoff Change'].color} fontSize="12" fontWeight="700">Post-Handoff</text>
-                <text x="500" y="465" textAnchor="middle" fill={LABEL_INFO['Usability Issue'].color} fontSize="12" fontWeight="700">Usability Issue</text>
+                <text x="300" y="120" textAnchor="middle" fill={LABEL_INFO['Research-Driven'].color} fontSize="12" fontWeight="700">Research-Driven</text>
+                <text x="500" y="120" textAnchor="middle" fill={LABEL_INFO['Design Revision'].color} fontSize="12" fontWeight="700">Design Revision</text>
+                <text x="300" y="465" textAnchor="middle" fill={LABEL_INFO['Post-Handoff'].color} fontSize="12" fontWeight="700">Post-Handoff</text>
+                <text x="500" y="465" textAnchor="middle" fill={LABEL_INFO['Usability Fix'].color} fontSize="12" fontWeight="700">Usability Fix</text>
 
                 {/* Separate circles for BA, Feedback, Scope */}
                 <g transform="translate(100, 520)">
-                  <circle cx="100" cy="0" r="35" fill={LABEL_INFO['PM Change Request'].color} fillOpacity={selectedLabels === 'PM Change Request' ? 0.8 : 0.5}
+                  <circle cx="100" cy="0" r="35" fill={LABEL_INFO['Requirements Update'].color} fillOpacity={selectedLabels === 'Requirements Update' ? 0.8 : 0.5}
                     style={{ cursor: 'pointer' }}
-                    onClick={() => handleRegionClick(['PM Change Request'])}
+                    onClick={() => handleRegionClick(['Requirements Update'])}
                   />
                   <text x="100" y="-10" textAnchor="middle" fill="white" fontSize="10" fontWeight="700">PM Change</text>
                   <text x="100" y="5" textAnchor="middle" fill="white" fontSize="16" fontWeight="800">{counts.ba}</text>
 
-                  <circle cx="300" cy="0" r="35" fill={LABEL_INFO['Iteration Feedback'].color} fillOpacity={selectedLabels === 'Iteration Feedback' ? 0.8 : 0.5}
+                  <circle cx="300" cy="0" r="35" fill={LABEL_INFO['Stakeholder Feedback'].color} fillOpacity={selectedLabels === 'Stakeholder Feedback' ? 0.8 : 0.5}
                     style={{ cursor: 'pointer' }}
-                    onClick={() => handleRegionClick(['Iteration Feedback'])}
+                    onClick={() => handleRegionClick(['Stakeholder Feedback'])}
                   />
                   <text x="300" y="-10" textAnchor="middle" fill="white" fontSize="10" fontWeight="700">Iteration</text>
                   <text x="300" y="5" textAnchor="middle" fill="white" fontSize="16" fontWeight="800">{counts.feedback}</text>
 
-                  <circle cx="500" cy="0" r="35" fill={LABEL_INFO['Scope Change'].color} fillOpacity={selectedLabels === 'Scope Change' ? 0.8 : 0.5}
+                  <circle cx="500" cy="0" r="35" fill={LABEL_INFO['Scope Expansion'].color} fillOpacity={selectedLabels === 'Scope Expansion' ? 0.8 : 0.5}
                     style={{ cursor: 'pointer' }}
-                    onClick={() => handleRegionClick(['Scope Change'])}
+                    onClick={() => handleRegionClick(['Scope Expansion'])}
                   />
                   <text x="500" y="-10" textAnchor="middle" fill="white" fontSize="10" fontWeight="700">Scope</text>
                   <text x="500" y="5" textAnchor="middle" fill="white" fontSize="16" fontWeight="800">{counts.scope}</text>

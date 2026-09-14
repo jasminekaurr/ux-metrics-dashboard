@@ -1,3 +1,9 @@
+/**
+ * schema.js — human descriptions of uploadable data files.
+ *
+ * Powers Data Settings UI copy (what each JSON key means). Related:
+ * context/DataContext.jsx, docs/data-format.md.
+ */
 export const DATA_SCHEMA = {
   months: {
     description: 'Array of month labels shown in the month picker.',
@@ -33,7 +39,7 @@ export const DATA_SCHEMA = {
     description: 'Innovation initiatives, POC funnel, and AI adoption.',
   },
   researchInitiatives: {
-    description: 'Active research initiatives list.',
+    description: 'Research spotlight cards for /research (impactTag, participants, detailedSummary). Use dataRef to bind panelHealth or ubaIASpotlight.',
   },
   panelHealth: {
     description: 'Research panel health metrics.',

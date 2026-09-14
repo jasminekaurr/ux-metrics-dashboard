@@ -73,8 +73,19 @@
     },
     "executive.json": { "key": "executive", "wiring": "exported_only", "routes": [] },
     "cost.json": { "key": "cost", "wiring": "exported_only", "routes": [] },
-    "researchInitiatives.json": { "key": "researchInitiatives", "wiring": "exported_only", "routes": [] },
+    "researchInitiatives.json": {
+      "key": "researchInitiatives",
+      "wiring": "active",
+      "routes": ["/research"],
+      "notes": "Spotlight initiative cards; detailedSummary.dataRef resolves panelHealth or ubaIASpotlight"
+    },
     "researchAsks.json": { "key": "researchAsks", "wiring": "exported_only", "routes": [] },
-    "fcubComponentVenn.json": { "key": "fcubComponentVenn", "wiring": "exported_only", "routes": [] }
+    "fcubComponentVenn.json": {
+      "key": "fcubComponentVenn",
+      "wiring": "active",
+      "routes": [],
+      "components": ["data/fcubTickets.js"],
+      "notes": "Lifecycle-label sample issues; also re-exported via data/fcubTickets.js"
+    }
   }
 }

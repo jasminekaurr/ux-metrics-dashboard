@@ -60,6 +60,52 @@ Capture scripts write to `dashboard/src/data/live/` (gitignored). The data provi
 
 How to attach your data (edit sample JSON, snapshot export, or capture scripts): [Data settings](docs/DATA-SETTINGS.md).
 
+## Customize for your org (`@CUSTOMIZE`)
+
+Search the repository for **`@CUSTOMIZE`** to find every place meant for adopters — branding, sample metrics, label taxonomy, and env examples. That tag marks “edit here for your data,” not internal plumbing.
+
+Convention in source:
+
+```js
+/**
+ * @CUSTOMIZE — Replace with your product names / metrics.
+ * See README “Customize for your org”.
+ */
+```
+
+Primary touchpoints:
+
+| What to change | Where |
+|----------------|--------|
+| Product / design-system display names | [`dashboard/src/config/orgLabels.js`](dashboard/src/config/orgLabels.js) |
+| Bundled metrics (roadmap, research, analytics, …) | [`dashboard/src/data/sample/`](dashboard/src/data/sample/) |
+| UX label taxonomy + fallback tickets | [`dashboard/src/data/uxLabelTickets.js`](dashboard/src/data/uxLabelTickets.js) |
+| Jira / Figma capture credentials | [`dashboard/.env.example`](dashboard/.env.example) → copy to `.env.local` |
+
+Step-by-step attach options: [Data settings](docs/DATA-SETTINGS.md). Schemas: [Data format](docs/data-format.md).
+
+## Deployment & hosting
+
+**How this repo is hosted today**
+
+1. `npm run build:external` in `dashboard/` builds a static site with anonymized product labels (`VITE_ORG_MODE=external`) and base path `/ux-metrics-dashboard/`.
+2. Vite writes the production bundle to [`docs/`](docs/) at the repo root (GitHub Pages-friendly).
+3. On push to `main`, [`.github/workflows/static.yml`](.github/workflows/static.yml) rebuilds and deploys to **GitHub Pages** via GitHub Actions.
+4. Live demo: [jasminekaurr.github.io/ux-metrics-dashboard](https://jasminekaurr.github.io/ux-metrics-dashboard/).
+
+CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs lint, data validation, and the external build on PRs and pushes — it does not deploy.
+
+**Alternatives**
+
+| Approach | When to use |
+|----------|-------------|
+| Fork + same Pages workflow | Keep the default open-source hosting model |
+| Netlify / Vercel / Cloudflare Pages | Point the site root at the Vite `outDir` (or build `dashboard/` and publish `dist`/`docs`) |
+| Any static file server | Serve the build output; set `VITE_BASE_PATH` to match your URL prefix |
+| Local only | `npm run dev` / `npm run dev:external` — no hosting required |
+
+Full publish checklist, base-path overrides, and Pages troubleshooting: [PUBLISH.md](PUBLISH.md).
+
 ## Viewing period
 
 The left-nav month picker uses **rolling calendar months** ending at the current month. “Last 3 months” and “Current month” presets are relative to your data window, not hardcoded demo dates.

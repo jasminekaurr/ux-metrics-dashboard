@@ -1,11 +1,17 @@
+/**
+ * AnalyticsDark.jsx — product analytics route (/analytics).
+ *
+ * Shows task success, funnels, adoption, and satisfaction from analytics JSON.
+ * Related: data/sample/analytics.json.
+ */
 import { useMemo, useState, useEffect, useRef } from 'react'
 import { useDashboardData } from '../context/DataContext'
 import { useTheme } from '../context/ThemeContext'
 import SectionHelp from '../components/SectionHelp'
 import SplitText from '../components/SplitText'
+import { FONT_MONO as MONO } from '../config/typography'
 import './ExecutiveSummary.css'
-
-const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
+import './AnalyticsDark.css'
 
 function useReveal() {
   const ref = useRef(null)
@@ -131,11 +137,11 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
       </div>
 
       <div className="es-content">
-        <div ref={overviewRef} className={`bq-reveal${overviewVisible ? ' visible' : ''}`} style={{ paddingTop: 40 }}>
+        <div ref={overviewRef} className={`bq-reveal${overviewVisible ? ' visible' : ''} an-section--pt40`}>
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow an-eyebrow--flush">
                   {/* Source: analytics.json — replace with Amplitude, Mixpanel, GA4, Heap, Pendo, etc. */}
                   Product Health
                 </div>
@@ -148,22 +154,15 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
             </div>
           </div>
 
-          <div style={{
-            display: 'flex',
-            background: 'var(--es-surface)',
-            borderRadius: 'var(--es-r)',
-            border: '1px solid var(--es-border-str)',
-            overflow: 'hidden',
-          }}>
+          <div className="an-stats-row">
             {overviewStats.map((s, i) => (
               <div
                 key={s.caption}
                 className="bq-stat-item bq-stagger-item"
-                style={{ borderRight: i < overviewStats.length - 1 ? '1px dashed var(--es-border-str)' : 'none' }}
               >
                 <div className={`bq-stat-num ${s.cls}`}>{s.num}</div>
                 <div className="bq-stat-caption">{s.caption}</div>
-                <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>{s.sub}</div>
+                <div className="an-stat-sub">{s.sub}</div>
                 {s.delta && (
                   <div style={{
                     marginTop: 6,
@@ -180,40 +179,27 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
           </div>
         </div>
 
-        <div ref={metricsRef} className={`bq-reveal${metricsVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
+        <div ref={metricsRef} className={`bq-reveal${metricsVisible ? ' visible' : ''} an-section--pt52`}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>Metrics Framework</div>
+              <div className="es-eyebrow an-eyebrow--spaced">Metrics Framework</div>
               <SplitText className="bq-section-h">Tracked usability signals</SplitText>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
+          <div className="an-metrics-grid">
             {analytics.metrics.map((metric) => {
               const value = current[metric.field]
               const prevValue = previous[metric.field]
               const delta = getDelta(value, prevValue, metric.direction)
               return (
-                <div key={metric.id} className="bq-stagger-item" style={{
-                  background: 'var(--es-surface)',
-                  border: '1px solid var(--es-border-str)',
-                  borderRadius: 'var(--es-r)',
-                  padding: '20px 22px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 9,
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'baseline',
-                    justifyContent: 'space-between',
-                    gap: 12,
-                  }}>
-                    <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--es-text-1)', lineHeight: 1.45 }}>{metric.title}</div>
-                    <div style={{ fontFamily: MONO, fontSize: 22, fontWeight: 300, color: 'var(--es-text-1)', flexShrink: 0 }}>
+                <div key={metric.id} className="bq-stagger-item an-metric-card">
+                  <div className="an-metric-head">
+                    <div className="an-metric-title">{metric.title}</div>
+                    <div className="an-metric-value">
                       {formatMetricValue(value, metric.unit)}
                     </div>
                   </div>
-                  <div style={{ fontSize: 12, color: 'var(--es-text-2)', lineHeight: 1.65 }}>{metric.description}</div>
+                  <div className="an-metric-desc">{metric.description}</div>
                   {delta && (
                     <div style={{ fontFamily: MONO, fontSize: 10, color: delta.improved ? 'var(--es-green)' : 'var(--es-amber)' }}>
                       {delta.improved ? 'Improving' : 'Watch'} · {Math.abs(delta.raw).toFixed(metric.unit === 's' ? 0 : 1)} {metric.unit === '%' ? 'pt' : metric.unit.trim()} MoM
@@ -230,30 +216,18 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
           </div>
         </div>
 
-        <div ref={funnelRef} className={`bq-reveal${funnelVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
+        <div ref={funnelRef} className={`bq-reveal${funnelVisible ? ' visible' : ''} an-section--pt52`}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>Funnel Analysis</div>
+              <div className="es-eyebrow an-eyebrow--spaced">Funnel Analysis</div>
               <SplitText className="bq-section-h">{primaryFunnel.name} — {primaryFunnel.product}</SplitText>
             </div>
           </div>
-          <div style={{
-            background: 'var(--es-surface)',
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)',
-            overflow: 'hidden',
-          }}>
+          <div className="an-funnel-shell">
             {primaryFunnel.steps.map((step, i) => (
-              <div key={step.name} style={{
-                display: 'grid',
-                gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 2fr) auto',
-                gap: 16,
-                alignItems: 'center',
-                padding: '14px 20px',
-                borderTop: i > 0 ? '1px solid var(--es-border)' : 'none',
-              }}>
-                <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--es-text-1)' }}>{step.name}</div>
-                <div style={{ height: 8, background: 'var(--es-surface-2)', borderRadius: 99, overflow: 'hidden' }}>
+              <div key={step.name} className="an-funnel-row">
+                <div className="an-funnel-name">{step.name}</div>
+                <div className="an-funnel-track">
                   <div style={{
                     width: `${Math.max(8, 100 - step.exitRate)}%`,
                     height: '100%',
@@ -261,7 +235,7 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
                     borderRadius: 99,
                   }} />
                 </div>
-                <div style={{ fontFamily: MONO, fontSize: 10, color: 'var(--es-text-3)', textAlign: 'right', minWidth: 88 }}>
+                <div className="an-funnel-meta">
                   {step.exitRate}% exit · {step.entered.toLocaleString()}
                 </div>
               </div>
@@ -269,10 +243,10 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
           </div>
         </div>
 
-        <div ref={adoptionRef} className={`bq-reveal${adoptionVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
+        <div ref={adoptionRef} className={`bq-reveal${adoptionVisible ? ' visible' : ''} an-section--pt52`}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>Feature Adoption</div>
+              <div className="es-eyebrow an-eyebrow--spaced">Feature Adoption</div>
               <SplitText className="bq-section-h">Shipped features in use</SplitText>
             </div>
           </div>
@@ -290,8 +264,8 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
                 <tr key={row.feature} className="bq-feature-tr">
                   <td className="bq-td bq-td-feature">{row.feature}</td>
                   <td className="bq-td bq-td-center"><span className="es-chip blue">{row.product}</span></td>
-                  <td className="bq-td bq-td-center" style={{ fontFamily: MONO, fontSize: 12 }}>
-                    {row.adoptionRate}% <span style={{ color: 'var(--es-text-3)' }}>({(row.adoptedUsers / 1000000).toFixed(1)}M)</span>
+                  <td className="bq-td bq-td-center an-adoption-mono">
+                    {row.adoptionRate}% <span className="an-muted">({(row.adoptedUsers / 1000000).toFixed(1)}M)</span>
                   </td>
                   <td className="bq-td bq-td-purpose bq-td-center">{row.daysSinceLaunch}</td>
                 </tr>
@@ -300,28 +274,23 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
           </table>
         </div>
 
-        <div ref={pagesRef} className={`bq-reveal${pagesVisible ? ' visible' : ''}`} style={{ paddingTop: 52 }}>
+        <div ref={pagesRef} className={`bq-reveal${pagesVisible ? ' visible' : ''} an-section--pt52`}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>Page Engagement</div>
+              <div className="es-eyebrow an-eyebrow--spaced">Page Engagement</div>
               <SplitText className="bq-section-h">High-traffic screens</SplitText>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
+          <div className="an-pages-grid">
             {analytics.topPages.map((page) => (
-              <div key={page.page} className="bq-stagger-item" style={{
-                background: 'var(--es-surface)',
-                border: '1px solid var(--es-border-str)',
-                borderRadius: 'var(--es-r)',
-                padding: '18px 20px',
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}>
-                  <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--es-text-1)' }}>{page.page}</div>
+              <div key={page.page} className="bq-stagger-item an-page-card">
+                <div className="an-page-head">
+                  <div className="an-page-title">{page.page}</div>
                   <span className={`es-chip ${page.trend === 'up' ? 'green' : page.trend === 'down' ? 'red' : ''}`}>
                     {page.trend === 'up' ? '↑' : page.trend === 'down' ? '↓' : '→'} {page.trend}
                   </span>
                 </div>
-                <div style={{ display: 'flex', gap: 20, fontFamily: MONO, fontSize: 10, color: 'var(--es-text-3)' }}>
+                <div className="an-page-meta">
                   <span>{(page.sessions / 1000000).toFixed(1)}M sessions</span>
                   <span>{page.avgTimeSec}s avg</span>
                   <span>{page.bounceRate}% bounce</span>
@@ -331,14 +300,14 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
           </div>
         </div>
 
-        <div ref={insightsRef} className={`bq-reveal${insightsVisible ? ' visible' : ''}`} style={{ paddingTop: 52, paddingBottom: 60 }}>
+        <div ref={insightsRef} className={`bq-reveal${insightsVisible ? ' visible' : ''} an-section--pt52-pb60`}>
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>Insights</div>
+              <div className="es-eyebrow an-eyebrow--spaced">Insights</div>
               <SplitText className="bq-section-h">What the data is saying</SplitText>
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div className="an-stack--tight">
             {analytics.insights.map((insight) => (
               <div key={insight.title} className="bq-stagger-item" style={{
                 background: 'var(--es-surface)',
@@ -347,8 +316,8 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
                 borderRadius: 'var(--es-r)',
                 padding: '16px 18px',
               }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--es-text-1)', marginBottom: 6 }}>{insight.title}</div>
-                <div style={{ fontSize: 12, color: 'var(--es-text-2)', lineHeight: 1.65 }}>{insight.body}</div>
+                <div className="an-insight-title">{insight.title}</div>
+                <div className="an-insight-body">{insight.body}</div>
               </div>
             ))}
           </div>

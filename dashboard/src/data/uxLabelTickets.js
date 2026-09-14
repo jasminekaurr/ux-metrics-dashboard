@@ -1,8 +1,12 @@
 /**
- * UX label taxonomy and sample tickets for label-adoption visualizations.
- * Tickets imagine an Instagram product design team shipping creator-facing features.
+ * uxLabelTickets.js — UX label taxonomy and sample tickets.
+ *
+ * Powers label-adoption / Venn views with Instagram-themed sample issues.
+ * Adopters customize UX_LABELS, LABEL_DEFINITIONS, and ALL_TICKETS below.
+ * Related: components/LabelAdoptionVennDark.jsx, utils/jiraLabelData.js.
  */
 
+/** @CUSTOMIZE — Canonical UX label names (must match Jira label map / capture). */
 export const UX_LABELS = {
   RESEARCH_DRIVEN: 'Research-Driven',
   DESIGN_REVISION: 'Design Revision',
@@ -13,6 +17,7 @@ export const UX_LABELS = {
   SCOPE_EXPANSION: 'Scope Expansion',
 }
 
+/** @CUSTOMIZE — Taxonomy metadata (colors + descriptions) for each UX label. */
 export const LABEL_DEFINITIONS = [
   { key: UX_LABELS.RESEARCH_DRIVEN, color: '#3898ec', desc: 'Change triggered by user research, diary studies, or usability testing' },
   { key: UX_LABELS.DESIGN_REVISION, color: '#f59e0b', desc: 'Rework of design that was already reviewed, approved, or handed off' },
@@ -23,6 +28,12 @@ export const LABEL_DEFINITIONS = [
   { key: UX_LABELS.SCOPE_EXPANSION, color: '#f97316', desc: 'Material expansion or shift from the original feature scope' },
 ]
 
+/**
+ * VENN_* helpers — presentation maps for LabelAdoptionVenn* diagrams.
+ * Keys are UX_LABELS display names. Used when rendering circles, legends, and
+ * multi-label intersection callouts (not for merge/capture logic).
+ */
+/** Fill / gradient / light-mode text colors per label circle. */
 export const VENN_COLORS = {
   [UX_LABELS.RESEARCH_DRIVEN]:      { h: '#3898ec', g1: '#5eadff', g2: '#1a6dcc', textLight: '#1d4ed8' },
   [UX_LABELS.DESIGN_REVISION]:       { h: '#f59e0b', g1: '#ffc04d', g2: '#cc7a00', textLight: '#92400e' },
@@ -33,6 +44,7 @@ export const VENN_COLORS = {
   [UX_LABELS.SCOPE_EXPANSION]:       { h: '#fb923c', g1: '#fdba74', g2: '#ea580c', textLight: '#9a3412' },
 }
 
+/** Short copy shown in Venn tooltips / side panels per single label. */
 export const VENN_DESCRIPTIONS = {
   [UX_LABELS.RESEARCH_DRIVEN]: 'Research, testing, or experimentation drove the change.',
   [UX_LABELS.DESIGN_REVISION]: 'Existing experience needs design improvement.',
@@ -43,6 +55,7 @@ export const VENN_DESCRIPTIONS = {
   [UX_LABELS.SCOPE_EXPANSION]: 'Material expansion beyond original scope.',
 }
 
+/** Emoji markers for Venn legends and playground label pieces. */
 export const VENN_ICONS = {
   [UX_LABELS.RESEARCH_DRIVEN]: '🧪',
   [UX_LABELS.DESIGN_REVISION]: '🔁',
@@ -53,6 +66,10 @@ export const VENN_ICONS = {
   [UX_LABELS.SCOPE_EXPANSION]: '📈',
 }
 
+/**
+ * Narrative copy for known multi-label overlaps.
+ * Keys are sorted label names joined with `|` (see intersectionDescription).
+ */
 export const VENN_INTERSECTIONS = {
   [`${UX_LABELS.DESIGN_REVISION}|${UX_LABELS.RESEARCH_DRIVEN}`]: 'Research shows an existing experience needs rework.',
   [`${UX_LABELS.RESEARCH_DRIVEN}|${UX_LABELS.USABILITY_FIX}`]: 'Research points to a worthwhile enhancement.',
@@ -62,6 +79,7 @@ export const VENN_INTERSECTIONS = {
   [`${UX_LABELS.DESIGN_REVISION}|${UX_LABELS.RESEARCH_DRIVEN}|${UX_LABELS.USABILITY_FIX}`]: 'Research-driven rework that enhances the experience.',
 }
 
+/** Resolve overlap copy for a set of labels; falls back to a generic sentence. */
 export function intersectionDescription(labels) {
   const key = [...labels].sort().join('|')
   return VENN_INTERSECTIONS[key] ?? 'Tickets that share all of these labels.'
@@ -71,6 +89,7 @@ export const JIRA_BASE_URL = 'https://example.atlassian.net/browse'
 
 const L = UX_LABELS
 
+/** @CUSTOMIZE — Sample tickets with one or more UX labels (fallback when capture is empty). */
 export const ALL_TICKETS = [
   { id: 'FEED-2201', name: 'Suggested posts indistinguishable from followed content — diary study flagged trust gap', labels: [L.RESEARCH_DRIVEN] },
   { id: 'DM-945', name: '72% of participants missed reply threading in group chats', labels: [L.RESEARCH_DRIVEN] },

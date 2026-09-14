@@ -1,107 +1,49 @@
 [
   {
-    "product": "Shop",
-    "study": "Shopping Tab Discovery Research",
-    "status": "Active",
-    "category": "Growth & acquisition",
-    "expectedDecision": "Prioritize / De-scope"
-  },
-  {
-    "product": "Shop",
-    "study": "Checkout Friction Benchmark",
-    "status": "Active",
-    "category": "Growth & acquisition",
-    "expectedDecision": "Validate assumption"
-  },
-  {
-    "product": "Feed",
-    "study": "Creator Advisory Panel",
-    "status": "Active",
-    "category": "Growth & acquisition",
-    "expectedDecision": "Redesign / Iterate"
-  },
-  {
-    "product": "Feed",
-    "study": "Suggested Posts Trust Study",
-    "status": "Planning",
-    "category": "Efficiency & workflow",
-    "expectedDecision": "Launch / Don't launch"
-  },
-  {
-    "product": "Insights",
-    "study": "Creator Analytics Redesign",
-    "status": "Active",
-    "category": "Efficiency & workflow",
-    "expectedDecision": "Redesign / Iterate"
-  },
-  {
-    "product": "Insights",
-    "study": "AI Workshop — Reels Team",
-    "status": "Complete",
-    "category": "Strategic exploration",
-    "expectedDecision": "Validate assumption"
-  },
-  {
-    "product": "Insights",
-    "study": "AI Workshop — DMs Team",
-    "status": "Planning",
-    "category": "Strategic exploration",
-    "expectedDecision": "Redesign / Iterate"
-  },
-  {
-    "product": "Insights",
-    "study": "Competitive Reels Benchmark",
-    "status": "Active",
-    "category": "Growth & acquisition",
-    "expectedDecision": "Validate assumption"
-  },
-  {
-    "product": "DMs",
-    "study": "Creator Panel (Monthly)",
-    "status": "Active",
-    "category": "Growth & acquisition",
-    "expectedDecision": "Redesign / Iterate"
-  },
-  {
-    "product": "DMs",
-    "study": "Inbox Feature Survey",
-    "status": "Complete",
-    "category": "Efficiency & workflow",
-    "expectedDecision": "Prioritize / De-scope"
-  },
-  {
-    "product": "DMs",
-    "study": "Vanish Mode Comprehension Test",
-    "status": "Planning",
-    "category": "Efficiency & workflow",
-    "expectedDecision": "Launch / Don't launch"
-  },
-  {
+    "id": "reels-ia",
     "product": "Reels",
-    "study": "Reels Navigation Tree Test",
-    "status": "Active",
-    "category": "Risk & compliance",
-    "expectedDecision": "Redesign / Iterate"
-  },
-  {
-    "product": "Creator",
-    "study": "Spark AI Trust & Transparency Survey",
+    "study": "Reels Navigation Architecture",
+    "category": "Risk & Compliance",
+    "purpose": "Validate tab model and navigation structure for creator publishing flows",
     "status": "Complete",
-    "category": "Strategic exploration",
-    "expectedDecision": "Validate assumption"
+    "impactTag": "Risk Reduction",
+    "participants": 18,
+    "detailedSummary": { "type": "uba", "dataRef": "ubaIASpotlight" }
   },
   {
-    "product": "Research Ops",
-    "study": "Qualitative Platform Evaluation",
-    "status": "Active",
-    "category": "Efficiency & workflow",
-    "expectedDecision": "Launch / Don't launch"
-  },
-  {
-    "product": "Subscriptions",
-    "study": "Badges Usability Test",
+    "id": "collab-posts",
+    "product": "Feed",
+    "study": "Collab Post Tagging Study",
+    "category": "Efficiency & Workflow",
+    "purpose": "Validate co-author tagging interaction model and creator mental models for shared posts",
     "status": "Complete",
-    "category": "Risk & compliance",
-    "expectedDecision": "Launch / Don't launch"
+    "impactTag": "Risk Reduction",
+    "participants": 10,
+    "detailedSummary": {
+      "type": "task-assignment",
+      "data": {
+        "methodology": "Usability testing with active creators",
+        "keyFindings": [
+          "Creators expected to tag collaborators from the compose screen, not a separate settings panel",
+          "Co-author avatars were understood, but approval flow timing was unclear",
+          "Search behavior often preceded filtering — creators typed handles before applying filters",
+          "Confirmation chips were helpful but subtle, influencing recognition speed",
+          "Single-collaborator prototype limitation caused confusion in multi-creator scenarios"
+        ],
+        "issuesCaught": 5,
+        "severity": "Medium"
+      }
+    }
+  },
+  {
+    "id": "panel-health",
+    "product": "Multiple",
+    "study": "Creator Panel Health",
+    "category": "Strategic Exploration",
+    "purpose": "Maintain advisory panels for same-week validation capability",
+    "status": "Active",
+    "impactTag": "Speed/Acceleration",
+    "participants": 109,
+    "detailedSummary": { "type": "panel", "dataRef": "panelHealth" }
   }
 ]

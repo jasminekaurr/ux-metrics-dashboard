@@ -1,3 +1,9 @@
+/**
+ * jira.js — Jira browse URL helpers.
+ *
+ * Resolves VITE_JIRA_* / capture browseBaseUrl into ticket deep links.
+ * Related: utils/jiraLabelData.js, components/LabelAdoptionVennDark.jsx.
+ */
 import jiraLabelAdoption from '../data/jiraLabelAdoption.json'
 
 const DEFAULT_JIRA_BROWSE_BASE_URL = 'https://jira.company.com/browse'

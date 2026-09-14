@@ -1,3 +1,7 @@
+/**
+ * Capture Jira issues with UX labels → src/data/live/jiraLabelAdoption.json.
+ * Needs JIRA_* env from .env.local. Run: npm run capture:jira
+ */
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'

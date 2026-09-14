@@ -1,10 +1,13 @@
 /**
- * Demo organization labels — Instagram-themed sample data.
- * Set VITE_ORG_MODE=external for extra-anonymized labels (Product Alpha, etc.).
+ * orgLabels.js — demo vs external organization copy.
+ *
+ * Switches product/design-system wording via VITE_ORG_MODE. Adopters edit the
+ * `demo` / `external` objects below. Related: pages/*Dark.jsx, App.jsx.
  */
 
 const DATA_KEY_PRODUCTS = ['Feed', 'Reels', 'DMs', 'Explore', 'Creator']
 
+/** @CUSTOMIZE — Instagram-themed demo labels (default when VITE_ORG_MODE unset). */
 const demo = {
   mode: 'demo',
   designSystemName: 'Prism',
@@ -20,6 +23,7 @@ const demo = {
   launchProduct: 'Reels',
 }
 
+/** @CUSTOMIZE — Anonymized labels when VITE_ORG_MODE=external. */
 const external = {
   mode: 'external',
   designSystemName: 'Nexus',

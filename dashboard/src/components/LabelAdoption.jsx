@@ -1,3 +1,10 @@
+/**
+ * LabelAdoption.jsx — light pie chart of UX Jira label adoption.
+ *
+ * Legacy/light-theme view of label distribution with ticket drill-down.
+ * Prefer LabelAdoptionDark / VennDark for current pages.
+ * Related: data/jiraLabelAdoption.json, utils/jira.js.
+ */
 import { useState } from 'react'
 import { Pie } from 'react-chartjs-2'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'

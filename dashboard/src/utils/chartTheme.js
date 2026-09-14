@@ -1,3 +1,18 @@
+/**
+ * chartTheme.js — Chart.js tooltip/scale colors for light and dark themes.
+ *
+ * Shared helpers so doughnut/line charts match dashboard tokens.
+ * Related: context/ThemeContext.jsx.
+ *
+ * Exports:
+ *   - getChartTheme(isDark)     — tooltip, scales, legend, hoverOverlay tokens
+ *   - SEMANTIC_COLORS           — success/warning/danger/info/purple/cyan per theme
+ *   - getSemanticColor(name, isDark)
+ *   - getChartColors(isDark)    — stroke/fill pairs for line/bar series
+ *   - getImpactThemes(isDark)   — Risk / Speed / Revenue chip styles
+ *   - getTypeColors(isDark)     — donut palette (colors, fills, hover)
+ *   - STATUS_PIPELINE           — ordered executive delivery-status stage labels
+ */
 export function getChartTheme(isDark) {
   return {
     tooltip: {
@@ -74,3 +89,54 @@ export function getChartColors(isDark) {
     purpleFill: isDark ? 'rgba(167,139,250,0.22)' : 'rgba(124,58,237,0.15)',
   }
 }
+
+/** Research impact theme chips (Risk / Speed / Revenue). */
+export function getImpactThemes(isDark) {
+  return {
+    'Risk Reduction': {
+      color: isDark ? '#ff2d2d' : '#dc2626',
+      tint: isDark ? 'rgba(255,45,45,0.06)' : 'rgba(220,38,38,0.06)',
+      border: isDark ? 'rgba(255,45,45,0.25)' : 'rgba(220,38,38,0.25)',
+      icon: '◎',
+      desc: 'Catching issues before development begins',
+    },
+    'Speed/Acceleration': {
+      color: isDark ? '#3898ec' : '#2563eb',
+      tint: isDark ? 'rgba(56,152,236,0.06)' : 'rgba(37,99,235,0.06)',
+      border: isDark ? 'rgba(56,152,236,0.25)' : 'rgba(37,99,235,0.25)',
+      icon: '◈',
+      desc: 'Reducing ambiguity and faster handoff to dev',
+    },
+    'Revenue Influence': {
+      color: isDark ? '#00bf2a' : '#16a34a',
+      tint: isDark ? 'rgba(0,191,42,0.06)' : 'rgba(22,163,74,0.06)',
+      border: isDark ? 'rgba(0,191,42,0.25)' : 'rgba(22,163,74,0.25)',
+      icon: '◷',
+      desc: 'Conversion, retention, and new capability',
+    },
+  }
+}
+
+/** Donut palette for research type breakdown. */
+export function getTypeColors(isDark) {
+  return {
+    colors: isDark
+      ? ['#3898ec', '#00bf2a', '#f59e0b', '#a78bfa', '#ff2d2d', '#0891b2']
+      : ['#2563eb', '#16a34a', '#d97706', '#7c3aed', '#dc2626', '#0e7490'],
+    fills: isDark
+      ? ['rgba(56,152,236,0.22)', 'rgba(0,191,42,0.22)', 'rgba(245,158,11,0.22)', 'rgba(167,139,250,0.22)', 'rgba(255,45,45,0.22)', 'rgba(8,145,178,0.22)']
+      : ['rgba(37,99,235,0.15)', 'rgba(22,163,74,0.15)', 'rgba(217,119,6,0.15)', 'rgba(124,58,237,0.15)', 'rgba(220,38,38,0.15)', 'rgba(14,116,144,0.15)'],
+    hover: isDark
+      ? ['rgba(56,152,236,0.50)', 'rgba(0,191,42,0.50)', 'rgba(245,158,11,0.50)', 'rgba(167,139,250,0.50)', 'rgba(255,45,45,0.50)', 'rgba(8,145,178,0.50)']
+      : ['rgba(37,99,235,0.40)', 'rgba(22,163,74,0.40)', 'rgba(217,119,6,0.40)', 'rgba(124,58,237,0.40)', 'rgba(220,38,38,0.40)', 'rgba(14,116,144,0.40)'],
+  }
+}
+
+/** Ordered status stages for the executive delivery pipeline. */
+export const STATUS_PIPELINE = [
+  'Early exploration',
+  'Risk reduction phase',
+  'Learning investment',
+  'Actively delivering ROI',
+  'Scaling or improving ROI',
+]

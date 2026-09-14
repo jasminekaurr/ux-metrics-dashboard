@@ -1,3 +1,9 @@
+/**
+ * ExecutiveSummaryDark.jsx — home executive summary route (/).
+ *
+ * Aggregates roadmap, research, strategic, APEX reuse, analytics, and label
+ * adoption into the landing narrative. Related: components/LabelAdoptionVennDark.jsx.
+ */
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useDashboardData } from '../context/DataContext'
 import { labels, countKeyProducts } from '../config/orgLabels'
@@ -6,11 +12,11 @@ import ExecutiveSummaryPlayground from '../components/ExecutiveSummaryPlayground
 import SectionHelp from '../components/SectionHelp'
 import SplitText from '../components/SplitText'
 import { useTheme } from '../context/ThemeContext'
+import { STATUS_PIPELINE } from '../utils/chartTheme'
+import { computeReuseRate } from '../config/reuseWeights'
+import { FONT_MONO as MONO } from '../config/typography'
 import './ExecutiveSummary.css'
-
-const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
-
-const STATUS_PIPELINE = ['Early exploration', 'Risk reduction phase', 'Learning investment', 'Actively delivering ROI', 'Scaling or improving ROI']
+import './ExecutiveSummaryDark.css'
 
 function getStatusStageColors(isDark) {
   return isDark
@@ -70,10 +76,8 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
   const prevWeeks = apexData.weeklyTotals.slice(Math.max(0, idx - 1) * weeksPerMonth, idx * weeksPerMonth)
   const monthInsertions = currentWeeks.reduce((sum, w) => sum + w.components, 0)
   const prevInsertions = prevWeeks.reduce((sum, w) => sum + w.components, 0)
-  const estimatedLocalInstances = (currentMonth.simple * 3) + (currentMonth.medium * 5) + (currentMonth.complex * 8) + (currentMonth.custom * 10)
-  const reuseRate = Math.round((monthInsertions / (monthInsertions + estimatedLocalInstances)) * 100)
-  const prevLocalInstances = (prevMonth.simple * 3) + (prevMonth.medium * 5) + (prevMonth.complex * 8) + (prevMonth.custom * 10)
-  const reuseRatePrev = Math.round((prevInsertions / (prevInsertions + prevLocalInstances)) * 100)
+  const reuseRate = computeReuseRate(monthInsertions, currentMonth)
+  const reuseRatePrev = computeReuseRate(prevInsertions, prevMonth)
   const reuseMoM = reuseRate - reuseRatePrev
 
   const customFeaturesCount = countKeyProducts(projectComponents.components)
@@ -169,13 +173,12 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
         {/* ── A) Delivery pipeline & label adoption ───────────────────────────── */}
         <div
           ref={deliveryRef}
-          className={`bq-reveal${deliveryVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 40 }}
+          className={`bq-reveal${deliveryVisible ? ' visible' : ''} esd-section--pt40`}
         >
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow esd-eyebrow--flush">
                   {/* Source: roadmap.json + jiraLabelAdoption.json */}
                   Delivery &amp; Data Integrity
                 </div>
@@ -188,14 +191,9 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
             </div>
           </div>
 
-          <div style={{
-            background: 'var(--es-surface)',
-            borderRadius: 'var(--es-r)',
-            border: '1px solid var(--es-border-str)',
-            overflow: 'hidden',
-          }}>
+          <div className="esd-combined-shell">
             <div className="es-combined-section-block">
-              <div style={{ display: 'flex', overflow: 'hidden' }}>
+              <div className="esd-stats-flex">
                 {[
                   { num: shippedAnim,    caption: 'Shipped',      sub: MONTHS[idx],             cls: 'green' },
                   { num: newFeatAnim,    caption: 'To Do',        sub: 'Backlog items',         cls: 'blue' },
@@ -219,7 +217,7 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
                   >
                     <div className={`bq-stat-num ${s.cls}`}>{s.num}</div>
                     <div className="bq-stat-caption">{s.caption}</div>
-                    <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>{s.sub}</div>
+                    <div className="esd-stat-sub">{s.sub}</div>
                   </div>
                 ))}
               </div>
@@ -235,12 +233,11 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
         {blockerIntelligence.active.length > 0 && (
           <div
             ref={blockersRef}
-            className={`bq-reveal${blockersVisible ? ' visible' : ''}`}
-            style={{ paddingTop: 52 }}
+            className={`bq-reveal${blockersVisible ? ' visible' : ''} esd-section--pt52`}
           >
             <div className="bq-section-top">
               <div>
-                <div className="es-eyebrow" style={{ marginBottom: 8 }}>
+                <div className="es-eyebrow esd-eyebrow--spaced">
                   {/* Source: roadmap.json blockerIntelligence */}
                   Active Blockers with Impact
                 </div>
@@ -248,7 +245,7 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div className="esd-stack--tight">
               {blockerIntelligence.active.map((b, i) => (
                 <div
                   key={i}
@@ -261,8 +258,8 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
                     padding: '16px 20px',
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--es-text-1)', lineHeight: 1.4 }}>{b.blocker}</div>
+                  <div className="esd-row-between" style={{ marginBottom: 8 }}>
+                    <div className="esd-blocker-title">{b.blocker}</div>
                     <span style={{
                       fontFamily: MONO, fontSize: 9, letterSpacing: '0.08em', textTransform: 'uppercase',
                       padding: '2px 8px', borderRadius: 12, flexShrink: 0, marginLeft: 12,
@@ -277,12 +274,12 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
                       {b.priority}
                     </span>
                   </div>
-                  <div style={{ fontFamily: MONO, fontSize: 10, color: 'var(--es-text-3)', marginBottom: 6, letterSpacing: '0.04em' }}>
+                  <div className="esd-blocker-meta">
                     Age: {b.ageInDays} days · Owner: {b.owner}
                   </div>
-                  <div style={{ fontSize: 12, color: 'var(--es-text-2)', lineHeight: 1.5 }}>
+                  <div className="esd-blocker-body">
                     Blocking: {b.affectedFeatures.join(', ')}
-                    <span style={{ color: 'var(--es-text-3)' }}> ({b.affectedProjects.join(', ')})</span>
+                    <span className="esd-blocker-muted"> ({b.affectedProjects.join(', ')})</span>
                   </div>
                 </div>
               ))}
@@ -293,13 +290,12 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
         {/* ── D) Initiative Status Pipeline ────────────────────────────────────── */}
         <div
           ref={pipelineRef}
-          className={`bq-reveal${pipelineVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 52 }}
+          className={`bq-reveal${pipelineVisible ? ' visible' : ''} esd-section--pt52`}
         >
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow esd-eyebrow--flush">
                   {/* Source: strategic.json */}
                   Initiative Status Pipeline
                 </div>
@@ -312,7 +308,7 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
           </div>
 
           {/* Stage headers */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 6, marginBottom: 6 }}>
+          <div className="esd-pipeline-labels">
             {STATUS_PIPELINE.map((stage, i) => (
               <div
                 key={stage}
@@ -335,51 +331,27 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
           </div>
 
           {/* Kanban columns */}
-          <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 6,
-            background: 'var(--es-border-str)',
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)', padding: 1,
-          }}>
+          <div className="esd-pipeline-grid">
             {STATUS_PIPELINE.map((stage, stageIdx) => {
               const stageItems = strategic.initiatives.filter(i => i.statusIndex === stageIdx)
               return (
                 <div
                   key={stage}
-                  className="bq-stagger-item"
-                  style={{
-                    background: 'var(--es-surface)',
-                    padding: 8,
-                    display: 'flex', flexDirection: 'column', gap: 6,
-                    minHeight: 80,
-                  }}
+                  className="bq-stagger-item esd-pipeline-col"
                 >
                   {stageItems.length === 0 ? (
-                    <div style={{
-                      height: 48,
-                      border: '1px dashed var(--es-border-str)',
-                      borderRadius: 'var(--es-r-sm)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}>
-                      <span style={{ fontFamily: MONO, fontSize: 9, color: 'var(--es-text-3)' }}>—</span>
+                    <div className="esd-pipeline-empty">
+                      <span className="esd-pipeline-empty-mark">—</span>
                     </div>
                   ) : stageItems.map(initiative => (
                     <div
                       key={initiative.name}
-                      style={{
-                        background: 'var(--es-surface-2)',
-                        border: '1px solid var(--es-border-str)',
-                        borderRadius: 'var(--es-r-sm)',
-                        padding: '10px 10px 8px',
-                        cursor: 'pointer',
-                        position: 'relative',
-                        transition: 'border-color 150ms ease, background 150ms ease',
-                      }}
+                      className="esd-init-card"
                     >
-                      <div style={{ fontSize: 12, fontWeight: 500, color: 'var(--es-text-1)', marginBottom: 2, lineHeight: 1.3 }}>
+                      <div className="esd-init-name">
                         {initiative.name}
                       </div>
-                      <div style={{ fontFamily: MONO, fontSize: 9, letterSpacing: '0.06em', color: 'var(--es-text-3)', textTransform: 'uppercase' }}>
+                      <div className="esd-init-type">
                         {initiative.shortType}
                       </div>
                     </div>
@@ -393,13 +365,12 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
         {/* ── E) Design System Adoption ────────────────────────────────────────── */}
         <div
           ref={apexRef}
-          className={`bq-reveal${apexVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 52 }}
+          className={`bq-reveal${apexVisible ? ' visible' : ''} esd-section--pt52`}
         >
           <div className="bq-section-top">
             <div>
               <div className="es-section-heading-row">
-                <div className="es-eyebrow" style={{ marginBottom: 0 }}>
+                <div className="es-eyebrow esd-eyebrow--flush">
                   {/* Source: projectComponents.json / apex.json */}
                   Design System Adoption
                 </div>
@@ -411,17 +382,11 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
             </div>
           </div>
 
-          <div style={{
-            display: 'flex',
-            background: 'var(--es-surface)',
-            borderRadius: 'var(--es-r)',
-            border: '1px solid var(--es-border-str)',
-            overflow: 'hidden',
-          }}>
-            <div className="bq-stat-item bq-stagger-item" style={{ borderRight: '1px dashed var(--es-border-str)' }}>
+          <div className="esd-stats-row">
+            <div className="bq-stat-item bq-stagger-item">
               <div className="bq-stat-num" style={{ color: reuseColor }}>{reuseAnim}%</div>
               <div className="bq-stat-caption">{labels.designSystemName} Reuse Rate</div>
-              <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>
+              <div className="esd-stat-sub">
                 {labels.uiFromPatterns}
               </div>
               <div style={{
@@ -434,7 +399,7 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
             <div className="bq-stat-item bq-stagger-item">
               <div className="bq-stat-num amber">{customFeatAnim}</div>
               <div className="bq-stat-caption">Custom Features Built</div>
-              <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>
+              <div className="esd-stat-sub">
                 Across {labels.portfolioProducts} this month
               </div>
             </div>
@@ -444,12 +409,11 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
         {/* ── F) Product Analytics ─────────────────────────────────────────────── */}
         <div
           ref={analyticsRef}
-          className={`bq-reveal${analyticsVisible ? ' visible' : ''}`}
-          style={{ paddingTop: 52, paddingBottom: 60 }}
+          className={`bq-reveal${analyticsVisible ? ' visible' : ''} esd-section--pt52-pb60`}
         >
           <div className="bq-section-top">
             <div>
-              <div className="es-eyebrow" style={{ marginBottom: 8 }}>
+              <div className="es-eyebrow esd-eyebrow--spaced">
                 {/* Source: analytics.json — replace with your analytics platform export */}
                 Analytics
               </div>
@@ -457,13 +421,7 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
             </div>
           </div>
 
-          <div style={{
-            display: 'flex',
-            background: 'var(--es-surface)',
-            borderRadius: 'var(--es-r)',
-            border: '1px solid var(--es-border-str)',
-            overflow: 'hidden',
-          }}>
+          <div className="esd-stats-row">
             {[
               { num: `${Math.round(taskCompletionAnim)}%`, caption: 'Task Completion', sub: MONTHS[idx], cls: analyticsMonth.taskCompletionRate >= 70 ? 'green' : 'amber' },
               { num: `${analyticsErrorAnim.toFixed(1)}%`, caption: 'Error Rate', sub: 'Critical flows', cls: analyticsMonth.errorRate <= 8 ? 'green' : 'red' },
@@ -473,11 +431,10 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
               <div
                 key={s.caption}
                 className="bq-stat-item bq-stagger-item"
-                style={{ borderRight: i < arr.length - 1 ? '1px dashed var(--es-border-str)' : 'none' }}
               >
                 <div className={`bq-stat-num ${s.cls}`}>{s.num}</div>
                 <div className="bq-stat-caption">{s.caption}</div>
-                <div style={{ fontSize: 11, color: 'var(--es-text-3)', marginTop: 3 }}>{s.sub}</div>
+                <div className="esd-stat-sub">{s.sub}</div>
               </div>
             ))}
           </div>

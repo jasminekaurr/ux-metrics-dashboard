@@ -1,6 +1,8 @@
 /**
- * Backward-compatible exports for legacy imports.
- * New code should use useDashboardData() from context/DataContext.jsx.
+ * dummy.js — backward-compatible named exports of sample data.
+ *
+ * Re-exports keys from sample/index.js for legacy imports. Prefer
+ * useDashboardData() from context/DataContext.jsx in new code.
  */
 import sample from './sample/index.js'
 

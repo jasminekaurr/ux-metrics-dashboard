@@ -1,3 +1,9 @@
+/**
+ * MonthRangePicker.jsx — expandable month / range selector.
+ *
+ * Lets users pick a single month or a contiguous range via presets and a
+ * calendar grid. Related: utils/monthLabels.js, components/Nav.jsx.
+ */
 import { useMemo, useState } from 'react'
 import { buildMonthPresets, getCalendarYear, getLatestMonthIndex } from '../utils/monthLabels'
 import './MonthRangePicker.css'

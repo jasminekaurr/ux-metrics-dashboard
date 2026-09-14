@@ -1,3 +1,9 @@
+/**
+ * SectionHelp.jsx — portal tooltip for section explanations.
+ *
+ * Renders an accessible help trigger and positions a floating tip near the
+ * control. Used by dashboard page section headers.
+ */
 import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 

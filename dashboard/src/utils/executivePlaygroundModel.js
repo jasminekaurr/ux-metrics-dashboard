@@ -1,3 +1,24 @@
+/**
+ * executivePlaygroundModel.js — data model for the executive playground.
+ *
+ * Builds entity definitions, connection metrics, and persisted layout positions
+ * for ExecutiveSummaryPlayground. Related: components/ExecutiveSummaryPlayground.jsx.
+ *
+ * What this module computes (no React — pure data for the sandbox UI):
+ *   - Entity graph: products, standalone projects, and UX labels as draggable pieces
+ *   - Evidence join: roadmap feature tickets ∪ ALL_TICKETS labels → shared “records”
+ *   - Compatibility: a product/project may connect to a UX label only when they share
+ *     at least one ticket (prefix match for products; label membership for UX labels)
+ *   - Connection strength: emerging / established / strong from shared ticket counts
+ *   - Ticket summaries: progress, blockers, APEX status, escalation flags per record
+ *   - Piece overview/severity: avg progress + escalation-driven severity chips
+ *   - Pipeline metrics: shipped / todo / in-progress / review / hold for a selected piece
+ *   - Layout: default % positions, lane clamps, and localStorage-persisted drag state
+ *
+ * Entry point for the playground: buildPlaygroundContext(roadmap) returns the helpers
+ * and entity lists the UI binds to. Layout helpers (getDefaultPositions, etc.) are
+ * separate so positions can be restored without rebuilding evidence maps.
+ */
 import { labels } from '../config/orgLabels'
 import {
   ALL_TICKETS,
@@ -22,6 +43,7 @@ const STANDALONE_PROJECTS = [
   { name: 'Reels Remix', prefix: 'REEL', color: '#7c3aed', detail: 'Creator collaboration initiative' },
 ]
 
+/** Product + project + UX-label piece definitions shown on the playground canvas. */
 export function buildEntityDefinitions() {
   const products = PRODUCT_NAMES.map((name, index) => ({
     id: `product-${name.toLowerCase().replace(/\s+/g, '-')}`,
@@ -86,10 +108,15 @@ const APEX_BY_TICKET = {
   'CRE-101': { status: 'custom', detail: `Custom ${labels.aiLayer} interface reported` },
 }
 
+/**
+ * Join roadmap + label tickets into the interactive playground model.
+ * Returns entity lists plus query helpers (evidenceFor, areCompatible, getPipeline, …).
+ */
 export function buildPlaygroundContext(roadmap) {
   const entityDefinitions = buildEntityDefinitions()
   const prefixByEntity = buildPrefixByEntity(entityDefinitions)
 
+  // Union of roadmap ticket keys and ALL_TICKETS, keyed by ticket id.
   const evidenceByKey = new Map()
 
   for (const feature of roadmap.features) {
@@ -298,10 +325,12 @@ export function buildPlaygroundContext(roadmap) {
   }
 }
 
+// Layout uses % of canvas height; products/projects on the left, UX labels on the right.
 const LANE_TOP_PCT = 11
 const LANE_BOTTOM_PCT = 4
 const ENTITY_COLUMNS = 2
 
+/** Slot heights and max Y for clamping dragged pieces within their lanes. */
 export function getLayoutMetrics(entityDefinitions) {
   const entities = entityDefinitions.filter(entity => entity.type !== 'label')
   const labels = entityDefinitions.filter(entity => entity.type === 'label')

@@ -1,32 +1,21 @@
+/**
+ * StrategicDark.jsx — strategic design contribution matrix (/strategic).
+ *
+ * Plots contribution cards on impact × maturity quadrants; demo filters to a
+ * subset of cards. Related: data/sample/strategic.json.
+ */
 import { useState } from 'react'
 import { useDashboardData } from '../context/DataContext'
 import { useTheme } from '../context/ThemeContext'
+import {
+  QUADRANTS,
+  DETAIL_FIELDS,
+  VISIBLE_IDS,
+  quadrantOf,
+} from '../config/strategicQuadrants'
+import { FONT_MONO as MONO } from '../config/typography'
 import './ExecutiveSummary.css'
-
-const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
-
-const QUADRANTS = {
-  Blocker:      { icon: '🚧', color: '#a78bfa', textLight: '#6d28d9' },
-  Enhancement:  { icon: '✨', color: '#0dc2d6', textLight: '#0e7490' },
-  Opportunity:  { icon: '🌱', color: '#34d058', textLight: '#15803d' },
-  Optimization: { icon: '⚡', color: '#ff4d4d', textLight: '#dc2626' },
-}
-
-// Position on the matrix determines the type: x = maturity, y = impact.
-function quadrantOf(x, y) {
-  if (y >= 50) return x < 50 ? 'Blocker' : 'Enhancement'
-  return x < 50 ? 'Opportunity' : 'Optimization'
-}
-
-const DETAIL_FIELDS = [
-  ['Problem', 'problem'],
-  ['Evidence', 'evidence'],
-  ['Recommendation', 'recommendation'],
-  ['Outcome', 'outcome'],
-]
-
-// Demo shows three contributions — one each from Blocker, Enhancement, Optimization.
-const VISIBLE_IDS = ['reels-bulk-trim', 'spark-confidence-labels', 'creator-studio-groupings']
+import './StrategicDark.css'
 
 export default function StrategicDark() {
   const { strategicContributions } = useDashboardData()
@@ -63,22 +52,14 @@ export default function StrategicDark() {
       </div>
 
       <div className="es-content">
-        <div style={{ paddingTop: 40, paddingBottom: 60 }}>
+        <div className="sd-matrix-wrap">
           {/* ── Impact × Maturity matrix ── */}
-          <div style={{
-            position: 'relative',
-            width: '100%',
-            height: 620,
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)',
-            background: 'var(--es-surface)',
-            padding: '48px 56px 44px 60px',
-          }}>
+          <div className="sd-matrix">
             {/* Plot area */}
-            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+            <div className="sd-matrix-inner">
               {/* Axis cross */}
-              <div style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: 1, background: 'var(--es-border-str)' }} />
-              <div style={{ position: 'absolute', top: '50%', left: 0, right: 0, height: 1, background: 'var(--es-border-str)' }} />
+              <div className="sd-axis-v" />
+              <div className="sd-axis-h" />
 
               {/* Quadrant labels (top-left of each quadrant) */}
               {[
@@ -98,24 +79,16 @@ export default function StrategicDark() {
                     textTransform: 'uppercase', color: labelColor, opacity: isLight ? 0.85 : 0.5,
                     pointerEvents: 'none', whiteSpace: 'nowrap',
                   }}>
-                    <span style={{ fontSize: 18 }}>{meta.icon}</span>{q.type}
+                    <span className="sd-quad-icon">{meta.icon}</span>{q.type}
                   </div>
                 )
               })}
 
               {/* Axis captions */}
-              <div style={{
-                position: 'absolute', top: -34, left: '50%', transform: 'translateX(-50%)',
-                fontFamily: MONO, fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase',
-                color: 'var(--es-text-3)', whiteSpace: 'nowrap',
-              }}>
+              <div className="sd-axis-caption sd-axis-caption--impact">
                 Business Impact
               </div>
-              <div style={{
-                position: 'absolute', top: '50%', right: -46, transform: 'translateY(calc(-50% - 16px))',
-                fontFamily: MONO, fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase',
-                color: 'var(--es-text-3)', whiteSpace: 'nowrap',
-              }}>
+              <div className="sd-axis-caption sd-axis-caption--maturity">
                 Product Maturity
               </div>
 
@@ -158,16 +131,10 @@ export default function StrategicDark() {
                       zIndex: active ? 3 : 2,
                     }}
                   >
-                    <span style={{
-                      fontFamily: MONO, fontSize: 8.5, fontWeight: 600, letterSpacing: '0.14em',
-                      textTransform: 'uppercase', color: typeColor,
-                    }}>
+                    <span className="sd-card-type" style={{ color: typeColor }}>
                       {type}
                     </span>
-                    <span style={{
-                      fontFamily: MONO, fontSize: 12.5, fontWeight: 500,
-                      color: 'var(--es-text-1)', lineHeight: 1.3,
-                    }}>
+                    <span className="sd-card-title">
                       {card.title}
                     </span>
                   </button>
@@ -219,56 +186,40 @@ export default function StrategicDark() {
                 }}>
                   <span style={{ fontSize: 13 }}>{panelMeta.icon}</span>{panelType}
                 </div>
-                <div style={{ fontSize: 20, fontWeight: 300, color: 'var(--es-text-1)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                <div className="sd-drawer-title">
                   {panelCard.title}
                 </div>
               </div>
               <button
                 onClick={() => setSelectedId(null)}
-                style={{
-                  background: 'rgba(255,255,255,0.04)', border: '1px solid var(--es-border-str)',
-                  color: 'var(--es-text-3)', cursor: 'pointer', fontFamily: MONO, fontSize: 11,
-                  width: 30, height: 30, borderRadius: 'var(--es-r-sm)', flexShrink: 0,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                }}
+                className="sd-drawer-close"
               >
                 ✕
               </button>
             </div>
 
-            <div style={{ flex: 1, overflowY: 'auto', padding: '18px 22px 28px' }}>
+            <div className="sd-drawer-body">
               {DETAIL_FIELDS.map(([label, key]) => (
-                <div key={key} style={{ marginBottom: 18 }}>
-                  <div style={{
-                    fontFamily: MONO, fontSize: 9, letterSpacing: '0.12em', textTransform: 'uppercase',
-                    color: 'var(--es-text-3)', marginBottom: 6,
-                  }}>
+                <div key={key} className="sd-field">
+                  <div className="sd-field-label">
                     {label}
                   </div>
-                  <p style={{ fontSize: 13, color: 'var(--es-text-2)', lineHeight: 1.6, margin: 0 }}>
+                  <p className="sd-field-body">
                     {panelCard[key]}
                   </p>
                 </div>
               ))}
 
-              <div style={{
-                fontFamily: MONO, fontSize: 9, letterSpacing: '0.12em', textTransform: 'uppercase',
-                color: 'var(--es-text-3)', marginBottom: 8,
-              }}>
+              <div className="sd-field-label" style={{ marginBottom: 8 }}>
                 Metrics
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+              <div className="sd-metrics-grid">
                 {panelCard.metrics.map((m, i) => (
-                  <div key={i} style={{
-                    padding: '12px 12px 10px',
-                    background: 'var(--es-surface-2)',
-                    border: '1px solid var(--es-border-str)',
-                    borderRadius: 'var(--es-r-sm)',
-                  }}>
-                    <div style={{ fontFamily: MONO, fontSize: 18, fontWeight: 300, color: 'var(--es-text-1)', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+                  <div key={i} className="sd-metric-tile">
+                    <div className="sd-metric-value">
                       {m.value}
                     </div>
-                    <div style={{ fontSize: 10, color: 'var(--es-text-3)', marginTop: 5, lineHeight: 1.35 }}>
+                    <div className="sd-metric-label">
                       {m.label}
                     </div>
                   </div>

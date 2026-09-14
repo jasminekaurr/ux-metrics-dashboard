@@ -1,3 +1,9 @@
+/**
+ * ThemeContext.jsx — light/dark theme provider.
+ *
+ * Persists theme in localStorage and sets data-theme on <html>; respects
+ * prefers-color-scheme until the user chooses explicitly.
+ */
 import { createContext, useContext, useState, useEffect } from 'react'
 
 const ThemeContext = createContext()

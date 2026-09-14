@@ -1,3 +1,9 @@
+/**
+ * ExecutiveSummaryPlayground.jsx — interactive executive sandbox.
+ *
+ * Drag-and-drop entity graph for exploring pipeline metrics, connections, and
+ * comparisons on the executive summary. Related: utils/executivePlaygroundModel.js.
+ */
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useDashboardData } from '../context/DataContext'
 import { labels } from '../config/orgLabels'

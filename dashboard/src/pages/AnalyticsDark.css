@@ -1,0 +1,205 @@
+/*
+ * AnalyticsDark.css — layout extracted from AnalyticsDark.jsx
+ * Delta colors, funnel fill widths/colors, insight severity borders stay inline.
+ */
+
+/* Section spacing */
+.an-section--pt40 { padding-top: 40px; }
+.an-section--pt52 { padding-top: 52px; }
+.an-section--pt52-pb60 { padding-top: 52px; padding-bottom: 60px; }
+.an-eyebrow--flush { margin-bottom: 0; }
+.an-eyebrow--spaced { margin-bottom: 8px; }
+
+/* Stats row shell */
+.an-stats-row {
+  display: flex;
+  background: var(--es-surface);
+  border-radius: var(--es-r);
+  border: 1px solid var(--es-border-str);
+  overflow: hidden;
+}
+.an-stats-row > .bq-stat-item:not(:last-child),
+.an-stats-row > *:not(:last-child).bq-stat-item {
+  border-right: 1px dashed var(--es-border-str);
+}
+.an-stat-sub {
+  font-size: 11px;
+  color: var(--es-text-3);
+  margin-top: 3px;
+}
+
+/* Card / stack shells */
+.an-card-shell {
+  background: var(--es-surface);
+  border: 1px solid var(--es-border-str);
+  border-radius: var(--es-r);
+  overflow: hidden;
+}
+.an-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.an-stack--tight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.an-mono-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--es-text-3);
+}
+.an-mono-label--mb10 {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--es-text-3);
+  margin-bottom: 10px;
+}
+.an-donut-wrap {
+  width: 240px;
+  height: 240px;
+  flex-shrink: 0;
+  position: relative;
+}
+.an-donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.an-row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.an-chip-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.an-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.an-metric-card {
+  background: var(--es-surface);
+  border: 1px solid var(--es-border-str);
+  border-radius: var(--es-r);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.an-metric-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.an-metric-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--es-text-1);
+  line-height: 1.45;
+}
+.an-metric-value {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--es-text-1);
+  flex-shrink: 0;
+}
+.an-metric-desc {
+  font-size: 12px;
+  color: var(--es-text-2);
+  line-height: 1.65;
+}
+.an-funnel-shell {
+  background: var(--es-surface);
+  border: 1px solid var(--es-border-str);
+  border-radius: var(--es-r);
+  overflow: hidden;
+}
+.an-funnel-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 20px;
+}
+.an-funnel-row + .an-funnel-row {
+  border-top: 1px solid var(--es-border);
+}
+.an-funnel-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--es-text-1);
+}
+.an-funnel-track {
+  height: 8px;
+  background: var(--es-surface-2);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.an-funnel-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--es-text-3);
+  text-align: right;
+  min-width: 88px;
+}
+.an-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.an-page-card {
+  background: var(--es-surface);
+  border: 1px solid var(--es-border-str);
+  border-radius: var(--es-r);
+  padding: 18px 20px;
+}
+.an-page-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.an-page-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--es-text-1);
+}
+.an-page-meta {
+  display: flex;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--es-text-3);
+}
+.an-insight-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--es-text-1);
+  margin-bottom: 6px;
+}
+.an-insight-body {
+  font-size: 12px;
+  color: var(--es-text-2);
+  line-height: 1.65;
+}
+.an-adoption-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.an-muted { color: var(--es-text-3); }

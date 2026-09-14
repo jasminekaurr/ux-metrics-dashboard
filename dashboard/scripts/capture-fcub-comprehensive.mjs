@@ -1,3 +1,7 @@
+/**
+ * Capture broader FCUB/Jira component metrics → src/data/fcubComprehensive.json.
+ * Needs JIRA_* env. Run via node scripts/capture-fcub-comprehensive.mjs
+ */
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'

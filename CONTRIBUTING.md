@@ -12,6 +12,7 @@ npm run dev
 
 ## Data changes
 
+- Search for `@CUSTOMIZE` in the repo to find adopter-facing edit points (see root README).
 - Default demo data lives in `dashboard/src/data/sample/*.json`.
 - Month **labels** in the nav are generated at runtime (rolling window ending at the current month); `months.json` controls how many slots exist.
 - Regenerate downloadable snapshots with `npm run export:snapshot`.

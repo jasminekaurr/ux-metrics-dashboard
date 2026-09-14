@@ -1,3 +1,9 @@
+/**
+ * monthLabels.js — rolling month labels and picker presets.
+ *
+ * Builds short month strings, latest index, calendar year, and Nav presets.
+ * Related: components/MonthRangePicker.jsx, data/providerCore.js.
+ */
 const MONTH_FORMAT = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' })
 
 /** Rolling month labels ending at the reference date (index 0 = oldest). */

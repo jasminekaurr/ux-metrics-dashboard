@@ -1,8 +1,14 @@
+/**
+ * PresentationDark.jsx — full-bleed presentation slides (standalone).
+ *
+ * Slide-style narrative layouts using org labels; not wired into the main
+ * HashRouter by default. Related: config/orgLabels.js.
+ */
 import { useTheme } from '../context/ThemeContext'
-import './ExecutiveSummary.css'
 import { labels } from '../config/orgLabels'
-
-const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
+import { FONT_MONO as MONO } from '../config/typography'
+import './ExecutiveSummary.css'
+import './PresentationDark.css'
 
 export default function PresentationDark() {
   const { theme } = useTheme()
@@ -13,114 +19,50 @@ export default function PresentationDark() {
     : 'linear-gradient(135deg, rgba(22,163,74,0.12) 0%, rgba(37,99,235,0.12) 100%)'
 
   return (
-    <div className="es-page" style={{ padding: 0 }}>
+    <div className="es-page pres-page">
 
       {/* ── Slide 1: Title ───────────────────────────────────────────────── */}
-      <section style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '80px 60px',
-        background: 'var(--es-bg)',
-      }}>
-        <div style={{ maxWidth: 1200, width: '100%', textAlign: 'center' }}>
-          <div style={{
-            fontFamily: MONO,
-            fontSize: 11,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'var(--es-green)',
-            marginBottom: 32,
-          }}>
+      <section className="pres-slide pres-slide--center">
+        <div className="pres-inner pres-inner--center">
+          <div className="pres-eyebrow pres-eyebrow--hero">
             UX METRICS DASHBOARD
           </div>
 
-          <h1 style={{
-            fontSize: 72,
-            fontWeight: 300,
-            color: 'var(--es-text-1)',
-            lineHeight: 1.1,
-            marginBottom: 48,
-            letterSpacing: '-0.02em',
-          }}>
+          <h1 className="pres-h1">
             Measuring what matters
           </h1>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 60 }}>
+          <div className="pres-tag-row">
             {['DESIGN SYSTEM', 'UX RESEARCH', 'PRODUCT ANALYSIS', 'DELIVERY AND ROADMAP', 'STRATEGIC CONTRIBUTION'].map(tag => (
-              <span key={tag} style={{
-                padding: '8px 16px',
-                background: 'transparent',
-                border: '1px solid var(--es-blue)',
-                borderRadius: 'var(--es-r-sm)',
-                fontFamily: MONO,
-                fontSize: 10,
-                letterSpacing: '0.08em',
-                color: 'var(--es-blue)',
-              }}>
+              <span key={tag} className="pres-tag">
                 {tag}
               </span>
             ))}
           </div>
 
-          <div style={{
-            fontFamily: MONO,
-            fontSize: 11,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            color: 'var(--es-green)',
-          }}>
+          <div className="pres-eyebrow pres-eyebrow--footer">
             UX METRICS DASHBOARD · OPEN SOURCE DEMO
           </div>
         </div>
       </section>
 
       {/* ── Slide 2: What is it? ─────────────────────────────────────────── */}
-      <section style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '80px 60px',
-        background: 'var(--es-bg)',
-        borderTop: '1px solid var(--es-border-str)',
-      }}>
-        <div style={{ maxWidth: 1200, width: '100%', margin: '0 auto' }}>
-          <div style={{
-            fontFamily: MONO,
-            fontSize: 11,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'var(--es-green)',
-            marginBottom: 16,
-          }}>
+      <section className="pres-slide pres-slide--border">
+        <div className="pres-inner">
+          <div className="pres-eyebrow">
             WHAT IS IT?
           </div>
 
-          <h2 style={{
-            fontSize: 48,
-            fontWeight: 300,
-            color: 'var(--es-text-1)',
-            lineHeight: 1.2,
-            marginBottom: 16,
-            letterSpacing: '-0.01em',
-          }}>
+          <h2 className="pres-h2 pres-h2--tight">
             A live UX impact dashboard
           </h2>
 
-          <p style={{
-            fontSize: 16,
-            color: 'var(--es-text-3)',
-            marginBottom: 48,
-            lineHeight: 1.6,
-          }}>
+          <p className="pres-lede">
             UX Metrics Dashboard providing leadership a clear, monthly view of design impact and performance
           </p>
 
           {/* Feature Cards Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 48 }}>
+          <div className="pres-feature-grid">
             {[
               { icon: '◻', label: 'Design system health' },
               { icon: '◎', label: 'Research impact' },
@@ -129,28 +71,11 @@ export default function PresentationDark() {
               { icon: '◈', label: 'Strategic contribution' },
               { icon: '◉', label: 'Executive summary' },
             ].map((item, i) => (
-              <div key={i} style={{
-                background: 'var(--es-surface)',
-                border: '1px solid var(--es-border-str)',
-                borderRadius: 'var(--es-r)',
-                padding: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 16,
-              }}>
-                <div style={{
-                  fontFamily: MONO,
-                  fontSize: 24,
-                  color: 'var(--es-green)',
-                  lineHeight: 1,
-                }}>
+              <div key={i} className="pres-feature-card">
+                <div className="pres-feature-icon">
                   {item.icon}
                 </div>
-                <div style={{
-                  fontSize: 15,
-                  color: 'var(--es-text-1)',
-                  fontWeight: 400,
-                }}>
+                <div className="pres-feature-label">
                   {item.label}
                 </div>
               </div>
@@ -158,49 +83,21 @@ export default function PresentationDark() {
           </div>
 
           {/* Who is it for? */}
-          <div style={{
-            background: 'var(--es-surface)',
-            border: '1px solid var(--es-border-str)',
-            borderRadius: 'var(--es-r)',
-            padding: '28px 32px',
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-              <div style={{
-                fontFamily: MONO,
-                fontSize: 18,
-                color: 'var(--es-green)',
-                lineHeight: 1,
-              }}>
+          <div className="pres-panel">
+            <div className="pres-panel-head">
+              <div className="pres-panel-icon">
                 ◎
               </div>
-              <div style={{
-                fontSize: 16,
-                fontWeight: 500,
-                color: 'var(--es-text-1)',
-              }}>
+              <div className="pres-panel-title">
                 Who is it for?
               </div>
             </div>
-            <p style={{
-              fontSize: 14,
-              color: 'var(--es-text-2)',
-              marginBottom: 16,
-              lineHeight: 1.6,
-            }}>
+            <p className="pres-panel-body">
               Built by the UX team, for everyone who needs to understand and act on UX contribution.
             </p>
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            <div className="pres-chip-row">
               {['UX LEADERS', 'PRODUCT MANAGERS', 'ENGINEERING LEADS', 'EXECUTIVES', 'DESIGN TEAM'].map(tag => (
-                <span key={tag} style={{
-                  padding: '6px 14px',
-                  background: 'transparent',
-                  border: '1px solid var(--es-blue)',
-                  borderRadius: 'var(--es-r-sm)',
-                  fontFamily: MONO,
-                  fontSize: 9,
-                  letterSpacing: '0.08em',
-                  color: 'var(--es-blue)',
-                }}>
+                <span key={tag} className="pres-tag pres-tag--sm">
                   {tag}
                 </span>
               ))}
@@ -210,39 +107,17 @@ export default function PresentationDark() {
       </section>
 
       {/* ── Slide 3: The Problem ─────────────────────────────────────────── */}
-      <section style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '80px 60px',
-        background: 'var(--es-bg)',
-        borderTop: '1px solid var(--es-border-str)',
-      }}>
-        <div style={{ maxWidth: 1200, width: '100%', margin: '0 auto' }}>
-          <div style={{
-            fontFamily: MONO,
-            fontSize: 11,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'var(--es-green)',
-            marginBottom: 16,
-          }}>
+      <section className="pres-slide pres-slide--border">
+        <div className="pres-inner">
+          <div className="pres-eyebrow">
             THE PROBLEM
           </div>
 
-          <h2 style={{
-            fontSize: 48,
-            fontWeight: 300,
-            color: 'var(--es-text-1)',
-            lineHeight: 1.2,
-            marginBottom: 48,
-            letterSpacing: '-0.01em',
-          }}>
+          <h2 className="pres-h2">
             What are we trying to solve?
           </h2>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div className="pres-problem-stack">
             {[
               {
                 problem: 'UX value has been invisible',
@@ -265,35 +140,11 @@ export default function PresentationDark() {
                 detail: 'LACK OF VISIBILITY ON TEAM ALIGNMENT & TECHNICAL DEBT'
               }
             ].map((item, i) => (
-              <div key={i} style={{
-                background: 'var(--es-surface)',
-                border: '1px solid var(--es-border-str)',
-                borderRadius: 'var(--es-r)',
-                padding: '24px 28px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                gap: 24,
-              }}>
-                <div style={{
-                  fontSize: 16,
-                  color: 'var(--es-text-1)',
-                  fontWeight: 400,
-                  flex: 1,
-                }}>
+              <div key={i} className="pres-problem-row">
+                <div className="pres-problem-text">
                   {item.problem}
                 </div>
-                <div style={{
-                  padding: '6px 14px',
-                  background: 'transparent',
-                  border: '1px solid var(--es-blue)',
-                  borderRadius: 'var(--es-r-sm)',
-                  fontFamily: MONO,
-                  fontSize: 9,
-                  letterSpacing: '0.08em',
-                  color: 'var(--es-blue)',
-                  whiteSpace: 'nowrap',
-                }}>
+                <div className="pres-problem-tag">
                   {item.detail}
                 </div>
               </div>
@@ -303,79 +154,34 @@ export default function PresentationDark() {
       </section>
 
       {/* ── Slide 4: How We Built It ─────────────────────────────────────── */}
-      <section style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '80px 60px',
-        background: 'var(--es-bg)',
-        borderTop: '1px solid var(--es-border-str)',
-      }}>
-        <div style={{ maxWidth: 1200, width: '100%', margin: '0 auto' }}>
-          <div style={{
-            fontFamily: MONO,
-            fontSize: 11,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'var(--es-green)',
-            marginBottom: 16,
-          }}>
+      <section className="pres-slide pres-slide--border">
+        <div className="pres-inner">
+          <div className="pres-eyebrow">
             HOW WE BUILT IT
           </div>
 
-          <h2 style={{
-            fontSize: 48,
-            fontWeight: 300,
-            color: 'var(--es-text-1)',
-            lineHeight: 1.2,
-            marginBottom: 48,
-            letterSpacing: '-0.01em',
-          }}>
+          <h2 className="pres-h2">
             Information flow
           </h2>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20, justifyContent: 'center', maxWidth: '100%', overflow: 'hidden' }}>
+          <div className="pres-flow">
             {/* Data Sources Column */}
-            <div style={{ flex: '0 0 220px', minWidth: 0 }}>
-              <div style={{
-                fontFamily: MONO,
-                fontSize: 9,
-                letterSpacing: '0.10em',
-                textTransform: 'uppercase',
-                color: 'var(--es-green)',
-                marginBottom: 16,
-              }}>
+            <div className="pres-flow-col pres-flow-col--src">
+              <div className="pres-flow-col-label">
                 Data sources
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <div className="pres-flow-stack">
                 {[
                   { icon: '◎', label: 'User input', color: 'var(--es-green)' },
                   { icon: '◷', label: 'Jira API', color: 'var(--es-blue)' },
                   { icon: '◻', label: 'Figma API', color: 'var(--es-amber)' },
                   { icon: '◬', label: 'Analytics API', color: 'var(--es-green)' },
                 ].map((source, i) => (
-                  <div key={i} style={{
-                    background: 'var(--es-surface)',
-                    border: '1px solid var(--es-border-str)',
-                    borderRadius: 'var(--es-r)',
-                    padding: '12px 14px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 10,
-                  }}>
-                    <div style={{
-                      fontFamily: MONO,
-                      fontSize: 16,
-                      color: source.color,
-                      lineHeight: 1,
-                    }}>
+                  <div key={i} className="pres-flow-card">
+                    <div className="pres-flow-card-icon" style={{ color: source.color }}>
                       {source.icon}
                     </div>
-                    <div style={{
-                      fontSize: 12,
-                      color: 'var(--es-text-1)',
-                    }}>
+                    <div className="pres-flow-card-label">
                       {source.label}
                     </div>
                   </div>
@@ -384,37 +190,19 @@ export default function PresentationDark() {
             </div>
 
             {/* Arrow */}
-            <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
-              <div style={{ fontSize: 28, color: 'var(--es-text-3)' }}>→</div>
-              <div style={{
-                fontFamily: MONO,
-                fontSize: 8,
-                letterSpacing: '0.08em',
-                color: 'var(--es-text-3)',
-              }}>
+            <div className="pres-flow-arrow">
+              <div className="pres-flow-arrow-glyph">→</div>
+              <div className="pres-flow-arrow-label">
                 Ingest
               </div>
             </div>
 
             {/* Processing Column */}
-            <div style={{ flex: '0 0 240px', minWidth: 0 }}>
-              <div style={{
-                fontFamily: MONO,
-                fontSize: 9,
-                letterSpacing: '0.10em',
-                textTransform: 'uppercase',
-                color: 'var(--es-green)',
-                marginBottom: 16,
-              }}>
+            <div className="pres-flow-col pres-flow-col--proc">
+              <div className="pres-flow-col-label">
                 Processing
               </div>
-              <div style={{
-                background: 'var(--es-surface)',
-                border: '1px solid var(--es-border-str)',
-                borderRadius: 'var(--es-r)',
-                padding: '24px 20px',
-                textAlign: 'center',
-              }}>
+              <div className="pres-proc-card">
                 <div style={{
                   fontSize: 10,
                   color: 'var(--es-text-3)',
@@ -450,28 +238,16 @@ export default function PresentationDark() {
             </div>
 
             {/* Arrow */}
-            <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
-              <div style={{ fontSize: 28, color: 'var(--es-text-3)' }}>→</div>
-              <div style={{
-                fontFamily: MONO,
-                fontSize: 8,
-                letterSpacing: '0.08em',
-                color: 'var(--es-text-3)',
-              }}>
+            <div className="pres-flow-arrow">
+              <div className="pres-flow-arrow-glyph">→</div>
+              <div className="pres-flow-arrow-label">
                 Output
               </div>
             </div>
 
             {/* Visualization Column */}
-            <div style={{ flex: '0 0 220px', minWidth: 0 }}>
-              <div style={{
-                fontFamily: MONO,
-                fontSize: 9,
-                letterSpacing: '0.10em',
-                textTransform: 'uppercase',
-                color: 'var(--es-green)',
-                marginBottom: 16,
-              }}>
+            <div className="pres-flow-col pres-flow-col--src">
+              <div className="pres-flow-col-label">
                 Visualization
               </div>
               <div style={{
@@ -508,44 +284,17 @@ export default function PresentationDark() {
       </section>
 
       {/* ── Slide 5: Roadmap ─────────────────────────────────────────────── */}
-      <section style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '80px 60px',
-        background: 'var(--es-bg)',
-        borderTop: '1px solid var(--es-border-str)',
-      }}>
-        <div style={{ maxWidth: 1200, width: '100%', margin: '0 auto' }}>
-          <div style={{
-            fontFamily: MONO,
-            fontSize: 11,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'var(--es-green)',
-            marginBottom: 16,
-          }}>
+      <section className="pres-slide pres-slide--border">
+        <div className="pres-inner">
+          <div className="pres-eyebrow">
             ROADMAP
           </div>
 
-          <h2 style={{
-            fontSize: 48,
-            fontWeight: 300,
-            color: 'var(--es-text-1)',
-            lineHeight: 1.2,
-            marginBottom: 16,
-            letterSpacing: '-0.01em',
-          }}>
+          <h2 className="pres-h2 pres-h2--tight">
             Next steps
           </h2>
 
-          <p style={{
-            fontSize: 16,
-            color: 'var(--es-text-3)',
-            marginBottom: 48,
-            lineHeight: 1.6,
-          }}>
+          <p className="pres-lede">
             The aim is to fully automate the dashboard with live data, gap analysis and recommendations.
           </p>
 

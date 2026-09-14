@@ -1,3 +1,9 @@
+/**
+ * PlaygroundIcons.jsx — small SVG icons for the executive playground.
+ *
+ * Shared stroke-based icons (close, history, tags, etc.) used by
+ * ExecutiveSummaryPlayground. Related: components/ExecutiveSummaryPlayground.jsx.
+ */
 const iconProps = { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true }
 
 export function IconX({ size = 19 }) {

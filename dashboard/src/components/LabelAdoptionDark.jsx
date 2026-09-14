@@ -1,14 +1,19 @@
+/**
+ * LabelAdoptionDark.jsx — dark-theme label adoption breakdown.
+ *
+ * Lists taxonomy labels with ticket sets from uxLabelTickets for the dark UI.
+ * Related: data/uxLabelTickets.js, components/LabelAdoptionVennDark.jsx.
+ */
 import { useState } from 'react'
 import { useTheme } from '../context/ThemeContext'
 import '../pages/ExecutiveSummary.css'
+import { FONT_MONO as MONO } from '../config/typography'
 import {
   ALL_TICKETS,
   LABEL_DEFINITIONS,
   UX_LABELS,
   VENN_COLORS,
 } from '../data/uxLabelTickets'
-
-const MONO = '"Gt America Mono", ui-monospace, Consolas, monospace'
 
 const LABELS = LABEL_DEFINITIONS.map(({ key, color, desc }) => ({
   key,
