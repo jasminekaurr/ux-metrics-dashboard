@@ -163,7 +163,7 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
               { num: participantsAnim, caption: 'Total Participants', sub: 'Across all studies',   cls: 'green' },
               { num: issuesCaughtAnim, caption: 'Issues Caught',      sub: 'Before development',   cls: 'amber' },
               { num: activePanelsAnim, caption: 'Advisory Panels',    sub: 'Same-week validation', cls: 'blue' },
-            ].map((s, i) => (
+            ].map((s) => (
               <div
                 key={s.caption}
                 className="bq-stats-cell bq-stat-item bq-stagger-item"

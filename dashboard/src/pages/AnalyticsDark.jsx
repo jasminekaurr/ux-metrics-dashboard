@@ -155,7 +155,7 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
           </div>
 
           <div className="an-stats-row">
-            {overviewStats.map((s, i) => (
+            {overviewStats.map((s) => (
               <div
                 key={s.caption}
                 className="bq-stat-item bq-stagger-item"
@@ -224,7 +224,7 @@ export default function AnalyticsDark({ selectedMonthIndex }) {
             </div>
           </div>
           <div className="an-funnel-shell">
-            {primaryFunnel.steps.map((step, i) => (
+            {primaryFunnel.steps.map((step) => (
               <div key={step.name} className="an-funnel-row">
                 <div className="an-funnel-name">{step.name}</div>
                 <div className="an-funnel-track">

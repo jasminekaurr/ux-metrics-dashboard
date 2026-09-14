@@ -427,7 +427,7 @@ export default function ExecutiveSummaryDark({ selectedMonthIndex }) {
               { num: `${analyticsErrorAnim.toFixed(1)}%`, caption: 'Error Rate', sub: 'Critical flows', cls: analyticsMonth.errorRate <= 8 ? 'green' : 'red' },
               { num: Math.round(susScoreAnim), caption: 'SUS Score', sub: 'Live baseline', cls: analyticsMonth.susScore >= 68 ? 'green' : 'amber' },
               { num: Math.round(npsAnim), caption: 'NPS', sub: 'Product sentiment', cls: 'blue' },
-            ].map((s, i, arr) => (
+            ].map((s) => (
               <div
                 key={s.caption}
                 className="bq-stat-item bq-stagger-item"
