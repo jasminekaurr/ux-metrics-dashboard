@@ -143,7 +143,7 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
         {/* ── Stats row ─────────────────────────────────────────────────────── */}
         <div
           ref={statsRef}
-          className={`bq-reveal${statsVisible ? ' visible' : ''} bq-section-pad-top`}
+          className={`bq-reveal${statsVisible ? ' visible' : ''} rd-section--pt40`}
         >
           <div className="bq-section-top">
             <div>
@@ -157,7 +157,7 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
             </div>
           </div>
 
-          <div className="bq-stats-strip">
+          <div className="rd-stats-row">
             {[
               { num: totalStudiesAnim, caption: 'Active Studies',    sub: 'This quarter',         cls: '' },
               { num: participantsAnim, caption: 'Total Participants', sub: 'Across all studies',   cls: 'green' },
@@ -166,7 +166,7 @@ export default function ResearchDark({ selectedMonthIndex: _selectedMonthIndex }
             ].map((s) => (
               <div
                 key={s.caption}
-                className="bq-stats-cell bq-stat-item bq-stagger-item"
+                className="bq-stat-item bq-stagger-item"
               >
                 <div className={`bq-stat-num ${s.cls}`}>{s.num}</div>
                 <div className="bq-stat-caption">{s.caption}</div>
