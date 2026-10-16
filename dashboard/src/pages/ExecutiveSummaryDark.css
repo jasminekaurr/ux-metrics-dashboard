@@ -174,3 +174,11 @@
   color: var(--es-text-3);
   text-transform: uppercase;
 }
+
+
+@media (max-width: 700px) {
+ .esd-stats-row, .esd-stats-flex { flex-wrap: wrap; }
+ .esd-stats-row > .bq-stat-item { flex: 1 1 50%; }
+ .esd-pipeline-grid, .esd-pipeline-labels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .esd-pipeline-col { min-width: 0; }
+}

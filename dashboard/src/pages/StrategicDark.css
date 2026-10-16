@@ -222,3 +222,15 @@
   margin-top: 5px;
   line-height: 1.35;
 }
+
+
+/* Absolute quadrant positions become a tappable list on phones. */
+@media (max-width: 700px) {
+ .sd-matrix-wrap { padding: 24px 0 48px; }
+ .sd-matrix { height: auto; padding: 14px; overflow: visible; }
+ .sd-matrix-inner { display: grid; gap: 12px; height: auto; }
+ .sd-matrix-inner > button { position: static !important; width: 100% !important; transform: none !important; min-height: 72px; }
+ .sd-axis-v, .sd-axis-h, .sd-axis-caption { display: none; }
+ .sd-matrix-inner > div:not(.sd-axis-v):not(.sd-axis-h):not(.sd-axis-caption) { display: none !important; }
+ .sd-drawer-close { min-width: 44px; min-height: 44px; }
+}

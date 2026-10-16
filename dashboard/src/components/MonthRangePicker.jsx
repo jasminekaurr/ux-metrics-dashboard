@@ -32,6 +32,7 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
     setRangeStart(null)
   }
 
+  // A single tap selects a month; two taps select the inclusive range.
   const handleClearRange = () => {
     setRangeStart(null)
     onChange([latestIdx, latestIdx])
@@ -72,7 +73,7 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
         className="month-range-display"
         onClick={() => setIsExpanded(!isExpanded)}
         aria-expanded={isExpanded}
-        aria-haspopup="dialog"
+        aria-controls="month-calendar"
       >
         <span className="range-text">{getDisplayText()}</span>
         <svg
@@ -88,7 +89,7 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
       </button>
 
       {isExpanded && (
-        <div className="month-calendar" role="dialog" aria-label="Select viewing period">
+        <div id="month-calendar" className="month-calendar" aria-label="Select viewing period">
           <div className="calendar-header">
             <span className="calendar-title">{calendarYear} months</span>
             {!isSingleMonth && (
@@ -130,8 +131,8 @@ export default function MonthRangePicker({ months, selectedRange, onChange }) {
           <div className="calendar-footer">
             <div className="instruction-text">
               {rangeStart === null
-                ? 'Click a month to select, or click two months for a range'
-                : 'Click another month to complete range'}
+                ? 'Tap a month to select, or tap two months for a range'
+                : 'Tap another month to complete range'}
             </div>
           </div>
         </div>

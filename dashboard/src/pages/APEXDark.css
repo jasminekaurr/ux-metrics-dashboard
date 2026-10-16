@@ -158,3 +158,12 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
+
+@media (max-width: 700px) {
+ .apex-stats-row { flex-wrap: wrap; }
+ .apex-stats-row > .bq-stat-item { flex: 1 1 50%; }
+ .apex-momentum-layout, .apex-integrity-layout { flex-direction: column; }
+ .apex-tab-col, .apex-chart-col { width: 100%; min-width: 0; }
+ .apex-donut-wrap { max-width: 100%; }
+}
