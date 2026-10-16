@@ -259,3 +259,12 @@
   cursor: pointer;
   transition: background 150ms ease, border-color 150ms ease;
 }
+
+
+@media (max-width: 700px) {
+ .rm-stats-row { flex-wrap: wrap; }
+ .rm-stats-row > .bq-stat-item { flex: 1 1 50%; }
+ .rm-projects-grid { grid-template-columns: 1fr; }
+ .rm-row-between, .rm-detail-head { flex-wrap: wrap; }
+ .rm-jira-btn { min-height: 44px; }
+}
