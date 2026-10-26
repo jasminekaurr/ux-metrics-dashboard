@@ -344,3 +344,16 @@
   letter-spacing: -0.05em;
   line-height: 1;
 }
+
+
+/* Research details and chart legend follow reading order on phones. */
+@media (max-width: 700px) {
+ .rd-stats-row { flex-wrap: wrap; }
+ .rd-stats-row > .bq-stat-item { flex: 1 1 50%; min-width: 0; }
+ .rd-rounds-grid, .rd-detail-cols, .rd-panel-stats { grid-template-columns: 1fr; }
+ .rd-donut-layout { flex-direction: column; align-items: center; gap: 20px; }
+ .rd-donut-wrap { width: min(240px, 100%); height: auto; aspect-ratio: 1; }
+ .rd-donut-legend { align-self: stretch; width: 100%; }
+ .rd-theme-header, .rd-row-between { flex-wrap: wrap; }
+ .rd-expand-btn { min-height: 44px; }
+}

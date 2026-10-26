@@ -10,6 +10,8 @@ Track UX impact across delivery health, research coverage, strategic contributio
 > - **Dashboard (visitors):** [jasminekaurr.github.io/ux-metrics-dashboard](https://jasminekaurr.github.io/ux-metrics-dashboard/) — the interactive app
 > - **Repository (developers):** [github.com/jasminekaurr/ux-metrics-dashboard](https://github.com/jasminekaurr/ux-metrics-dashboard) — source code and docs
 
+Mobile layout and touch interaction guidance: [docs/MOBILE-UI.md](docs/MOBILE-UI.md).
+
 ## Quick start
 
 ```bash

@@ -93,7 +93,7 @@ body {
 
 .app { display: flex; min-height: 100vh; }
 .main-content { flex: 1; min-width: 0; margin-left: var(--nav-width); padding: 40px 48px 80px; }
-@media (max-width: 900px) { .main-content { margin-left: 0; padding: 24px 20px 60px; } }
+@media (max-width: 900px) { .main-content { margin-left: 0; padding: 80px 20px 60px; } }
 
 .page { max-width: 1100px; }
 .page-header { margin-bottom: 32px; }
@@ -194,4 +194,13 @@ body {
 /* Theme transition */
 body, .sidenav, .main-content, .card, .metric-tile, .chart-box, .story-card {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Narrow screens keep every page within the viewport and preserve chart/table access. */
+@media (max-width: 600px) {
+  .main-content { padding: 72px 14px 48px; width: 100%; }
+  .page, .es-page, .es-content { min-width: 0; max-width: 100%; }
+  .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab-group { max-width: 100%; overflow-x: auto; }
+  button, a { touch-action: manipulation; }
 }

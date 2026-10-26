@@ -1457,3 +1457,24 @@
     margin: -24px -20px 0;
   }
 }
+
+
+/* Mobile shell and content spacing match the 56px top navigation. */
+@media (max-width: 900px) {
+ .es-page, .es-page.es-page--playground { margin-top: -80px; }
+ .es-header, .es-page.es-page--executive-summary .es-header { padding-top: 72px; }
+}
+@media (max-width: 600px) {
+ .es-page, .es-page.es-page--playground { margin: -72px -14px -48px; }
+ .es-header, .es-page.es-page--executive-summary .es-header { padding: 72px 14px 18px; }
+ .es-content { padding: 0 14px; }
+ .es-title { font-size: clamp(24px, 7vw, 30px); overflow-wrap: anywhere; }
+ .es-kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .es-kpi { padding: 14px; }
+ .es-section-heading-row, .es-header-row { flex-wrap: wrap; }
+ .bq-feature-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+ .es-section-help-trigger { min-width: 44px; min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .es-section, .bq-reveal, .bq-stagger-item, .bq-split-char, .es-cursor { animation: none; transition: none; }
+}

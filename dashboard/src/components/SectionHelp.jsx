@@ -82,10 +82,11 @@ export default function SectionHelp({ title = 'Why it matters', children, label 
           type="button"
           className="es-section-help-trigger"
           aria-label={label}
+          onClick={show}
           onMouseEnter={show}
           onMouseLeave={hide}
-          onFocus={show}
           onBlur={hide}
+          aria-expanded={open}
         >
           <span className="es-section-help-emoji" aria-hidden="true">🤔</span>
         </button>
